@@ -29,15 +29,35 @@ export default function Home() {
           Muhammad Farooq Ibrahim
         </h1>
 
-        <div style={{ fontSize: "15px", lineHeight: "1.55", marginBottom: "28px" }}>
-          <p style={{ margin: "0 0 8px 0" }}>
-            I am in Chicago, Illinois, originally from Karachi, Pakistan.
+        <div style={{ fontSize: "15px", lineHeight: "1.75", marginBottom: "30px" }}>
+          <p style={{ margin: "0 0 18px 0" }}>
+            I’m currently based in Chicago, Illinois, and originally from Karachi,
+            Pakistan, a city known for its energy, diversity, and entrepreneurial
+            spirit, which has deeply shaped my personality and perspective. Living
+            in two very different parts of the world has given me the ability to
+            connect with people from diverse backgrounds and adapt quickly to new
+            environments and opportunities.
           </p>
-          <p style={{ margin: "0 0 8px 0" }}>
-            My interests include spending quality time with family and friends.
+
+          <p style={{ margin: "0 0 18px 0" }}>
+            Outside of academics and technology, I genuinely value spending
+            quality time with family and friends, building meaningful
+            relationships, and creating experiences that matter.
           </p>
+
+          <p style={{ margin: "0 0 18px 0" }}>
+            I have a strong interest in business, global politics, sports,
+            emerging technologies, and cryptocurrency. I’m especially fascinated
+            by how technology is transforming industries, financial systems, and
+            the way people connect and build communities around the world. I enjoy
+            staying informed about market trends, innovative ideas, and
+            developments that are shaping the future.
+          </p>
+
           <p style={{ margin: 0 }}>
-            I am interested in business, politics, sports, and emerging technologies.
+            I’m naturally curious, growth-oriented, and always eager to learn
+            from people, ideas, and experiences that inspire progress and create
+            a lasting impact.
           </p>
         </div>
 
