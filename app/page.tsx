@@ -2,25 +2,22 @@ export default function Home() {
   return (
     <main
       style={{
-        minHeight: "100vh",
-        background:
-          "linear-gradient(to bottom right, #f4f4f4, #e8e8e8)",
-        padding: "35px 50px",
+        height: "100vh",
+        overflow: "hidden",
+        background: "linear-gradient(to bottom right, #f4f4f4, #e8e8e8)",
         fontFamily: "Arial, sans-serif",
         color: "#111",
+        padding: "28px 46px",
+        boxSizing: "border-box",
       }}
     >
-      <section
-        style={{
-          maxWidth: "900px",
-          margin: "0 auto",
-        }}
-      >
+      <section style={{ maxWidth: "850px" }}>
         <h1
           style={{
-            fontSize: "48px",
-            fontWeight: "bold",
-            marginBottom: "20px",
+            fontSize: "38px",
+            fontWeight: 800,
+            margin: "0 0 18px 0",
+            lineHeight: "1.05",
           }}
         >
           Muhammad Farooq Ibrahim
@@ -28,36 +25,35 @@ export default function Home() {
 
         <div
           style={{
-            fontSize: "14px",
-            lineHeight: "1.6",
-            marginBottom: "28px",
+            fontSize: "12.5px",
+            lineHeight: "1.45",
+            marginBottom: "20px",
           }}
         >
-          <p style={{ margin: "0 0 12px 0" }}>
-            I’m based in Chicago, Illinois, and originally from
-            Karachi, Pakistan. Experiencing different cultures has
-            helped me develop adaptability, communication skills,
-            and a broad perspective toward people and opportunities.
+          <p style={{ margin: "0 0 8px 0" }}>
+            I’m based in Chicago, Illinois, and originally from Karachi, Pakistan.
+            Experiencing different cultures has helped me develop adaptability,
+            communication skills, and a broad perspective toward people and
+            opportunities.
           </p>
 
-          <p style={{ margin: "0 0 12px 0" }}>
-            I enjoy spending quality time with family and friends
-            and have strong interests in business, politics,
-            sports, emerging technologies, and cryptocurrency.
+          <p style={{ margin: "0 0 8px 0" }}>
+            I enjoy spending quality time with family and friends and have strong
+            interests in business, politics, sports, emerging technologies, and
+            cryptocurrency.
           </p>
 
           <p style={{ margin: 0 }}>
-            I’m naturally curious, growth-oriented, and always eager
-            to learn from new ideas, experiences, and innovation
-            shaping the future.
+            I’m naturally curious, growth-oriented, and always eager to learn from
+            new ideas, experiences, and innovation shaping the future.
           </p>
         </div>
 
         <h2
           style={{
-            fontSize: "34px",
-            fontWeight: "bold",
-            marginBottom: "18px",
+            fontSize: "24px",
+            fontWeight: 800,
+            margin: "0 0 12px 0",
           }}
         >
           Work Experience:
@@ -65,24 +61,24 @@ export default function Home() {
 
         <div
           style={{
-            fontSize: "14px",
-            lineHeight: "1.5",
-            marginBottom: "28px",
+            fontSize: "12.5px",
+            lineHeight: "1.35",
+            marginBottom: "18px",
           }}
         >
-          <div style={{ marginBottom: "16px" }}>
+          <div style={{ marginBottom: "9px" }}>
             <strong>– Student Assistant</strong>
             <br />
             DePaul University, Lincoln Park
           </div>
 
-          <div style={{ marginBottom: "16px" }}>
+          <div style={{ marginBottom: "9px" }}>
             <strong>– Cybersecurity and Technology Intern</strong>
             <br />
             Enterprise Network Technology
           </div>
 
-          <div style={{ marginBottom: "16px" }}>
+          <div style={{ marginBottom: "9px" }}>
             <strong>– Technology Intern</strong>
             <br />
             PBS Distribution
@@ -97,29 +93,21 @@ export default function Home() {
 
         <h2
           style={{
-            fontSize: "30px",
-            fontWeight: "bold",
-            marginBottom: "14px",
+            fontSize: "20px",
+            fontWeight: 800,
+            margin: "0 0 8px 0",
           }}
         >
           Connect with me:
         </h2>
 
-        <div
-          style={{
-            fontSize: "14px",
-            lineHeight: "1.7",
-          }}
-        >
+        <div style={{ fontSize: "12.5px", lineHeight: "1.45" }}>
           <div>
             <strong>LinkedIn:</strong>{" "}
             <a
               href="https://linkedin.com/in/m-farooq15"
               target="_blank"
-              style={{
-                color: "#111",
-                textDecoration: "underline",
-              }}
+              style={{ color: "#111", textDecoration: "underline" }}
             >
               linkedin.com/in/m-farooq15
             </a>
@@ -130,25 +118,14 @@ export default function Home() {
             <a
               href="https://twitter.com/imfarooqibrahim"
               target="_blank"
-              style={{
-                color: "#111",
-                textDecoration: "underline",
-              }}
+              style={{ color: "#111", textDecoration: "underline" }}
             >
               twitter.com/imfarooqibrahim
             </a>
           </div>
         </div>
 
-        <p
-          style={{
-            marginTop: "28px",
-            fontSize: "14px",
-            fontWeight: 500,
-          }}
-        >
-          FAROOQ
-        </p>
+        <p style={{ margin: "14px 0 0 0", fontSize: "12.5px" }}>FAROOQ</p>
       </section>
     </main>
   );
