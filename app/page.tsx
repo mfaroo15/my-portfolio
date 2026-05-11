@@ -23,15 +23,15 @@ export default function Home() {
 
           .bismillah {
             display: block !important;
-            position: relative !important;
-            top: auto !important;
-            right: auto !important;
-            width: 100% !important;
-            max-width: none !important;
-            text-align: left !important;
-            margin-bottom: 14px !important;
-            padding-bottom: 8px !important;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important;
+            position: absolute !important;
+            top: 18px !important;
+            right: 16px !important;
+            width: auto !important;
+            max-width: 210px !important;
+            text-align: right !important;
+            margin-bottom: 0 !important;
+            padding: 0 !important;
+            border: none !important;
             z-index: 9999 !important;
           }
 
@@ -169,6 +169,8 @@ export default function Home() {
             </p>
           </div>
 
+          <hr style={{ border: "none", borderTop: "1px solid #bbb", margin: "7px 0" }} />
+
           <div
             className="quote-box"
             style={{
@@ -184,8 +186,6 @@ export default function Home() {
             Building local LLM-powered AI systems for cybersecurity,
             productivity, and workflow automation.
           </div>
-
-          <hr style={{ border: "none", borderTop: "1px solid #bbb", margin: "7px 0" }} />
 
           <h2 className="section-heading" style={{ fontSize: "17px", margin: "0 0 3px 0", fontWeight: 900 }}>
             MFI GPT
@@ -271,4 +271,4 @@ export default function Home() {
       </main>
     </>
   );
-}
+}S
