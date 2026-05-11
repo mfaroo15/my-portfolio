@@ -73,6 +73,30 @@ export default function Home() {
             margin-bottom: 4px !important;
           }
         }
+
+        @media (min-width: 769px) {
+          .bismillah {
+            position: absolute !important;
+            top: 26px !important;
+            right: 60px !important;
+            text-align: center !important;
+            max-width: 230px !important;
+            z-index: 9999 !important;
+          }
+
+          .bismillah-arabic {
+            font-size: 32px !important;
+            font-family: serif !important;
+            line-height: 1.1 !important;
+            margin-bottom: 6px !important;
+          }
+
+          .bismillah-english {
+            font-size: 11px !important;
+            font-style: italic !important;
+            line-height: 1.35 !important;
+          }
+        }
       `}</style>
 
       <main
@@ -107,34 +131,15 @@ export default function Home() {
 
           <div
             className="bismillah"
-            style={{
-              position: "absolute",
-              top: "26px",
-              right: "60px",
-              textAlign: "center",
-              maxWidth: "230px",
-              zIndex: 9999,
-            }}
           >
             <div
               className="bismillah-arabic"
-              style={{
-                fontSize: "32px",
-                fontFamily: "serif",
-                lineHeight: "1.1",
-                marginBottom: "6px",
-              }}
             >
               بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
             </div>
 
             <div
               className="bismillah-english"
-              style={{
-                fontSize: "11px",
-                fontStyle: "italic",
-                lineHeight: "1.35",
-              }}
             >
               In the name of Allah, the Most
               <br />
@@ -271,4 +276,4 @@ export default function Home() {
       </main>
     </>
   );
-}S
+}
