@@ -3,17 +3,36 @@ export default function Home() {
     <>
       <style>{`
         @media (max-width: 768px) {
-          .bismillah {
-            display: none;
-          }
-
           .main-container {
-            padding: 18px 24px !important;
+            padding: 16px 20px !important;
+            overflow-y: auto !important;
+            height: auto !important;
           }
 
           .main-title {
-            font-size: 34px !important;
+            font-size: 30px !important;
             line-height: 0.95 !important;
+            max-width: 230px !important;
+          }
+
+          .bismillah {
+            display: block !important;
+            position: absolute !important;
+            top: 16px !important;
+            right: 18px !important;
+            max-width: 120px !important;
+            text-align: center !important;
+          }
+
+          .bismillah-arabic {
+            font-size: 18px !important;
+            line-height: 1 !important;
+            margin-bottom: 3px !important;
+          }
+
+          .bismillah-english {
+            font-size: 7px !important;
+            line-height: 1.2 !important;
           }
         }
       `}</style>
@@ -58,6 +77,7 @@ export default function Home() {
             }}
           >
             <div
+              className="bismillah-arabic"
               style={{
                 fontSize: "32px",
                 fontFamily: "serif",
@@ -69,6 +89,7 @@ export default function Home() {
             </div>
 
             <div
+              className="bismillah-english"
               style={{
                 fontSize: "11px",
                 fontStyle: "italic",
@@ -267,4 +288,4 @@ export default function Home() {
       </main>
     </>
   );
-}
+}s
