@@ -4,43 +4,51 @@ export default function Home() {
       <style>{`
         @media (max-width: 768px) {
           .main-container {
-            padding: 14px 14px !important;
-            height: 100vh !important;
-            overflow: hidden !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: flex-start !important;
+            align-items: stretch !important;
+            padding: 18px 16px !important;
+            min-height: 100vh !important;
+            width: 100% !important;
+            overflow-y: auto !important;
           }
 
           .main-title {
-            font-size: 27px !important;
-            line-height: 0.95 !important;
-            max-width: 190px !important;
+            font-size: 28px !important;
+            line-height: 1.05 !important;
+            max-width: none !important;
             margin-bottom: 8px !important;
           }
 
           .bismillah {
             display: block !important;
-            position: fixed !important;
-            top: 10px !important;
-            right: 10px !important;
-            width: 105px !important;
-            max-width: 105px !important;
-            text-align: center !important;
+            position: relative !important;
+            top: auto !important;
+            right: auto !important;
+            width: 100% !important;
+            max-width: none !important;
+            text-align: left !important;
+            margin-bottom: 14px !important;
+            padding-bottom: 8px !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important;
             z-index: 9999 !important;
-            color: #111 !important;
           }
 
           .bismillah-arabic {
-            font-size: 15px !important;
-            line-height: 1 !important;
-            margin-bottom: 2px !important;
+            font-size: 22px !important;
+            line-height: 1.1 !important;
+            margin-bottom: 4px !important;
           }
 
           .bismillah-english {
-            font-size: 6px !important;
-            line-height: 1.1 !important;
+            font-size: 10px !important;
+            line-height: 1.3 !important;
           }
 
           .content-section {
             max-width: 100% !important;
+            width: 100% !important;
           }
 
           .intro-text,
@@ -48,21 +56,21 @@ export default function Home() {
           .work-text,
           .connect-text,
           .sign-text {
-            font-size: 9px !important;
+            font-size: 12px !important;
           }
 
           .quote-box {
-            font-size: 9.5px !important;
-            margin: 6px 0 !important;
+            font-size: 11px !important;
+            margin: 10px 0 !important;
           }
 
           .section-heading {
-            font-size: 14px !important;
-            margin-bottom: 3px !important;
+            font-size: 16px !important;
+            margin-bottom: 4px !important;
           }
 
           .small-line {
-            margin-bottom: 2px !important;
+            margin-bottom: 4px !important;
           }
         }
       `}</style>
@@ -70,17 +78,18 @@ export default function Home() {
       <main
         className="main-container"
         style={{
-          height: "100vh",
-          overflow: "hidden",
+          minHeight: "100vh",
+          overflowY: "auto",
           background: "linear-gradient(to bottom right, #f4f4f4, #e8e8e8)",
           fontFamily: "Arial, sans-serif",
           color: "#111",
           padding: "16px 52px",
           boxSizing: "border-box",
           position: "relative",
+          width: "100%",
         }}
       >
-        <section className="content-section" style={{ maxWidth: "760px" }}>
+        <section className="content-section" style={{ maxWidth: "760px", width: "100%" }}>
           <h1
             className="main-title"
             style={{
