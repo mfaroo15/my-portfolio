@@ -5,65 +5,129 @@ export default function Home() {
         height: "100vh",
         overflow: "hidden",
         background: "linear-gradient(to bottom right, #f4f4f4, #e8e8e8)",
-        fontFamily: "Consolas, Monaco, 'Courier New', monospace",
+        fontFamily: "Arial, sans-serif",
         color: "#111",
-        padding: "24px 42px",
+        padding: "28px 46px",
         boxSizing: "border-box",
-        fontWeight: "bold",
       }}
     >
-      <section
-        style={{
-          maxWidth: "1000px",
-          margin: "0 auto",
-          fontSize: "13px",
-          lineHeight: "1.35",
-          whiteSpace: "pre-line",
-        }}
-      >
-{`> Muhammad Farooq Ibrahim
+      <section style={{ maxWidth: "850px" }}>
+        <h1
+          style={{
+            fontSize: "38px",
+            fontWeight: 800,
+            margin: "0 0 18px 0",
+            lineHeight: "1.05",
+          }}
+        >
+          Muhammad Farooq Ibrahim
+        </h1>
 
-location: Chicago, Illinois
-origin: Karachi, Pakistan
+        <div
+          style={{
+            fontSize: "12.5px",
+            lineHeight: "1.45",
+            marginBottom: "20px",
+          }}
+        >
+          <p style={{ margin: "0 0 8px 0" }}>
+            I’m based in Chicago, Illinois, and originally from Karachi, Pakistan.
+            Experiencing different cultures has helped me develop adaptability,
+            communication skills, and a broad perspective toward people and
+            opportunities.
+          </p>
 
-> overview
+          <p style={{ margin: "0 0 8px 0" }}>
+            I enjoy spending quality time with family and friends and have strong
+            interests in business, politics, sports, emerging technologies, and
+            cryptocurrency.
+          </p>
 
-I’m currently based in Chicago, Illinois, and originally from Karachi, Pakistan, a city
-known for its energy, diversity, and entrepreneurial spirit, which has deeply shaped my
-personality and perspective. Living in two very different parts of the world has given me
-the ability to connect with people from diverse backgrounds and adapt quickly to new
-environments and opportunities.
+          <p style={{ margin: 0 }}>
+            I’m naturally curious, growth-oriented, and always eager to learn from
+            new ideas, experiences, and innovation shaping the future.
+          </p>
+        </div>
 
-Outside of academics and technology, I genuinely value spending quality time with family
-and friends, building meaningful relationships, and creating experiences that matter.
+        <h2
+          style={{
+            fontSize: "24px",
+            fontWeight: 800,
+            margin: "0 0 12px 0",
+          }}
+        >
+          Work Experience:
+        </h2>
 
-I have a strong interest in business, global politics, sports, emerging technologies, and
-cryptocurrency. I’m especially fascinated by how technology is transforming industries,
-financial systems, and the way people connect and build communities around the world.
+        <div
+          style={{
+            fontSize: "12.5px",
+            lineHeight: "1.35",
+            marginBottom: "18px",
+          }}
+        >
+          <div style={{ marginBottom: "9px" }}>
+            <strong>– Student Assistant</strong>
+            <br />
+            DePaul University, Lincoln Park
+          </div>
 
-I’m naturally curious, growth-oriented, and always eager to learn from people, ideas,
-and experiences that inspire progress and create a lasting impact.
+          <div style={{ marginBottom: "9px" }}>
+            <strong>– Cybersecurity and Technology Intern</strong>
+            <br />
+            Enterprise Network Technology
+          </div>
 
-> work experience
+          <div style={{ marginBottom: "9px" }}>
+            <strong>– Technology Intern</strong>
+            <br />
+            PBS Distribution
+          </div>
 
-- Student Assistant
-  DePaul University, Lincoln Park
+          <div>
+            <strong>– President of DePaul Crypto Club</strong>
+            <br />
+            Co-founder and President, DePaul Crypto Club
+          </div>
+        </div>
 
-- Cybersecurity and Technology Intern
-  Enterprise Network Technology
+        <h2
+          style={{
+            fontSize: "20px",
+            fontWeight: 800,
+            margin: "0 0 8px 0",
+          }}
+        >
+          Connect with me:
+        </h2>
 
-- Technology Intern
-  PBS Distribution
+        <div style={{ fontSize: "12.5px", lineHeight: "1.45" }}>
+          <div>
+            <strong>LinkedIn:</strong>{" "}
+            <a
+              href="https://linkedin.com/in/m-farooq15"
+              target="_blank"
+              style={{ color: "#111", textDecoration: "underline" }}
+            >
+              linkedin.com/in/m-farooq15
+            </a>
+          </div>
 
-- President of DePaul Crypto Club
-  Co-founder and President, DePaul Crypto Club
+          <div>
+            <strong>Twitter:</strong>{" "}
+            <a
+              href="https://twitter.com/imfarooqibrahim"
+              target="_blank"
+              style={{ color: "#111", textDecoration: "underline" }}
+            >
+              twitter.com/imfarooqibrahim
+            </a>
+          </div>
+        </div>
 
-> connect
-
-LinkedIn: linkedin.com/in/m-farooq15
-Twitter: twitter.com/imfarooqibrahim
-
-FAROOQ_`}
+        <p style={{ margin: "14px 0 0 0", fontSize: "12.5px" }}>
+          FAROOQ
+        </p>
       </section>
     </main>
   );
