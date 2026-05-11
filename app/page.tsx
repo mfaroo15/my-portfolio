@@ -7,8 +7,9 @@ export default function Home() {
         background: "linear-gradient(to bottom right, #f4f4f4, #e8e8e8)",
         fontFamily: "Arial, sans-serif",
         color: "#111",
-        padding: "18px 52px",
+        padding: "16px 52px",
         boxSizing: "border-box",
+        position: "relative",
       }}
     >
       <section style={{ maxWidth: "760px" }}>
@@ -25,6 +26,38 @@ export default function Home() {
           <br />
           Farooq Ibrahim
         </h1>
+
+        <div
+          style={{
+            position: "absolute",
+            top: "26px",
+            right: "60px",
+            textAlign: "center",
+            maxWidth: "230px",
+          }}
+        >
+          <div
+            style={{
+              fontSize: "32px",
+              fontFamily: "serif",
+              lineHeight: "1.1",
+              marginBottom: "6px",
+            }}
+          >
+            بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
+          </div>
+          <div
+            style={{
+              fontSize: "11px",
+              fontStyle: "italic",
+              lineHeight: "1.35",
+            }}
+          >
+            In the name of Allah, the Most
+            <br />
+            Gracious, the Most Merciful
+          </div>
+        </div>
 
         <div style={{ fontSize: "11px", lineHeight: "1.32", marginBottom: "10px" }}>
           <p style={{ margin: "0 0 7px 0" }}>
@@ -119,21 +152,32 @@ export default function Home() {
         <div style={{ fontSize: "10.5px", lineHeight: "1.25" }}>
           <div>
             <strong>LinkedIn:</strong>{" "}
-            <a href="https://linkedin.com/in/m-farooq15" target="_blank" style={{ color: "#153f8f" }}>
+            <a
+              href="https://linkedin.com/in/m-farooq15"
+              target="_blank"
+              style={{ color: "#153f8f" }}
+            >
               linkedin.com/in/m-farooq15
             </a>
           </div>
 
           <div>
             <strong>Twitter:</strong>{" "}
-            <a href="https://twitter.com/imfarooqibrahim" target="_blank" style={{ color: "#153f8f" }}>
+            <a
+              href="https://twitter.com/imfarooqibrahim"
+              target="_blank"
+              style={{ color: "#153f8f" }}
+            >
               twitter.com/imfarooqibrahim
             </a>
           </div>
 
           <div>
             <strong>Email:</strong>{" "}
-            <a href="mailto:thefarooqibrahim@gmail.com" style={{ color: "#153f8f" }}>
+            <a
+              href="mailto:thefarooqibrahim@gmail.com"
+              style={{ color: "#153f8f" }}
+            >
               thefarooqibrahim@gmail.com
             </a>
           </div>
