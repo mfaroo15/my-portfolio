@@ -291,7 +291,7 @@ export default function Home() {
                 <div style={{ marginBottom: "4px" }}>
                   <strong>— Technology Intern</strong>
                   <br />
-                  FBS Distribution
+                  PBS Distribution
                 </div>
 
                 <div>
