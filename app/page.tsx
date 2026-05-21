@@ -35,6 +35,13 @@ export default function Home() {
           .bottom-grid {
             display: block !important;
           }
+
+          .signature {
+            font-family: Arial, sans-serif !important;
+            font-style: normal !important;
+            font-weight: 400 !important;
+            font-size: 18px !important;
+          }
         }
       `}</style>
 
@@ -262,15 +269,16 @@ export default function Home() {
               </div>
 
               <div
+                className="signature"
                 style={{
-                  fontSize: "34px",
-                  fontWeight: 500,
-                  fontStyle: "italic",
+                  fontSize: "18px",
+                  fontWeight: 400,
+                  fontStyle: "normal",
                   marginTop: "14px",
-                  fontFamily: "cursive",
+                  fontFamily: "Arial, sans-serif",
                 }}
               >
-                FAROOQ
+                Farooq
               </div>
             </div>
           </div>
