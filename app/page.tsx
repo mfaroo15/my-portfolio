@@ -4,10 +4,6 @@ export default function Home() {
       <style>{`
         @media (max-width: 768px) {
           .main-container {
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: flex-start !important;
-            align-items: stretch !important;
             padding: 18px 16px !important;
             min-height: 100vh !important;
             width: 100% !important;
@@ -17,85 +13,27 @@ export default function Home() {
           .main-title {
             font-size: 28px !important;
             line-height: 1.02 !important;
-            max-width: none !important;
             margin-bottom: 8px !important;
           }
 
           .bismillah {
-            display: block !important;
             position: absolute !important;
             top: 18px !important;
             right: 16px !important;
-            width: auto !important;
-            max-width: 210px !important;
+            max-width: 150px !important;
             text-align: right !important;
-            z-index: 9999 !important;
           }
 
           .bismillah-arabic {
-            font-size: 22px !important;
-            line-height: 1.1 !important;
-            margin-bottom: 4px !important;
+            font-size: 20px !important;
           }
 
           .bismillah-english {
-            font-size: 10px !important;
-            line-height: 1.3 !important;
-          }
-
-          .content-section {
-            max-width: 100% !important;
-            width: 100% !important;
-          }
-
-          .intro-text,
-          .project-text,
-          .work-text,
-          .connect-text {
-            font-size: 12px !important;
-          }
-
-          .quote-box {
-            font-size: 11px !important;
-            margin: 10px 0 !important;
-          }
-
-          .section-heading {
-            font-size: 16px !important;
-            margin-bottom: 4px !important;
+            font-size: 8px !important;
           }
 
           .bottom-grid {
             display: block !important;
-          }
-
-          .signature {
-            font-size: 34px !important;
-            margin-top: 10px !important;
-          }
-        }
-
-        @media (min-width: 769px) {
-          .bismillah {
-            position: absolute !important;
-            top: 26px !important;
-            right: 60px !important;
-            text-align: center !important;
-            max-width: 230px !important;
-            z-index: 9999 !important;
-          }
-
-          .bismillah-arabic {
-            font-size: 32px !important;
-            font-family: serif !important;
-            line-height: 1.1 !important;
-            margin-bottom: 6px !important;
-          }
-
-          .bismillah-english {
-            font-size: 11px !important;
-            font-style: italic !important;
-            line-height: 1.35 !important;
           }
         }
       `}</style>
@@ -114,13 +52,7 @@ export default function Home() {
           width: "100%",
         }}
       >
-        <section
-          className="content-section"
-          style={{
-            maxWidth: "1100px",
-            width: "100%",
-          }}
-        >
+        <section style={{ maxWidth: "1100px", width: "100%" }}>
           <h1
             className="main-title"
             style={{
@@ -136,12 +68,37 @@ export default function Home() {
             Farooq Ibrahim
           </h1>
 
-          <div className="bismillah">
-            <div className="bismillah-arabic">
+          <div
+            className="bismillah"
+            style={{
+              position: "absolute",
+              top: "26px",
+              right: "60px",
+              textAlign: "center",
+              maxWidth: "230px",
+              zIndex: 9999,
+            }}
+          >
+            <div
+              className="bismillah-arabic"
+              style={{
+                fontSize: "32px",
+                fontFamily: "serif",
+                lineHeight: "1.1",
+                marginBottom: "6px",
+              }}
+            >
               بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
             </div>
 
-            <div className="bismillah-english">
+            <div
+              className="bismillah-english"
+              style={{
+                fontSize: "11px",
+                fontStyle: "italic",
+                lineHeight: "1.35",
+              }}
+            >
               In the name of Allah, the Most
               <br />
               Gracious, the Most Merciful
@@ -149,7 +106,6 @@ export default function Home() {
           </div>
 
           <div
-            className="intro-text"
             style={{
               fontSize: "11px",
               lineHeight: "1.32",
@@ -158,7 +114,7 @@ export default function Home() {
             }}
           >
             <p style={{ margin: "0 0 7px 0" }}>
-              I'm based in Chicago, Illinois, and I'm a proud Pakistani.
+              I’m based in Chicago, Illinois, and I’m a proud Pakistani.
               Experiencing different cultures has helped me develop adaptability,
               communication skills, and a global perspective toward people and
               opportunities.
@@ -171,22 +127,14 @@ export default function Home() {
             </p>
 
             <p style={{ margin: 0 }}>
-              I'm naturally curious, growth-oriented, and always eager to learn
+              I’m naturally curious, growth-oriented, and always eager to learn
               from new ideas, experiences, and innovation shaping the future.
             </p>
           </div>
 
-          <hr
-            style={{
-              border: "none",
-              borderTop: "1px solid #999",
-              margin: "7px 0",
-              maxWidth: "760px",
-            }}
-          />
+          <hr style={{ border: "none", borderTop: "1px solid #999", margin: "7px 0", maxWidth: "760px" }} />
 
           <div
-            className="quote-box"
             style={{
               borderLeft: "3px solid #1f4f9a",
               paddingLeft: "10px",
@@ -198,32 +146,17 @@ export default function Home() {
               maxWidth: "760px",
             }}
           >
-            Building AI-powered workspace systems for productivity,
-            cybersecurity, documentation, and workflow automation.
+            Building AI-powered workspace systems for productivity, cybersecurity,
+            documentation, and workflow automation.
           </div>
 
-          <hr
-            style={{
-              border: "none",
-              borderTop: "1px solid #999",
-              margin: "7px 0",
-              maxWidth: "760px",
-            }}
-          />
+          <hr style={{ border: "none", borderTop: "1px solid #999", margin: "7px 0", maxWidth: "760px" }} />
 
-          <h2
-            className="section-heading"
-            style={{
-              fontSize: "17px",
-              margin: "0 0 5px 0",
-              fontWeight: 900,
-            }}
-          >
+          <h2 style={{ fontSize: "17px", margin: "0 0 5px 0", fontWeight: 900 }}>
             MFI Nexus AI
           </h2>
 
           <div
-            className="project-text"
             style={{
               fontSize: "10.5px",
               lineHeight: "1.25",
@@ -251,19 +184,12 @@ export default function Home() {
             <p style={{ margin: 0 }}>
               MFI Nexus AI currently runs through my local system and is
               available for limited testing access when the system is active. If
-              you're interested in trying it, feel free to request access by
+              you’re interested in trying it, feel free to request access by
               email.
             </p>
           </div>
 
-          <hr
-            style={{
-              border: "none",
-              borderTop: "1px solid #999",
-              margin: "10px 0",
-              maxWidth: "760px",
-            }}
-          />
+          <hr style={{ border: "none", borderTop: "1px solid #999", margin: "10px 0", maxWidth: "760px" }} />
 
           <div
             className="bottom-grid"
@@ -276,24 +202,11 @@ export default function Home() {
             }}
           >
             <div style={{ flex: 1 }}>
-              <h2
-                className="section-heading"
-                style={{
-                  fontSize: "18px",
-                  margin: "0 0 5px 0",
-                  fontWeight: 900,
-                }}
-              >
+              <h2 style={{ fontSize: "18px", margin: "0 0 5px 0", fontWeight: 900 }}>
                 Work Experience:
               </h2>
 
-              <div
-                className="work-text"
-                style={{
-                  fontSize: "10.5px",
-                  lineHeight: "1.18",
-                }}
-              >
+              <div style={{ fontSize: "10.5px", lineHeight: "1.18" }}>
                 <div style={{ marginBottom: "4px" }}>
                   <strong>— Student Assistant</strong>
                   <br />
@@ -321,66 +234,40 @@ export default function Home() {
             </div>
 
             <div style={{ flex: 1 }}>
-              <h2
-                className="section-heading"
-                style={{
-                  fontSize: "18px",
-                  margin: "0 0 5px 0",
-                  fontWeight: 900,
-                }}
-              >
+              <h2 style={{ fontSize: "18px", margin: "0 0 5px 0", fontWeight: 900 }}>
                 Connect with me:
               </h2>
 
-              <div
-                className="connect-text"
-                style={{
-                  fontSize: "10.5px",
-                  lineHeight: "1.4",
-                }}
-              >
+              <div style={{ fontSize: "10.5px", lineHeight: "1.4" }}>
                 <div>
                   <strong>LinkedIn:</strong>{" "}
-                  <a
-                    href="https://linkedin.com/in/m-farooq15"
-                    target="_blank"
-                    style={{ color: "#1a4fb8" }}
-                  >
+                  <a href="https://linkedin.com/in/m-farooq15" target="_blank" style={{ color: "#1a4fb8" }}>
                     linkedin.com/in/m-farooq15
                   </a>
                 </div>
 
                 <div>
                   <strong>Twitter:</strong>{" "}
-                  <a
-                    href="https://twitter.com/imfarooqibrahim"
-                    target="_blank"
-                    style={{ color: "#1a4fb8" }}
-                  >
+                  <a href="https://twitter.com/imfarooqibrahim" target="_blank" style={{ color: "#1a4fb8" }}>
                     twitter.com/imfarooqibrahim
                   </a>
                 </div>
 
                 <div>
                   <strong>Email:</strong>{" "}
-                  <a
-                    href="mailto:ibefarooqibrahim@gmail.com"
-                    style={{ color: "#1a4fb8" }}
-                  >
+                  <a href="mailto:ibefarooqibrahim@gmail.com" style={{ color: "#1a4fb8" }}>
                     ibefarooqibrahim@gmail.com
                   </a>
                 </div>
               </div>
 
               <div
-                className="signature"
                 style={{
-                  fontSize: "44px",
-                  fontWeight: 900,
+                  fontSize: "34px",
+                  fontWeight: 500,
                   fontStyle: "italic",
                   marginTop: "14px",
                   fontFamily: "cursive",
-                  transform: "rotate(-4deg)",
                 }}
               >
                 FAROOQ
