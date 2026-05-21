@@ -2,106 +2,63 @@ export default function Home() {
   return (
     <>
       <style>{`
-        * {
-          box-sizing: border-box;
-        }
-
-        body {
-          margin: 0;
-          padding: 0;
-          overflow-x: hidden;
-        }
-
         @media (max-width: 768px) {
           .main-container {
-            padding: 16px 16px 24px 16px !important;
+            padding: 18px 16px !important;
             min-height: 100vh !important;
+            width: 100% !important;
             overflow-y: auto !important;
           }
 
           .main-title {
             font-size: 24px !important;
-            line-height: 0.98 !important;
-            max-width: 200px !important;
+            line-height: 1.02 !important;
             margin-bottom: 14px !important;
+            max-width: 230px !important;
           }
 
           .bismillah {
             position: absolute !important;
-            top: 14px !important;
+            top: 16px !important;
             right: 14px !important;
-            max-width: 120px !important;
-            text-align: right !important;
+            width: 155px !important;
+            text-align: center !important;
             z-index: 9999 !important;
           }
 
           .bismillah-arabic {
-            font-size: 16px !important;
-            line-height: 1.05 !important;
-            margin-bottom: 2px !important;
+            font-size: 14px !important;
+            line-height: 1 !important;
+            white-space: nowrap !important;
+            margin-bottom: 4px !important;
           }
 
           .bismillah-english {
             font-size: 7px !important;
             line-height: 1.15 !important;
-          }
-
-          .intro-text,
-          .project-text,
-          .work-text,
-          .connect-text {
-            font-size: 10px !important;
-            line-height: 1.28 !important;
-          }
-
-          .section-heading {
-            font-size: 15px !important;
-          }
-
-          .quote-box {
-            font-size: 10px !important;
-            line-height: 1.2 !important;
+            font-style: italic !important;
           }
 
           .bottom-grid {
             display: block !important;
           }
 
-          .connect-section {
-            margin-top: 18px !important;
-          }
-
           .signature {
-            font-size: 16px !important;
-            margin-top: 12px !important;
-          }
-        }
-
-        @media (min-width: 769px) {
-          .main-container {
-            overflow-y: auto;
+            font-family: Arial, sans-serif !important;
+            font-style: normal !important;
+            font-weight: 400 !important;
+            font-size: 18px !important;
           }
 
-          .bismillah {
-            position: absolute;
-            top: 26px;
-            right: 60px;
-            text-align: center;
-            max-width: 230px;
-            z-index: 9999;
+          .intro-text,
+          .project-text,
+          .work-text,
+          .connect-text {
+            font-size: 11px !important;
           }
 
-          .bismillah-arabic {
-            font-size: 32px;
-            font-family: serif;
-            line-height: 1.1;
-            margin-bottom: 6px;
-          }
-
-          .bismillah-english {
-            font-size: 11px;
-            font-style: italic;
-            line-height: 1.35;
+          .section-heading {
+            font-size: 17px !important;
           }
         }
       `}</style>
@@ -110,20 +67,17 @@ export default function Home() {
         className="main-container"
         style={{
           minHeight: "100vh",
+          overflowY: "auto",
           background: "linear-gradient(to bottom right, #f4f4f4, #e8e8e8)",
           fontFamily: "Arial, sans-serif",
           color: "#111",
           padding: "16px 52px",
+          boxSizing: "border-box",
           position: "relative",
           width: "100%",
         }}
       >
-        <section
-          style={{
-            maxWidth: "1100px",
-            width: "100%",
-          }}
-        >
+        <section style={{ maxWidth: "1100px", width: "100%" }}>
           <h1
             className="main-title"
             style={{
@@ -139,12 +93,38 @@ export default function Home() {
             Farooq Ibrahim
           </h1>
 
-          <div className="bismillah">
-            <div className="bismillah-arabic">
+          <div
+            className="bismillah"
+            style={{
+              position: "absolute",
+              top: "26px",
+              right: "60px",
+              textAlign: "center",
+              maxWidth: "230px",
+              zIndex: 9999,
+            }}
+          >
+            <div
+              className="bismillah-arabic"
+              style={{
+                fontSize: "32px",
+                fontFamily: "serif",
+                lineHeight: "1.1",
+                marginBottom: "6px",
+                whiteSpace: "nowrap",
+              }}
+            >
               بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
             </div>
 
-            <div className="bismillah-english">
+            <div
+              className="bismillah-english"
+              style={{
+                fontSize: "11px",
+                fontStyle: "italic",
+                lineHeight: "1.35",
+              }}
+            >
               In the name of Allah, the Most
               <br />
               Gracious, the Most Merciful
@@ -189,7 +169,6 @@ export default function Home() {
           />
 
           <div
-            className="quote-box"
             style={{
               borderLeft: "3px solid #1f4f9a",
               paddingLeft: "10px",
@@ -323,7 +302,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="connect-section" style={{ flex: 1 }}>
+            <div style={{ flex: 1 }}>
               <h2
                 className="section-heading"
                 style={{
@@ -380,6 +359,7 @@ export default function Home() {
                 style={{
                   fontSize: "18px",
                   fontWeight: 400,
+                  fontStyle: "normal",
                   marginTop: "14px",
                   fontFamily: "Arial, sans-serif",
                 }}
