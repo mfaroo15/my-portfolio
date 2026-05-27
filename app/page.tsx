@@ -349,7 +349,7 @@ export default function Home() {
                     href="mailto:ibefarooqibrahim@gmail.com"
                     style={{ color: "#1a4fb8" }}
                   >
-                    ibefarooqibrahim@gmail.com
+                    thefarooqibrahim@gmail.com
                   </a>
                 </div>
               </div>
