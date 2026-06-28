@@ -289,7 +289,7 @@ export default function Home() {
                 </div>
 
                 <div style={{ marginBottom: "4px" }}>
-                  <strong>— Technology Intern</strong>
+                  <strong>— Technology Analyst</strong>
                   <br />
                   PBS Distribution
                 </div>
@@ -346,7 +346,7 @@ export default function Home() {
                 <div>
                   <strong>Email:</strong>{" "}
                   <a
-                    href="mailto:ibefarooqibrahim@gmail.com"
+                    href="mailto:thefarooqibrahim@gmail.com"
                     style={{ color: "#1a4fb8" }}
                   >
                     thefarooqibrahim@gmail.com
