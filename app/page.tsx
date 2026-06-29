@@ -346,10 +346,10 @@ export default function Home() {
                 <div>
                   <strong>Email:</strong>{" "}
                   <a
-                    href="mailto:thefarooqibrahim@gmail.com"
+                    href="mailto:contact@farooqibrahim.com"
                     style={{ color: "#1a4fb8" }}
                   >
-                    thefarooqibrahim@gmail.com
+                    contact@farooqibrahim.com
                   </a>
                 </div>
               </div>
