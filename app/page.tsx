@@ -149,7 +149,7 @@ export default function Home() {
 
             <p style={{ margin: "0 0 7px 0" }}>
               I enjoy spending quality time with family and friends and have
-              strong interests in business, politics, sport and emerging
+              strong interests in business, politics, sports and emerging
               technologies.
             </p>
 
