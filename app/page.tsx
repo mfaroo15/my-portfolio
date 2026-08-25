@@ -9,7 +9,7 @@ const capabilities = [
     icon: "PD",
     title: "Project Delivery",
     description:
-      "Coordinating deployments, vendors, timelines, and technical readiness.",
+      "Coordinating technology initiatives, priorities, documentation, and technical readiness.",
   },
   {
     icon: "AR",
@@ -18,44 +18,58 @@ const capabilities = [
       "Supporting control documentation, evidence gathering, risk awareness, and audit readiness.",
   },
   {
-    icon: "SS",
-    title: "Systems & Security",
+    icon: "CS",
+    title: "Cybersecurity",
     description:
-      "Improving access, device, documentation, and cybersecurity processes.",
+      "Strengthening access, documentation, security awareness, and technology processes.",
   },
 ];
 
 const experience = [
   {
-    role: "Associate Consultant — Managed Services",
-    company: "Retail Technology Solutions",
-    description:
-      "Supporting IT operations, technology deployments, business systems, vendors, and technical projects across a multi-location environment.",
-  },
-  {
     role: "Technology Analyst",
-    company: "PBS Distribution",
+    company: "Public Broadcasting Service Distribution",
     description:
-      "Supported technology operations, systems, reporting, and business requirements.",
+      "Supported technology operations, business systems, reporting, technical documentation, and process improvement initiatives.",
   },
   {
     role: "Cybersecurity and Technology Intern",
     company: "Enterprise Network Technology",
     description:
-      "Assisted with cybersecurity processes, technical documentation, and technology support.",
+      "Supported cybersecurity operations through security monitoring, vulnerability awareness, technical documentation, risk identification, and IT infrastructure support.",
   },
   {
-    role: "Student Assistant",
+    role: "Information Technology Student Assistant",
     company: "DePaul University",
     description:
-      "Provided operational and administrative support within the university environment.",
+      "Provided frontline technology assistance, resolved user issues, supported university systems, and helped maintain reliable day-to-day IT operations.",
   },
+];
+
+const focusAreas = [
+  { symbol: "▦", label: "IT Operations" },
+  { symbol: "□", label: "Technology Projects" },
+  { symbol: "✓", label: "IT Audit & Controls" },
+  { symbol: "◇", label: "Technology Risk" },
+  { symbol: "⌁", label: "Cybersecurity" },
 ];
 
 export default function Home() {
   return (
     <>
       <style>{`
+        :root {
+          --navy: #0b1530;
+          --blue: #0755c9;
+          --blue-dark: #003f9e;
+          --blue-light: #edf5ff;
+          --text: #101a33;
+          --muted: #59677f;
+          --border: #dce4ef;
+          --surface: #ffffff;
+          --background: #fbfcfe;
+        }
+
         * {
           box-sizing: border-box;
         }
@@ -66,9 +80,10 @@ export default function Home() {
 
         body {
           margin: 0;
-          background: #fbfcfe;
-          color: #101a33;
+          background: var(--background);
+          color: var(--text);
           font-family: Arial, Helvetica, sans-serif;
+          -webkit-font-smoothing: antialiased;
         }
 
         a {
@@ -81,12 +96,16 @@ export default function Home() {
           margin: 0 auto;
         }
 
+        /* Navigation */
+
         .navbar {
-          background: rgba(255, 255, 255, 0.96);
-          border-bottom: 1px solid #e5e9f0;
           position: sticky;
           top: 0;
           z-index: 100;
+          background: rgba(255, 255, 255, 0.94);
+          border-bottom: 1px solid rgba(220, 228, 239, 0.9);
+          backdrop-filter: blur(18px);
+          -webkit-backdrop-filter: blur(18px);
         }
 
         .nav-inner {
@@ -99,19 +118,41 @@ export default function Home() {
 
         .brand {
           font-size: 22px;
-          font-weight: 800;
-          letter-spacing: -0.5px;
+          font-weight: 850;
+          letter-spacing: -0.6px;
         }
 
         .nav-links {
           display: flex;
           gap: 38px;
-          font-size: 15px;
-          font-weight: 700;
+          font-size: 14px;
+          font-weight: 750;
+        }
+
+        .nav-links a {
+          position: relative;
+          padding: 10px 0;
+        }
+
+        .nav-links a::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          bottom: 3px;
+          left: 0;
+          height: 2px;
+          background: var(--blue);
+          transform: scaleX(0);
+          transform-origin: center;
+          transition: transform 180ms ease;
         }
 
         .nav-links a:hover {
-          color: #0755c9;
+          color: var(--blue);
+        }
+
+        .nav-links a:hover::after {
+          transform: scaleX(1);
         }
 
         .bismillah {
@@ -122,57 +163,83 @@ export default function Home() {
         .bismillah-arabic {
           font-family: Georgia, "Times New Roman", serif;
           font-size: 23px;
+          line-height: 1.2;
           direction: rtl;
         }
 
         .bismillah-english {
-          color: #62708b;
+          margin-top: 3px;
+          color: #68758c;
           font-family: Georgia, "Times New Roman", serif;
           font-size: 10px;
           font-style: italic;
           line-height: 1.35;
-          margin-top: 3px;
         }
 
+        /* Hero */
+
         .hero {
-          padding: 68px 0 38px;
+          position: relative;
+          overflow: hidden;
+          padding: 72px 0 44px;
           background:
-            radial-gradient(circle at 3% 12%, #dbeaff 1.5px, transparent 1.5px),
+            radial-gradient(
+              circle at 8% 16%,
+              rgba(7, 85, 201, 0.08),
+              transparent 23%
+            ),
             linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
-          background-size: 18px 18px, auto;
-          background-repeat: no-repeat;
+        }
+
+        .hero::before {
+          content: "";
+          position: absolute;
+          top: 32px;
+          left: 16px;
+          width: 110px;
+          height: 110px;
+          opacity: 0.4;
+          background-image: radial-gradient(
+            circle,
+            #80a9e5 1.4px,
+            transparent 1.5px
+          );
+          background-size: 17px 17px;
         }
 
         .hero-grid {
+          position: relative;
+          z-index: 1;
           display: grid;
           grid-template-columns: 1.35fr 0.85fr;
-          gap: 80px;
+          gap: 78px;
           align-items: center;
         }
 
         .eyebrow {
-          color: #0755c9;
-          font-size: 12px;
-          font-weight: 800;
-          letter-spacing: 4px;
           margin-bottom: 18px;
+          color: var(--blue);
+          font-size: 12px;
+          font-weight: 850;
+          letter-spacing: 3.5px;
         }
 
         .hero h1 {
-          max-width: 720px;
-          font-family: Georgia, "Times New Roman", serif;
-          font-size: clamp(45px, 5vw, 70px);
-          line-height: 1.03;
-          letter-spacing: -2.5px;
+          max-width: 750px;
           margin: 0;
+          color: var(--navy);
+          font-family: Georgia, "Times New Roman", serif;
+          font-size: clamp(45px, 5vw, 69px);
+          line-height: 1.03;
+          letter-spacing: -2.6px;
         }
 
         .hero-description {
-          max-width: 690px;
-          color: #5c6880;
+          max-width: 700px;
+          margin: 23px 0 28px;
+          color: var(--muted);
           font-size: 17px;
-          line-height: 1.65;
-          margin: 22px 0 26px;
+          line-height: 1.67;
         }
 
         .hero-buttons {
@@ -186,60 +253,110 @@ export default function Home() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
+          gap: 10px;
           padding: 0 25px;
-          border: 1px solid #0755c9;
-          border-radius: 6px;
-          color: #0755c9;
+          border: 1px solid var(--blue);
+          border-radius: 7px;
+          color: var(--blue);
+          background: #ffffff;
           font-size: 15px;
           font-weight: 800;
-          transition: 0.2s ease;
+          transition:
+            transform 180ms ease,
+            box-shadow 180ms ease,
+            background 180ms ease;
         }
 
         .button-primary {
-          background: #0755c9;
-          color: white;
+          background: var(--blue);
+          color: #ffffff;
+          box-shadow: 0 10px 25px rgba(7, 85, 201, 0.2);
         }
 
         .button:hover {
           transform: translateY(-2px);
-          box-shadow: 0 8px 22px rgba(7, 85, 201, 0.14);
+          box-shadow: 0 12px 28px rgba(7, 85, 201, 0.18);
+        }
+
+        .button-primary:hover {
+          background: var(--blue-dark);
         }
 
         .location {
-          color: #637087;
+          display: flex;
+          align-items: center;
+          gap: 9px;
+          margin-top: 21px;
+          color: #647188;
           font-size: 14px;
-          margin-top: 20px;
         }
 
+        .location-dot {
+          width: 9px;
+          height: 9px;
+          background: var(--blue);
+          border: 3px solid #dceaff;
+          border-radius: 50%;
+          box-sizing: content-box;
+        }
+
+        /* Focus panel */
+
         .focus-panel {
-          padding: 28px 34px;
-          background: linear-gradient(145deg, #ffffff, #f2f7ff);
-          border: 1px solid #dce4ef;
-          border-radius: 12px;
-          box-shadow: 0 12px 32px rgba(24, 45, 82, 0.09);
+          position: relative;
+          overflow: hidden;
+          padding: 29px 34px;
+          background:
+            linear-gradient(
+              145deg,
+              rgba(255, 255, 255, 0.98),
+              rgba(240, 246, 255, 0.98)
+            );
+          border: 1px solid var(--border);
+          border-radius: 14px;
+          box-shadow:
+            0 20px 55px rgba(24, 45, 82, 0.1),
+            0 2px 8px rgba(24, 45, 82, 0.05);
+        }
+
+        .focus-panel::after {
+          content: "";
+          position: absolute;
+          right: -60px;
+          bottom: -70px;
+          width: 180px;
+          height: 180px;
+          background: rgba(7, 85, 201, 0.05);
+          border-radius: 50%;
         }
 
         .focus-panel h2 {
-          color: #0755c9;
-          font-size: 20px;
+          position: relative;
+          z-index: 1;
           margin: 0 0 10px;
+          color: var(--blue);
+          font-size: 20px;
         }
 
         .blue-line {
+          position: relative;
+          z-index: 1;
           width: 42px;
           height: 2px;
-          background: #0755c9;
           margin-bottom: 13px;
+          background: var(--blue);
         }
 
         .focus-item {
+          position: relative;
+          z-index: 1;
           display: flex;
           align-items: center;
-          gap: 14px;
+          gap: 15px;
           padding: 14px 0;
           border-bottom: 1px solid #dce3ed;
           font-size: 15px;
-          font-weight: 700;
+          font-weight: 750;
         }
 
         .focus-item:last-child {
@@ -247,22 +364,24 @@ export default function Home() {
         }
 
         .focus-icon {
-          width: 29px;
-          color: #0755c9;
-          font-size: 17px;
+          width: 31px;
+          color: var(--blue);
+          font-size: 19px;
           font-weight: 900;
           text-align: center;
         }
 
+        /* Capabilities */
+
         .section {
-          padding: 60px 0;
+          padding: 65px 0;
         }
 
         .section-heading {
           display: flex;
           align-items: center;
           gap: 22px;
-          margin-bottom: 30px;
+          margin-bottom: 32px;
         }
 
         .section-heading::before,
@@ -274,10 +393,12 @@ export default function Home() {
         }
 
         .section-heading h2 {
-          font-family: Georgia, "Times New Roman", serif;
-          font-size: 38px;
           margin: 0;
+          color: var(--navy);
+          font-family: Georgia, "Times New Roman", serif;
+          font-size: 39px;
           text-align: center;
+          letter-spacing: -1px;
         }
 
         .capability-grid {
@@ -287,154 +408,255 @@ export default function Home() {
         }
 
         .capability-card {
-          min-height: 190px;
-          padding: 27px 23px;
-          background: #ffffff;
-          border: 1px solid #dce3ed;
-          border-radius: 10px;
-          box-shadow: 0 7px 18px rgba(17, 35, 68, 0.05);
-          transition: 0.2s ease;
+          position: relative;
+          min-height: 200px;
+          overflow: hidden;
+          padding: 28px 23px;
+          background: var(--surface);
+          border: 1px solid var(--border);
+          border-radius: 12px;
+          box-shadow: 0 8px 22px rgba(17, 35, 68, 0.05);
+          transition:
+            transform 200ms ease,
+            border-color 200ms ease,
+            box-shadow 200ms ease;
+        }
+
+        .capability-card::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          height: 3px;
+          background: var(--blue);
+          transform: scaleX(0);
+          transition: transform 200ms ease;
         }
 
         .capability-card:hover {
-          transform: translateY(-4px);
+          transform: translateY(-5px);
           border-color: #9cbceb;
-          box-shadow: 0 12px 26px rgba(17, 35, 68, 0.1);
+          box-shadow: 0 16px 35px rgba(17, 35, 68, 0.11);
+        }
+
+        .capability-card:hover::after {
+          transform: scaleX(1);
         }
 
         .card-top {
           display: flex;
           align-items: center;
           gap: 15px;
-          margin-bottom: 15px;
+          margin-bottom: 16px;
         }
 
         .card-icon {
-          width: 52px;
-          height: 52px;
-          flex: 0 0 52px;
+          width: 53px;
+          height: 53px;
+          flex: 0 0 53px;
           display: grid;
           place-items: center;
-          background: #0755c9;
+          background: linear-gradient(145deg, #1266df, #0345aa);
           border-radius: 50%;
           color: #ffffff;
+          box-shadow: 0 8px 20px rgba(7, 85, 201, 0.22);
           font-size: 12px;
           font-weight: 900;
+          letter-spacing: 0.5px;
         }
 
         .capability-card h3 {
-          font-size: 17px;
           margin: 0;
+          color: var(--navy);
+          font-size: 17px;
         }
 
         .capability-card p {
+          margin: 0;
           color: #536078;
           font-size: 14px;
-          line-height: 1.6;
-          margin: 0;
+          line-height: 1.65;
         }
 
+        /* Experience */
+
         .experience-section {
-          background: linear-gradient(145deg, #f3f7fd, #ffffff);
+          background:
+            radial-gradient(
+              circle at 90% 10%,
+              rgba(7, 85, 201, 0.06),
+              transparent 27%
+            ),
+            linear-gradient(145deg, #f3f7fd, #ffffff);
           border-top: 1px solid #e0e7f0;
         }
 
         .experience-title {
-          font-family: Georgia, "Times New Roman", serif;
-          font-size: 38px;
           margin: 0 0 8px;
+          color: var(--navy);
+          font-family: Georgia, "Times New Roman", serif;
+          font-size: 39px;
+          letter-spacing: -1px;
         }
 
         .title-underline {
-          width: 38px;
+          width: 40px;
           height: 3px;
-          background: #0755c9;
-          margin-bottom: 28px;
+          margin-bottom: 30px;
+          background: var(--blue);
         }
 
         .experience-layout {
           display: grid;
-          grid-template-columns: 1.4fr 0.6fr;
+          grid-template-columns: 1.35fr 0.65fr;
           gap: 70px;
           align-items: start;
         }
 
         .experience-list {
+          position: relative;
           display: grid;
-          gap: 15px;
+          gap: 16px;
+          padding-left: 25px;
+        }
+
+        .experience-list::before {
+          content: "";
+          position: absolute;
+          top: 12px;
+          bottom: 12px;
+          left: 5px;
+          width: 1px;
+          background: #b8c9e2;
         }
 
         .experience-item {
-          background: #ffffff;
-          border: 1px solid #dce3ed;
-          border-radius: 9px;
-          padding: 22px 25px;
+          position: relative;
+          padding: 23px 26px;
+          background: rgba(255, 255, 255, 0.94);
+          border: 1px solid var(--border);
+          border-radius: 11px;
+          box-shadow: 0 8px 22px rgba(17, 35, 68, 0.05);
+          transition:
+            transform 180ms ease,
+            box-shadow 180ms ease;
+        }
+
+        .experience-item::before {
+          content: "";
+          position: absolute;
+          top: 29px;
+          left: -25px;
+          width: 9px;
+          height: 9px;
+          background: var(--blue);
+          border: 4px solid #eaf2ff;
+          border-radius: 50%;
+          transform: translateX(-50%);
+        }
+
+        .experience-item:hover {
+          transform: translateX(4px);
+          box-shadow: 0 13px 30px rgba(17, 35, 68, 0.09);
         }
 
         .experience-item h3 {
-          font-size: 16px;
-          margin: 0 0 5px;
+          margin: 0 0 6px;
+          color: var(--navy);
+          font-size: 17px;
         }
 
         .company {
-          color: #0755c9;
+          margin-bottom: 10px;
+          color: var(--blue);
           font-size: 14px;
           font-weight: 800;
-          margin-bottom: 9px;
         }
 
         .experience-item p {
+          margin: 0;
           color: #5b687f;
           font-size: 14px;
-          line-height: 1.55;
-          margin: 0;
+          line-height: 1.6;
         }
+
+        /* Contact */
 
         .contact-panel {
           position: sticky;
           top: 110px;
-          padding: 26px;
+          overflow: hidden;
+          padding: 29px;
           background: #ffffff;
-          border: 1px solid #dce3ed;
-          border-radius: 10px;
+          border: 1px solid var(--border);
+          border-radius: 13px;
+          box-shadow: 0 12px 32px rgba(17, 35, 68, 0.07);
+        }
+
+        .contact-panel::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          height: 4px;
+          background: linear-gradient(90deg, var(--blue), #68a2f0);
         }
 
         .contact-panel h3 {
+          margin: 0 0 9px;
+          color: var(--navy);
           font-family: Georgia, "Times New Roman", serif;
-          font-size: 25px;
-          margin: 0 0 8px;
+          font-size: 27px;
         }
 
         .contact-panel p {
+          margin: 0 0 23px;
           color: #5b687f;
           font-size: 14px;
-          line-height: 1.6;
-          margin: 0 0 22px;
+          line-height: 1.65;
         }
 
         .contact-link {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 16px 0;
+          padding: 17px 0;
           border-top: 1px solid #dce3ed;
-          color: #0755c9;
+          color: var(--blue);
           font-weight: 800;
+          transition:
+            color 180ms ease,
+            padding 180ms ease;
         }
 
         .contact-link:hover {
-          color: #003d92;
+          padding-left: 5px;
+          color: var(--blue-dark);
         }
 
+        .contact-arrow {
+          transition: transform 180ms ease;
+        }
+
+        .contact-link:hover .contact-arrow {
+          transform: translate(3px, -3px);
+        }
+
+        /* Footer */
+
         footer {
-          padding: 25px 0;
-          background: #101a33;
+          padding: 27px 0;
+          background: var(--navy);
           color: #bdc8da;
           text-align: center;
           font-size: 13px;
         }
 
-        @media (max-width: 950px) {
+        /* Responsive */
+
+        @media (max-width: 1000px) {
           .nav-inner {
             grid-template-columns: 1fr auto;
           }
@@ -446,7 +668,7 @@ export default function Home() {
           .hero-grid,
           .experience-layout {
             grid-template-columns: 1fr;
-            gap: 38px;
+            gap: 40px;
           }
 
           .capability-grid {
@@ -458,7 +680,7 @@ export default function Home() {
           }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 650px) {
           .container {
             width: min(100% - 30px, 1320px);
           }
@@ -480,12 +702,21 @@ export default function Home() {
           }
 
           .hero {
-            padding-top: 42px;
+            padding: 45px 0 30px;
+          }
+
+          .hero::before {
+            display: none;
           }
 
           .hero h1 {
             font-size: 40px;
             letter-spacing: -1.5px;
+          }
+
+          .eyebrow {
+            font-size: 10px;
+            letter-spacing: 2.2px;
           }
 
           .hero-description {
@@ -501,11 +732,15 @@ export default function Home() {
           }
 
           .focus-panel {
-            padding: 23px;
+            padding: 24px;
           }
 
           .section {
-            padding: 45px 0;
+            padding: 47px 0;
+          }
+
+          .section-heading {
+            gap: 13px;
           }
 
           .section-heading h2,
@@ -516,12 +751,16 @@ export default function Home() {
           .capability-grid {
             grid-template-columns: 1fr;
           }
+
+          .experience-layout {
+            gap: 35px;
+          }
         }
       `}</style>
 
       <header className="navbar">
         <div className="container nav-inner">
-          <a className="brand" href="#">
+          <a className="brand" href="#about">
             Muhammad Farooq Ibrahim
           </a>
 
@@ -536,6 +775,7 @@ export default function Home() {
             <div className="bismillah-arabic">
               بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
             </div>
+
             <div className="bismillah-english">
               In the name of Allah, the Most
               <br />
@@ -549,7 +789,9 @@ export default function Home() {
         <section className="hero" id="about">
           <div className="container hero-grid">
             <div>
-              <div className="eyebrow">TECHNOLOGY &amp; IT OPERATIONS</div>
+              <div className="eyebrow">
+                TECHNOLOGY • CYBERSECURITY • IT OPERATIONS
+              </div>
 
               <h1>
                 Turning complex technology operations into reliable, organized
@@ -557,51 +799,41 @@ export default function Home() {
               </h1>
 
               <p className="hero-description">
-                Chicago-based technology professional with experience supporting
-                IT operations, multi-location technology deployments, systems
-                administration, documentation, and process improvement.
+                Chicago-based technology professional with experience in IT
+                operations, cybersecurity, systems support, technical
+                documentation, data analysis, technology risk, and process
+                improvement.
               </p>
 
               <div className="hero-buttons">
                 <a className="button button-primary" href="#experience">
-                  View Experience&nbsp; →
+                  View Experience <span>→</span>
                 </a>
 
                 <a
                   className="button"
                   href="mailto:contact@farooqibrahim.com"
                 >
-                  Let&apos;s Connect&nbsp; ✉
+                  Let&apos;s Connect <span>✉</span>
                 </a>
               </div>
 
-              <div className="location">● &nbsp;Chicago, Illinois</div>
+              <div className="location">
+                <span className="location-dot" />
+                Chicago, Illinois
+              </div>
             </div>
 
             <aside className="focus-panel">
               <h2>Focus Areas</h2>
               <div className="blue-line" />
 
-              <div className="focus-item">
-                <span className="focus-icon">▦</span>
-                IT Operations
-              </div>
-              <div className="focus-item">
-                <span className="focus-icon">□</span>
-                Technology Projects
-              </div>
-              <div className="focus-item">
-                <span className="focus-icon">✓</span>
-                IT Audit &amp; Controls
-              </div>
-              <div className="focus-item">
-                <span className="focus-icon">◇</span>
-                Technology Risk
-              </div>
-              <div className="focus-item">
-                <span className="focus-icon">↗</span>
-                Process Improvement
-              </div>
+              {focusAreas.map((area) => (
+                <div className="focus-item" key={area.label}>
+                  <span className="focus-icon">{area.symbol}</span>
+                  <span>{area.label}</span>
+                </div>
+              ))}
             </aside>
           </div>
         </section>
@@ -619,6 +851,7 @@ export default function Home() {
                     <div className="card-icon">{item.icon}</div>
                     <h3>{item.title}</h3>
                   </div>
+
                   <p>{item.description}</p>
                 </article>
               ))}
@@ -626,10 +859,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section
-          className="section experience-section"
-          id="experience"
-        >
+        <section className="section experience-section" id="experience">
           <div className="container">
             <h2 className="experience-title">Selected Experience</h2>
             <div className="title-underline" />
@@ -647,9 +877,10 @@ export default function Home() {
 
               <aside className="contact-panel" id="contact">
                 <h3>Let&apos;s Connect</h3>
+
                 <p>
-                  Connect with me to discuss technology, IT operations,
-                  projects, audit readiness, and professional opportunities.
+                  Connect with me to discuss technology, cybersecurity, IT
+                  operations, audit and risk, or professional opportunities.
                 </p>
 
                 <a
@@ -659,7 +890,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                 >
                   <span>LinkedIn</span>
-                  <span>↗</span>
+                  <span className="contact-arrow">↗</span>
                 </a>
 
                 <a
@@ -667,7 +898,7 @@ export default function Home() {
                   href="mailto:contact@farooqibrahim.com"
                 >
                   <span>Email</span>
-                  <span>↗</span>
+                  <span className="contact-arrow">↗</span>
                 </a>
               </aside>
             </div>
