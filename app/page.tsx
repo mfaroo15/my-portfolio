@@ -30,7 +30,7 @@ const experience = [
     role: "Technology Analyst",
     company: "Public Broadcasting Service Distribution",
     description:
-      "Supported technology operations, business systems, reporting, technical documentation, and process improvement initiatives.",
+      "Public BroadcastingSupported technology operations, business systems, reporting, technical documentation, and process improvement initiatives.",
   },
   {
     role: "Cybersecurity and Technology Intern",
@@ -39,10 +39,10 @@ const experience = [
       "Supported cybersecurity operations through security monitoring, vulnerability awareness, technical documentation, risk identification, and IT infrastructure support.",
   },
   {
-    role: "Information Technology Student Assistant",
+    role: "IT / Student Assistant",
     company: "DePaul University",
     description:
-      "Provided frontline technology assistance, resolved user issues, supported university systems, and helped maintain reliable day-to-day IT operations.",
+      "Assisted students with day-to-day services, addressed general technology needs, and supported the university’s administrative and IT operations.",
   },
 ];
 
@@ -62,7 +62,6 @@ export default function Home() {
           --navy: #0b1530;
           --blue: #0755c9;
           --blue-dark: #003f9e;
-          --blue-light: #edf5ff;
           --text: #101a33;
           --muted: #59677f;
           --border: #dce4ef;
@@ -124,7 +123,7 @@ export default function Home() {
 
         .nav-links {
           display: flex;
-          gap: 38px;
+          gap: 32px;
           font-size: 14px;
           font-weight: 750;
         }
@@ -306,12 +305,11 @@ export default function Home() {
           position: relative;
           overflow: hidden;
           padding: 29px 34px;
-          background:
-            linear-gradient(
-              145deg,
-              rgba(255, 255, 255, 0.98),
-              rgba(240, 246, 255, 0.98)
-            );
+          background: linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.98),
+            rgba(240, 246, 255, 0.98)
+          );
           border: 1px solid var(--border);
           border-radius: 14px;
           box-shadow:
@@ -371,7 +369,7 @@ export default function Home() {
           text-align: center;
         }
 
-        /* Capabilities */
+        /* General sections */
 
         .section {
           padding: 65px 0;
@@ -400,6 +398,8 @@ export default function Home() {
           text-align: center;
           letter-spacing: -1px;
         }
+
+        /* Capabilities */
 
         .capability-grid {
           display: grid;
@@ -477,6 +477,116 @@ export default function Home() {
           color: #536078;
           font-size: 14px;
           line-height: 1.65;
+        }
+
+        /* Featured article */
+
+        .article-section {
+          padding: 4px 0 65px;
+        }
+
+        .article-card {
+          position: relative;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 45px;
+          padding: 38px 42px;
+          background:
+            radial-gradient(
+              circle at 90% 15%,
+              rgba(62, 139, 255, 0.22),
+              transparent 27%
+            ),
+            linear-gradient(135deg, #07152f, #0d2a58);
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          border-radius: 15px;
+          color: #ffffff;
+          box-shadow: 0 22px 55px rgba(11, 21, 48, 0.2);
+        }
+
+        .article-card::after {
+          content: "";
+          position: absolute;
+          right: -100px;
+          bottom: -145px;
+          width: 420px;
+          height: 240px;
+          border: 1px solid rgba(130, 182, 255, 0.17);
+          border-radius: 50%;
+          transform: rotate(-8deg);
+        }
+
+        .article-content {
+          position: relative;
+          z-index: 1;
+          display: flex;
+          align-items: center;
+          gap: 25px;
+        }
+
+        .article-icon {
+          width: 66px;
+          height: 66px;
+          flex: 0 0 66px;
+          display: grid;
+          place-items: center;
+          background: rgba(255, 255, 255, 0.06);
+          border: 1px solid rgba(255, 255, 255, 0.11);
+          border-radius: 10px;
+          color: #ffffff;
+          font-size: 28px;
+        }
+
+        .article-label {
+          margin-bottom: 9px;
+          color: #7eb5ff;
+          font-size: 11px;
+          font-weight: 850;
+          letter-spacing: 3px;
+        }
+
+        .article-card h2 {
+          margin: 0 0 8px;
+          font-family: Georgia, "Times New Roman", serif;
+          font-size: 31px;
+          letter-spacing: -0.5px;
+        }
+
+        .article-card p {
+          max-width: 710px;
+          margin: 0;
+          color: #ced9e9;
+          font-size: 14px;
+          line-height: 1.65;
+        }
+
+        .article-button {
+          position: relative;
+          z-index: 2;
+          min-width: 185px;
+          min-height: 52px;
+          flex: 0 0 auto;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          padding: 0 22px;
+          background: #ffffff;
+          border-radius: 7px;
+          color: var(--blue);
+          box-shadow: 0 10px 27px rgba(0, 0, 0, 0.18);
+          font-size: 14px;
+          font-weight: 850;
+          transition:
+            transform 180ms ease,
+            box-shadow 180ms ease;
+        }
+
+        .article-button:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 15px 34px rgba(0, 0, 0, 0.25);
         }
 
         /* Experience */
@@ -656,7 +766,7 @@ export default function Home() {
 
         /* Responsive */
 
-        @media (max-width: 1000px) {
+        @media (max-width: 1050px) {
           .nav-inner {
             grid-template-columns: 1fr auto;
           }
@@ -677,6 +787,22 @@ export default function Home() {
 
           .contact-panel {
             position: static;
+          }
+        }
+
+        @media (max-width: 750px) {
+          .article-card {
+            display: grid;
+            gap: 28px;
+            padding: 31px 26px;
+          }
+
+          .article-content {
+            align-items: flex-start;
+          }
+
+          .article-button {
+            width: 100%;
           }
         }
 
@@ -752,6 +878,22 @@ export default function Home() {
             grid-template-columns: 1fr;
           }
 
+          .article-section {
+            padding-bottom: 47px;
+          }
+
+          .article-content {
+            display: block;
+          }
+
+          .article-icon {
+            margin-bottom: 20px;
+          }
+
+          .article-card h2 {
+            font-size: 27px;
+          }
+
           .experience-layout {
             gap: 35px;
           }
@@ -768,6 +910,7 @@ export default function Home() {
             <a href="#about">About</a>
             <a href="#experience">Experience</a>
             <a href="#capabilities">Capabilities</a>
+            <a href="#writing">Writing</a>
             <a href="#contact">Contact</a>
           </nav>
 
@@ -855,6 +998,37 @@ export default function Home() {
                   <p>{item.description}</p>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="article-section" id="writing">
+          <div className="container">
+            <div className="article-card">
+              <div className="article-content">
+                <div className="article-icon">▤</div>
+
+                <div>
+                  <div className="article-label">FEATURED WRITING</div>
+
+                  <h2>Crypto for Beginners</h2>
+
+                  <p>
+                    A simple, beginner-friendly guide to understanding
+                    cryptocurrency, how it works, and the key ideas newcomers
+                    should know.
+                  </p>
+                </div>
+              </div>
+
+              <a
+                className="article-button"
+                href="https://www.linkedin.com/pulse/crypto-beginners-simple-guide-understanding-muhammad-farooq-x9ric/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Read on LinkedIn <span>↗</span>
+              </a>
             </div>
           </div>
         </section>
