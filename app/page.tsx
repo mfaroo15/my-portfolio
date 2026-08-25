@@ -961,10 +961,10 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="location">
-                <span className="location-dot" />
-                Chicago, Illinois
-              </div>
+             <div className="location">
+  <span className="location-dot" />
+  Chicago, Illinois • Washington, D.C.
+</div>
             </div>
 
             <aside className="focus-panel">
