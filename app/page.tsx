@@ -30,7 +30,7 @@ const experience = [
     role: "Technology Analyst",
     company: "Public Broadcasting Service Distribution",
     description:
-      "Public BroadcastingSupported technology operations, business systems, reporting, technical documentation, and process improvement initiatives.",
+      "Supported technology operations, business systems, reporting, technical documentation, and process improvement initiatives.",
   },
   {
     role: "Cybersecurity and Technology Intern",
