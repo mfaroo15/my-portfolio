@@ -1009,6 +1009,7 @@ export default function Home() {
 
           .nav-inner {
             min-height: 74px;
+            gap: 10px;
           }
 
           .brand {
@@ -1016,11 +1017,14 @@ export default function Home() {
           }
 
           .bismillah-arabic {
-            font-size: 16px;
+            font-size: 15px;
           }
 
           .bismillah-english {
-            display: none;
+            display: block;
+            margin-top: 3px;
+            font-size: 8px;
+            line-height: 1.25;
           }
 
           .hero {
