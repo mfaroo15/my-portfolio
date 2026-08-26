@@ -1,3 +1,8 @@
+"use client";
+
+import { useEffect } from "react";
+import type { MouseEvent } from "react";
+
 const capabilities = [
   {
     icon: "IT",
@@ -73,6 +78,45 @@ const companyLogos = [
 ];
 
 export default function Home() {
+  const scrollToSection = (
+    sectionId: string,
+    behavior: ScrollBehavior = "smooth",
+  ) => {
+    const section = document.getElementById(sectionId);
+    const navbar = document.querySelector<HTMLElement>(".navbar");
+
+    if (!section) return;
+
+    const navbarHeight = navbar?.offsetHeight ?? 82;
+    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+
+    window.scrollTo({
+      top: Math.max(0, sectionTop - navbarHeight - 24),
+      behavior,
+    });
+  };
+
+  const handleNavigation = (
+    event: MouseEvent<HTMLAnchorElement>,
+    sectionId: string,
+  ) => {
+    event.preventDefault();
+    window.history.pushState(null, "", `#${sectionId}`);
+    scrollToSection(sectionId);
+  };
+
+  useEffect(() => {
+    const sectionId = window.location.hash.replace("#", "");
+
+    if (!sectionId) return;
+
+    const frame = window.requestAnimationFrame(() => {
+      scrollToSection(sectionId, "auto");
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
+
   return (
     <>
       <style>{`
@@ -93,6 +137,11 @@ export default function Home() {
 
         html {
           scroll-behavior: smooth;
+          scroll-padding-top: 105px;
+        }
+
+        section[id] {
+          scroll-margin-top: 105px;
         }
 
         body {
@@ -922,6 +971,14 @@ export default function Home() {
         }
 
         @media (max-width: 650px) {
+          html {
+            scroll-padding-top: 90px;
+          }
+
+          section[id] {
+            scroll-margin-top: 90px;
+          }
+
           .container {
             width: min(100% - 30px, 1320px);
           }
@@ -1017,16 +1074,45 @@ export default function Home() {
 
       <header className="navbar">
         <div className="container nav-inner">
-          <a className="brand" href="#about">
+          <a
+            className="brand"
+            href="#about"
+            onClick={(event) => handleNavigation(event, "about")}
+          >
             Muhammad Farooq Ibrahim
           </a>
 
           <nav className="nav-links" aria-label="Main navigation">
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#capabilities">Capabilities</a>
-            <a href="#writing">Writing</a>
-            <a href="#contact">Contact</a>
+            <a
+              href="#about"
+              onClick={(event) => handleNavigation(event, "about")}
+            >
+              About
+            </a>
+            <a
+              href="#experience"
+              onClick={(event) => handleNavigation(event, "experience")}
+            >
+              Experience
+            </a>
+            <a
+              href="#capabilities"
+              onClick={(event) => handleNavigation(event, "capabilities")}
+            >
+              Capabilities
+            </a>
+            <a
+              href="#writing"
+              onClick={(event) => handleNavigation(event, "writing")}
+            >
+              Writing
+            </a>
+            <a
+              href="#contact"
+              onClick={(event) => handleNavigation(event, "contact")}
+            >
+              Contact
+            </a>
           </nav>
 
           <div className="bismillah">
@@ -1064,7 +1150,11 @@ export default function Home() {
               </p>
 
               <div className="hero-buttons">
-                <a className="button button-primary" href="#experience">
+                <a
+                  className="button button-primary"
+                  href="#experience"
+                  onClick={(event) => handleNavigation(event, "experience")}
+                >
                   View Experience <span>→</span>
                 </a>
 
