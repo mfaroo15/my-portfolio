@@ -54,6 +54,24 @@ const focusAreas = [
   { symbol: "⌁", label: "Cybersecurity" },
 ];
 
+const companyLogos = [
+  {
+    name: "DePaul University",
+    src: "/logos/depaul-university.png",
+    className: "logo-depaul",
+  },
+  {
+    name: "PBS",
+    src: "/logos/pbs.png",
+    className: "logo-pbs",
+  },
+  {
+    name: "Enterprise Network Technology",
+    src: "/logos/ntech.png",
+    className: "logo-ntech",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -754,6 +772,103 @@ export default function Home() {
           transform: translate(3px, -3px);
         }
 
+        /* Continuous company-logo marquee */
+
+        .logo-marquee-section {
+          position: relative;
+          overflow: hidden;
+          padding: 20px 0;
+          background: #ffffff;
+          border-top: 1px solid var(--border);
+          border-bottom: 1px solid var(--border);
+        }
+
+        .logo-marquee-section::before,
+        .logo-marquee-section::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          z-index: 2;
+          width: min(10vw, 130px);
+          pointer-events: none;
+        }
+
+        .logo-marquee-section::before {
+          left: 0;
+          background: linear-gradient(90deg, #ffffff, transparent);
+        }
+
+        .logo-marquee-section::after {
+          right: 0;
+          background: linear-gradient(270deg, #ffffff, transparent);
+        }
+
+        .logo-marquee-track {
+          display: flex;
+          width: max-content;
+          will-change: transform;
+          animation: logo-marquee 24s linear infinite;
+        }
+
+        .logo-marquee-section:hover .logo-marquee-track {
+          animation-play-state: paused;
+        }
+
+        .logo-marquee-group {
+          display: flex;
+          flex-shrink: 0;
+          align-items: center;
+          gap: clamp(70px, 8vw, 130px);
+          padding-right: clamp(70px, 8vw, 130px);
+        }
+
+        .logo-marquee-item {
+          width: clamp(175px, 15vw, 235px);
+          height: 72px;
+          flex: 0 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .logo-marquee-item img {
+          display: block;
+          width: auto;
+          max-width: 100%;
+          height: auto;
+          max-height: 62px;
+          object-fit: contain;
+        }
+
+        .logo-marquee-item .logo-depaul {
+          max-height: 48px;
+        }
+
+        .logo-marquee-item .logo-pbs {
+          max-height: 54px;
+        }
+
+        .logo-marquee-item .logo-ntech {
+          max-height: 64px;
+        }
+
+        @keyframes logo-marquee {
+          from {
+            transform: translateX(0);
+          }
+
+          to {
+            transform: translateX(-50%);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .logo-marquee-track {
+            animation-play-state: paused;
+          }
+        }
+
         /* Footer */
 
         footer {
@@ -1079,6 +1194,37 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      <section
+        className="logo-marquee-section"
+        aria-label="Organizations I have experience with"
+      >
+        <div className="logo-marquee-track">
+          <div className="logo-marquee-group">
+            {companyLogos.map((logo) => (
+              <div className="logo-marquee-item" key={logo.name}>
+                <img
+                  className={logo.className}
+                  src={logo.src}
+                  alt={logo.name}
+                />
+              </div>
+            ))}
+          </div>
+
+          <div className="logo-marquee-group" aria-hidden="true">
+            {companyLogos.map((logo) => (
+              <div className="logo-marquee-item" key={`duplicate-${logo.name}`}>
+                <img
+                  className={logo.className}
+                  src={logo.src}
+                  alt=""
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <footer>
         © {new Date().getFullYear()} Muhammad Farooq Ibrahim
