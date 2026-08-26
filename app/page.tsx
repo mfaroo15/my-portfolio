@@ -1349,7 +1349,7 @@ export default function Home() {
           <span>© {new Date().getFullYear()} Muhammad Farooq Ibrahim</span>
 
           <span className="footer-credit">
-            Designed by <strong>MFI Technologies</strong>
+            Designed by <strong>Dawood Technologies</strong>
           </span>
         </div>
       </footer>
