@@ -924,8 +924,25 @@ export default function Home() {
           padding: 27px 0;
           background: var(--navy);
           color: #bdc8da;
-          text-align: center;
           font-size: 13px;
+        }
+
+        .footer-content {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 20px;
+        }
+
+        .footer-credit {
+          color: #93a4bd;
+          font-size: 12px;
+          letter-spacing: 0.3px;
+        }
+
+        .footer-credit strong {
+          color: #ffffff;
+          font-weight: 750;
         }
 
         /* Responsive */
@@ -977,6 +994,13 @@ export default function Home() {
 
           section[id] {
             scroll-margin-top: 90px;
+          }
+
+          .footer-content {
+            flex-direction: column;
+            justify-content: center;
+            gap: 8px;
+            text-align: center;
           }
 
           .container {
@@ -1317,7 +1341,13 @@ export default function Home() {
       </section>
 
       <footer>
-        © {new Date().getFullYear()} Muhammad Farooq Ibrahim
+        <div className="container footer-content">
+          <span>© {new Date().getFullYear()} Muhammad Farooq Ibrahim</span>
+
+          <span className="footer-credit">
+            Designed by <strong>MFI Technologies</strong>
+          </span>
+        </div>
       </footer>
     </>
   );
