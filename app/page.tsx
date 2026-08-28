@@ -401,9 +401,13 @@ export default function Home() {
         .round-link:hover { color: #fff; background: var(--ink); }
 
         .contact-section {
+          position: relative;
+          z-index: 1;
+          isolation: isolate;
           min-height: calc(100svh - 82px);
           display: flex;
           align-items: center;
+          overflow: hidden;
           text-align: center;
           background: #fff;
         }
@@ -413,7 +417,15 @@ export default function Home() {
         .contact-actions .button { border-color: var(--ink); color: var(--ink); }
         .contact-actions .button:hover, .contact-actions .button-primary { color: #fff; background: var(--ink); }
 
-        .logo-marquee-section { position: relative; overflow: hidden; padding: 22px 0; background: #fff; border-top: 1px solid var(--line); }
+        .logo-marquee-section {
+          position: relative;
+          z-index: 0;
+          clear: both;
+          overflow: hidden;
+          padding: 22px 0;
+          background: #fff;
+          border-top: 1px solid var(--line);
+        }
         .logo-marquee-section::before, .logo-marquee-section::after {
           content: ""; position: absolute; top: 0; bottom: 0; z-index: 2; width: min(10vw, 130px); pointer-events: none;
         }
@@ -642,7 +654,7 @@ export default function Home() {
 
         <section className="section contact-section" id="contact">
           <div className="container">
-            <div className="section-label" data-scroll-heading>LET’S CONNECT</div>
+            <div className="section-label">LET’S CONNECT</div>
             <h2 className="section-title">Interested in technology that moves business forward?</h2>
             <p>Connect with me to discuss technology operations, financial management, cybersecurity, business systems, or professional opportunities.</p>
             <div className="contact-actions">
