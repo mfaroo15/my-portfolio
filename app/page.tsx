@@ -5,28 +5,40 @@ import type { MouseEvent } from "react";
 
 const capabilities = [
   {
-    icon: "IT",
-    title: "IT Operations",
+    number: "01",
+    title: "Technology Operations",
     description:
-      "Supporting business-critical systems and resolving operational technology issues.",
+      "Supporting business-critical systems, resolving operational issues, and improving the reliability of day-to-day technology.",
   },
   {
-    icon: "PD",
+    number: "02",
     title: "Project Delivery",
     description:
-      "Coordinating technology initiatives, priorities, documentation, and technical readiness.",
+      "Coordinating priorities, stakeholders, documentation, technical readiness, and execution across technology initiatives.",
   },
   {
-    icon: "AR",
-    title: "IT Audit & Risk",
+    number: "03",
+    title: "Financial Management",
     description:
-      "Supporting control documentation, evidence gathering, risk awareness, and audit readiness.",
+      "Bringing financial discipline to planning, budgeting, cost awareness, reporting, and operational decision-making.",
   },
   {
-    icon: "CS",
-    title: "Cybersecurity",
+    number: "04",
+    title: "Cybersecurity & Risk",
     description:
-      "Strengthening access, documentation, security awareness, and technology processes.",
+      "Supporting security awareness, access practices, risk identification, technical controls, and stronger technology processes.",
+  },
+  {
+    number: "05",
+    title: "Business Systems",
+    description:
+      "Connecting technology with real operational needs through organized systems, useful data, and practical process improvement.",
+  },
+  {
+    number: "06",
+    title: "IT Audit & Controls",
+    description:
+      "Supporting control documentation, evidence gathering, audit readiness, accountability, and continuous improvement.",
   },
 ];
 
@@ -41,57 +53,32 @@ const experience = [
     role: "Cybersecurity and Technology Intern",
     company: "Enterprise Network Technology",
     description:
-      "Supported cybersecurity operations through security monitoring, vulnerability awareness, technical documentation, risk identification, and IT infrastructure support.",
+      "Supported cybersecurity operations through security monitoring, vulnerability awareness, risk identification, documentation, and IT infrastructure support.",
   },
   {
     role: "IT / Student Assistant",
     company: "DePaul University",
     description:
-      "Assisted students with day-to-day services, addressed general technology needs, and supported the university’s administrative and IT operations.",
+      "Assisted students with day-to-day services, addressed technology needs, and supported the university’s administrative and IT operations.",
   },
-];
-
-const focusAreas = [
-  { symbol: "▦", label: "IT Operations" },
-  { symbol: "□", label: "Technology Projects" },
-  { symbol: "✓", label: "IT Audit & Controls" },
-  { symbol: "◇", label: "Technology Risk" },
-  { symbol: "⌁", label: "Cybersecurity" },
 ];
 
 const companyLogos = [
-  {
-    name: "DePaul University",
-    src: "/logos/depaul-university.png",
-    className: "logo-depaul",
-  },
-  {
-    name: "PBS",
-    src: "/logos/pbs.png",
-    className: "logo-pbs",
-  },
-  {
-    name: "Enterprise Network Technology",
-    src: "/logos/ntech.png",
-    className: "logo-ntech",
-  },
+  { name: "DePaul University", src: "/logos/depaul-university.png", className: "logo-depaul" },
+  { name: "PBS", src: "/logos/pbs.png", className: "logo-pbs" },
+  { name: "Enterprise Network Technology", src: "/logos/ntech.png", className: "logo-ntech" },
 ];
 
 export default function Home() {
-  const scrollToSection = (
-    sectionId: string,
-    behavior: ScrollBehavior = "smooth",
-  ) => {
+  const scrollToSection = (sectionId: string, behavior: ScrollBehavior = "smooth") => {
     const section = document.getElementById(sectionId);
     const navbar = document.querySelector<HTMLElement>(".navbar");
-
     if (!section) return;
 
-    const navbarHeight = navbar?.offsetHeight ?? 82;
+    const navbarHeight = navbar?.offsetHeight ?? 80;
     const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-
     window.scrollTo({
-      top: Math.max(0, sectionTop - navbarHeight - 24),
+      top: Math.max(0, sectionTop - navbarHeight - 20),
       behavior,
     });
   };
@@ -107,13 +94,8 @@ export default function Home() {
 
   useEffect(() => {
     const sectionId = window.location.hash.replace("#", "");
-
     if (!sectionId) return;
-
-    const frame = window.requestAnimationFrame(() => {
-      scrollToSection(sectionId, "auto");
-    });
-
+    const frame = window.requestAnimationFrame(() => scrollToSection(sectionId, "auto"));
     return () => window.cancelAnimationFrame(frame);
   }, []);
 
@@ -121,59 +103,42 @@ export default function Home() {
     <>
       <style>{`
         :root {
-          --navy: #0b1530;
-          --blue: #0755c9;
-          --blue-dark: #003f9e;
-          --text: #101a33;
-          --muted: #59677f;
-          --border: #dce4ef;
-          --surface: #ffffff;
-          --background: #fbfcfe;
+          --ink: #07111f;
+          --navy: #0a1830;
+          --navy-soft: #122542;
+          --blue: #2b75df;
+          --sky: #84b8ff;
+          --cream: #f4f0e7;
+          --paper: #f8f8f5;
+          --white: #ffffff;
+          --text: #162238;
+          --muted: #617087;
+          --line: rgba(16, 38, 68, 0.14);
         }
 
-        * {
-          box-sizing: border-box;
-        }
-
-        html {
-          scroll-behavior: smooth;
-          scroll-padding-top: 105px;
-        }
-
-        section[id] {
-          scroll-margin-top: 105px;
-        }
-
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 105px; }
+        section[id] { scroll-margin-top: 105px; }
         body {
           margin: 0;
-          background: var(--background);
           color: var(--text);
+          background: var(--paper);
           font-family: Arial, Helvetica, sans-serif;
           -webkit-font-smoothing: antialiased;
         }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .container {
-          width: min(1320px, calc(100% - 48px));
-          margin: 0 auto;
-        }
-
-        /* Navigation */
+        a { color: inherit; text-decoration: none; }
+        .container { width: min(1280px, calc(100% - 64px)); margin: 0 auto; }
 
         .navbar {
           position: sticky;
           top: 0;
           z-index: 100;
-          background: rgba(255, 255, 255, 0.94);
-          border-bottom: 1px solid rgba(220, 228, 239, 0.9);
+          background: rgba(7, 17, 31, 0.94);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
           backdrop-filter: blur(18px);
           -webkit-backdrop-filter: blur(18px);
+          color: var(--white);
         }
-
         .nav-inner {
           min-height: 82px;
           display: grid;
@@ -181,1053 +146,326 @@ export default function Home() {
           align-items: center;
           gap: 30px;
         }
-
-        .brand {
-          font-size: 22px;
-          font-weight: 850;
-          letter-spacing: -0.6px;
-        }
-
-        .nav-links {
-          display: flex;
-          gap: 32px;
-          font-size: 14px;
-          font-weight: 750;
-        }
-
-        .nav-links a {
-          position: relative;
-          padding: 10px 0;
-        }
-
-        .nav-links a::after {
-          content: "";
-          position: absolute;
-          right: 0;
-          bottom: 3px;
-          left: 0;
-          height: 2px;
-          background: var(--blue);
-          transform: scaleX(0);
-          transform-origin: center;
-          transition: transform 180ms ease;
-        }
-
-        .nav-links a:hover {
-          color: var(--blue);
-        }
-
-        .nav-links a:hover::after {
-          transform: scaleX(1);
-        }
-
-        .bismillah {
-          justify-self: end;
-          text-align: center;
-        }
-
+        .brand { font-size: 18px; font-weight: 800; letter-spacing: -0.3px; }
+        .nav-links { display: flex; gap: 30px; font-size: 13px; font-weight: 700; }
+        .nav-links a { color: #c5cfdd; transition: color 180ms ease; }
+        .nav-links a:hover { color: #ffffff; }
+        .bismillah { justify-self: end; text-align: center; }
         .bismillah-arabic {
           font-family: Georgia, "Times New Roman", serif;
-          font-size: 23px;
-          line-height: 1.2;
+          font-size: 21px;
+          line-height: 1.15;
           direction: rtl;
         }
-
         .bismillah-english {
           margin-top: 3px;
-          color: #68758c;
+          color: #91a0b5;
           font-family: Georgia, "Times New Roman", serif;
-          font-size: 10px;
+          font-size: 9px;
           font-style: italic;
-          line-height: 1.35;
+          line-height: 1.3;
         }
-
-        /* Hero */
 
         .hero {
           position: relative;
+          min-height: calc(100vh - 82px);
           overflow: hidden;
-          padding: 72px 0 44px;
+          display: flex;
+          align-items: center;
+          color: #ffffff;
           background:
-            radial-gradient(
-              circle at 8% 16%,
-              rgba(7, 85, 201, 0.08),
-              transparent 23%
-            ),
-            linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+            radial-gradient(circle at 78% 30%, rgba(60, 125, 218, 0.28), transparent 28%),
+            linear-gradient(135deg, #07111f 0%, #0a1830 52%, #15294a 100%);
         }
-
         .hero::before {
           content: "";
           position: absolute;
-          top: 32px;
-          left: 16px;
-          width: 110px;
-          height: 110px;
-          opacity: 0.4;
-          background-image: radial-gradient(
-            circle,
-            #80a9e5 1.4px,
-            transparent 1.5px
-          );
-          background-size: 17px 17px;
+          inset: 0;
+          opacity: 0.12;
+          background-image:
+            linear-gradient(rgba(255,255,255,.16) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,.16) 1px, transparent 1px);
+          background-size: 80px 80px;
+          mask-image: linear-gradient(to right, transparent, black 70%);
         }
-
-        .hero-grid {
-          position: relative;
-          z-index: 1;
-          display: grid;
-          grid-template-columns: 1.35fr 0.85fr;
-          gap: 78px;
-          align-items: center;
+        .hero::after {
+          content: "MFI";
+          position: absolute;
+          right: -25px;
+          bottom: -65px;
+          color: rgba(255,255,255,.035);
+          font-size: clamp(190px, 28vw, 430px);
+          font-weight: 900;
+          letter-spacing: -35px;
+          line-height: .8;
         }
-
-        .eyebrow {
-          margin-bottom: 18px;
-          color: var(--blue);
-          font-size: 12px;
-          font-weight: 850;
-          letter-spacing: 3.5px;
-        }
-
-        .hero h1 {
-          max-width: 750px;
-          margin: 0;
-          color: var(--navy);
-          font-family: Georgia, "Times New Roman", serif;
-          font-size: clamp(45px, 5vw, 69px);
-          line-height: 1.03;
-          letter-spacing: -2.6px;
-        }
-
-        .hero-description {
-          max-width: 700px;
-          margin: 23px 0 28px;
-          color: var(--muted);
-          font-size: 17px;
-          line-height: 1.67;
-        }
-
-        .hero-buttons {
+        .hero-inner { position: relative; z-index: 1; padding: 92px 0 70px; }
+        .hero-kicker {
           display: flex;
-          flex-wrap: wrap;
-          gap: 15px;
+          align-items: center;
+          gap: 13px;
+          margin-bottom: 28px;
+          color: #a9cfff;
+          font-size: 11px;
+          font-weight: 800;
+          letter-spacing: 3.3px;
         }
-
+        .hero-kicker::before { content: ""; width: 44px; height: 1px; background: #70adff; }
+        .hero h1 {
+          max-width: 1040px;
+          margin: 0;
+          font-family: Georgia, "Times New Roman", serif;
+          font-size: clamp(55px, 8vw, 116px);
+          font-weight: 400;
+          line-height: .88;
+          letter-spacing: -5px;
+        }
+        .hero h1 strong { font-family: Arial, Helvetica, sans-serif; font-weight: 900; }
+        .hero-bottom {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) minmax(320px, 520px);
+          gap: 70px;
+          align-items: end;
+          margin-top: 62px;
+          padding-top: 32px;
+          border-top: 1px solid rgba(255,255,255,.16);
+        }
+        .hero-role { color: #d7e1ef; font-size: 14px; font-weight: 700; letter-spacing: 1px; }
+        .hero-description { margin: 0 0 26px; color: #bdc9d8; font-size: 17px; line-height: 1.7; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; }
         .button {
           min-height: 52px;
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          gap: 10px;
-          padding: 0 25px;
-          border: 1px solid var(--blue);
-          border-radius: 7px;
-          color: var(--blue);
-          background: #ffffff;
-          font-size: 15px;
-          font-weight: 800;
-          transition:
-            transform 180ms ease,
-            box-shadow 180ms ease,
-            background 180ms ease;
-        }
-
-        .button-primary {
-          background: var(--blue);
-          color: #ffffff;
-          box-shadow: 0 10px 25px rgba(7, 85, 201, 0.2);
-        }
-
-        .button:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 12px 28px rgba(7, 85, 201, 0.18);
-        }
-
-        .button-primary:hover {
-          background: var(--blue-dark);
-        }
-
-        .location {
-          display: flex;
-          align-items: center;
-          gap: 9px;
-          margin-top: 21px;
-          color: #647188;
+          gap: 13px;
+          padding: 0 24px;
+          border: 1px solid rgba(255,255,255,.55);
+          border-radius: 999px;
+          color: #fff;
           font-size: 14px;
+          font-weight: 800;
+          transition: transform 180ms ease, background 180ms ease, color 180ms ease;
         }
+        .button:hover { transform: translateY(-2px); background: #ffffff; color: var(--ink); }
+        .button-primary { background: #ffffff; color: var(--ink); }
+        .button-primary:hover { background: #dceaff; }
 
-        .location-dot {
-          width: 9px;
-          height: 9px;
-          background: var(--blue);
-          border: 3px solid #dceaff;
-          border-radius: 50%;
-          box-sizing: content-box;
-        }
+        .proof-strip { background: var(--cream); border-bottom: 1px solid var(--line); }
+        .proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+        .proof-item { padding: 27px 24px; border-left: 1px solid var(--line); }
+        .proof-item:last-child { border-right: 1px solid var(--line); }
+        .proof-item span { display: block; color: #858c94; font-size: 9px; font-weight: 800; letter-spacing: 2.2px; }
+        .proof-item strong { display: block; margin-top: 8px; color: var(--ink); font-size: 14px; }
 
-        /* Focus panel */
-
-        .focus-panel {
-          position: relative;
-          overflow: hidden;
-          padding: 29px 34px;
-          background: linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.98),
-            rgba(240, 246, 255, 0.98)
-          );
-          border: 1px solid var(--border);
-          border-radius: 14px;
-          box-shadow:
-            0 20px 55px rgba(24, 45, 82, 0.1),
-            0 2px 8px rgba(24, 45, 82, 0.05);
-        }
-
-        .focus-panel::after {
-          content: "";
-          position: absolute;
-          right: -60px;
-          bottom: -70px;
-          width: 180px;
-          height: 180px;
-          background: rgba(7, 85, 201, 0.05);
-          border-radius: 50%;
-        }
-
-        .focus-panel h2 {
-          position: relative;
-          z-index: 1;
-          margin: 0 0 10px;
-          color: var(--blue);
-          font-size: 20px;
-        }
-
-        .blue-line {
-          position: relative;
-          z-index: 1;
-          width: 42px;
-          height: 2px;
-          margin-bottom: 13px;
-          background: var(--blue);
-        }
-
-        .focus-item {
-          position: relative;
-          z-index: 1;
-          display: flex;
-          align-items: center;
-          gap: 15px;
-          padding: 14px 0;
-          border-bottom: 1px solid #dce3ed;
-          font-size: 15px;
-          font-weight: 750;
-        }
-
-        .focus-item:last-child {
-          border-bottom: 0;
-        }
-
-        .focus-icon {
-          width: 31px;
-          color: var(--blue);
-          font-size: 19px;
-          font-weight: 900;
-          text-align: center;
-        }
-
-        /* General sections */
-
-        .section {
-          padding: 65px 0;
-        }
-
-        .section-heading {
-          display: flex;
-          align-items: center;
-          gap: 22px;
-          margin-bottom: 32px;
-        }
-
-        .section-heading::before,
-        .section-heading::after {
-          content: "";
-          height: 1px;
-          background: #d5dce7;
-          flex: 1;
-        }
-
-        .section-heading h2 {
+        .section { padding: 105px 0; }
+        .section-label { margin-bottom: 20px; color: var(--blue); font-size: 10px; font-weight: 900; letter-spacing: 3px; }
+        .section-title {
+          max-width: 800px;
           margin: 0;
-          color: var(--navy);
+          color: var(--ink);
           font-family: Georgia, "Times New Roman", serif;
-          font-size: 39px;
-          text-align: center;
-          letter-spacing: -1px;
+          font-size: clamp(38px, 5vw, 68px);
+          font-weight: 400;
+          line-height: 1.04;
+          letter-spacing: -2px;
         }
 
-        /* Capabilities */
+        .perspective { background: #ffffff; }
+        .perspective-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 100px; align-items: start; }
+        .perspective-copy { padding-top: 10px; }
+        .perspective-copy p { margin: 0 0 24px; color: #526178; font-size: 17px; line-height: 1.78; }
+        .perspective-copy p:first-child { color: var(--text); font-size: 20px; }
+        .location-line { display: flex; gap: 12px; align-items: center; margin-top: 35px; color: #233551; font-size: 13px; font-weight: 800; }
+        .location-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 5px #e8f1ff; }
 
-        .capability-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 20px;
-        }
-
+        .capabilities { background: var(--paper); }
+        .capability-header { display: flex; justify-content: space-between; gap: 50px; align-items: end; margin-bottom: 56px; }
+        .capability-intro { max-width: 390px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.7; }
+        .capability-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
         .capability-card {
-          position: relative;
-          min-height: 200px;
-          overflow: hidden;
-          padding: 28px 23px;
-          background: var(--surface);
-          border: 1px solid var(--border);
-          border-radius: 12px;
-          box-shadow: 0 8px 22px rgba(17, 35, 68, 0.05);
-          transition:
-            transform 200ms ease,
-            border-color 200ms ease,
-            box-shadow 200ms ease;
-        }
-
-        .capability-card::after {
-          content: "";
-          position: absolute;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          height: 3px;
-          background: var(--blue);
-          transform: scaleX(0);
-          transition: transform 200ms ease;
-        }
-
-        .capability-card:hover {
-          transform: translateY(-5px);
-          border-color: #9cbceb;
-          box-shadow: 0 16px 35px rgba(17, 35, 68, 0.11);
-        }
-
-        .capability-card:hover::after {
-          transform: scaleX(1);
-        }
-
-        .card-top {
-          display: flex;
-          align-items: center;
-          gap: 15px;
-          margin-bottom: 16px;
-        }
-
-        .card-icon {
-          width: 53px;
-          height: 53px;
-          flex: 0 0 53px;
-          display: grid;
-          place-items: center;
-          background: linear-gradient(145deg, #1266df, #0345aa);
-          border-radius: 50%;
-          color: #ffffff;
-          box-shadow: 0 8px 20px rgba(7, 85, 201, 0.22);
-          font-size: 12px;
-          font-weight: 900;
-          letter-spacing: 0.5px;
-        }
-
-        .capability-card h3 {
-          margin: 0;
-          color: var(--navy);
-          font-size: 17px;
-        }
-
-        .capability-card p {
-          margin: 0;
-          color: #536078;
-          font-size: 14px;
-          line-height: 1.65;
-        }
-
-        /* Featured article */
-
-        .article-section {
-          padding: 4px 0 65px;
-        }
-
-        .article-card {
-          position: relative;
-          overflow: hidden;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 45px;
-          padding: 38px 42px;
-          background:
-            radial-gradient(
-              circle at 90% 15%,
-              rgba(62, 139, 255, 0.22),
-              transparent 27%
-            ),
-            linear-gradient(135deg, #07152f, #0d2a58);
-          border: 1px solid rgba(255, 255, 255, 0.12);
-          border-radius: 15px;
-          color: #ffffff;
-          box-shadow: 0 22px 55px rgba(11, 21, 48, 0.2);
-        }
-
-        .article-card::after {
-          content: "";
-          position: absolute;
-          right: -100px;
-          bottom: -145px;
-          width: 420px;
-          height: 240px;
-          border: 1px solid rgba(130, 182, 255, 0.17);
-          border-radius: 50%;
-          transform: rotate(-8deg);
-        }
-
-        .article-content {
-          position: relative;
-          z-index: 1;
-          display: flex;
-          align-items: center;
-          gap: 25px;
-        }
-
-        .article-icon {
-          width: 66px;
-          height: 66px;
-          flex: 0 0 66px;
-          display: grid;
-          place-items: center;
-          background: rgba(255, 255, 255, 0.06);
-          border: 1px solid rgba(255, 255, 255, 0.11);
-          border-radius: 10px;
-          color: #ffffff;
-          font-size: 28px;
-        }
-
-        .article-label {
-          margin-bottom: 9px;
-          color: #7eb5ff;
-          font-size: 11px;
-          font-weight: 850;
-          letter-spacing: 3px;
-        }
-
-        .article-card h2 {
-          margin: 0 0 8px;
-          font-family: Georgia, "Times New Roman", serif;
-          font-size: 31px;
-          letter-spacing: -0.5px;
-        }
-
-        .article-card p {
-          max-width: 710px;
-          margin: 0;
-          color: #ced9e9;
-          font-size: 14px;
-          line-height: 1.65;
-        }
-
-        .article-button {
-          position: relative;
-          z-index: 2;
-          min-width: 185px;
-          min-height: 52px;
-          flex: 0 0 auto;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: 10px;
-          padding: 0 22px;
+          min-height: 270px;
+          padding: 30px;
           background: #ffffff;
-          border-radius: 7px;
-          color: var(--blue);
-          box-shadow: 0 10px 27px rgba(0, 0, 0, 0.18);
-          font-size: 14px;
-          font-weight: 850;
-          transition:
-            transform 180ms ease,
-            box-shadow 180ms ease;
+          border-right: 1px solid var(--line);
+          border-bottom: 1px solid var(--line);
+          transition: background 200ms ease, color 200ms ease, transform 200ms ease;
         }
+        .capability-card:hover { position: relative; z-index: 1; color: #fff; background: var(--navy); transform: translateY(-5px); }
+        .card-number { color: var(--blue); font-size: 11px; font-weight: 900; letter-spacing: 2px; }
+        .capability-card h3 { margin: 70px 0 15px; font-family: Georgia, "Times New Roman", serif; font-size: 24px; font-weight: 400; }
+        .capability-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+        .capability-card:hover p { color: #bfcbdc; }
+        .capability-card:hover .card-number { color: #89bbff; }
 
-        .article-button:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 15px 34px rgba(0, 0, 0, 0.25);
-        }
-
-        /* Experience */
-
-        .experience-section {
-          background:
-            radial-gradient(
-              circle at 90% 10%,
-              rgba(7, 85, 201, 0.06),
-              transparent 27%
-            ),
-            linear-gradient(145deg, #f3f7fd, #ffffff);
-          border-top: 1px solid #e0e7f0;
-        }
-
-        .experience-title {
-          margin: 0 0 8px;
-          color: var(--navy);
-          font-family: Georgia, "Times New Roman", serif;
-          font-size: 39px;
-          letter-spacing: -1px;
-        }
-
-        .title-underline {
-          width: 40px;
-          height: 3px;
-          margin-bottom: 30px;
-          background: var(--blue);
-        }
-
-        .experience-layout {
-          display: grid;
-          grid-template-columns: 1.35fr 0.65fr;
-          gap: 70px;
-          align-items: start;
-        }
-
-        .experience-list {
-          position: relative;
-          display: grid;
-          gap: 16px;
-          padding-left: 25px;
-        }
-
-        .experience-list::before {
-          content: "";
-          position: absolute;
-          top: 12px;
-          bottom: 12px;
-          left: 5px;
-          width: 1px;
-          background: #b8c9e2;
-        }
-
+        .experience-section { color: #fff; background: var(--ink); }
+        .experience-section .section-label { color: #83b8ff; }
+        .experience-section .section-title { color: #fff; }
+        .experience-heading { display: grid; grid-template-columns: 1fr .8fr; gap: 80px; align-items: end; margin-bottom: 55px; }
+        .experience-heading p { margin: 0; color: #aebccd; font-size: 15px; line-height: 1.7; }
+        .experience-list { border-top: 1px solid rgba(255,255,255,.16); }
         .experience-item {
-          position: relative;
-          padding: 23px 26px;
-          background: rgba(255, 255, 255, 0.94);
-          border: 1px solid var(--border);
-          border-radius: 11px;
-          box-shadow: 0 8px 22px rgba(17, 35, 68, 0.05);
-          transition:
-            transform 180ms ease,
-            box-shadow 180ms ease;
+          display: grid;
+          grid-template-columns: 72px .8fr 1.2fr;
+          gap: 35px;
+          padding: 34px 0;
+          border-bottom: 1px solid rgba(255,255,255,.16);
         }
+        .experience-number { color: #6f839c; font-size: 11px; font-weight: 800; }
+        .experience-item h3 { margin: 0 0 9px; font-family: Georgia, "Times New Roman", serif; font-size: 22px; font-weight: 400; }
+        .company { color: #83b8ff; font-size: 12px; font-weight: 800; line-height: 1.5; }
+        .experience-item p { margin: 0; color: #aebccd; font-size: 14px; line-height: 1.7; }
 
-        .experience-item::before {
-          content: "";
-          position: absolute;
-          top: 29px;
-          left: -25px;
-          width: 9px;
-          height: 9px;
-          background: var(--blue);
-          border: 4px solid #eaf2ff;
-          border-radius: 50%;
-          transform: translateX(-50%);
+        .writing { background: var(--cream); }
+        .writing-card { display: grid; grid-template-columns: .9fr 1.1fr auto; gap: 50px; align-items: center; padding: 48px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+        .writing-tag { color: var(--blue); font-size: 10px; font-weight: 900; letter-spacing: 2.5px; }
+        .writing-card h3 { margin: 0 0 10px; color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: 31px; font-weight: 400; }
+        .writing-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+        .round-link { width: 58px; height: 58px; display: grid; place-items: center; border: 1px solid #9da9b6; border-radius: 50%; font-size: 20px; transition: background 180ms ease, color 180ms ease; }
+        .round-link:hover { color: #fff; background: var(--ink); }
+
+        .contact-section { text-align: center; background: #fff; }
+        .contact-section .section-title { max-width: 900px; margin: 0 auto 25px; }
+        .contact-section p { max-width: 620px; margin: 0 auto 34px; color: var(--muted); font-size: 16px; line-height: 1.7; }
+        .contact-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 13px; }
+        .contact-actions .button { border-color: var(--ink); color: var(--ink); }
+        .contact-actions .button:hover, .contact-actions .button-primary { color: #fff; background: var(--ink); }
+
+        .logo-marquee-section { position: relative; overflow: hidden; padding: 22px 0; background: #fff; border-top: 1px solid var(--line); }
+        .logo-marquee-section::before, .logo-marquee-section::after {
+          content: ""; position: absolute; top: 0; bottom: 0; z-index: 2; width: min(10vw, 130px); pointer-events: none;
         }
+        .logo-marquee-section::before { left: 0; background: linear-gradient(90deg, #fff, transparent); }
+        .logo-marquee-section::after { right: 0; background: linear-gradient(270deg, #fff, transparent); }
+        .logo-marquee-track { display: flex; width: max-content; will-change: transform; animation: logo-marquee 24s linear infinite; }
+        .logo-marquee-section:hover .logo-marquee-track { animation-play-state: paused; }
+        .logo-marquee-group { display: flex; flex-shrink: 0; align-items: center; gap: clamp(70px, 8vw, 130px); padding-right: clamp(70px, 8vw, 130px); }
+        .logo-marquee-item { width: clamp(175px, 15vw, 235px); height: 72px; flex: 0 0 auto; display: flex; align-items: center; justify-content: center; }
+        .logo-marquee-item img { display: block; width: auto; max-width: 100%; height: auto; max-height: 62px; object-fit: contain; }
+        .logo-marquee-item .logo-depaul { max-height: 48px; }
+        .logo-marquee-item .logo-pbs { max-height: 54px; }
+        .logo-marquee-item .logo-ntech { max-height: 64px; }
+        @keyframes logo-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-        .experience-item:hover {
-          transform: translateX(4px);
-          box-shadow: 0 13px 30px rgba(17, 35, 68, 0.09);
+        footer { padding: 28px 0; color: #9aa9bc; background: var(--ink); font-size: 12px; }
+        .footer-content { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+        .footer-credit strong { color: #fff; }
+
+        @media (prefers-reduced-motion: reduce) { .logo-marquee-track { animation-play-state: paused; } }
+        @media (max-width: 1000px) {
+          .nav-inner { grid-template-columns: 1fr auto; }
+          .nav-links { display: none; }
+          .hero-bottom, .perspective-grid, .experience-heading { grid-template-columns: 1fr; gap: 35px; }
+          .capability-grid { grid-template-columns: repeat(2, 1fr); }
+          .capability-header { display: block; }
+          .capability-intro { margin-top: 25px; }
         }
-
-        .experience-item h3 {
-          margin: 0 0 6px;
-          color: var(--navy);
-          font-size: 17px;
-        }
-
-        .company {
-          margin-bottom: 10px;
-          color: var(--blue);
-          font-size: 14px;
-          font-weight: 800;
-        }
-
-        .experience-item p {
-          margin: 0;
-          color: #5b687f;
-          font-size: 14px;
-          line-height: 1.6;
-        }
-
-        /* Contact */
-
-        .contact-panel {
-          position: sticky;
-          top: 110px;
-          overflow: hidden;
-          padding: 29px;
-          background: #ffffff;
-          border: 1px solid var(--border);
-          border-radius: 13px;
-          box-shadow: 0 12px 32px rgba(17, 35, 68, 0.07);
-        }
-
-        .contact-panel::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          right: 0;
-          left: 0;
-          height: 4px;
-          background: linear-gradient(90deg, var(--blue), #68a2f0);
-        }
-
-        .contact-panel h3 {
-          margin: 0 0 9px;
-          color: var(--navy);
-          font-family: Georgia, "Times New Roman", serif;
-          font-size: 27px;
-        }
-
-        .contact-panel p {
-          margin: 0 0 23px;
-          color: #5b687f;
-          font-size: 14px;
-          line-height: 1.65;
-        }
-
-        .contact-link {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 17px 0;
-          border-top: 1px solid #dce3ed;
-          color: var(--blue);
-          font-weight: 800;
-          transition:
-            color 180ms ease,
-            padding 180ms ease;
-        }
-
-        .contact-link:hover {
-          padding-left: 5px;
-          color: var(--blue-dark);
-        }
-
-        .contact-arrow {
-          transition: transform 180ms ease;
-        }
-
-        .contact-link:hover .contact-arrow {
-          transform: translate(3px, -3px);
-        }
-
-        /* Continuous company-logo marquee */
-
-        .logo-marquee-section {
-          position: relative;
-          overflow: hidden;
-          padding: 20px 0;
-          background: #ffffff;
-          border-top: 1px solid var(--border);
-          border-bottom: 1px solid var(--border);
-        }
-
-        .logo-marquee-section::before,
-        .logo-marquee-section::after {
-          content: "";
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          z-index: 2;
-          width: min(10vw, 130px);
-          pointer-events: none;
-        }
-
-        .logo-marquee-section::before {
-          left: 0;
-          background: linear-gradient(90deg, #ffffff, transparent);
-        }
-
-        .logo-marquee-section::after {
-          right: 0;
-          background: linear-gradient(270deg, #ffffff, transparent);
-        }
-
-        .logo-marquee-track {
-          display: flex;
-          width: max-content;
-          will-change: transform;
-          animation: logo-marquee 24s linear infinite;
-        }
-
-        .logo-marquee-section:hover .logo-marquee-track {
-          animation-play-state: paused;
-        }
-
-        .logo-marquee-group {
-          display: flex;
-          flex-shrink: 0;
-          align-items: center;
-          gap: clamp(70px, 8vw, 130px);
-          padding-right: clamp(70px, 8vw, 130px);
-        }
-
-        .logo-marquee-item {
-          width: clamp(175px, 15vw, 235px);
-          height: 72px;
-          flex: 0 0 auto;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .logo-marquee-item img {
-          display: block;
-          width: auto;
-          max-width: 100%;
-          height: auto;
-          max-height: 62px;
-          object-fit: contain;
-        }
-
-        .logo-marquee-item .logo-depaul {
-          max-height: 48px;
-        }
-
-        .logo-marquee-item .logo-pbs {
-          max-height: 54px;
-        }
-
-        .logo-marquee-item .logo-ntech {
-          max-height: 64px;
-        }
-
-        @keyframes logo-marquee {
-          from {
-            transform: translateX(0);
-          }
-
-          to {
-            transform: translateX(-50%);
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .logo-marquee-track {
-            animation-play-state: paused;
-          }
-        }
-
-        /* Footer */
-
-        footer {
-          padding: 27px 0;
-          background: var(--navy);
-          color: #bdc8da;
-          font-size: 13px;
-        }
-
-        .footer-content {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 20px;
-        }
-
-        .footer-credit {
-          color: #93a4bd;
-          font-size: 12px;
-          letter-spacing: 0.3px;
-        }
-
-        .footer-credit strong {
-          color: #ffffff;
-          font-weight: 750;
-        }
-
-        /* Responsive */
-
-        @media (max-width: 1050px) {
-          .nav-inner {
-            grid-template-columns: 1fr auto;
-          }
-
-          .nav-links {
-            display: none;
-          }
-
-          .hero-grid,
-          .experience-layout {
-            grid-template-columns: 1fr;
-            gap: 40px;
-          }
-
-          .capability-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
-
-          .contact-panel {
-            position: static;
-          }
-        }
-
-        @media (max-width: 750px) {
-          .article-card {
-            display: grid;
-            gap: 28px;
-            padding: 31px 26px;
-          }
-
-          .article-content {
-            align-items: flex-start;
-          }
-
-          .article-button {
-            width: 100%;
-          }
-        }
-
-        @media (max-width: 650px) {
-          html {
-            scroll-padding-top: 90px;
-          }
-
-          section[id] {
-            scroll-margin-top: 90px;
-          }
-
-          .footer-content {
-            flex-direction: column;
-            justify-content: center;
-            gap: 8px;
-            text-align: center;
-          }
-
-          .container {
-            width: min(100% - 30px, 1320px);
-          }
-
-          .nav-inner {
-            min-height: 74px;
-            gap: 10px;
-          }
-
-          .brand {
-            font-size: 16px;
-          }
-
-          .bismillah-arabic {
-            font-size: 15px;
-          }
-
-          .bismillah-english {
-            display: block;
-            margin-top: 3px;
-            font-size: 8px;
-            line-height: 1.25;
-          }
-
-          .hero {
-            padding: 45px 0 30px;
-          }
-
-          .hero::before {
-            display: none;
-          }
-
-          .hero h1 {
-            font-size: 40px;
-            letter-spacing: -1.5px;
-          }
-
-          .eyebrow {
-            font-size: 10px;
-            letter-spacing: 2.2px;
-          }
-
-          .hero-description {
-            font-size: 15px;
-          }
-
-          .hero-buttons {
-            display: grid;
-          }
-
-          .button {
-            width: 100%;
-          }
-
-          .focus-panel {
-            padding: 24px;
-          }
-
-          .section {
-            padding: 47px 0;
-          }
-
-          .section-heading {
-            gap: 13px;
-          }
-
-          .section-heading h2,
-          .experience-title {
-            font-size: 30px;
-          }
-
-          .capability-grid {
-            grid-template-columns: 1fr;
-          }
-
-          .article-section {
-            padding-bottom: 47px;
-          }
-
-          .article-content {
-            display: block;
-          }
-
-          .article-icon {
-            margin-bottom: 20px;
-          }
-
-          .article-card h2 {
-            font-size: 27px;
-          }
-
-          .experience-layout {
-            gap: 35px;
-          }
+        @media (max-width: 700px) {
+          html { scroll-padding-top: 90px; }
+          section[id] { scroll-margin-top: 90px; }
+          .container { width: min(100% - 30px, 1280px); }
+          .nav-inner { min-height: 76px; gap: 10px; }
+          .brand { max-width: 125px; font-size: 15px; line-height: 1.15; }
+          .bismillah-arabic { font-size: 14px; }
+          .bismillah-english { display: block; font-size: 7px; }
+          .hero { min-height: auto; }
+          .hero-inner { padding: 65px 0 48px; }
+          .hero h1 { font-size: 52px; line-height: .93; letter-spacing: -3px; }
+          .hero-bottom { margin-top: 44px; padding-top: 25px; }
+          .hero-description { font-size: 15px; }
+          .hero-actions { display: grid; }
+          .button { width: 100%; }
+          .proof-grid { grid-template-columns: repeat(2, 1fr); }
+          .proof-item:nth-child(3) { border-top: 1px solid var(--line); }
+          .proof-item:nth-child(4) { border-top: 1px solid var(--line); }
+          .section { padding: 72px 0; }
+          .section-title { font-size: 42px; }
+          .perspective-grid { gap: 38px; }
+          .capability-grid { grid-template-columns: 1fr; }
+          .capability-card { min-height: 225px; }
+          .capability-card h3 { margin-top: 45px; }
+          .experience-item { grid-template-columns: 42px 1fr; gap: 20px; }
+          .experience-item p { grid-column: 2; }
+          .writing-card { grid-template-columns: 1fr auto; gap: 24px; }
+          .writing-card > div:nth-child(2) { grid-column: 1 / -1; grid-row: 2; }
+          .round-link { grid-column: 2; grid-row: 1; }
+          .footer-content { flex-direction: column; justify-content: center; gap: 8px; text-align: center; }
         }
       `}</style>
 
       <header className="navbar">
         <div className="container nav-inner">
-          <a
-            className="brand"
-            href="#about"
-            onClick={(event) => handleNavigation(event, "about")}
-          >
-            Muhammad Farooq Ibrahim
-          </a>
-
+          <a className="brand" href="#about" onClick={(event) => handleNavigation(event, "about")}>Muhammad Farooq Ibrahim</a>
           <nav className="nav-links" aria-label="Main navigation">
-            <a
-              href="#about"
-              onClick={(event) => handleNavigation(event, "about")}
-            >
-              About
-            </a>
-            <a
-              href="#experience"
-              onClick={(event) => handleNavigation(event, "experience")}
-            >
-              Experience
-            </a>
-            <a
-              href="#capabilities"
-              onClick={(event) => handleNavigation(event, "capabilities")}
-            >
-              Capabilities
-            </a>
-            <a
-              href="#writing"
-              onClick={(event) => handleNavigation(event, "writing")}
-            >
-              Writing
-            </a>
-            <a
-              href="#contact"
-              onClick={(event) => handleNavigation(event, "contact")}
-            >
-              Contact
-            </a>
+            <a href="#about" onClick={(event) => handleNavigation(event, "about")}>About</a>
+            <a href="#capabilities" onClick={(event) => handleNavigation(event, "capabilities")}>Expertise</a>
+            <a href="#experience" onClick={(event) => handleNavigation(event, "experience")}>Experience</a>
+            <a href="#writing" onClick={(event) => handleNavigation(event, "writing")}>Writing</a>
+            <a href="#contact" onClick={(event) => handleNavigation(event, "contact")}>Contact</a>
           </nav>
-
           <div className="bismillah">
-            <div className="bismillah-arabic">
-              بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
-            </div>
-
-            <div className="bismillah-english">
-              In the name of Allah, the Most
-              <br />
-              Gracious, the Most Merciful
-            </div>
+            <div className="bismillah-arabic">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+            <div className="bismillah-english">In the name of Allah, the Most<br />Gracious, the Most Merciful</div>
           </div>
         </div>
       </header>
 
       <main>
         <section className="hero" id="about">
-          <div className="container hero-grid">
-            <div>
-              <div className="eyebrow">
-                TECHNOLOGY • CYBERSECURITY • IT OPERATIONS
-              </div>
-
-              <h1>
-                Turning complex technology operations into reliable, organized
-                solutions.
-              </h1>
-
-              <p className="hero-description">
-                Chicago-based technology professional with experience in IT
-                operations, cybersecurity, systems support, technical
-                documentation, data analysis, technology risk, and process
-                improvement.
-              </p>
-
-              <div className="hero-buttons">
-                <a
-                  className="button button-primary"
-                  href="#experience"
-                  onClick={(event) => handleNavigation(event, "experience")}
-                >
-                  View Experience <span>→</span>
-                </a>
-
-                <a
-                  className="button"
-                  href="mailto:contact@farooqibrahim.com"
-                >
-                  Let&apos;s Connect <span>✉</span>
-                </a>
-              </div>
-
-             <div className="location">
-  <span className="location-dot" />
-  Chicago, Illinois • Washington, D.C.
-</div>
-            </div>
-
-            <aside className="focus-panel">
-              <h2>Focus Areas</h2>
-              <div className="blue-line" />
-
-              {focusAreas.map((area) => (
-                <div className="focus-item" key={area.label}>
-                  <span className="focus-icon">{area.symbol}</span>
-                  <span>{area.label}</span>
+          <div className="container hero-inner">
+            <div className="hero-kicker">TECHNOLOGY · OPERATIONS · FINANCIAL MANAGEMENT</div>
+            <h1><strong>MUHAMMAD</strong><br />FAROOQ IBRAHIM</h1>
+            <div className="hero-bottom">
+              <div className="hero-role">Technology, Operations & Business</div>
+              <div>
+                <p className="hero-description">I work where technology meets real-world business—supporting technology operations, project delivery, financial management, cybersecurity, and digital growth.</p>
+                <div className="hero-actions">
+                  <a className="button button-primary" href="#capabilities" onClick={(event) => handleNavigation(event, "capabilities")}>Explore My Work <span>↗</span></a>
+                  <a className="button" href="mailto:contact@farooqibrahim.com">Get in Touch <span>↗</span></a>
                 </div>
-              ))}
-            </aside>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section className="section" id="capabilities">
-          <div className="container">
-            <div className="section-heading">
-              <h2>How I Contribute</h2>
-            </div>
+        <section className="proof-strip" aria-label="Professional focus">
+          <div className="container proof-grid">
+            <div className="proof-item"><span>FOCUS 01</span><strong>Technology Operations</strong></div>
+            <div className="proof-item"><span>FOCUS 02</span><strong>Financial Management</strong></div>
+            <div className="proof-item"><span>FOCUS 03</span><strong>Cybersecurity & Risk</strong></div>
+            <div className="proof-item"><span>BASED IN</span><strong>Chicago · Washington, D.C.</strong></div>
+          </div>
+        </section>
 
+        <section className="section perspective">
+          <div className="container perspective-grid">
+            <div>
+              <div className="section-label">BUSINESS PERSPECTIVE</div>
+              <h2 className="section-title">Where technology, finance, and operations come together.</h2>
+            </div>
+            <div className="perspective-copy">
+              <p>My work focuses on the systems, financial processes, technology, and operational decisions that help organizations function efficiently and grow responsibly.</p>
+              <p>I am particularly interested in how cybersecurity, automation, financial discipline, useful data, and better execution can strengthen modern businesses.</p>
+              <p>My approach combines technical understanding with an operational mindset: identify what matters, organize the work, manage risk, and move ideas toward practical results.</p>
+              <div className="location-line"><span className="location-dot" />Chicago, Illinois · Washington, D.C.</div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section capabilities" id="capabilities">
+          <div className="container">
+            <div className="capability-header">
+              <div>
+                <div className="section-label">WHAT I WORK ACROSS</div>
+                <h2 className="section-title">Capabilities built around real business needs.</h2>
+              </div>
+              <p className="capability-intro">A cross-functional perspective spanning technology, financial management, security, systems, controls, and operational delivery.</p>
+            </div>
             <div className="capability-grid">
               {capabilities.map((item) => (
                 <article className="capability-card" key={item.title}>
-                  <div className="card-top">
-                    <div className="card-icon">{item.icon}</div>
-                    <h3>{item.title}</h3>
-                  </div>
-
+                  <div className="card-number">{item.number}</div>
+                  <h3>{item.title}</h3>
                   <p>{item.description}</p>
                 </article>
               ))}
@@ -1235,122 +473,71 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="article-section" id="writing">
+        <section className="section experience-section" id="experience">
           <div className="container">
-            <div className="article-card">
-              <div className="article-content">
-                <div className="article-icon">▤</div>
-
-                <div>
-                  <div className="article-label">FEATURED WRITING</div>
-
-                  <h2>Crypto for Beginners</h2>
-
-                  <p>
-                    A simple, beginner-friendly guide to understanding
-                    cryptocurrency, how it works, and the key ideas newcomers
-                    should know.
-                  </p>
-                </div>
+            <div className="experience-heading">
+              <div>
+                <div className="section-label">SELECTED EXPERIENCE</div>
+                <h2 className="section-title">Experience across technology, systems, and security.</h2>
               </div>
-
-              <a
-                className="article-button"
-                href="https://www.linkedin.com/pulse/crypto-beginners-simple-guide-understanding-muhammad-farooq-x9ric/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Read on LinkedIn <span>↗</span>
-              </a>
+              <p>Professional experience supporting organizations through technical operations, documentation, analysis, risk awareness, and process improvement.</p>
+            </div>
+            <div className="experience-list">
+              {experience.map((item, index) => (
+                <article className="experience-item" key={item.role}>
+                  <div className="experience-number">0{index + 1}</div>
+                  <div><h3>{item.role}</h3><div className="company">{item.company}</div></div>
+                  <p>{item.description}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
 
-        <section className="section experience-section" id="experience">
+        <section className="section writing" id="writing">
           <div className="container">
-            <h2 className="experience-title">Selected Experience</h2>
-            <div className="title-underline" />
-
-            <div className="experience-layout">
-              <div className="experience-list">
-                {experience.map((item) => (
-                  <article className="experience-item" key={item.role}>
-                    <h3>{item.role}</h3>
-                    <div className="company">{item.company}</div>
-                    <p>{item.description}</p>
-                  </article>
-                ))}
+            <div className="writing-card">
+              <div className="writing-tag">FEATURED WRITING</div>
+              <div>
+                <h3>Crypto for Beginners</h3>
+                <p>A simple guide to understanding cryptocurrency, how it works, and the key ideas newcomers should know.</p>
               </div>
+              <a className="round-link" href="https://www.linkedin.com/pulse/crypto-beginners-simple-guide-understanding-muhammad-farooq-x9ric/" target="_blank" rel="noopener noreferrer" aria-label="Read Crypto for Beginners on LinkedIn">↗</a>
+            </div>
+          </div>
+        </section>
 
-              <aside className="contact-panel" id="contact">
-                <h3>Let&apos;s Connect</h3>
-
-                <p>
-                  Connect with me to discuss technology, cybersecurity, IT
-                  operations, audit and risk, or professional opportunities.
-                </p>
-
-                <a
-                  className="contact-link"
-                  href="https://linkedin.com/in/m-farooq15"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span>LinkedIn</span>
-                  <span className="contact-arrow">↗</span>
-                </a>
-
-                <a
-                  className="contact-link"
-                  href="mailto:contact@farooqibrahim.com"
-                >
-                  <span>Email</span>
-                  <span className="contact-arrow">↗</span>
-                </a>
-              </aside>
+        <section className="section contact-section" id="contact">
+          <div className="container">
+            <div className="section-label">LET’S CONNECT</div>
+            <h2 className="section-title">Interested in technology that moves business forward?</h2>
+            <p>Connect with me to discuss technology operations, financial management, cybersecurity, business systems, or professional opportunities.</p>
+            <div className="contact-actions">
+              <a className="button button-primary" href="mailto:contact@farooqibrahim.com">Email Me <span>↗</span></a>
+              <a className="button" href="https://linkedin.com/in/m-farooq15" target="_blank" rel="noopener noreferrer">LinkedIn <span>↗</span></a>
             </div>
           </div>
         </section>
       </main>
 
-      <section
-        className="logo-marquee-section"
-        aria-label="Organizations I have experience with"
-      >
+      <section className="logo-marquee-section" aria-label="Organizations I have experience with">
         <div className="logo-marquee-track">
-          <div className="logo-marquee-group">
-            {companyLogos.map((logo) => (
-              <div className="logo-marquee-item" key={logo.name}>
-                <img
-                  className={logo.className}
-                  src={logo.src}
-                  alt={logo.name}
-                />
-              </div>
-            ))}
-          </div>
-
-          <div className="logo-marquee-group" aria-hidden="true">
-            {companyLogos.map((logo) => (
-              <div className="logo-marquee-item" key={`duplicate-${logo.name}`}>
-                <img
-                  className={logo.className}
-                  src={logo.src}
-                  alt=""
-                />
-              </div>
-            ))}
-          </div>
+          {["first", "duplicate"].map((group) => (
+            <div className="logo-marquee-group" aria-hidden={group === "duplicate" ? "true" : undefined} key={group}>
+              {companyLogos.map((logo) => (
+                <div className="logo-marquee-item" key={`${group}-${logo.name}`}>
+                  <img className={logo.className} src={logo.src} alt={group === "duplicate" ? "" : logo.name} />
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </section>
 
       <footer>
         <div className="container footer-content">
           <span>© {new Date().getFullYear()} Muhammad Farooq Ibrahim</span>
-
-          <span className="footer-credit">
-            Designed by <strong>Dawood Technologies</strong>
-          </span>
+          <span className="footer-credit">Designed by <strong>MFI Technologies</strong></span>
         </div>
       </footer>
     </>
