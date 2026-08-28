@@ -6,9 +6,9 @@ import type { MouseEvent } from "react";
 const capabilities = [
   {
     number: "01",
-    title: "Technology Operations",
+    title: "Revenue & Sales Operations",
     description:
-      "Supporting business-critical systems, resolving operational issues, and improving the reliability of day-to-day technology.",
+      "Supporting organized sales processes, customer coordination, CRM discipline, pipeline visibility, and stronger commercial execution.",
   },
   {
     number: "02",
@@ -61,6 +61,43 @@ const experience = [
     description:
       "Assisted students with day-to-day services, addressed technology needs, and supported the university’s administrative and IT operations.",
   },
+];
+
+const operatingModel = [
+  {
+    number: "01",
+    title: "Understand the opportunity",
+    description: "Clarify the business need, customer, market, operational challenge, and intended outcome.",
+  },
+  {
+    number: "02",
+    title: "Build the business case",
+    description: "Connect value, cost, feasibility, risk, stakeholders, and expected impact before execution begins.",
+  },
+  {
+    number: "03",
+    title: "Design the right systems",
+    description: "Select practical software, infrastructure, data, controls, and workflows that support the objective.",
+  },
+  {
+    number: "04",
+    title: "Execute with discipline",
+    description: "Coordinate priorities, documentation, ownership, financial awareness, and technical readiness.",
+  },
+  {
+    number: "05",
+    title: "Measure and improve",
+    description: "Review performance, identify gaps, manage risk, and turn lessons into stronger processes.",
+  },
+];
+
+const softwareCategories = [
+  { title: "Sales & CRM", detail: "Customer workflows · Pipeline visibility · Relationship management" },
+  { title: "Finance & Reporting", detail: "Budget awareness · Cost visibility · Management reporting" },
+  { title: "Business Intelligence", detail: "Power BI · Tableau · Operational dashboards · Data analysis" },
+  { title: "Planning & Delivery", detail: "Jira · Confluence · Documentation · Cross-functional coordination" },
+  { title: "Workplace Systems", detail: "Microsoft 365 · Collaboration · Identity · Business productivity" },
+  { title: "Infrastructure & Security", detail: "Networks · Cloud · Access · Monitoring · Technology controls" },
 ];
 
 const companyLogos = [
@@ -298,6 +335,31 @@ export default function Home() {
         .capability-card:hover p { color: #bfcbdc; }
         .capability-card:hover .card-number { color: #89bbff; }
 
+        .operating-model { overflow: hidden; color: #fff; background: linear-gradient(135deg, #0b1a31, #132b4e); }
+        .operating-model .section-label { color: #83b8ff; }
+        .operating-model .section-title { color: #fff; }
+        .model-heading { display: grid; grid-template-columns: 1fr .75fr; gap: 80px; align-items: end; margin-bottom: 65px; }
+        .model-heading p { margin: 0; color: #adbbcd; font-size: 15px; line-height: 1.75; }
+        .model-track { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid rgba(255,255,255,.16); border-bottom: 1px solid rgba(255,255,255,.16); }
+        .model-step { position: relative; min-height: 280px; padding: 30px 25px; border-right: 1px solid rgba(255,255,255,.16); }
+        .model-step:last-child { border-right: 0; }
+        .model-step::after { content: "→"; position: absolute; top: 26px; right: -12px; z-index: 2; width: 24px; height: 24px; display: grid; place-items: center; color: #8ebeff; background: #102440; border-radius: 50%; }
+        .model-step:last-child::after { display: none; }
+        .model-number { color: #83b8ff; font-size: 10px; font-weight: 900; letter-spacing: 2px; }
+        .model-step h3 { margin: 83px 0 15px; font-family: Georgia, "Times New Roman", serif; font-size: 22px; font-weight: 400; line-height: 1.2; }
+        .model-step p { margin: 0; color: #aab8ca; font-size: 13px; line-height: 1.65; }
+
+        .software-section { background: #fff; }
+        .software-heading { display: grid; grid-template-columns: .9fr 1.1fr; gap: 90px; margin-bottom: 55px; align-items: end; }
+        .software-heading p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.75; }
+        .software-grid { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line); }
+        .software-item { display: grid; grid-template-columns: 55px 1fr; gap: 18px; padding: 29px 25px 29px 0; border-bottom: 1px solid var(--line); }
+        .software-item:nth-child(odd) { border-right: 1px solid var(--line); }
+        .software-item:nth-child(even) { padding-left: 25px; }
+        .software-icon { width: 42px; height: 42px; display: grid; place-items: center; color: var(--blue); background: #edf4ff; border-radius: 50%; font-size: 14px; font-weight: 900; }
+        .software-item h3 { margin: 1px 0 8px; color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: 21px; font-weight: 400; }
+        .software-item p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+
         .experience-section { color: #fff; background: var(--ink); }
         .experience-section .section-label { color: #83b8ff; }
         .experience-section .section-title { color: #fff; }
@@ -355,8 +417,13 @@ export default function Home() {
         @media (max-width: 1000px) {
           .nav-inner { grid-template-columns: 1fr auto; }
           .nav-links { display: none; }
-          .hero-bottom, .perspective-grid, .experience-heading { grid-template-columns: 1fr; gap: 35px; }
+          .hero-bottom, .perspective-grid, .experience-heading, .model-heading, .software-heading { grid-template-columns: 1fr; gap: 35px; }
           .capability-grid { grid-template-columns: repeat(2, 1fr); }
+          .model-track { grid-template-columns: 1fr; }
+          .model-step { min-height: auto; padding: 28px 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.16); }
+          .model-step:last-child { border-bottom: 0; }
+          .model-step::after { content: "↓"; top: auto; right: 0; bottom: -12px; }
+          .model-step h3 { margin: 34px 0 12px; }
           .capability-header { display: block; }
           .capability-intro { margin-top: 25px; }
         }
@@ -386,6 +453,8 @@ export default function Home() {
           .capability-card h3 { margin-top: 45px; }
           .experience-item { grid-template-columns: 42px 1fr; gap: 20px; }
           .experience-item p { grid-column: 2; }
+          .software-grid { grid-template-columns: 1fr; }
+          .software-item, .software-item:nth-child(even) { padding: 25px 0; border-right: 0; }
           .writing-card { grid-template-columns: 1fr auto; gap: 24px; }
           .writing-card > div:nth-child(2) { grid-column: 1 / -1; grid-row: 2; }
           .round-link { grid-column: 2; grid-row: 1; }
@@ -413,12 +482,12 @@ export default function Home() {
       <main>
         <section className="hero" id="about">
           <div className="container hero-inner">
-            <div className="hero-kicker">TECHNOLOGY · OPERATIONS · FINANCIAL MANAGEMENT</div>
+            <div className="hero-kicker">BUSINESS · TECHNOLOGY · FINANCE · EXECUTION</div>
             <h1><strong>MUHAMMAD</strong><br />FAROOQ IBRAHIM</h1>
             <div className="hero-bottom">
-              <div className="hero-role">Technology, Operations & Business</div>
+              <div className="hero-role">Business & Technology Strategist</div>
               <div>
-                <p className="hero-description">I work where technology meets real-world business—supporting technology operations, project delivery, financial management, cybersecurity, and digital growth.</p>
+                <p className="hero-description">I work where business ambition meets disciplined execution—across revenue operations, financial management, business software, audit readiness, infrastructure, cybersecurity, and strategic planning.</p>
                 <div className="hero-actions">
                   <a className="button button-primary" href="#capabilities" onClick={(event) => handleNavigation(event, "capabilities")}>Explore My Work <span>↗</span></a>
                   <a className="button" href="mailto:contact@farooqibrahim.com">Get in Touch <span>↗</span></a>
@@ -430,10 +499,10 @@ export default function Home() {
 
         <section className="proof-strip" aria-label="Professional focus">
           <div className="container proof-grid">
-            <div className="proof-item"><span>FOCUS 01</span><strong>Technology Operations</strong></div>
-            <div className="proof-item"><span>FOCUS 02</span><strong>Financial Management</strong></div>
-            <div className="proof-item"><span>FOCUS 03</span><strong>Cybersecurity & Risk</strong></div>
-            <div className="proof-item"><span>BASED IN</span><strong>Chicago · Washington, D.C.</strong></div>
+            <div className="proof-item"><span>COMMERCIAL</span><strong>Sales & Revenue Operations</strong></div>
+            <div className="proof-item"><span>FINANCIAL</span><strong>Finance, Audit & Controls</strong></div>
+            <div className="proof-item"><span>DIGITAL</span><strong>Business Software & Data</strong></div>
+            <div className="proof-item"><span>OPERATIONAL</span><strong>Infrastructure & Execution</strong></div>
           </div>
         </section>
 
@@ -448,6 +517,47 @@ export default function Home() {
               <p>I am particularly interested in how cybersecurity, automation, financial discipline, useful data, and better execution can strengthen modern businesses.</p>
               <p>My approach combines technical understanding with an operational mindset: identify what matters, organize the work, manage risk, and move ideas toward practical results.</p>
               <div className="location-line"><span className="location-dot" />Chicago, Illinois · Washington, D.C.</div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section operating-model">
+          <div className="container">
+            <div className="model-heading">
+              <div>
+                <div className="section-label">ENTREPRENEURIAL OPERATING MODEL</div>
+                <h2 className="section-title">From opportunity to measurable execution.</h2>
+              </div>
+              <p>I approach business challenges as connected systems: understand the commercial opportunity, test the economics, design the operating model, manage risk, and execute with accountability.</p>
+            </div>
+            <div className="model-track">
+              {operatingModel.map((step) => (
+                <article className="model-step" key={step.number}>
+                  <div className="model-number">{step.number}</div>
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section software-section">
+          <div className="container">
+            <div className="software-heading">
+              <div>
+                <div className="section-label">BUSINESS SOFTWARE & INFRASTRUCTURE</div>
+                <h2 className="section-title">The systems behind modern operations.</h2>
+              </div>
+              <p>My perspective spans the tools and infrastructure businesses use to sell, plan, report, collaborate, manage risk, and operate reliably.</p>
+            </div>
+            <div className="software-grid">
+              {softwareCategories.map((item, index) => (
+                <article className="software-item" key={item.title}>
+                  <div className="software-icon">0{index + 1}</div>
+                  <div><h3>{item.title}</h3><p>{item.detail}</p></div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
