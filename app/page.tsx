@@ -107,7 +107,7 @@ const companyLogos = [
 ];
 
 export default function Home() {
-  const scrollToSection = (sectionId: string, behavior: ScrollBehavior = "smooth") => {
+  const scrollToSection = (sectionId: string, behavior: ScrollBehavior = "auto") => {
     const section = document.getElementById(sectionId);
     const navbar = document.querySelector<HTMLElement>(".navbar");
     if (!section) return;
@@ -134,7 +134,7 @@ export default function Home() {
   ) => {
     event.preventDefault();
     window.history.pushState(null, "", `#${sectionId}`);
-    scrollToSection(sectionId);
+    scrollToSection(sectionId, "auto");
   };
 
   useEffect(() => {
@@ -179,7 +179,7 @@ export default function Home() {
         }
 
         * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; scroll-padding-top: 105px; }
+        html { scroll-behavior: auto; scroll-padding-top: 105px; }
         section[id] { scroll-margin-top: 105px; }
         body {
           margin: 0;
@@ -400,7 +400,13 @@ export default function Home() {
         .round-link { width: 58px; height: 58px; display: grid; place-items: center; border: 1px solid #9da9b6; border-radius: 50%; font-size: 20px; transition: background 180ms ease, color 180ms ease; }
         .round-link:hover { color: #fff; background: var(--ink); }
 
-        .contact-section { text-align: center; background: #fff; }
+        .contact-section {
+          min-height: calc(100svh - 82px);
+          display: flex;
+          align-items: center;
+          text-align: center;
+          background: #fff;
+        }
         .contact-section .section-title { max-width: 900px; margin: 0 auto 25px; }
         .contact-section p { max-width: 620px; margin: 0 auto 34px; color: var(--muted); font-size: 16px; line-height: 1.7; }
         .contact-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 13px; }
@@ -664,7 +670,7 @@ export default function Home() {
       <footer>
         <div className="container footer-content">
           <span>© {new Date().getFullYear()} Muhammad Farooq</span>
-          <span className="footer-credit">Designed by <strong>Tawood Technologies</strong></span>
+          <span className="footer-credit">Designed by <strong>Dawood Technologies</strong></span>
         </div>
       </footer>
     </>
