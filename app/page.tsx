@@ -112,10 +112,14 @@ export default function Home() {
     const navbar = document.querySelector<HTMLElement>(".navbar");
     if (!section) return;
 
-    const navbarHeight = navbar?.offsetHeight ?? 80;
-    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+    const navbarHeight = navbar?.getBoundingClientRect().height ?? 82;
+    const visibleTarget =
+      section.querySelector<HTMLElement>("[data-scroll-heading]") ?? section;
+    const targetTop =
+      visibleTarget.getBoundingClientRect().top + window.scrollY;
+
     window.scrollTo({
-      top: Math.max(0, sectionTop - navbarHeight - 20),
+      top: Math.max(0, targetTop - navbarHeight - 28),
       behavior,
     });
   };
@@ -130,10 +134,27 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const sectionId = window.location.hash.replace("#", "");
-    if (!sectionId) return;
-    const frame = window.requestAnimationFrame(() => scrollToSection(sectionId, "auto"));
-    return () => window.cancelAnimationFrame(frame);
+    let frame = 0;
+
+    const alignHashTarget = () => {
+      const sectionId = window.location.hash.replace("#", "");
+      if (!sectionId) return;
+
+      window.cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(() => {
+        scrollToSection(sectionId, "auto");
+      });
+    };
+
+    alignHashTarget();
+    window.addEventListener("load", alignHashTarget);
+    window.addEventListener("hashchange", alignHashTarget);
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("load", alignHashTarget);
+      window.removeEventListener("hashchange", alignHashTarget);
+    };
   }, []);
 
   return (
@@ -226,14 +247,14 @@ export default function Home() {
           mask-image: linear-gradient(to right, transparent, black 70%);
         }
         .hero::after {
-          content: "MFI";
+          content: "MF";
           position: absolute;
           right: -25px;
           bottom: -65px;
           color: rgba(255,255,255,.035);
           font-size: clamp(190px, 28vw, 430px);
           font-weight: 900;
-          letter-spacing: -35px;
+          letter-spacing: -24px;
           line-height: .8;
         }
         .hero-inner { position: relative; z-index: 1; padding: 92px 0 70px; }
@@ -252,7 +273,7 @@ export default function Home() {
           max-width: 1040px;
           margin: 0;
           font-family: Georgia, "Times New Roman", serif;
-          font-size: clamp(55px, 8vw, 116px);
+          font-size: clamp(52px, 7vw, 98px);
           font-weight: 400;
           line-height: .88;
           letter-spacing: -5px;
@@ -464,7 +485,7 @@ export default function Home() {
 
       <header className="navbar">
         <div className="container nav-inner">
-          <a className="brand" href="#about" onClick={(event) => handleNavigation(event, "about")}>Muhammad Farooq Ibrahim</a>
+          <a className="brand" href="#about" onClick={(event) => handleNavigation(event, "about")}>Muhammad Faruk</a>
           <nav className="nav-links" aria-label="Main navigation">
             <a href="#about" onClick={(event) => handleNavigation(event, "about")}>About</a>
             <a href="#capabilities" onClick={(event) => handleNavigation(event, "capabilities")}>Expertise</a>
@@ -482,8 +503,8 @@ export default function Home() {
       <main>
         <section className="hero" id="about">
           <div className="container hero-inner">
-            <div className="hero-kicker">BUSINESS · TECHNOLOGY · FINANCE · EXECUTION</div>
-            <h1><strong>MUHAMMAD</strong><br />FAROOQ IBRAHIM</h1>
+            <div className="hero-kicker" data-scroll-heading>BUSINESS · TECHNOLOGY · FINANCE · EXECUTION</div>
+            <h1><strong>MUHAMMAD</strong><br />FARUK</h1>
             <div className="hero-bottom">
               <div className="hero-role">Business & Technology Strategist</div>
               <div>
@@ -564,7 +585,7 @@ export default function Home() {
 
         <section className="section capabilities" id="capabilities">
           <div className="container">
-            <div className="capability-header">
+            <div className="capability-header" data-scroll-heading>
               <div>
                 <div className="section-label">WHAT I WORK ACROSS</div>
                 <h2 className="section-title">Capabilities built around real business needs.</h2>
@@ -585,7 +606,7 @@ export default function Home() {
 
         <section className="section experience-section" id="experience">
           <div className="container">
-            <div className="experience-heading">
+            <div className="experience-heading" data-scroll-heading>
               <div>
                 <div className="section-label">SELECTED EXPERIENCE</div>
                 <h2 className="section-title">Experience across technology, systems, and security.</h2>
@@ -606,7 +627,7 @@ export default function Home() {
 
         <section className="section writing" id="writing">
           <div className="container">
-            <div className="writing-card">
+            <div className="writing-card" data-scroll-heading>
               <div className="writing-tag">FEATURED WRITING</div>
               <div>
                 <h3>Crypto for Beginners</h3>
@@ -619,7 +640,7 @@ export default function Home() {
 
         <section className="section contact-section" id="contact">
           <div className="container">
-            <div className="section-label">LET’S CONNECT</div>
+            <div className="section-label" data-scroll-heading>LET’S CONNECT</div>
             <h2 className="section-title">Interested in technology that moves business forward?</h2>
             <p>Connect with me to discuss technology operations, financial management, cybersecurity, business systems, or professional opportunities.</p>
             <div className="contact-actions">
@@ -646,8 +667,8 @@ export default function Home() {
 
       <footer>
         <div className="container footer-content">
-          <span>© {new Date().getFullYear()} Muhammad Farooq Ibrahim</span>
-          <span className="footer-credit">Designed by <strong>MFI Technologies</strong></span>
+          <span>© {new Date().getFullYear()} Muhammad Faruk</span>
+          <span className="footer-credit">Designed by <strong>Daoud Technologies</strong></span>
         </div>
       </footer>
     </>
