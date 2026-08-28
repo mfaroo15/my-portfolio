@@ -117,9 +117,13 @@ export default function Home() {
       section.querySelector<HTMLElement>("[data-scroll-heading]") ?? section;
     const targetTop =
       visibleTarget.getBoundingClientRect().top + window.scrollY;
+    const breathingRoom = Math.min(
+      96,
+      Math.max(52, Math.round(window.innerHeight * 0.09)),
+    );
 
     window.scrollTo({
-      top: Math.max(0, targetTop - navbarHeight - 28),
+      top: Math.max(0, targetTop - navbarHeight - breathingRoom),
       behavior,
     });
   };
@@ -246,17 +250,6 @@ export default function Home() {
           background-size: 80px 80px;
           mask-image: linear-gradient(to right, transparent, black 70%);
         }
-        .hero::after {
-          content: "MF";
-          position: absolute;
-          right: -25px;
-          bottom: -65px;
-          color: rgba(255,255,255,.035);
-          font-size: clamp(190px, 28vw, 430px);
-          font-weight: 900;
-          letter-spacing: -24px;
-          line-height: .8;
-        }
         .hero-inner { position: relative; z-index: 1; padding: 92px 0 70px; }
         .hero-kicker {
           display: flex;
@@ -273,7 +266,7 @@ export default function Home() {
           max-width: 1040px;
           margin: 0;
           font-family: Georgia, "Times New Roman", serif;
-          font-size: clamp(52px, 7vw, 98px);
+          font-size: clamp(48px, 6vw, 82px);
           font-weight: 400;
           line-height: .88;
           letter-spacing: -5px;
@@ -323,7 +316,7 @@ export default function Home() {
           margin: 0;
           color: var(--ink);
           font-family: Georgia, "Times New Roman", serif;
-          font-size: clamp(38px, 5vw, 68px);
+          font-size: clamp(36px, 4.25vw, 60px);
           font-weight: 400;
           line-height: 1.04;
           letter-spacing: -2px;
@@ -458,7 +451,7 @@ export default function Home() {
           .bismillah-english { display: block; font-size: 7px; }
           .hero { min-height: auto; }
           .hero-inner { padding: 65px 0 48px; }
-          .hero h1 { font-size: 52px; line-height: .93; letter-spacing: -3px; }
+          .hero h1 { font-size: clamp(40px, 12vw, 52px); line-height: .94; letter-spacing: -2.5px; }
           .hero-bottom { margin-top: 44px; padding-top: 25px; }
           .hero-description { font-size: 15px; }
           .hero-actions { display: grid; }
@@ -467,7 +460,7 @@ export default function Home() {
           .proof-item:nth-child(3) { border-top: 1px solid var(--line); }
           .proof-item:nth-child(4) { border-top: 1px solid var(--line); }
           .section { padding: 72px 0; }
-          .section-title { font-size: 42px; }
+          .section-title { font-size: clamp(34px, 10vw, 42px); }
           .perspective-grid { gap: 38px; }
           .capability-grid { grid-template-columns: 1fr; }
           .capability-card { min-height: 225px; }
@@ -485,7 +478,7 @@ export default function Home() {
 
       <header className="navbar">
         <div className="container nav-inner">
-          <a className="brand" href="#about" onClick={(event) => handleNavigation(event, "about")}>Muhammad Faruk</a>
+          <a className="brand" href="#about" onClick={(event) => handleNavigation(event, "about")}>Muhammad Farooq</a>
           <nav className="nav-links" aria-label="Main navigation">
             <a href="#about" onClick={(event) => handleNavigation(event, "about")}>About</a>
             <a href="#capabilities" onClick={(event) => handleNavigation(event, "capabilities")}>Expertise</a>
@@ -504,7 +497,7 @@ export default function Home() {
         <section className="hero" id="about">
           <div className="container hero-inner">
             <div className="hero-kicker" data-scroll-heading>BUSINESS · TECHNOLOGY · FINANCE · EXECUTION</div>
-            <h1><strong>MUHAMMAD</strong><br />FARUK</h1>
+            <h1><strong>MUHAMMAD</strong><br />FAROOQ</h1>
             <div className="hero-bottom">
               <div className="hero-role">Business & Technology Strategist</div>
               <div>
@@ -667,8 +660,8 @@ export default function Home() {
 
       <footer>
         <div className="container footer-content">
-          <span>© {new Date().getFullYear()} Muhammad Faruk</span>
-          <span className="footer-credit">Designed by <strong>Daoud Technologies</strong></span>
+          <span>© {new Date().getFullYear()} Muhammad Farooq</span>
+          <span className="footer-credit">Designed by <strong>Dawood Technologies</strong></span>
         </div>
       </footer>
     </>
