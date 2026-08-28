@@ -483,7 +483,7 @@ export default function Home() {
             <a href="#about" onClick={(event) => handleNavigation(event, "about")}>About</a>
             <a href="#capabilities" onClick={(event) => handleNavigation(event, "capabilities")}>Expertise</a>
             <a href="#experience" onClick={(event) => handleNavigation(event, "experience")}>Experience</a>
-            <a href="#writing" onClick={(event) => handleNavigation(event, "writing")}>Writing</a>
+            <a href="#articles" onClick={(event) => handleNavigation(event, "articles")}>Articles</a>
             <a href="#contact" onClick={(event) => handleNavigation(event, "contact")}>Contact</a>
           </nav>
           <div className="bismillah">
@@ -501,7 +501,7 @@ export default function Home() {
             <div className="hero-bottom">
               <div className="hero-role">Business & Technology Strategist</div>
               <div>
-                <p className="hero-description">I work where business ambition meets disciplined execution—across revenue operations, financial management, business software, audit readiness, infrastructure, cybersecurity, and strategic planning.</p>
+                <p className="hero-description">I work where business ambition meets disciplined execution across revenue operations, financial management, business software, audit readiness, infrastructure, cybersecurity, and strategic planning.</p>
                 <div className="hero-actions">
                   <a className="button button-primary" href="#capabilities" onClick={(event) => handleNavigation(event, "capabilities")}>Explore My Work <span>↗</span></a>
                   <a className="button" href="mailto:contact@farooqibrahim.com">Get in Touch <span>↗</span></a>
@@ -530,7 +530,10 @@ export default function Home() {
               <p>My work focuses on the systems, financial processes, technology, and operational decisions that help organizations function efficiently and grow responsibly.</p>
               <p>I am particularly interested in how cybersecurity, automation, financial discipline, useful data, and better execution can strengthen modern businesses.</p>
               <p>My approach combines technical understanding with an operational mindset: identify what matters, organize the work, manage risk, and move ideas toward practical results.</p>
-              <div className="location-line"><span className="location-dot" />Chicago, Illinois · Washington, D.C.</div>
+              <div className="location-line">
+                <span className="location-dot" />
+                Chicago, IL · Washington, DC · Karachi, Pakistan · Dubai, UAE
+              </div>
             </div>
           </div>
         </section>
@@ -618,10 +621,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section writing" id="writing">
+        <section className="section writing" id="articles">
           <div className="container">
             <div className="writing-card" data-scroll-heading>
-              <div className="writing-tag">FEATURED WRITING</div>
+              <div className="writing-tag">FEATURED ARTICLE</div>
               <div>
                 <h3>Crypto for Beginners</h3>
                 <p>A simple guide to understanding cryptocurrency, how it works, and the key ideas newcomers should know.</p>
@@ -661,7 +664,7 @@ export default function Home() {
       <footer>
         <div className="container footer-content">
           <span>© {new Date().getFullYear()} Muhammad Farooq</span>
-          <span className="footer-credit">Designed by <strong>Dawood Technologies</strong></span>
+          <span className="footer-credit">Designed by <strong>Tawood Technologies</strong></span>
         </div>
       </footer>
     </>
