@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { FloatingWhatsApp } from "@/app/components/FloatingWhatsApp";
 import { Footer } from "@/app/components/Footer";
 import { Header } from "@/app/components/Header";
 import "./globals.css";
@@ -23,6 +24,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <FloatingWhatsApp />
       </body>
     </html>
   );
