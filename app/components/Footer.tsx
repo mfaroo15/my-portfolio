@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { contactEmail, navLinks, whatsappHref, whatsappNumber } from "@/app/data/site";
+import { contactEmail, navLinks, whatsappHref, whatsappLabel, whatsappNumber } from "@/app/data/site";
 
 export function Footer() {
   return (
@@ -10,7 +10,7 @@ export function Footer() {
           <p>Business technology solutions for websites, software, systems, cybersecurity, data and AI automation.</p>
           <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
           <a href={whatsappHref} rel="noopener noreferrer" target="_blank">
-            WhatsApp {whatsappNumber}
+            {whatsappLabel}: {whatsappNumber}
           </a>
         </div>
         <nav className="footer-links" aria-label="Footer navigation">
