@@ -11,7 +11,7 @@ const services = [
   { code: "05", title: "Business Software & CRM", text: "CRM selection, configuration and workflow design to organize leads, customers, sales activity and service delivery." },
   { code: "06", title: "Database & Systems", text: "Structured databases, system integrations, reporting foundations and dependable information management." },
   { code: "07", title: "Infrastructure", text: "Practical network, cloud, workplace and systems planning that supports secure and dependable operations." },
-  { code: "08", title: "Cybersecurity", text: "Security reviews, access practices, risk awareness, documentation and safeguards built into business processes." },
+  { code: "08", title: "Cybersecurity", text: "Security reviews, audits, access practices, risk awareness, documentation and safeguards built into business processes." },
   { code: "09", title: "Digital Transformation", text: "Modernizing manual work through better software, connected systems, automation and data-driven processes." },
   { code: "10", title: "Technology Consulting", text: "Clear technology roadmaps, vendor guidance, solution evaluation and implementation planning for growing businesses." },
   { code: "11", title: "AI Chatbots & Automation", text: "Customer-service chatbots, internal knowledge assistants and workflow automation designed around useful outcomes." },
@@ -405,7 +405,7 @@ export default function Home() {
               <p>MFI Technologies is a business technology company focused on helping organizations build, manage and improve their digital capabilities.</p>
               <p>Our approach connects commercial goals with practical technology. That means understanding the operation first, recommending the right solution, and staying focused on usability, reliability, security and long-term value.</p>
               <p>We support businesses that need a new website or software product, stronger management of an existing platform, better internal systems, or experienced guidance through a technology decision.</p>
-              <div className="locations"><span className="location">Chicago, IL</span><span className="location">Washington, DC</span><span className="location">Karachi, Pakistan</span><span className="location">Dubai, UAE</span></div>
+              <div className="locations"><span className="location">Chicago, IL</span><span className="location">Dallas, TX</span><span className="location">California</span><span className="location">New York, NY</span><span className="location">Washington, DC</span><span className="location">Karachi, Pakistan</span><span className="location">Dubai, UAE</span></div>
             </div>
           </div>
         </section>
