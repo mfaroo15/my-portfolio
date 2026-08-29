@@ -1,5 +1,5 @@
 import { ButtonLink } from "@/app/components/ButtonLink";
-import { contactEmail } from "@/app/data/site";
+import { contactEmail, whatsappHref, whatsappNumber } from "@/app/data/site";
 
 type CTASectionProps = {
   eyebrow?: string;
@@ -24,6 +24,9 @@ export function CTASection({
           </ButtonLink>
           <a className="button button-dark" href={`mailto:${contactEmail}`}>
             {contactEmail}
+          </a>
+          <a className="button button-dark" href={whatsappHref} rel="noopener noreferrer" target="_blank">
+            WhatsApp {whatsappNumber}
           </a>
         </div>
       </div>

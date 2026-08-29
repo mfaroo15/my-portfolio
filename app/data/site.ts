@@ -1,4 +1,6 @@
 export const contactEmail = "contact@farooqibrahim.com";
+export const whatsappNumber = "+1 224 598 7275";
+export const whatsappHref = "https://wa.me/12245987275";
 
 export const navLinks = [
   { href: "/about", label: "About" },
