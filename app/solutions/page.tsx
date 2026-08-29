@@ -22,8 +22,13 @@ export default function SolutionsPage() {
         <div className="container solution-list">
           {solutions.map((item) => (
             <article className="solution-detail" key={item.title}>
-              <div className="solution-label">{item.label}</div>
-              <h2>{item.title}</h2>
+              <div className="solution-detail-lead">
+                <div className="solution-label">{item.label}</div>
+                <h2>{item.title}</h2>
+                <ButtonLink href="/contact" variant="dark">
+                  Discuss This Solution
+                </ButtonLink>
+              </div>
               <div className="solution-columns">
                 <div>
                   <h3>Business challenge</h3>
@@ -46,9 +51,6 @@ export default function SolutionsPage() {
                   <p>{item.outcome}</p>
                 </div>
               </div>
-              <ButtonLink href="/contact" variant="dark">
-                Discuss This Solution
-              </ButtonLink>
             </article>
           ))}
         </div>
