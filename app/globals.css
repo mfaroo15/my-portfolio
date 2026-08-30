@@ -719,6 +719,11 @@ main {
   line-height: 1.75;
 }
 
+.solution-detail ul {
+  padding-left: 0;
+  list-style: none;
+}
+
 .card-action {
   margin-top: auto;
   padding-top: 26px;
