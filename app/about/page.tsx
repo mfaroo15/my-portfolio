@@ -6,7 +6,7 @@ import { locations, values } from "@/app/data/site";
 
 export const metadata: Metadata = {
   title: "About MFI Technologies",
-  description: "Learn about MFI Technologies, its business-first technology approach, values, markets served and way of working.",
+  description: "Learn about MFI Technologies, its business-first, risk-aware technology approach, values, markets served and way of working.",
 };
 
 export default function AboutPage() {
@@ -29,9 +29,10 @@ export default function AboutPage() {
             <h2 className="section-title">Technology that serves the business first.</h2>
           </div>
           <div className="about-copy light-copy">
-            <p>MFI Technologies helps businesses plan, build and operate the digital systems they rely on, including websites, software, CRM, internal systems, cybersecurity, reporting and automation.</p>
+            <p>MFI Technologies helps businesses plan, build and operate the digital systems they rely on, including websites, software, POS, finance workflows, CRM, internal systems, cybersecurity, IT controls, reporting and automation.</p>
             <p>The mission is to connect business goals with technology that is practical, secure, understandable and valuable over the long term.</p>
-            <p>That means understanding the operation first, recommending the right solution, and staying focused on usability, reliability, security and long-term value.</p>
+            <p>MFI Technologies approaches technology as part of the wider business operation. Our work considers systems, people, workflows, access, documentation, security, controls, reporting, and long-term maintainability.</p>
+            <p>Recommendations are based on operational requirements rather than using technology merely for appearance.</p>
           </div>
         </div>
       </section>

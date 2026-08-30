@@ -2,7 +2,7 @@
 
 import type { FormEvent } from "react";
 import { useState } from "react";
-import { contactEmail, services } from "@/app/data/site";
+import { contactEmail, contactServiceOptions } from "@/app/data/site";
 
 const budgetRanges = ["Not sure yet", "Under $5,000", "$5,000 - $15,000", "$15,000 - $50,000", "$50,000+"];
 const timelines = ["Not sure yet", "As soon as possible", "1 - 3 months", "3 - 6 months", "6+ months"];
@@ -59,9 +59,9 @@ export function ContactForm() {
             <option value="" disabled>
               Select a service
             </option>
-            {services.map((service) => (
-              <option value={service.title} key={service.title}>
-                {service.title}
+            {contactServiceOptions.map((service) => (
+              <option value={service} key={service}>
+                {service}
               </option>
             ))}
           </select>

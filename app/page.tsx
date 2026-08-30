@@ -15,7 +15,7 @@ import {
 
 export const metadata: Metadata = {
   title: "MFI Technologies | Business Technology Solutions",
-  description: "MFI Technologies designs, builds, manages and improves websites, software, business systems, cybersecurity and AI automation.",
+  description: "MFI Technologies designs, builds, manages and improves websites, software, business systems, point-of-sale systems, cybersecurity, IT controls and AI automation.",
 };
 
 export default function Home() {
@@ -28,7 +28,7 @@ export default function Home() {
             Technology built around <span>your business.</span>
           </>
         }
-        text="MFI Technologies designs, builds, manages and improves the digital systems businesses need to operate, serve customers and grow - from websites and software to CRM, infrastructure, cybersecurity and AI automation."
+        text="MFI Technologies designs, builds, manages and improves the digital systems businesses need to operate, serve customers and grow - from websites and software to CRM, POS, finance workflows, infrastructure, cybersecurity and AI automation."
       >
         <ButtonLink href="/contact" variant="primary">
           Discuss Your Project
@@ -53,7 +53,7 @@ export default function Home() {
             <div className="section-kicker">TRANSFORMATION AREAS</div>
             <h2 className="section-title">Enterprise discipline for practical business technology.</h2>
             <p className="section-intro">
-              Inspired by global technology consulting firms, the site now presents MFI Technologies through clear transformation areas: digital platforms, operations, security and growth.
+              MFI Technologies helps businesses connect CRM systems, database systems, point-of-sale systems, inventory workflows, finance management systems, reporting dashboards and workflow automation.
             </p>
             <div className="section-action">
               <ButtonLink href="/solutions" variant="primary">

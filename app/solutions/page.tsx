@@ -6,7 +6,7 @@ import { solutions } from "@/app/data/site";
 
 export const metadata: Metadata = {
   title: "Business Technology Solutions | MFI Technologies",
-  description: "Business technology solutions organized around launches, platform improvements, CRM, automation, cybersecurity, growth and technology roadmaps.",
+  description: "Business technology solutions for digital products, POS and retail operations, CRM, finance systems, automation, cybersecurity, IT controls, infrastructure and technology roadmaps.",
 };
 
 export default function SolutionsPage() {
@@ -15,7 +15,7 @@ export default function SolutionsPage() {
       <PageHero
         eyebrow="BUSINESS SOLUTIONS"
         title="Technology organized around business problems."
-        text="The right solution starts with the operational challenge, not the tool. MFI Technologies connects customer needs, workflows, risk and growth priorities to practical implementation."
+        text="The right solution starts with the operational challenge, not the tool. MFI Technologies connects customer needs, workflows, retail operations, technology risk, controls and growth priorities to practical implementation."
       />
 
       <section className="section solutions">

@@ -6,7 +6,7 @@ import { services } from "@/app/data/site";
 
 export const metadata: Metadata = {
   title: "Technology Services | MFI Technologies",
-  description: "Explore MFI Technologies services for websites, software, support, CRM, systems, infrastructure, cybersecurity, AI automation and digital growth.",
+  description: "Explore MFI Technologies services for websites, software, POS and retail systems, CRM and databases, finance management systems, cybersecurity, IT controls, infrastructure and AI automation.",
 };
 
 export default function ServicesPage() {
@@ -14,8 +14,8 @@ export default function ServicesPage() {
     <main>
       <PageHero
         eyebrow="TECHNOLOGY SERVICES"
-        title="Complete digital capability for growing businesses."
-        text="MFI Technologies brings strategy, implementation and ongoing support together across websites, software, systems, cybersecurity, data and automation."
+        title="Complete digital capability for business operations."
+        text="MFI Technologies brings strategy, implementation and ongoing support together across websites, software, business systems, POS, finance workflows, cybersecurity, IT controls, data and automation."
       />
 
       <section className="section services">

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     default: "MFI Technologies | Business Technology Solutions",
     template: "%s",
   },
-  description: "Business technology solutions for websites, software, systems, cybersecurity, data and AI automation.",
+  description: "Business technology solutions for websites, software, point-of-sale systems, finance management systems, cybersecurity, IT controls, infrastructure and AI automation.",
 };
 
 export default function RootLayout({

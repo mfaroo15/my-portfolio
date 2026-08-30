@@ -5,7 +5,7 @@ import { contactEmail, whatsappHref, whatsappLabel, whatsappNumber } from "@/app
 
 export const metadata: Metadata = {
   title: "Start a Project | MFI Technologies",
-  description: "Contact MFI Technologies to discuss a website, software, CRM, support, cybersecurity, automation or business technology project.",
+  description: "Contact MFI Technologies to discuss websites, software, POS and retail systems, finance management systems, cybersecurity, security audits, IT controls, infrastructure or automation.",
 };
 
 export default function ContactPage() {

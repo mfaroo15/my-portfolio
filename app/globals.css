@@ -220,17 +220,6 @@ main {
     linear-gradient(135deg, #06111f 0%, #0a1b31 55%, #102b50 100%);
 }
 
-.page-hero::after {
-  content: "MFI";
-  position: absolute;
-  right: -3vw;
-  bottom: -8vw;
-  color: rgba(255, 255, 255, 0.035);
-  font-size: clamp(170px, 23vw, 360px);
-  font-weight: 900;
-  line-height: 0.8;
-}
-
 .page-hero::before {
   content: "";
   position: absolute;
