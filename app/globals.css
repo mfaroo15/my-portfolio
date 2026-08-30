@@ -88,37 +88,73 @@ main {
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   min-width: 0;
 }
 
 .brand-mark {
-  width: 42px;
-  height: 42px;
-  flex: 0 0 42px;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
   display: grid;
   place-items: center;
   color: #fff;
-  background: linear-gradient(145deg, var(--blue), #1451ae);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.2), transparent 36%),
+    linear-gradient(135deg, #3b8bff 0%, #1e65d8 52%, #123f93 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  box-shadow:
+    0 14px 30px rgba(46, 125, 246, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.brand-mark::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 11px;
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.6px;
-  box-shadow: 0 8px 25px rgba(46, 125, 246, 0.3);
+}
+
+.brand-mark::after {
+  content: "";
+  position: absolute;
+  right: 9px;
+  bottom: 8px;
+  width: 18px;
+  height: 3px;
+  background: var(--cyan);
+  border-radius: 999px;
+  transform: rotate(-32deg);
+  box-shadow: 0 0 18px rgba(77, 216, 232, 0.7);
+}
+
+.brand-mark span {
+  position: relative;
+  z-index: 1;
+  font-size: 13px;
+  font-weight: 950;
+  letter-spacing: 0.8px;
 }
 
 .brand-name {
   display: block;
-  font-size: 16px;
-  font-weight: 850;
+  color: #f7fbff;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.1px;
 }
 
 .brand-tag {
   display: block;
-  margin-top: 2px;
+  margin-top: 6px;
   color: #91a5bf;
-  font-size: 9px;
-  letter-spacing: 1.2px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
 }
 
 .desktop-nav {
@@ -1248,9 +1284,10 @@ a:focus-visible {
   }
 
   .brand-mark {
-    width: 38px;
-    height: 38px;
-    flex-basis: 38px;
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+    border-radius: 13px;
   }
 
   .brand-name {

@@ -30,7 +30,9 @@ export function Header() {
     <header className="site-header">
       <div className="container header-inner">
         <Link className="brand" href="/" aria-label="MFI Technologies home">
-          <span className="brand-mark">MFI</span>
+          <span className="brand-mark">
+            <span>MFI</span>
+          </span>
           <span>
             <span className="brand-name">MFI Technologies</span>
             <span className="brand-tag">BUSINESS TECHNOLOGY SOLUTIONS</span>
