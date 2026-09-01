@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 900" role="img" aria-labelledby="title desc">
+  <title id="title">MFI Technologies</title>
+  <desc id="desc">MFI Technologies business technology solutions logo with a globe mark.</desc>
+  <rect width="1800" height="900" fill="#ffffff"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M238 429c10-119 111-221 238-238 35-5 70-2 102 7" stroke="#121c21" stroke-width="11"/>
+    <path d="M241 436c12 116 111 211 234 226 127 15 245-55 295-163" stroke="#5d8f26" stroke-width="26"/>
+    <path d="M704 213c42 35 68 86 72 143" stroke="#121c21" stroke-width="9"/>
+    <path d="M236 416c1-145 121-263 268-263s267 118 267 263-120 263-267 263-268-118-268-263Z" stroke="#121c21" stroke-width="4" opacity=".18"/>
+  </g>
+  <g fill="#121c21">
+    <path d="M304 219c17-10 38-18 64-24 24-6 46-8 67-7l-17 20 19 7-17 8-24-5-17 16-23-3-11 19-30 1-11-14 12-10-12-8Z"/>
+    <path d="M445 191l54 1 25 14-14 10 33 15-37 9-44-15-44-4 17-15-14-8Z"/>
+    <path d="M559 208l52 13 39 25 8 26-37-10-15-21-35-5-21-17Z"/>
+    <path d="M273 274l51-16 34 13 3 31-30 18-11 34-32 23-25-13-7-43Z"/>
+    <path d="M362 284l58-36 48 14 45 29 24 51-21 36-48 8-28-18-42-1-35-23-21-31Z"/>
+    <path d="M531 286l51 1 24 34-19 30-32 7-21-25Z"/>
+    <path d="M626 299l57 21 25 49-16 54-33 27-27-14 11-41-23-16 10-39Z"/>
+    <path d="M430 385l43 13 26 40-9 56-34 40 7 67-34-25-28-65-38-23-24-43 27-39Z"/>
+    <path d="M507 460l49-16 41 25 38 43-11 57-49 55-37-39-8-54-31-26Z"/>
+    <path d="M305 486l35 21 30 58 36 41-5 39-47-30-43-49-23-52Z"/>
+    <path d="M654 479l51-15 28 18-21 59-46 49-40 23 23-58Z"/>
+  </g>
+  <rect x="825" y="214" width="8" height="417" fill="#121c21"/>
+  <g fill="#121c21">
+    <path d="M941 274h68l133 171 133-171h66v234h-60V354l-116 142h-48l-116-142v154h-60Z"/>
+    <path d="M1405 274h268v49h-208c-18 0-25 7-25 25v34h174v47h-174v79h-35Z"/>
+    <path d="M1724 274h62v234h-62Z"/>
+  </g>
+  <text x="942" y="606" fill="#5a8a2b" font-family="Arial, Helvetica, sans-serif" font-size="69" font-weight="700" letter-spacing="28">TECHNOLOGIES</text>
+  <g fill="#121c21" font-family="Arial, Helvetica, sans-serif" font-size="45" font-weight="700" letter-spacing="22">
+    <text x="418" y="735">BUSINESS TECHNOLOGY SOLUTIONS</text>
+  </g>
+  <rect x="246" y="718" width="128" height="7" fill="#5a8a2b"/>
+  <rect x="1654" y="718" width="128" height="7" fill="#5a8a2b"/>
+</svg>
