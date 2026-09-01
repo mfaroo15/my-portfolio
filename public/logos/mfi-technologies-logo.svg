@@ -1,11 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
   <title id="title">MFI Technologies</title>
   <desc id="desc">Typography-only MFI Technologies logo with business technology solutions tagline.</desc>
-  <rect width="1200" height="300" fill="#ffffff"/>
   <g font-family="Arial, Helvetica, sans-serif">
-    <text x="70" y="145" fill="#11181a" font-size="112" font-weight="900" letter-spacing="4">MFI</text>
-    <text x="345" y="141" fill="#11181a" font-size="54" font-weight="700" letter-spacing="9">TECHNOLOGIES</text>
-    <rect x="345" y="164" width="661" height="4" fill="#5f8f2f"/>
-    <text x="70" y="226" fill="#5f8f2f" font-size="28" font-weight="700" letter-spacing="14">BUSINESS TECHNOLOGY SOLUTIONS</text>
+    <text x="70" y="145" fill="#f7fbff" font-size="112" font-weight="900" letter-spacing="4">MFI</text>
+    <text x="345" y="141" fill="#d9e4f1" font-size="54" font-weight="700" letter-spacing="9">TECHNOLOGIES</text>
+    <rect x="345" y="164" width="661" height="4" fill="#6fa43a"/>
+    <text x="70" y="226" fill="#8fb861" font-size="28" font-weight="700" letter-spacing="14">BUSINESS TECHNOLOGY SOLUTIONS</text>
   </g>
 </svg>

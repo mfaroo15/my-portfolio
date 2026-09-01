@@ -96,7 +96,6 @@ main {
   display: block;
   width: clamp(178px, 18vw, 255px);
   height: auto;
-  border-radius: 4px;
 }
 
 .desktop-nav {
