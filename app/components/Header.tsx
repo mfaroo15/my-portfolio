@@ -35,8 +35,8 @@ export function Header() {
             className="brand-logo"
             src="/logos/mfi-technologies-logo.svg"
             alt="MFI Technologies"
-            width={360}
-            height={180}
+            width={1200}
+            height={300}
             unoptimized
           />
         </Link>
