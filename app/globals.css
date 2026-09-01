@@ -164,23 +164,22 @@ main {
 .page-hero {
   position: relative;
   overflow: hidden;
-  color: #fff;
+  color: var(--ink);
   background:
-    radial-gradient(circle at 78% 30%, rgba(88, 127, 43, 0.22), transparent 28%),
-    radial-gradient(circle at 20% 100%, rgba(111, 157, 58, 0.13), transparent 30%),
-    linear-gradient(135deg, #071112 0%, #10191b 56%, #1c2a2d 100%);
+    linear-gradient(180deg, rgba(237, 244, 232, 0.76), rgba(255, 255, 255, 0) 44%),
+    #fff;
 }
 
 .page-hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  opacity: 0.12;
+  opacity: 0.58;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+    linear-gradient(rgba(16, 25, 27, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 25, 27, 0.055) 1px, transparent 1px);
   background-size: 72px 72px;
-  mask-image: linear-gradient(to right, transparent 5%, #000 100%);
+  mask-image: linear-gradient(to right, transparent 8%, #000 100%);
 }
 
 .page-hero-inner {
@@ -199,7 +198,7 @@ main {
   align-items: center;
   gap: 12px;
   margin-bottom: 24px;
-  color: #a5c77d;
+  color: var(--green);
   font-size: 10px;
   font-weight: 900;
   letter-spacing: 3px;
@@ -222,13 +221,13 @@ main {
 }
 
 .page-hero h1 span {
-  color: #a7cb7d;
+  color: var(--green);
 }
 
 .page-hero p {
   max-width: 680px;
   margin: 27px 0 31px;
-  color: #b9c7d8;
+  color: var(--muted);
   font-size: 17px;
   line-height: 1.72;
 }
@@ -243,14 +242,15 @@ main {
 .button {
   min-height: 52px;
   padding: 0 24px;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  color: #fff;
+  border: 1px solid rgba(16, 25, 27, 0.28);
+  color: var(--ink);
   transition: transform 160ms ease, background 160ms ease, color 160ms ease, border-color 160ms ease;
 }
 
 .button:hover {
   transform: translateY(-2px);
-  background: #fff;
+  border-color: var(--green);
+  background: var(--soft-green);
   color: var(--ink);
 }
 
@@ -275,10 +275,10 @@ main {
   position: relative;
   padding: 28px;
   overflow: hidden;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.045));
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(145deg, rgba(16, 25, 27, 0.92), rgba(28, 42, 45, 0.88));
+  border: 1px solid rgba(16, 25, 27, 0.16);
   border-radius: 22px;
-  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 28px 70px rgba(16, 25, 27, 0.18);
   backdrop-filter: blur(12px);
 }
 
