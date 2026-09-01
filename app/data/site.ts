@@ -5,9 +5,9 @@ export const whatsappHref = "https://wa.me/923323132729";
 
 export const navLinks = [
   { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/solutions", label: "Solutions" },
-  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
