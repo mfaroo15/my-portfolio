@@ -4,14 +4,14 @@
   --ink: #06111f;
   --navy: #10191b;
   --navy-2: #1c2a2d;
-  --accent: #9a7a35;
-  --accent-2: #b8954a;
-  --paper: #f7f8f6;
+  --accent: #263133;
+  --accent-2: #445052;
+  --paper: #fbfaf6;
   --white: #ffffff;
   --text: #182425;
-  --muted: #62706c;
+  --muted: #66706f;
   --line: rgba(16, 25, 27, 0.13);
-  --soft-accent: #f4efe5;
+  --soft-accent: #f3f1ea;
 }
 
 @theme inline {
@@ -158,7 +158,7 @@ main {
   overflow: hidden;
   color: var(--ink);
   background:
-    linear-gradient(180deg, rgba(244, 239, 229, 0.76), rgba(255, 255, 255, 0) 44%),
+    linear-gradient(180deg, rgba(243, 241, 234, 0.88), rgba(255, 255, 255, 0) 44%),
     #fff;
 }
 
@@ -279,7 +279,7 @@ main {
   position: absolute;
   inset: auto -30% -38% 18%;
   height: 170px;
-  background: radial-gradient(circle, rgba(184, 149, 74, 0.18), transparent 62%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12), transparent 62%);
 }
 
 .system-top {
@@ -333,7 +333,7 @@ main {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
   background:
-    linear-gradient(145deg, rgba(154, 122, 53, 0.24), rgba(255, 255, 255, 0.03)),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03)),
     repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.055) 0 1px, transparent 1px 34px);
 }
 
@@ -343,8 +343,8 @@ main {
   display: grid;
   place-items: center;
   margin-bottom: auto;
-  color: #d8c08b;
-  border: 1px solid rgba(216, 192, 139, 0.34);
+  color: #d5dddc;
+  border: 1px solid rgba(213, 221, 220, 0.3);
   border-radius: 999px;
   font-size: 11px;
   font-weight: 900;
@@ -380,7 +380,7 @@ main {
 }
 
 .dashboard-rail span:nth-child(2) {
-  background: rgba(154, 122, 53, 0.22);
+  background: rgba(255, 255, 255, 0.09);
 }
 
 .system-stack {
@@ -435,7 +435,7 @@ main {
 .value-item small {
   display: block;
   margin-bottom: 8px;
-  color: #f2e8cf;
+  color: #f5f2e9;
   font-size: 8px;
   font-weight: 900;
   letter-spacing: 2px;
@@ -494,7 +494,7 @@ main {
 .transformation-section {
   color: #fff;
   background:
-    linear-gradient(135deg, rgba(154, 122, 53, 0.14), transparent 38%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 38%),
     linear-gradient(135deg, var(--ink), var(--navy-2));
 }
 
@@ -529,7 +529,7 @@ main {
 }
 
 .transformation-card span {
-  color: #d8c08b;
+  color: #d5dddc;
   font-size: 9px;
   font-weight: 900;
   letter-spacing: 2px;
@@ -573,7 +573,7 @@ main {
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   background:
-    linear-gradient(180deg, rgba(154, 122, 53, 0.045), rgba(255, 255, 255, 0)),
+    linear-gradient(180deg, rgba(16, 25, 27, 0.025), rgba(255, 255, 255, 0)),
     #fff;
   transition: background 180ms ease, color 180ms ease, transform 180ms ease;
 }
@@ -624,7 +624,7 @@ main {
   flex-direction: column;
   padding: 27px;
   background:
-    linear-gradient(180deg, rgba(154, 122, 53, 0.045), rgba(255, 255, 255, 0)),
+    linear-gradient(180deg, rgba(16, 25, 27, 0.025), rgba(255, 255, 255, 0)),
     #fff;
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -634,7 +634,7 @@ main {
 
 .service-card:hover {
   transform: translateY(-5px);
-  border-color: #d2bf91;
+  border-color: rgba(16, 25, 27, 0.26);
   box-shadow: 0 18px 45px rgba(14, 38, 67, 0.1);
 }
 
@@ -906,7 +906,7 @@ main {
   gap: 44px;
   align-items: start;
   background:
-    linear-gradient(90deg, rgba(154, 122, 53, 0.06), rgba(255, 255, 255, 0) 28%),
+    linear-gradient(90deg, rgba(16, 25, 27, 0.045), rgba(255, 255, 255, 0) 28%),
     #fff;
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -997,7 +997,7 @@ main {
 .menu-toggle:focus-visible,
 .button:focus-visible,
 a:focus-visible {
-  outline: 3px solid rgba(154, 122, 53, 0.32);
+  outline: 3px solid rgba(38, 49, 51, 0.24);
   outline-offset: 3px;
 }
 
@@ -1139,7 +1139,7 @@ a:focus-visible {
 
   .mobile-nav a[aria-current="page"] {
     color: var(--ink);
-    border-color: rgba(154, 122, 53, 0.55);
+    border-color: rgba(38, 49, 51, 0.34);
     background: var(--soft-accent);
   }
 
