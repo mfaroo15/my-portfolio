@@ -80,9 +80,9 @@ export const workflowProblems = [
 ];
 
 export const proofPoints = [
-  { value: "01", label: "accountable delivery partner from first diagnosis to support" },
-  { value: "4", label: "focus areas: build, connect, protect and improve" },
-  { value: "100%", label: "built around your business accounts, tools and ownership" },
+  { value: "Single Partner", label: "From diagnosis to delivery, support and improvement." },
+  { value: "4 Core Areas", label: "Build, connect, protect and improve the systems your business depends on." },
+  { value: "Client-Owned", label: "Built around your business accounts, tools, data and long-term ownership." },
 ];
 
 export const deliveryPrinciples = [
