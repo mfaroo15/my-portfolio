@@ -7,10 +7,13 @@ import { ServiceCard } from "@/app/components/ServiceCard";
 import {
   capabilities,
   coreCapabilities,
+  deliveryPrinciples,
   homeServicePreview,
   homeSolutionPreview,
+  proofPoints,
   processSteps,
   transformationAreas,
+  workflowProblems,
 } from "@/app/data/site";
 
 export const metadata: Metadata = {
@@ -25,13 +28,13 @@ export default function Home() {
         eyebrow="WEB / SOFTWARE / SYSTEMS / AI"
         title={
           <>
-            Technology built around <span>your business.</span>
+            We diagnose, build and improve <span>business technology.</span>
           </>
         }
-        text="MFI Technologies designs, builds, manages and improves the digital systems businesses need to operate, serve customers and grow - from websites and software to CRM, POS, finance workflows, infrastructure, cybersecurity and AI automation."
+        text="MFI Technologies helps companies turn operational friction into dependable websites, software, CRM, POS, finance workflows, reporting systems, cybersecurity practices and AI automation."
       >
         <ButtonLink href="/contact" variant="primary">
-          Discuss Your Project
+          Book a Technology Diagnostic
         </ButtonLink>
         <ButtonLink href="/services">Explore Services</ButtonLink>
       </PageHero>
@@ -42,6 +45,40 @@ export default function Home() {
             <div className="value-item" key={item.label}>
               <small>{item.label}</small>
               <strong>{item.title}</strong>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="section diagnostic-section">
+        <div className="container diagnostic-layout">
+          <div>
+            <div className="section-kicker">BUSINESS SYSTEMS DIAGNOSTIC</div>
+            <h2 className="section-title">Find the work that quietly drains time, margin and focus.</h2>
+          </div>
+          <div className="diagnostic-copy">
+            <p>
+              Your team may already use modern tools, but the work tied to customers, sales, operations and reporting can still depend on manual checking, copying and chasing.
+            </p>
+            <p>
+              MFI Technologies helps identify the costly workflow, put structure around the fix and build the system that makes the improvement stick.
+            </p>
+          </div>
+        </div>
+        <div className="container diagnostic-grid" aria-label="Common technology problems">
+          {workflowProblems.map((item) => (
+            <article className="diagnostic-card" key={item.label}>
+              <span>{item.label}</span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+        <div className="container proof-grid" aria-label="MFI Technologies engagement proof points">
+          {proofPoints.map((item) => (
+            <div className="proof-item" key={item.value}>
+              <strong>{item.value}</strong>
+              <span>{item.label}</span>
             </div>
           ))}
         </div>
@@ -97,8 +134,8 @@ export default function Home() {
         <div className="container">
           <SectionHeading
             eyebrow="SOLUTIONS PREVIEW"
-            title="One technology partner across the business journey."
-            text="Whether you are launching something new, improving an existing platform or modernizing daily operations, we bring strategy and implementation together."
+            title="Practical transformation without losing the business context."
+            text="Inspired by outcome-led digital transformation firms, this site now puts the operating problem first: what needs to be built, connected, protected or improved."
           />
           <div className="solution-grid">
             {homeSolutionPreview.map((item) => (
@@ -113,6 +150,27 @@ export default function Home() {
             <ButtonLink href="/solutions" variant="dark">
               Explore Solutions
             </ButtonLink>
+          </div>
+        </div>
+      </section>
+
+      <section className="section assurance-section">
+        <div className="container assurance-layout">
+          <div>
+            <div className="section-kicker">DELIVERY ASSURANCE</div>
+            <h2 className="section-title">Built with ownership, security and continuity in mind.</h2>
+            <p className="section-intro">
+              The goal is not just a polished launch. It is a usable system your team can trust, understand and keep improving.
+            </p>
+          </div>
+          <div className="assurance-grid">
+            {deliveryPrinciples.map((item) => (
+              <article className="assurance-item" key={item.label}>
+                <span>{item.label}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>

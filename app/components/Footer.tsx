@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { contactEmail, navLinks, whatsappHref, whatsappLabel, whatsappNumber } from "@/app/data/site";
+import { contactEmail, legalLinks, navLinks, whatsappHref, whatsappLabel, whatsappNumber } from "@/app/data/site";
 
 export function Footer() {
   return (
@@ -15,6 +15,11 @@ export function Footer() {
         </div>
         <nav className="footer-links" aria-label="Footer navigation">
           {navLinks.map((item) => (
+            <Link href={item.href} key={item.href}>
+              {item.label}
+            </Link>
+          ))}
+          {legalLinks.map((item) => (
             <Link href={item.href} key={item.href}>
               {item.label}
             </Link>

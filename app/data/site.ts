@@ -11,6 +11,11 @@ export const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
+export const legalLinks = [
+  { href: "/privacy", label: "Privacy Policy" },
+  { href: "/terms", label: "Terms & Conditions" },
+];
+
 export const capabilities = [
   "React",
   "Next.js",
@@ -53,6 +58,48 @@ export const transformationAreas = [
     label: "GROWTH",
     title: "Data, search and intelligent automation",
     text: "Analytics, technical SEO, reporting and AI assistants that help the website and systems become business assets.",
+  },
+];
+
+export const workflowProblems = [
+  {
+    label: "MANUAL HANDOFFS",
+    title: "Work copied between tools",
+    text: "Customer records, invoices, reports and approvals should move through the business without someone re-keying the same information twice.",
+  },
+  {
+    label: "SLOW VISIBILITY",
+    title: "Decisions waiting on reports",
+    text: "Dashboards and operating views help managers see sales, stock, tickets, finance activity and project status before the issue becomes expensive.",
+  },
+  {
+    label: "FRAGILE SYSTEMS",
+    title: "Daily work depending on one person",
+    text: "We document workflows, tighten access, improve systems and reduce the dependency on memory, inboxes and scattered spreadsheets.",
+  },
+];
+
+export const proofPoints = [
+  { value: "01", label: "accountable delivery partner from first diagnosis to support" },
+  { value: "4", label: "focus areas: build, connect, protect and improve" },
+  { value: "100%", label: "built around your business accounts, tools and ownership" },
+];
+
+export const deliveryPrinciples = [
+  {
+    label: "OWNERSHIP",
+    title: "Your systems stay yours",
+    text: "Accounts, source files, hosting access, documentation and operating knowledge are handled so the business keeps control.",
+  },
+  {
+    label: "SECURITY",
+    title: "Risk is considered early",
+    text: "Access, data handling, permissions, backups and vendor dependencies are reviewed as part of practical delivery.",
+  },
+  {
+    label: "CONTINUITY",
+    title: "Launch is not the finish line",
+    text: "Support, monitoring, documentation and improvement planning help the solution keep working after the first release.",
   },
 ];
 
@@ -322,6 +369,8 @@ export const solutions = [
 ];
 
 export const homeSolutionPreview = solutions.slice(0, 4);
+
+export const legalUpdated = "September 2, 2026";
 
 export const contactServiceOptions = [
   "Website Development",

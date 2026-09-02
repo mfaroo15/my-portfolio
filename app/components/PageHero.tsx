@@ -28,8 +28,8 @@ export function PageHero({ eyebrow, title, text, children }: PageHeroProps) {
           <div className="system-dashboard">
             <div className="dashboard-main">
               <span>01</span>
-              <strong>Business Technology</strong>
-              <p>Strategy, systems, security and growth aligned into one delivery path.</p>
+              <strong>Diagnostic to Delivery</strong>
+              <p>Map the operating problem, build the right system and keep improving it after launch.</p>
             </div>
             <div className="dashboard-rail">
               <span />
@@ -40,15 +40,15 @@ export function PageHero({ eyebrow, title, text, children }: PageHeroProps) {
           <div className="system-stack">
             <div>
               <span>Plan</span>
-              <strong>Roadmap</strong>
+              <strong>Diagnose</strong>
             </div>
             <div>
               <span>Build</span>
-              <strong>Platform</strong>
+              <strong>Deliver</strong>
             </div>
             <div>
               <span>Run</span>
-              <strong>Support</strong>
+              <strong>Improve</strong>
             </div>
           </div>
         </aside>
