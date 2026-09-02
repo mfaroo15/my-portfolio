@@ -1015,10 +1015,9 @@ a:focus-visible {
 }
 
 .site-footer {
-  padding: 36px 0;
+  padding: 36px 0 108px;
   color: var(--muted);
   background: var(--soft-accent);
-  border-top: 1px solid var(--line);
   font-size: 12px;
 }
 
@@ -1062,12 +1061,29 @@ a:focus-visible {
   grid-column: 1 / -1;
   padding-top: 20px;
   border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.footer-credit {
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.footer-credit strong {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 950;
 }
 
 .floating-whatsapp {
   position: fixed;
   right: 24px;
-  bottom: 24px;
+  bottom: 12px;
   z-index: 120;
   min-height: 58px;
   display: inline-flex;
@@ -1297,9 +1313,13 @@ a:focus-visible {
     justify-content: center;
   }
 
+  .footer-copy {
+    justify-content: center;
+  }
+
   .floating-whatsapp {
     right: 15px;
-    bottom: 15px;
+    bottom: 10px;
     min-height: 52px;
     max-width: calc(100% - 30px);
     padding: 0 18px 0 12px;

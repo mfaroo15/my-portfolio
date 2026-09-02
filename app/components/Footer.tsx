@@ -20,7 +20,12 @@ export function Footer() {
             </Link>
           ))}
         </nav>
-        <div className="footer-copy">Copyright {new Date().getFullYear()} MFI Technologies</div>
+        <div className="footer-copy">
+          <span>Copyright {new Date().getFullYear()} MFI Technologies</span>
+          <span className="footer-credit">
+            Designed &amp; Maintained by <strong>MFI Technologies</strong>
+          </span>
+        </div>
       </div>
     </footer>
   );
