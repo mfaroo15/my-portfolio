@@ -574,9 +574,7 @@ main {
   padding: 27px;
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background:
-    linear-gradient(180deg, rgba(16, 25, 27, 0.025), rgba(255, 255, 255, 0)),
-    #fff;
+  background: var(--soft-accent);
   transition: background 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
@@ -625,9 +623,7 @@ main {
   display: flex;
   flex-direction: column;
   padding: 27px;
-  background:
-    linear-gradient(180deg, rgba(16, 25, 27, 0.025), rgba(255, 255, 255, 0)),
-    #fff;
+  background: var(--soft-accent);
   border: 1px solid var(--line);
   border-radius: 14px;
   box-shadow: 0 10px 30px rgba(14, 38, 67, 0.04);
@@ -911,9 +907,7 @@ main {
   grid-template-columns: minmax(260px, 0.42fr) 1fr;
   gap: 44px;
   align-items: start;
-  background:
-    linear-gradient(90deg, rgba(16, 25, 27, 0.045), rgba(255, 255, 255, 0) 28%),
-    #fff;
+  background: var(--soft-accent);
   border: 1px solid var(--line);
   border-radius: 14px;
 }
@@ -1082,21 +1076,27 @@ a:focus-visible {
 
 .floating-whatsapp {
   position: fixed;
-  right: 24px;
-  bottom: 12px;
+  right: 18px;
+  bottom: 18px;
   z-index: 120;
-  min-height: 58px;
+  width: 48px;
+  height: 48px;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 13px;
-  padding: 0 24px 0 16px;
+  padding: 0;
   color: #fff;
   background: #25d366;
   border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 999px;
-  box-shadow: 0 18px 45px rgba(6, 17, 31, 0.22);
+  box-shadow: 0 12px 28px rgba(6, 17, 31, 0.2);
   font-size: 15px;
   font-weight: 900;
+}
+
+.floating-whatsapp > span:last-child {
+  display: none;
 }
 
 .floating-whatsapp:hover {
@@ -1104,8 +1104,8 @@ a:focus-visible {
 }
 
 .floating-whatsapp-icon {
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
   display: grid;
   place-items: center;
   color: #25d366;
@@ -1318,16 +1318,15 @@ a:focus-visible {
   }
 
   .floating-whatsapp {
-    right: 15px;
-    bottom: 10px;
-    min-height: 52px;
-    max-width: calc(100% - 30px);
-    padding: 0 18px 0 12px;
-    font-size: 13px;
+    right: 14px;
+    bottom: 14px;
+    width: 44px;
+    height: 44px;
+    font-size: 12px;
   }
 
   .floating-whatsapp-icon {
-    width: 32px;
-    height: 32px;
+    width: 26px;
+    height: 26px;
   }
 }
