@@ -218,11 +218,13 @@ export default function Home() {
       <section className="tech-section" aria-label="Technology capabilities">
         <div className="container">
           <div className="tech-label">TECHNOLOGY CAPABILITIES</div>
-          <div className="tech-list">
+          <div className="tech-capability-grid">
             {capabilities.map((item) => (
-              <span className="tech-item" key={item}>
-                {item}
-              </span>
+              <article className="tech-capability" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+                <span>{item.tools}</span>
+              </article>
             ))}
           </div>
         </div>

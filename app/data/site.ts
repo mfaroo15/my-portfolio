@@ -17,18 +17,26 @@ export const legalLinks = [
 ];
 
 export const capabilities = [
-  "React",
-  "Next.js",
-  "Node.js",
-  "WordPress",
-  "Shopify",
-  "Python",
-  "Django",
-  "SQL",
-  "Power BI",
-  "Tableau",
-  "Microsoft 365",
-  "Cloud & APIs",
+  {
+    title: "Web Platforms",
+    text: "Fast websites, service pages, portals and CMS-backed experiences.",
+    tools: "Next.js, React, WordPress, Shopify",
+  },
+  {
+    title: "Business Applications",
+    text: "Custom tools for operations, customers, staff and internal workflows.",
+    tools: "Node.js, Python, Django, APIs",
+  },
+  {
+    title: "Data & Reporting",
+    text: "Dashboards and structured views for sales, finance and operations.",
+    tools: "SQL, Power BI, Tableau",
+  },
+  {
+    title: "Connected Operations",
+    text: "CRM, POS, Microsoft 365 and workflow automation that reduce manual work.",
+    tools: "CRM, POS, Microsoft 365, Cloud integrations",
+  },
 ];
 
 export const coreCapabilities = [
