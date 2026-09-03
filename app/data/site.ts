@@ -34,8 +34,8 @@ export const capabilities = [
   },
   {
     title: "Connected Operations",
-    text: "CRM, POS, Microsoft 365 and workflow automation that reduce manual work.",
-    tools: "CRM, POS, Microsoft 365, Cloud integrations",
+    text: "CRM, POS, Microsoft 365, cloud tools and workflow automation that reduce manual work.",
+    tools: "CRM, POS, Microsoft 365, Cloud & APIs",
   },
 ];
 
@@ -297,6 +297,76 @@ export const services = [
     value: "A website that is easier to find, easier to measure and easier for visitors to act on.",
     deliverables: ["Technical SEO review", "Analytics setup", "Performance improvements", "Conversion recommendations"],
   },
+  {
+    code: "17",
+    title: "Cloud Services",
+    summary: "Cloud setup, migration, hosting, storage, backups and practical support for business cloud tools.",
+    value: "A more flexible technology environment with clearer access, safer storage and better continuity for daily operations.",
+    deliverables: ["Cloud setup", "Hosting coordination", "Storage planning", "Backup configuration", "Migration support"],
+  },
+  {
+    code: "18",
+    title: "API Integration",
+    summary: "Connecting websites, CRMs, POS, payment systems, accounting tools, inventory systems and third-party platforms.",
+    value: "Less duplicate entry and smoother information flow between the systems your team already uses.",
+    deliverables: ["Integration planning", "API connection setup", "Data flow mapping", "Testing and documentation"],
+  },
+  {
+    code: "19",
+    title: "E-commerce Development",
+    summary: "Online stores, product catalogs, payment setup, order workflows and shopping experiences built for business goals.",
+    value: "A dependable sales channel that supports products, payments, orders, customer experience and operational visibility.",
+    deliverables: ["Store setup", "Product catalog structure", "Payment configuration", "Order workflow planning", "Launch support"],
+  },
+  {
+    code: "20",
+    title: "Mobile App Development",
+    summary: "Mobile applications for customers, staff, bookings, field work, delivery, dashboards and business workflows.",
+    value: "A mobile experience that gives customers or teams easier access to the tools and information they need.",
+    deliverables: ["App requirements planning", "Interface design", "Mobile app development", "Testing", "Release support"],
+  },
+  {
+    code: "21",
+    title: "SaaS Product Development",
+    summary: "Subscription platforms, MVPs, admin dashboards, user accounts, billing flows and product foundations.",
+    value: "A structured software product foundation that can be launched, measured and improved over time.",
+    deliverables: ["MVP scoping", "User account flows", "Admin dashboard", "Billing workflow planning", "Product roadmap"],
+  },
+  {
+    code: "22",
+    title: "Data Migration & Cleanup",
+    summary: "Moving data from spreadsheets, old systems or disconnected tools into cleaner CRMs, databases and business platforms.",
+    value: "More reliable records, cleaner reporting and a better foundation for automation, support and management decisions.",
+    deliverables: ["Data review", "Field mapping", "Data cleanup", "Migration support", "Validation checks"],
+  },
+  {
+    code: "23",
+    title: "Backup & Disaster Recovery",
+    summary: "Backup planning, recovery processes, file protection, website recovery and business continuity support.",
+    value: "Better preparation for downtime, data loss, website issues and unexpected technology interruptions.",
+    deliverables: ["Backup review", "Recovery planning", "Website recovery support", "File protection guidance", "Continuity documentation"],
+  },
+  {
+    code: "24",
+    title: "Microsoft 365 & Google Workspace Setup",
+    summary: "Business email, users, permissions, shared drives, domains, security settings and collaboration tool setup.",
+    value: "A cleaner workplace technology setup that supports communication, collaboration, access control and administration.",
+    deliverables: ["Email setup", "User and permission setup", "Shared drive structure", "Domain coordination", "Security settings review"],
+  },
+  {
+    code: "25",
+    title: "Domain, Email & Hosting Management",
+    summary: "DNS, professional email setup, SSL, hosting, website deployment and domain troubleshooting.",
+    value: "Reliable website and email foundations with fewer launch issues, access problems and configuration surprises.",
+    deliverables: ["DNS management", "Domain configuration", "Email setup", "SSL coordination", "Hosting support"],
+  },
+  {
+    code: "26",
+    title: "QA & Software Testing",
+    summary: "Testing websites, software and forms before launch across functionality, responsiveness, usability and performance basics.",
+    value: "A cleaner release with fewer avoidable bugs, broken forms, layout issues and customer-facing problems.",
+    deliverables: ["Functional testing", "Responsive testing", "Form testing", "Bug reporting", "Launch readiness checks"],
+  },
 ];
 
 export const homeServicePreview = services.slice(0, 6);
@@ -394,5 +464,15 @@ export const contactServiceOptions = [
   "Technical Support",
   "AI & Automation",
   "Digital Transformation",
+  "Cloud Services",
+  "API Integration",
+  "E-commerce Development",
+  "Mobile App Development",
+  "SaaS Product Development",
+  "Data Migration & Cleanup",
+  "Backup & Disaster Recovery",
+  "Microsoft 365 & Google Workspace Setup",
+  "Domain, Email & Hosting Management",
+  "QA & Software Testing",
   "Other",
 ];
