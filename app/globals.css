@@ -79,7 +79,7 @@ main {
 }
 
 .header-inner {
-  min-height: 94px;
+  min-height: 104px;
   display: grid;
   grid-template-columns: 1fr auto auto;
   align-items: center;
@@ -96,18 +96,18 @@ main {
 
 .brand-logo {
   display: block;
-  width: clamp(236px, 21vw, 322px);
+  width: clamp(260px, 22vw, 348px);
   height: auto;
 }
 
 .brand-tagline {
   display: block;
-  margin-top: 3px;
+  margin-top: 4px;
   color: var(--ink);
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 900;
-  letter-spacing: 2.2px;
-  line-height: 1;
+  letter-spacing: 0.9px;
+  line-height: 1.15;
   white-space: nowrap;
 }
 
@@ -1508,8 +1508,8 @@ a:focus-visible {
 
   .brand-tagline {
     margin-top: 2px;
-    font-size: 7px;
-    letter-spacing: 1.1px;
+    font-size: 9px;
+    letter-spacing: 0.3px;
   }
 
   .page-hero-inner {
