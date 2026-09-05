@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -31,14 +30,10 @@ export function Header() {
     <header className="site-header">
       <div className="container header-inner">
         <Link className="brand" href="/" aria-label="MFI Technologies home">
-          <Image
-            className="brand-logo"
-            src="/logos/mfi-technologies-logo.svg"
-            alt="MFI Technologies"
-            width={1200}
-            height={190}
-            unoptimized
-          />
+          <span className="brand-wordmark" aria-hidden="true">
+            <span className="brand-mfi">MFI</span>
+            <span className="brand-technologies">TECHNOLOGIES</span>
+          </span>
           <span className="brand-tagline">Business Technology Solutions</span>
         </Link>
 
