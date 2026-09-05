@@ -79,7 +79,7 @@ main {
 }
 
 .header-inner {
-  min-height: 78px;
+  min-height: 94px;
   display: grid;
   grid-template-columns: 1fr auto auto;
   align-items: center;
@@ -95,7 +95,7 @@ main {
 
 .brand-logo {
   display: block;
-  width: clamp(196px, 20vw, 278px);
+  width: clamp(260px, 24vw, 360px);
   height: auto;
 }
 
