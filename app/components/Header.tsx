@@ -39,7 +39,7 @@ export function Header() {
             height={190}
             unoptimized
           />
-          <span className="brand-tagline">BUSINESS TECHNOLOGY SOLUTIONS</span>
+          <span className="brand-tagline">Business Technology Solutions</span>
         </Link>
 
         <nav className="desktop-nav" aria-label="Main navigation">
