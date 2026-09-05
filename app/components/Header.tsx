@@ -36,9 +36,10 @@ export function Header() {
             src="/logos/mfi-technologies-logo.svg"
             alt="MFI Technologies"
             width={1200}
-            height={300}
+            height={190}
             unoptimized
           />
+          <span className="brand-tagline">BUSINESS TECHNOLOGY SOLUTIONS</span>
         </Link>
 
         <nav className="desktop-nav" aria-label="Main navigation">
