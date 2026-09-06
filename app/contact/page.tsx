@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/app/contact/ContactForm";
 import { PageHero } from "@/app/components/PageHero";
-import { contactEmail, whatsappHref, whatsappLabel, whatsappNumber } from "@/app/data/site";
+import { contactEmail } from "@/app/data/site";
 
 export const metadata: Metadata = {
   title: "Start a Project | MFI Technologies",
@@ -25,9 +25,6 @@ export default function ContactPage() {
             <p className="section-intro">Use the form to prepare a complete inquiry, or email directly if that is easier.</p>
             <a className="contact-email" href={`mailto:${contactEmail}`}>
               {contactEmail}
-            </a>
-            <a className="contact-email" href={whatsappHref} rel="noopener noreferrer" target="_blank">
-              {whatsappLabel}: {whatsappNumber}
             </a>
           </div>
           <ContactForm />
