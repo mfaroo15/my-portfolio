@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">MFI Technologies icon</title>
+  <desc id="desc">Compact MFI Technologies brand mark.</desc>
+  <rect width="512" height="512" rx="104" fill="#1f4f59"/>
+  <path d="M104 338h304" stroke="#b8d7d2" stroke-width="18" stroke-linecap="round"/>
+  <text x="256" y="282" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="156" font-weight="800" letter-spacing="4" text-anchor="middle">MFI</text>
+</svg>
