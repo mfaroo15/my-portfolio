@@ -14,7 +14,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="START A PROJECT"
         title="Tell us what your business needs technology to do."
-        text="Share the project context, timeline and service area. If no backend form service is configured, the form opens a prepared email so the inquiry is not silently lost."
+        text="Share the project context, timeline and service area. We will review the details and follow up with the right next step."
       />
 
       <section className="section contact-page">

@@ -2,40 +2,50 @@
 
 import type { FormEvent } from "react";
 import { useState } from "react";
-import { contactEmail, contactServiceOptions } from "@/app/data/site";
+import { contactServiceOptions } from "@/app/data/site";
 
 const budgetRanges = ["Not sure yet", "Under $5,000", "$5,000 - $15,000", "$15,000 - $50,000", "$50,000+"];
 const timelines = ["Not sure yet", "As soon as possible", "1 - 3 months", "3 - 6 months", "6+ months"];
 const contactMethods = ["Email", "Phone", "WhatsApp", "Either"];
+const formspreeEndpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
 
 export function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const lines = [
-      `Name: ${formData.get("name")}`,
-      `Work email: ${formData.get("email")}`,
-      `Phone: ${formData.get("phone") || "Not provided"}`,
-      `Company: ${formData.get("company") || "Not provided"}`,
-      `Service required: ${formData.get("service")}`,
-      `Budget range: ${formData.get("budget")}`,
-      `Project timeline: ${formData.get("timeline")}`,
-      `Preferred contact method: ${formData.get("contactMethod")}`,
-      "",
-      "Project description:",
-      `${formData.get("description")}`,
-    ];
+    const form = event.currentTarget;
 
-    const subject = encodeURIComponent("MFI Technologies Project Inquiry");
-    const body = encodeURIComponent(lines.join("\n"));
-    window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
-    setStatus("success");
+    if (!formspreeEndpoint) {
+      setStatus("error");
+      return;
+    }
+
+    setStatus("submitting");
+
+    try {
+      const response = await fetch(formspreeEndpoint, {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      form.reset();
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
     <form className="contact-form" onSubmit={onSubmit}>
+      <input type="hidden" name="_subject" value="MFI Technologies Project Inquiry" />
       <div className="form-grid">
         <label>
           <span>Name</span>
@@ -101,13 +111,15 @@ export function ContactForm() {
         <span>Project description</span>
         <textarea name="description" rows={7} required minLength={20} />
       </label>
-      <button className="button button-primary" type="submit">
-        Submit Project Inquiry
+      <button className="button button-primary" type="submit" disabled={status === "submitting"}>
+        {status === "submitting" ? "Submitting..." : "Submit Project Inquiry"}
       </button>
       <p className="form-note" role="status" aria-live="polite">
         {status === "success"
-          ? "Your email app should open with the project inquiry filled in. Send the email from there to complete the inquiry."
-          : "This form uses a mailto fallback because no backend submission service is configured in the project yet."}
+          ? "Thank you. Your inquiry has been sent."
+          : status === "error"
+            ? "The form could not be sent. Please try again or email us directly."
+            : "Share your project details and we will reply as soon as possible."}
       </p>
     </form>
   );
