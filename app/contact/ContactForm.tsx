@@ -7,7 +7,7 @@ import { contactServiceOptions } from "@/app/data/site";
 const budgetRanges = ["Not sure yet", "Under $5,000", "$5,000 - $15,000", "$15,000 - $50,000", "$50,000+"];
 const timelines = ["Not sure yet", "As soon as possible", "1 - 3 months", "3 - 6 months", "6+ months"];
 const contactMethods = ["Email", "Phone", "WhatsApp", "Either"];
-const formspreeEndpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
+const formspreeEndpoint = "https://formspree.io/f/mkjnqyey";
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
