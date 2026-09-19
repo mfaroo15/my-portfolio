@@ -1629,3 +1629,137 @@ a:focus-visible {
     height: 25px;
   }
 }
+
+/* Dawood Group marquee */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.group-section {
+  overflow: hidden;
+  padding: 28px 0 32px;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+
+.group-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.group-heading p {
+  margin: 0;
+}
+
+.group-heading > p:last-child {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.group-rule {
+  width: 64px;
+  height: 1px;
+  background: var(--line);
+}
+
+.group-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.group-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: group-scroll 32s linear infinite;
+}
+
+.group-marquee:hover .group-marquee-track {
+  animation-play-state: paused;
+}
+
+.group-marquee-segment {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.group-company {
+  width: 310px;
+  margin-right: 64px;
+  padding-right: 64px;
+  text-align: center;
+  border-right: 1px solid var(--line);
+}
+
+.group-logo-frame {
+  position: relative;
+  width: 260px;
+  height: 82px;
+  margin: 0 auto;
+  transition: transform 180ms ease;
+}
+
+.group-company:hover .group-logo-frame {
+  transform: translateY(-2px);
+}
+
+.group-logo-frame img {
+  object-fit: contain;
+}
+
+.group-company-caption {
+  display: block;
+  margin-top: 7px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+@keyframes group-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 680px) {
+  .group-section {
+    padding: 24px 0 28px;
+  }
+
+  .group-heading {
+    margin-bottom: 18px;
+  }
+
+  .group-heading > p:last-child {
+    display: none;
+  }
+
+  .group-company {
+    width: 220px;
+    margin-right: 36px;
+    padding-right: 36px;
+  }
+
+  .group-logo-frame {
+    width: 180px;
+    height: 64px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .group-marquee-track {
+    animation: none;
+    transform: none;
+  }
+}

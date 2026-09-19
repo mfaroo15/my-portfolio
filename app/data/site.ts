@@ -11,6 +11,21 @@ export const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
+export const groupCompanies = [
+  {
+    name: "Dawood RCC Pipe",
+    logo: "/logos/dawood-rcc-pipe.png",
+    caption: "Dawood RCC Pipe",
+    url: "",
+  },
+  {
+    name: "Dawood Traders",
+    logo: "/logos/dawood-traders.png",
+    caption: "",
+    url: "",
+  },
+];
+
 export const legalLinks = [
   { href: "/privacy", label: "Privacy Policy" },
   { href: "/terms", label: "Terms & Conditions" },

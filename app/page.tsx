@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ButtonLink } from "@/app/components/ButtonLink";
 import { CTASection } from "@/app/components/CTASection";
+import { GroupMarquee } from "@/app/components/GroupMarquee";
 import { PageHero } from "@/app/components/PageHero";
 import { SectionHeading } from "@/app/components/SectionHeading";
 import { ServiceCard } from "@/app/components/ServiceCard";
@@ -38,6 +39,8 @@ export default function Home() {
         </ButtonLink>
         <ButtonLink href="/services">Explore Services</ButtonLink>
       </PageHero>
+
+      <GroupMarquee />
 
       <section className="value-strip" aria-label="Core capabilities">
         <div className="container value-grid">
