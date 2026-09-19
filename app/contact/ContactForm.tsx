@@ -45,7 +45,7 @@ export function ContactForm() {
 
   return (
     <form className="contact-form" onSubmit={onSubmit}>
-      <input type="hidden" name="_subject" value="MFI Technologies Project Inquiry" />
+      <input type="hidden" name="_subject" value="Dawood Technologies Project Inquiry" />
       <div className="form-grid">
         <label>
           <span>Name</span>

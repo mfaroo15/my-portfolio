@@ -7,7 +7,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "MFI Technologies | Business Technology Solutions",
+    default: "Dawood Technologies | Business Technology Solutions",
     template: "%s",
   },
   description: "Business technology solutions for websites, software, point-of-sale systems, finance management systems, cybersecurity, IT controls, infrastructure and AI automation.",

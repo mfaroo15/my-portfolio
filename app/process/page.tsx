@@ -5,8 +5,8 @@ import { PageHero } from "@/app/components/PageHero";
 import { processSteps } from "@/app/data/site";
 
 export const metadata: Metadata = {
-  title: "Process | MFI Technologies",
-  description: "Learn how MFI Technologies approaches discovery, planning, design, delivery and continuous improvement.",
+  title: "Process | Dawood Technologies",
+  description: "Learn how Dawood Technologies approaches discovery, planning, design, delivery and continuous improvement.",
 };
 
 export default function ProcessPage() {
@@ -15,7 +15,7 @@ export default function ProcessPage() {
       <PageHero
         eyebrow="HOW WE WORK"
         title="Structured delivery. Clear communication."
-        text="MFI Technologies follows a practical delivery process that keeps business goals, users, technical decisions and long-term support connected from the start."
+        text="Dawood Technologies follows a practical delivery process that keeps business goals, users, technical decisions and long-term support connected from the start."
       >
         <ButtonLink href="/contact" variant="primary">
           Discuss Your Project
@@ -45,7 +45,7 @@ export default function ProcessPage() {
         </div>
       </section>
 
-      <CTASection title="Ready to shape the next step?" text="Share the business need and MFI Technologies can help define the practical path forward." />
+      <CTASection title="Ready to shape the next step?" text="Share the business need and Dawood Technologies can help define the practical path forward." />
     </main>
   );
 }

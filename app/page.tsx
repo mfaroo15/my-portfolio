@@ -17,8 +17,8 @@ import {
 } from "@/app/data/site";
 
 export const metadata: Metadata = {
-  title: "MFI Technologies | Business Technology Solutions",
-  description: "MFI Technologies designs, builds, manages and improves websites, software, business systems, point-of-sale systems, cybersecurity, IT controls and AI automation.",
+  title: "Dawood Technologies | Business Technology Solutions",
+  description: "Dawood Technologies designs, builds, manages and improves websites, software, business systems, point-of-sale systems, cybersecurity, IT controls and AI automation.",
 };
 
 export default function Home() {
@@ -31,7 +31,7 @@ export default function Home() {
             We diagnose, build and improve <span>business technology.</span>
           </>
         }
-        text="MFI Technologies helps companies turn operational friction into dependable websites, software, CRM, POS, finance workflows, reporting systems, cybersecurity practices and AI automation."
+        text="Dawood Technologies helps companies turn operational friction into dependable websites, software, CRM, POS, finance workflows, reporting systems, cybersecurity practices and AI automation."
       >
         <ButtonLink href="/contact" variant="primary">
           Book a Technology Diagnostic
@@ -61,7 +61,7 @@ export default function Home() {
               Your team may already use modern tools, but the work tied to customers, sales, operations and reporting can still depend on manual checking, copying and chasing.
             </p>
             <p>
-              MFI Technologies helps identify the costly workflow, put structure around the fix and build the system that makes the improvement stick.
+              Dawood Technologies helps identify the costly workflow, put structure around the fix and build the system that makes the improvement stick.
             </p>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default function Home() {
             </article>
           ))}
         </div>
-        <div className="container proof-grid" aria-label="MFI Technologies engagement proof points">
+        <div className="container proof-grid" aria-label="Dawood Technologies engagement proof points">
           {proofPoints.map((item) => (
             <div className="proof-item" key={item.value}>
               <strong>{item.value}</strong>
@@ -90,7 +90,7 @@ export default function Home() {
             <div className="section-kicker">TRANSFORMATION AREAS</div>
             <h2 className="section-title">Enterprise discipline for practical business technology.</h2>
             <p className="section-intro">
-              MFI Technologies helps businesses connect CRM systems, database systems, point-of-sale systems, inventory workflows, finance management systems, reporting dashboards and workflow automation.
+              Dawood Technologies helps businesses connect CRM systems, database systems, point-of-sale systems, inventory workflows, finance management systems, reporting dashboards and workflow automation.
             </p>
             <div className="section-action">
               <ButtonLink href="/solutions" variant="primary">
@@ -202,14 +202,14 @@ export default function Home() {
       <section className="section about">
         <div className="container about-grid">
           <div>
-            <div className="section-kicker">ABOUT MFI TECHNOLOGIES</div>
+            <div className="section-kicker">ABOUT Dawood TECHNOLOGIES</div>
             <h2 className="section-title">Business understanding with technical execution.</h2>
           </div>
           <div className="about-copy">
-            <p>MFI Technologies is a business technology company focused on helping organizations build, manage and improve their digital capabilities.</p>
+            <p>Dawood Technologies is a business technology company focused on helping organizations build, manage and improve their digital capabilities.</p>
             <p>Our approach connects commercial goals with practical technology, staying focused on usability, reliability, security and long-term value.</p>
             <ButtonLink href="/about" variant="primary">
-              About MFI Technologies
+              About Dawood Technologies
             </ButtonLink>
           </div>
         </div>

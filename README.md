@@ -1,6 +1,6 @@
-# MFI Technologies Website
+# Dawood Technologies Website
 
-Next.js website for MFI Technologies.
+Next.js website for Dawood Technologies.
 
 ## Development
 

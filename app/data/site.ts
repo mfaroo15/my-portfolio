@@ -376,7 +376,7 @@ export const solutions = [
     label: "BUILD",
     title: "Launch a New Digital Product",
     challenge: "You need to turn an idea, service or internal workflow into a reliable website, portal, application or digital product.",
-    approach: "MFI Technologies helps clarify scope, shape the experience, select the right technical path and build toward launch with practical documentation.",
+    approach: "Dawood Technologies helps clarify scope, shape the experience, select the right technical path and build toward launch with practical documentation.",
     services: ["Web Development", "Software Development", "Technology Consulting"],
     outcome: "A defined, usable product foundation that is ready to launch, operate and improve.",
   },

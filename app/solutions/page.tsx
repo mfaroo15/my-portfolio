@@ -5,7 +5,7 @@ import { PageHero } from "@/app/components/PageHero";
 import { solutions } from "@/app/data/site";
 
 export const metadata: Metadata = {
-  title: "Business Technology Solutions | MFI Technologies",
+  title: "Business Technology Solutions | Dawood Technologies",
   description: "Business technology solutions for digital products, POS and retail operations, CRM, finance systems, automation, cybersecurity, IT controls, infrastructure and technology roadmaps.",
 };
 
@@ -15,7 +15,7 @@ export default function SolutionsPage() {
       <PageHero
         eyebrow="BUSINESS SOLUTIONS"
         title="Technology organized around business problems."
-        text="The right solution starts with the operational challenge, not the tool. MFI Technologies connects customer needs, workflows, retail operations, technology risk, controls and growth priorities to practical implementation."
+        text="The right solution starts with the operational challenge, not the tool. Dawood Technologies connects customer needs, workflows, retail operations, technology risk, controls and growth priorities to practical implementation."
       />
 
       <section className="section solutions">
@@ -35,7 +35,7 @@ export default function SolutionsPage() {
                   <p>{item.challenge}</p>
                 </div>
                 <div>
-                  <h3>How MFI Technologies approaches it</h3>
+                  <h3>How Dawood Technologies approaches it</h3>
                   <p>{item.approach}</p>
                 </div>
                 <div>

@@ -6,7 +6,7 @@ export function Footer() {
     <footer className="site-footer">
       <div className="container footer-grid">
         <div>
-          <div className="footer-brand">MFI Technologies</div>
+          <div className="footer-brand">Dawood Technologies</div>
           <p>Business technology solutions for websites, software, systems, cybersecurity, data and AI automation.</p>
           <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
           <a href={whatsappHref} rel="noopener noreferrer" target="_blank">
@@ -26,9 +26,9 @@ export function Footer() {
           ))}
         </nav>
         <div className="footer-copy">
-          <span>Copyright {new Date().getFullYear()} MFI Technologies</span>
+          <span>Copyright {new Date().getFullYear()} Dawood Technologies</span>
           <span className="footer-credit">
-            Designed &amp; Maintained by <strong>MFI Technologies</strong>
+            Designed &amp; Maintained by <strong>Dawood Technologies</strong>
           </span>
         </div>
       </div>

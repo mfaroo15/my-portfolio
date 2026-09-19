@@ -4,8 +4,8 @@ import { PageHero } from "@/app/components/PageHero";
 import { contactEmail } from "@/app/data/site";
 
 export const metadata: Metadata = {
-  title: "Start a Project | MFI Technologies",
-  description: "Contact MFI Technologies to discuss websites, software, POS and retail systems, finance management systems, cybersecurity, security audits, IT controls, infrastructure or automation.",
+  title: "Start a Project | Dawood Technologies",
+  description: "Contact Dawood Technologies to discuss websites, software, POS and retail systems, finance management systems, cybersecurity, security audits, IT controls, infrastructure or automation.",
 };
 
 export default function ContactPage() {

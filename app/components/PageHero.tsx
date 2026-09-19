@@ -17,9 +17,9 @@ export function PageHero({ eyebrow, title, text, children }: PageHeroProps) {
           <p>{text}</p>
           {children ? <div className="actions">{children}</div> : null}
         </div>
-        <aside className="system-card" aria-label="MFI Technologies solution model">
+        <aside className="system-card" aria-label="Dawood Technologies solution model">
           <div className="system-top">
-            <span className="system-label">MFI SOLUTION SYSTEM</span>
+            <span className="system-label">Dawood SOLUTION SYSTEM</span>
             <span className="system-status">
               <span className="status-dot" />
               READY TO BUILD

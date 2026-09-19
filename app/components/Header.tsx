@@ -29,9 +29,9 @@ export function Header() {
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <Link className="brand" href="/" aria-label="MFI Technologies home">
+        <Link className="brand" href="/" aria-label="Dawood Technologies home">
           <span className="brand-wordmark" aria-hidden="true">
-            <span className="brand-mfi">MFI</span>
+            <span className="brand-Dawood">Dawood</span>
             <span className="brand-technologies">TECHNOLOGIES</span>
           </span>
           <span className="brand-tagline">Business Technology Solutions</span>

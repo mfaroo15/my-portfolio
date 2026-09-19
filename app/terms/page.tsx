@@ -4,8 +4,8 @@ import { PageHero } from "@/app/components/PageHero";
 import { contactEmail, legalUpdated } from "@/app/data/site";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | MFI Technologies",
-  description: "Terms and Conditions for using the MFI Technologies website and requesting services.",
+  title: "Terms & Conditions | Dawood Technologies",
+  description: "Terms and Conditions for using the Dawood Technologies website and requesting services.",
 };
 
 export default function TermsPage() {
@@ -14,7 +14,7 @@ export default function TermsPage() {
       <PageHero
         eyebrow="LEGAL"
         title="Terms & Conditions"
-        text="These terms explain the basic conditions for using this website, requesting information and engaging MFI Technologies for business technology services."
+        text="These terms explain the basic conditions for using this website, requesting information and engaging Dawood Technologies for business technology services."
       />
 
       <section className="section">
@@ -31,7 +31,7 @@ export default function TermsPage() {
             <section>
               <h2>Use of This Website</h2>
               <p>
-                This website is provided for general information about MFI Technologies and its services. You agree not to misuse the website, interfere with its operation or attempt unauthorized access to related systems.
+                This website is provided for general information about Dawood Technologies and its services. You agree not to misuse the website, interfere with its operation or attempt unauthorized access to related systems.
               </p>
             </section>
 
@@ -55,7 +55,7 @@ export default function TermsPage() {
             <section>
               <h2>Intellectual Property</h2>
               <p>
-                Unless otherwise agreed in writing, website content, branding, templates, processes and materials created by MFI Technologies remain protected by applicable intellectual property laws. Client-owned materials remain the property of the client.
+                Unless otherwise agreed in writing, website content, branding, templates, processes and materials created by Dawood Technologies remain protected by applicable intellectual property laws. Client-owned materials remain the property of the client.
               </p>
               <p>
                 Ownership of project deliverables should be defined in the applicable proposal or agreement.
@@ -65,7 +65,7 @@ export default function TermsPage() {
             <section>
               <h2>Third-Party Services</h2>
               <p>
-                Projects may involve third-party platforms, plugins, hosting providers, payment processors, analytics tools or software vendors. MFI Technologies is not responsible for changes, outages, pricing, security incidents or policy decisions made by third-party providers.
+                Projects may involve third-party platforms, plugins, hosting providers, payment processors, analytics tools or software vendors. Dawood Technologies is not responsible for changes, outages, pricing, security incidents or policy decisions made by third-party providers.
               </p>
             </section>
 
@@ -79,7 +79,7 @@ export default function TermsPage() {
             <section>
               <h2>Limitation of Liability</h2>
               <p>
-                To the fullest extent permitted by law, MFI Technologies is not liable for indirect, incidental, consequential, special or punitive damages arising from website use or services unless a separate written agreement states otherwise.
+                To the fullest extent permitted by law, Dawood Technologies is not liable for indirect, incidental, consequential, special or punitive damages arising from website use or services unless a separate written agreement states otherwise.
               </p>
             </section>
 

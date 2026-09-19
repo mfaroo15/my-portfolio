@@ -4,8 +4,8 @@ import { PageHero } from "@/app/components/PageHero";
 import { contactEmail, legalUpdated } from "@/app/data/site";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | MFI Technologies",
-  description: "Privacy Policy for MFI Technologies website visitors, prospects and clients.",
+  title: "Privacy Policy | Dawood Technologies",
+  description: "Privacy Policy for Dawood Technologies website visitors, prospects and clients.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
       <PageHero
         eyebrow="LEGAL"
         title="Privacy Policy"
-        text="This policy explains how MFI Technologies collects, uses and protects information shared through this website, contact forms and project conversations."
+        text="This policy explains how Dawood Technologies collects, uses and protects information shared through this website, contact forms and project conversations."
       />
 
       <section className="section">
