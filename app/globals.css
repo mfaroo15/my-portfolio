@@ -78,7 +78,7 @@ main {
 }
 
 .container {
-  width: min(1200px, calc(100% - clamp(30px, 5vw, 72px)));
+  width: min(clamp(1200px, 75vw, 1440px), calc(100% - clamp(30px, 5vw, 72px)));
   margin: 0 auto;
 }
 
@@ -226,7 +226,7 @@ main {
   z-index: 1;
   min-height: 500px;
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(330px, 0.72fr);
+  grid-template-columns: minmax(0, 1fr) minmax(400px, 460px);
   gap: clamp(36px, 4vw, 52px);
   align-items: center;
   padding: 60px 0 64px;
@@ -313,6 +313,8 @@ main {
 
 .system-card {
   position: relative;
+  width: 100%;
+  justify-self: end;
   padding: 26px;
   overflow: hidden;
   background: linear-gradient(145deg, #ffffff, #f7f7f4);

@@ -1,4 +1,4 @@
-export const contactEmail = "contact@farooqibrahim.com";
+export const contactEmail = "info@dawoodtech.com";
 export const whatsappLabel = "Discuss Your Project";
 export const whatsappNumber = "+92 332 3132729";
 export const whatsappHref = "https://wa.me/923323132729";
