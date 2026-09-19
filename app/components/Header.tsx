@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -30,11 +31,14 @@ export function Header() {
     <header className="site-header">
       <div className="container header-inner">
         <Link className="brand" href="/" aria-label="Dawood Technologies home">
-          <span className="brand-wordmark" aria-hidden="true">
-            <span className="brand-Dawood">Dawood</span>
-            <span className="brand-technologies">TECHNOLOGIES</span>
-          </span>
-          <span className="brand-tagline">Business Technology Solutions</span>
+          <Image
+            className="brand-logo"
+            src="/dawood-technologies-logo.png"
+            alt=""
+            width={1714}
+            height={221}
+            priority
+          />
         </Link>
 
         <nav className="desktop-nav" aria-label="Main navigation">
