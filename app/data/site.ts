@@ -135,13 +135,8 @@ export const processSteps = [
 ];
 
 export const locations = [
-  "Chicago, IL",
-  "Dallas, TX",
-  "California",
-  "New York, NY",
-  "Washington, DC",
-  "Karachi, Pakistan",
-  "Dubai, UAE",
+  "Karachi",
+  "Dubai",
 ];
 
 export const values = [
