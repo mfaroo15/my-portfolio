@@ -5,11 +5,16 @@ function MarqueeSegment() {
   return (
     <div className="group-marquee-segment" aria-hidden="true">
       {[...groupCompanies, ...groupCompanies].map((company, index) => (
-        <div className="group-company" key={`${company.name}-${index}`}>
+        <div className={`group-company ${company.caption ? "group-company-rcc" : ""}`} key={`${company.name}-${index}`}>
           <div className="group-logo-frame">
             <Image src={company.logo} alt="" fill sizes="(max-width: 680px) 180px, 260px" />
           </div>
-          {company.caption ? <span className="group-company-caption">{company.caption}</span> : null}
+          {company.caption ? (
+            <span className="group-company-caption">
+              <strong>Dawood</strong>
+              <small>RCC PIPE</small>
+            </span>
+          ) : null}
         </div>
       ))}
     </div>

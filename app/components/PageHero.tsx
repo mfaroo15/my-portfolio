@@ -19,7 +19,7 @@ export function PageHero({ eyebrow, title, text, children }: PageHeroProps) {
         </div>
         <aside className="system-card" aria-label="Dawood Technologies solution model">
           <div className="system-top">
-            <span className="system-label">Dawood SOLUTION SYSTEM</span>
+            <span className="system-label">Dawood Solution System</span>
             <span className="system-status">
               <span className="status-dot" />
               READY TO BUILD
