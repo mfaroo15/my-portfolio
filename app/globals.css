@@ -73,7 +73,7 @@ main {
 }
 
 .container {
-  width: min(1140px, calc(100% - 48px));
+  width: min(1200px, calc(100% - 48px));
   margin: 0 auto;
 }
 
@@ -90,11 +90,11 @@ main {
 }
 
 .header-inner {
-  min-height: 76px;
+  min-height: 68px;
   display: grid;
   grid-template-columns: 1fr auto auto;
   align-items: center;
-  gap: 38px;
+  gap: 30px;
 }
 
 .brand {
@@ -106,22 +106,22 @@ main {
 
 .brand-logo {
   display: block;
-  width: 285px;
+  width: 240px;
   height: auto;
 }
 
 .desktop-nav {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 26px;
   color: #46575a;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
 }
 
 .desktop-nav a:last-child {
   margin-left: 6px;
-  padding: 10px 17px;
+  padding: 8px 16px;
   color: var(--white);
   background: var(--accent);
   border-radius: 6px;
@@ -204,21 +204,21 @@ main {
 .page-hero-inner {
   position: relative;
   z-index: 1;
-  min-height: 540px;
+  min-height: 500px;
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(330px, 0.72fr);
-  gap: 64px;
+  gap: 52px;
   align-items: center;
-  padding: 74px 0 78px;
+  padding: 60px 0 64px;
 }
 
 .eyebrow {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 20px;
+  gap: 10px;
+  margin-bottom: 16px;
   color: var(--accent);
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 900;
   letter-spacing: 1.5px;
 }
@@ -234,7 +234,7 @@ main {
   max-width: 660px;
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(40px, 4.2vw, 52px);
+  font-size: clamp(36px, 3.7vw, 46px);
   font-weight: 400;
   line-height: 1.12;
 }
@@ -245,9 +245,9 @@ main {
 
 .page-hero p {
   max-width: 650px;
-  margin: 24px 0 30px;
+  margin: 20px 0 26px;
   color: var(--muted);
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.65;
 }
 
@@ -259,8 +259,8 @@ main {
 }
 
 .button {
-  min-height: 48px;
-  padding: 0 20px;
+  min-height: 44px;
+  padding: 0 18px;
   border: 1px solid rgba(31, 79, 89, 0.26);
   color: var(--ink);
   transition: transform 160ms ease, background 160ms ease, color 160ms ease, border-color 160ms ease;
@@ -482,13 +482,13 @@ main {
 }
 
 .section {
-  padding: 76px 0;
+  padding: 64px 0;
 }
 
 .section-kicker {
-  margin-bottom: 18px;
+  margin-bottom: 14px;
   color: var(--accent);
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 900;
   letter-spacing: 1.4px;
 }
@@ -498,25 +498,25 @@ main {
   margin: 0;
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(30px, 3.2vw, 40px);
+  font-size: clamp(28px, 2.8vw, 36px);
   font-weight: 400;
   line-height: 1.16;
 }
 
 .section-intro {
   max-width: 620px;
-  margin: 23px 0 0;
+  margin: 18px 0 0;
   color: var(--muted);
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.65;
 }
 
 .section-heading {
   display: grid;
   grid-template-columns: 1fr 0.7fr;
-  gap: 54px;
+  gap: 44px;
   align-items: end;
-  margin-bottom: 42px;
+  margin-bottom: 34px;
 }
 
 .section-heading .section-intro {
@@ -524,7 +524,7 @@ main {
 }
 
 .section-action {
-  margin-top: 34px;
+  margin-top: 28px;
 }
 
 .diagnostic-section {
@@ -565,8 +565,8 @@ main {
 }
 
 .diagnostic-card {
-  min-height: 220px;
-  padding: 26px;
+  min-height: 200px;
+  padding: 22px;
   background: var(--surface);
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -580,10 +580,10 @@ main {
 }
 
 .diagnostic-card h3 {
-  margin: 42px 0 12px;
+  margin: 34px 0 10px;
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 24px;
+  font-size: 21px;
   font-weight: 400;
   line-height: 1.16;
 }
@@ -709,8 +709,8 @@ main {
 }
 
 .solution-card {
-  min-height: 245px;
-  padding: 25px;
+  min-height: 220px;
+  padding: 22px;
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   background: var(--surface);
@@ -733,9 +733,9 @@ main {
 }
 
 .solution-card h3 {
-  margin: 42px 0 12px;
+  margin: 34px 0 10px;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 23px;
+  font-size: 21px;
   font-weight: 400;
   line-height: 1.2;
 }
@@ -758,10 +758,10 @@ main {
 }
 
 .service-card {
-  min-height: 245px;
+  min-height: 220px;
   display: flex;
   flex-direction: column;
-  padding: 25px;
+  padding: 22px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -787,10 +787,10 @@ main {
 }
 
 .service-card h3 {
-  margin: 36px 0 12px;
+  margin: 30px 0 10px;
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 23px;
+  font-size: 21px;
   font-weight: 400;
   line-height: 1.22;
 }
@@ -1650,7 +1650,7 @@ a:focus-visible {
 
 .group-section {
   overflow: hidden;
-  padding: 28px 0 32px;
+  padding: 16px 0 18px;
   background: #fff;
   border-bottom: 1px solid var(--line);
 }
@@ -1658,8 +1658,8 @@ a:focus-visible {
 .group-heading {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 22px;
+  gap: 13px;
+  margin-bottom: 12px;
 }
 
 .group-heading p {
@@ -1672,7 +1672,7 @@ a:focus-visible {
 }
 
 .group-rule {
-  width: 64px;
+  width: 52px;
   height: 1px;
   background: var(--line);
 }
@@ -1699,9 +1699,9 @@ a:focus-visible {
 }
 
 .group-company {
-  width: 310px;
-  margin-right: 64px;
-  padding-right: 64px;
+  width: 280px;
+  margin-right: 48px;
+  padding-right: 48px;
   text-align: center;
   border-right: 1px solid var(--line);
 }
@@ -1709,7 +1709,7 @@ a:focus-visible {
 .group-logo-frame {
   position: relative;
   width: 260px;
-  height: 82px;
+  height: 52px;
   margin: 0 auto;
   transition: transform 180ms ease;
 }
@@ -1728,29 +1728,29 @@ a:focus-visible {
   align-items: center;
   justify-content: center;
   gap: 2px;
-  width: 275px;
-  margin: -7px auto 0;
+  width: 140px;
+  margin: 3px auto 0;
   line-height: 1;
   text-align: center;
 }
 
 .group-company-caption strong {
   color: #202627;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 850;
   letter-spacing: 0;
 }
 
 .group-company-caption small {
   color: #9b7418;
-  font-size: 8px;
+  font-size: 7px;
   font-weight: 900;
-  letter-spacing: 2.2px;
+  letter-spacing: 1.8px;
 }
 
 .group-company-rcc .group-logo-frame {
-  width: 275px;
-  height: 88px;
+  width: 140px;
+  height: 52px;
 }
 
 .group-company-rcc .group-logo-frame img {
@@ -1765,11 +1765,11 @@ a:focus-visible {
 
 @media (max-width: 680px) {
   .group-section {
-    padding: 24px 0 28px;
+    padding: 14px 0 16px;
   }
 
   .group-heading {
-    margin-bottom: 18px;
+    margin-bottom: 10px;
   }
 
   .group-heading > p:last-child {
@@ -1777,24 +1777,24 @@ a:focus-visible {
   }
 
   .group-company {
-    width: 220px;
-    margin-right: 36px;
-    padding-right: 36px;
+    width: 210px;
+    margin-right: 30px;
+    padding-right: 30px;
   }
 
   .group-logo-frame {
-    width: 180px;
-    height: 64px;
+    width: 190px;
+    height: 42px;
   }
 
   .group-company-rcc .group-logo-frame {
-    width: 190px;
-    height: 70px;
+    width: 112px;
+    height: 42px;
   }
 
   .group-company-caption {
-    width: 190px;
-    margin-top: -5px;
+    width: 112px;
+    margin-top: 2px;
   }
 }
 
