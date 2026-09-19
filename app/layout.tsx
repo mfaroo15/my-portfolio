@@ -11,6 +11,10 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description: "Business technology solutions for websites, software, point-of-sale systems, finance management systems, cybersecurity, IT controls, infrastructure and AI automation.",
+  icons: {
+    icon: [{ url: "/icon.svg?v=2", type: "image/svg+xml" }],
+    apple: "/apple-icon.png?v=2",
+  },
 };
 
 export default function RootLayout({
