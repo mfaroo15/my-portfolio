@@ -16,13 +16,22 @@ export const groupCompanies = [
     name: "Dawood RCC Pipe",
     logo: "/logos/dawood-rcc-pipe.png",
     caption: "Dawood RCC Pipe",
+    descriptor: "Infrastructure & Manufacturing",
     url: "https://dawoodrccpipe.com",
   },
   {
-    name: "Dawood Traders",
+    name: "Dawood Traders International",
     logo: "/logos/dawood-traders.png",
     caption: "",
+    descriptor: "Global Trade & Commerce",
     url: "https://dawoodtraderspk.com",
+  },
+  {
+    name: "Dawood Technologies",
+    logo: "/dawood-technologies-logo.png",
+    caption: "",
+    descriptor: "Technology & Digital Solutions",
+    url: "/",
   },
 ];
 
@@ -107,10 +116,10 @@ export const industries = [
 ];
 
 export const coreCapabilities = [
-  { label: "CREATE", title: "Websites, Software & Business Systems" },
-  { label: "OPERATE", title: "Technology Management & Technical Support" },
-  { label: "PROTECT", title: "Cybersecurity, Security Audits & IT Controls" },
-  { label: "GROW", title: "Traffic, Data, Automation & AI" },
+  { label: "CREATE", title: "Digital Products & Platforms", text: "Websites, applications, software and business systems tailored to your goals." },
+  { label: "OPERATE", title: "IT Operations & Support", text: "Infrastructure, cloud, systems management and technical support you can rely on." },
+  { label: "PROTECT", title: "Cybersecurity & Risk", text: "Security assessments, controls, monitoring and practical risk reduction." },
+  { label: "GROW", title: "Data, Automation & AI", text: "Analytics, integrations and intelligent automation that unlock new opportunities." },
 ];
 
 export const transformationAreas = [

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Blocks, ChartNoAxesCombined, Settings2, ShieldCheck } from "lucide-react";
 import { ButtonLink } from "@/app/components/ButtonLink";
 import { CTASection } from "@/app/components/CTASection";
 import { GroupMarquee } from "@/app/components/GroupMarquee";
@@ -24,6 +25,8 @@ export const metadata: Metadata = {
   description: "Dawood Technologies designs, builds, manages and improves websites, software, business systems, point-of-sale systems, cybersecurity, IT controls and AI automation.",
 };
 
+const capabilityIcons = [Blocks, Settings2, ShieldCheck, ChartNoAxesCombined];
+
 export default function Home() {
   return (
     <main>
@@ -45,13 +48,27 @@ export default function Home() {
       <GroupMarquee />
 
       <section className="value-strip" aria-label="Core capabilities">
-        <div className="container value-grid">
-          {coreCapabilities.map((item) => (
-            <div className="value-item" key={item.label}>
-              <small>{item.label}</small>
-              <strong>{item.title}</strong>
-            </div>
-          ))}
+        <div className="container">
+          <div className="value-heading">
+            <div className="section-kicker">OUR CAPABILITIES</div>
+            <h2>Technology built around your business.</h2>
+            <p>From digital products to secure infrastructure and intelligent automation, we help businesses operate smarter, safer and faster.</p>
+          </div>
+          <div className="value-grid">
+            {coreCapabilities.map((item, index) => {
+              const Icon = capabilityIcons[index];
+              return (
+                <article className="value-item" key={item.label}>
+                  <Icon aria-hidden="true" size={25} strokeWidth={1.8} />
+                  <div>
+                    <small>{item.label}</small>
+                    <strong>{item.title}</strong>
+                    <p>{item.text}</p>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
         </div>
       </section>
 
