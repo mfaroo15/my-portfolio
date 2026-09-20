@@ -27,9 +27,6 @@ export function Footer() {
         </nav>
         <div className="footer-copy">
           <span>Copyright {new Date().getFullYear()} Dawood Technologies</span>
-          <span className="footer-credit">
-            Designed &amp; Maintained by <strong>Dawood Technologies</strong>
-          </span>
         </div>
       </div>
     </footer>

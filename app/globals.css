@@ -1559,18 +1559,6 @@ a:focus-visible {
   flex-wrap: wrap;
 }
 
-.footer-credit {
-  color: var(--text);
-  font-size: 13px;
-  font-weight: 750;
-}
-
-.footer-credit strong {
-  color: var(--ink);
-  font-size: 15px;
-  font-weight: 950;
-}
-
 .floating-whatsapp {
   position: fixed;
   right: 18px;
