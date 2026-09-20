@@ -16,13 +16,13 @@ export const groupCompanies = [
     name: "Dawood RCC Pipe",
     logo: "/logos/dawood-rcc-pipe.png",
     caption: "Dawood RCC Pipe",
-    url: "",
+    url: "https://dawoodrccpipe.com",
   },
   {
     name: "Dawood Traders",
     logo: "/logos/dawood-traders.png",
     caption: "",
-    url: "",
+    url: "https://dawoodtraderspk.com",
   },
 ];
 
