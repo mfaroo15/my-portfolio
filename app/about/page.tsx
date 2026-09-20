@@ -13,7 +13,7 @@ export default function AboutPage() {
   return (
     <main>
       <PageHero
-        eyebrow="ABOUT Dawood TECHNOLOGIES"
+        eyebrow="ABOUT Dawood Technologies"
         title="Business understanding with technical execution."
         text="Dawood Technologies is a business technology company focused on helping organizations build, manage and improve their digital capabilities."
       >

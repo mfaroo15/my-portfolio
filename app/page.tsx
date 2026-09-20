@@ -243,7 +243,7 @@ export default function Home() {
       <section className="section about">
         <div className="container about-grid">
           <div>
-            <div className="section-kicker">ABOUT Dawood TECHNOLOGIES</div>
+            <div className="section-kicker">ABOUT Dawood Technologies</div>
             <h2 className="section-title">Business understanding with technical execution.</h2>
           </div>
           <div className="about-copy">
