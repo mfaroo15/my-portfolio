@@ -93,15 +93,17 @@ export const technologyCategories = [
 ];
 
 export const industries = [
-  { code: "AD", title: "AdTech & Digital Media", text: "Campaign platforms, publisher workflows, analytics, integrations and reporting systems built for fast-moving media operations." },
+  { code: "AD", title: "AdTech & Digital Media", text: "Campaign platforms, publisher workflows, audience analytics, integrations and reporting systems built for fast-moving media operations." },
   { code: "FN", title: "FinTech & Financial Services", text: "Secure customer journeys, finance workflows, dashboards and connected systems designed around control, trust and visibility." },
   { code: "AV", title: "Aviation & Aerospace", text: "Operational software, scheduling, portals, reporting and data workflows that support complex teams and time-sensitive decisions." },
   { code: "RT", title: "Retail & E-commerce", text: "Connected storefronts, POS, inventory, customer data and reporting for physical and digital commerce." },
-  { code: "HC", title: "Healthcare", text: "Accessible digital experiences and dependable administrative workflows with privacy and operational clarity in mind." },
+  { code: "HC", title: "Healthcare Technology", text: "Accessible patient experiences and dependable administrative workflows with privacy, security and operational clarity in mind." },
   { code: "LG", title: "Logistics & Supply Chain", text: "Tracking, inventory, field workflows and reporting that improve coordination across suppliers, teams and locations." },
   { code: "PS", title: "Professional Services", text: "CRM, client portals, workflow automation and management reporting for knowledge-led organizations." },
   { code: "MF", title: "Manufacturing", text: "Production visibility, inventory workflows, systems integration and practical automation for growing operations." },
-  { code: "RE", title: "Real Estate & Construction", text: "Lead management, project workflows, document systems and dashboards that keep commercial activity organized." },
+  { code: "PT", title: "PropTech & Real Estate", text: "Property platforms, lead management, tenant experiences, project workflows and dashboards that keep portfolios and commercial activity organized." },
+  { code: "ED", title: "EdTech & Education", text: "Learning platforms, student and staff portals, enrollment workflows and reporting systems for modern education providers." },
+  { code: "EN", title: "Entertainment Technology", text: "Digital content platforms, audience experiences, production workflows, ticketing integrations and analytics for entertainment businesses." },
 ];
 
 export const coreCapabilities = [
