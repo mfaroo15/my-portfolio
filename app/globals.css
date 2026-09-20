@@ -1604,28 +1604,9 @@ a:focus-visible {
 }
 
 .scroll-to-top {
-  appearance: none;
-  position: fixed;
-  left: 26px;
-  bottom: 26px;
-  z-index: 140;
-  width: 60px;
-  min-width: 60px;
-  height: 60px;
-  min-height: 60px;
-  display: grid;
-  flex: 0 0 60px;
-  place-items: center;
-  padding: 0;
-  color: #fff;
-  background: #1f5962;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  box-shadow: 0 0 0 1px rgba(31, 79, 89, 0.16), 0 14px 34px rgba(6, 17, 31, 0.28);
-  opacity: 0;
-  pointer-events: none;
+  overflow: hidden;
   transform: translateY(10px);
-  transition: opacity 180ms ease, background-color 180ms ease, transform 180ms ease;
+  transition: opacity 180ms ease, filter 180ms ease, transform 180ms ease;
 }
 
 .scroll-to-top.is-visible {
@@ -1635,8 +1616,23 @@ a:focus-visible {
 }
 
 .scroll-to-top:hover {
-  background: #163f46;
+  filter: brightness(0.82);
   transform: translateY(-3px);
+}
+
+.scroll-to-top-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 50%;
+}
+
+.scroll-to-top-icon svg {
+  display: block;
+  width: 27px;
+  height: 27px;
 }
 
 .scroll-to-top:focus-visible {
@@ -1911,13 +1907,8 @@ a:focus-visible {
   }
 
   .scroll-to-top {
-    left: 18px;
-    bottom: 18px;
-    width: 52px;
-    min-width: 52px;
-    height: 52px;
-    min-height: 52px;
-    flex-basis: 52px;
+    left: 18px !important;
+    bottom: 18px !important;
   }
 }
 
