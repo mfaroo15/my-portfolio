@@ -73,12 +73,13 @@ export const technologyCategories = [
     ],
   },
   {
-    title: "Enterprise Platforms",
+    title: "Enterprise & Commerce Platforms",
     logos: [
       { name: "Salesforce", category: "CRM", visualScale: 1.02 },
       { name: "Dynamics 365", category: "ERP", visualScale: 0.98, accessibleLabel: "Microsoft Dynamics 365" },
       { name: "Oracle", category: "ERP", visualScale: 0.92 },
       { name: "NetSuite", category: "ERP", visualScale: 0.96, accessibleLabel: "Oracle NetSuite" },
+      { name: "Shopify", category: "Commerce", visualScale: 0.96 },
     ],
   },
   {

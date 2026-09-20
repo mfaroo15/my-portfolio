@@ -14,6 +14,7 @@ import docker from "@iconify-icons/logos/docker";
 import kubernetes from "@iconify-icons/logos/kubernetes";
 import terraform from "@iconify-icons/logos/terraform";
 import github from "@iconify-icons/logos/github-icon";
+import shopify from "@iconify-icons/logos/shopify";
 
 type TechnologyLogoProps = {
   name: string;
@@ -30,6 +31,7 @@ const logos: Record<string, IconifyIcon> = {
   "Dynamics 365": microsoft,
   Oracle: oracle,
   NetSuite: oracle,
+  Shopify: shopify,
   "Power BI": powerBi,
   Snowflake: snowflake,
   Databricks: databricks,

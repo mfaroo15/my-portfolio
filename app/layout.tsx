@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { FloatingWhatsApp } from "@/app/components/FloatingWhatsApp";
 import { Footer } from "@/app/components/Footer";
 import { Header } from "@/app/components/Header";
+import { ScrollToTop } from "@/app/components/ScrollToTop";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <ScrollToTop />
         <FloatingWhatsApp />
       </body>
     </html>
