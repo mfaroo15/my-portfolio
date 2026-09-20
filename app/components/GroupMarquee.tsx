@@ -30,9 +30,11 @@ export function GroupMarquee() {
   return (
     <section className="group-section" aria-labelledby="group-title">
       <div className="container group-heading">
-        <p className="section-kicker" id="group-title">OUR GROUP</p>
-        <div className="group-rule" />
-        <p>Built on shared enterprise values</p>
+        <div>
+          <p className="section-kicker" id="group-title">DAWOOD GROUP</p>
+          <strong>Connected businesses. Shared standards.</strong>
+        </div>
+        <p>Explore our group companies</p>
       </div>
 
       <ul className="sr-only">
