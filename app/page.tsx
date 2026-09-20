@@ -5,14 +5,16 @@ import { GroupMarquee } from "@/app/components/GroupMarquee";
 import { PageHero } from "@/app/components/PageHero";
 import { SectionHeading } from "@/app/components/SectionHeading";
 import { ServiceCard } from "@/app/components/ServiceCard";
+import { TechnologyLogo } from "@/app/components/TechnologyLogo";
 import {
-  capabilities,
   coreCapabilities,
   deliveryPrinciples,
   homeServicePreview,
   homeSolutionPreview,
+  industries,
   proofPoints,
   processSteps,
+  technologyCategories,
   transformationAreas,
   workflowProblems,
 } from "@/app/data/site";
@@ -178,6 +180,25 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section industries-section" aria-label="Industries we serve">
+        <div className="container">
+          <SectionHeading
+            eyebrow="INDUSTRIES"
+            title="Technology shaped around how your industry operates."
+            text="We bring the same practical engineering discipline to specialized markets, then adapt the workflows, controls and customer experience to the realities of each sector."
+          />
+          <div className="industry-grid">
+            {industries.map((industry) => (
+              <article className="industry-card" key={industry.title}>
+                <span aria-hidden="true">{industry.code}</span>
+                <h3>{industry.title}</h3>
+                <p>{industry.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section process-section">
         <div className="container">
           <SectionHeading
@@ -220,14 +241,27 @@ export default function Home() {
 
       <section className="tech-section" aria-label="Technology capabilities">
         <div className="container">
-          <div className="tech-label">TECHNOLOGY CAPABILITIES</div>
-          <div className="tech-capability-grid">
-            {capabilities.map((item) => (
-              <article className="tech-capability" key={item.title}>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-                <span>{item.tools}</span>
-              </article>
+          <SectionHeading
+            eyebrow="TECHNOLOGY CAPABILITIES"
+            title="Platforms your team can recognize and trust."
+            text="Dawood Technologies works across cloud, enterprise systems, data platforms and delivery tooling, then shapes the stack around the business workflow."
+          />
+          <div className="technology-category-grid">
+            {technologyCategories.map((group) => (
+              <section className="technology-category" key={group.title} aria-labelledby={`${group.title.replaceAll(" ", "-").toLowerCase()}-title`}>
+                <h3 id={`${group.title.replaceAll(" ", "-").toLowerCase()}-title`}>{group.title}</h3>
+                <div className="technology-logo-grid">
+                  {group.logos.map((logo) => (
+                    <TechnologyLogo
+                      key={logo.name}
+                      name={logo.name}
+                      category={logo.category}
+                      visualScale={logo.visualScale}
+                      accessibleLabel={logo.accessibleLabel}
+                    />
+                  ))}
+                </div>
+              </section>
             ))}
           </div>
         </div>
