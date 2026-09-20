@@ -28,7 +28,7 @@ export function ScrollToTop() {
       aria-label="Scroll to top"
       title="Back to top"
     >
-      <ArrowUp aria-hidden="true" size={22} strokeWidth={2} />
+      <ArrowUp aria-hidden="true" size={29} strokeWidth={2.4} />
     </button>
   );
 }
