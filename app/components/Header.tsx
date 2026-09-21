@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { MobileNavigation } from "@/app/components/MobileNavigation";
@@ -48,6 +48,10 @@ export function Header() {
             </Link>
           ))}
         </nav>
+
+        <Link className="header-cta" href="/contact">
+          Let&apos;s Talk <ArrowUpRight aria-hidden="true" size={16} />
+        </Link>
 
         <button
           ref={menuButtonRef}

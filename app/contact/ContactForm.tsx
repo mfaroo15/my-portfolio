@@ -39,7 +39,7 @@ function isValidSubmission(formData: FormData) {
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) &&
     phone.length <= fieldLimits.phone &&
     company.length <= fieldLimits.company &&
-    contactServiceOptions.includes(service) &&
+    (contactServiceOptions as readonly string[]).includes(service) &&
     budgetRanges.includes(budget) &&
     timelines.includes(timeline) &&
     contactMethods.includes(contactMethod) &&

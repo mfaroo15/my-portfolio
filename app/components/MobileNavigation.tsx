@@ -15,6 +15,7 @@ export function MobileNavigation({ pathname, onNavigate }: MobileNavigationProps
             {item.label}
           </Link>
         ))}
+        <Link className="mobile-contact" href="/contact" onClick={onNavigate}>Let&apos;s Talk</Link>
       </nav>
     </div>
   );

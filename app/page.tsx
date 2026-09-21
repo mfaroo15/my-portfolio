@@ -1,290 +1,117 @@
 import type { Metadata } from "next";
-import { Blocks, ChartNoAxesCombined, Settings2, ShieldCheck } from "lucide-react";
-import { ButtonLink } from "@/app/components/ButtonLink";
-import { CTASection } from "@/app/components/CTASection";
-import { GroupMarquee } from "@/app/components/GroupMarquee";
-import { PageHero } from "@/app/components/PageHero";
-import { SectionHeading } from "@/app/components/SectionHeading";
-import { ServiceCard } from "@/app/components/ServiceCard";
-import { TechnologyLogo } from "@/app/components/TechnologyLogo";
-import {
-  coreCapabilities,
-  deliveryPrinciples,
-  homeServicePreview,
-  homeSolutionPreview,
-  industries,
-  proofPoints,
-  processSteps,
-  technologyCategories,
-  transformationAreas,
-  workflowProblems,
-} from "@/app/data/site";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { capabilities, industries, lifecycle, siteUrl, work } from "@/app/data/site";
 
 export const metadata: Metadata = {
-  title: "Dawood Technologies | Business Technology Solutions",
-  description: "Dawood Technologies designs, builds, manages and improves websites, software, business systems, point-of-sale systems, cybersecurity, IT controls and AI automation.",
+  title: "Technology Built Around Business",
+  description: "Dawood Technologies designs, builds, operates, secures and continuously improves technology for real businesses.",
+  alternates: { canonical: "/" },
 };
 
-const capabilityIcons = [Blocks, Settings2, ShieldCheck, ChartNoAxesCombined];
-
 export default function Home() {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Dawood Technologies",
+    url: siteUrl,
+    email: "info@dawoodtech.com",
+    logo: `${siteUrl}/dawood-technologies-logo.png`,
+    description: "A technology company that designs, builds, operates and improves digital systems around business operations.",
+  };
+
   return (
-    <main>
-      <PageHero
-        eyebrow="WEB / SOFTWARE / SYSTEMS / AI"
-        title={
-          <>
-            We diagnose, build and improve <span>business technology.</span>
-          </>
-        }
-        text="Dawood Technologies helps companies turn operational friction into dependable websites, software, CRM, POS, finance workflows, reporting systems, cybersecurity practices and AI automation."
-      >
-        <ButtonLink href="/contact" variant="primary">
-          Book a Technology Diagnostic
-        </ButtonLink>
-        <ButtonLink href="/services">Explore Services</ButtonLink>
-      </PageHero>
+    <main id="main-content">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema).replace(/</g, "\\u003c") }} />
 
-      <GroupMarquee />
+      <section className="home-hero">
+        <div className="hero-grid" aria-hidden="true" />
+        <div className="container hero-inner">
+          <div className="hero-copy">
+            <p className="kicker">DAWOOD TECHNOLOGIES</p>
+            <h1>Technology built around <span>business.</span></h1>
+            <p className="hero-intro">We design, build, manage and evolve the digital systems modern businesses depend on, from software and enterprise platforms to infrastructure, security, data and intelligent automation.</p>
+            <div className="hero-actions">
+              <Link className="button button-primary" href="/work">Explore Our Work <ArrowRight aria-hidden="true" size={17} /></Link>
+              <Link className="text-link" href="/contact">Work With Us <ArrowUpRight aria-hidden="true" size={17} /></Link>
+            </div>
+          </div>
+          <div className="hero-system" aria-label="Technology lifecycle">
+            <div className="system-head"><span>OPERATING MODEL</span><span>CONTINUOUS</span></div>
+            <div className="system-core">
+              <span className="system-orbit orbit-one" />
+              <span className="system-orbit orbit-two" />
+              <div><small>BUSINESS</small><strong>Technology<br />Capability</strong></div>
+            </div>
+            <div className="system-phases">{lifecycle.map((item, index) => <span key={item}><b>{String(index + 1).padStart(2, "0")}</b>{item}</span>)}</div>
+          </div>
+        </div>
+        <div className="container hero-foot"><span>Engineering for real operating environments</span><span>Software / Systems / Infrastructure / Intelligence</span></div>
+      </section>
 
-      <section className="value-strip" aria-label="Core capabilities">
-        <div className="container">
-          <div className="value-heading">
-            <div className="section-kicker">OUR CAPABILITIES</div>
-            <h2>Technology built around your business.</h2>
-            <p>From digital products to secure infrastructure and intelligent automation, we help businesses operate smarter, safer and faster.</p>
-          </div>
-          <div className="value-grid">
-            {coreCapabilities.map((item, index) => {
-              const Icon = capabilityIcons[index];
-              return (
-                <article className="value-item" key={item.label}>
-                  <Icon aria-hidden="true" size={25} strokeWidth={1.8} />
-                  <div>
-                    <small>{item.label}</small>
-                    <strong>{item.title}</strong>
-                    <p>{item.text}</p>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
+      <section className="section real-world">
+        <div className="container split-heading">
+          <div><p className="kicker">TECHNOLOGY IN THE REAL WORLD</p><h2>Built where business happens.</h2></div>
+          <p>Our capability is developed through direct exposure to operating businesses. We solve for real workflows, real constraints and systems that need to keep working long after deployment.</p>
+        </div>
+        <div className="container evidence-grid">
+          {work.map((item, index) => (
+            <Link className="evidence-item" href={`/work/${item.slug}`} key={item.slug}>
+              <span className="index">{String(index + 1).padStart(2, "0")}</span>
+              <div className="evidence-logo"><Image src={item.logo} alt={item.name} width={420} height={120} /></div>
+              <div><strong>{item.name}</strong><span>{item.sector}</span></div>
+              <ArrowUpRight aria-hidden="true" />
+            </Link>
+          ))}
+          <div className="evidence-statement"><p>This experience becomes a stronger technology capability for every organization we work with.</p></div>
         </div>
       </section>
 
-      <section className="section diagnostic-section">
-        <div className="container diagnostic-layout">
-          <div>
-            <div className="section-kicker">BUSINESS SYSTEMS DIAGNOSTIC</div>
-            <h2 className="section-title">Find the work that quietly drains time, margin and focus.</h2>
-          </div>
-          <div className="diagnostic-copy">
-            <p>
-              Your team may already use modern tools, but the work tied to customers, sales, operations and reporting can still depend on manual checking, copying and chasing.
-            </p>
-            <p>
-              Dawood Technologies helps identify the costly workflow, put structure around the fix and build the system that makes the improvement stick.
-            </p>
-          </div>
-        </div>
-        <div className="container diagnostic-grid" aria-label="Common technology problems">
-          {workflowProblems.map((item) => (
-            <article className="diagnostic-card" key={item.label}>
-              <span>{item.label}</span>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </article>
-          ))}
-        </div>
-        <div className="container proof-grid" aria-label="Dawood Technologies engagement proof points">
-          {proofPoints.map((item) => (
-            <div className="proof-item" key={item.value}>
-              <strong>{item.value}</strong>
-              <span>{item.label}</span>
-            </div>
+      <section className="section work-feature">
+        <div className="container section-top"><div><p className="kicker">SELECTED WORK</p><h2>Technology inside the operation.</h2></div><Link className="text-link" href="/work">View all work <ArrowRight aria-hidden="true" size={17} /></Link></div>
+        <div className="container work-grid">
+          {work.map((item, index) => (
+            <Link className={`work-card work-card-${index + 1}`} href={`/work/${item.slug}`} key={item.slug}>
+              <div className="work-visual">
+                <span>{item.sector}</span>
+                <Image src={item.logo} alt="" width={520} height={150} />
+                <div className="blueprint-lines" aria-hidden="true" />
+              </div>
+              <div className="work-copy"><p>{item.name}</p><h3>{item.title}</h3><span>View case study <ArrowUpRight aria-hidden="true" size={16} /></span></div>
+            </Link>
           ))}
         </div>
       </section>
 
-      <section className="section transformation-section">
-        <div className="container transformation-layout">
-          <div>
-            <div className="section-kicker">TRANSFORMATION AREAS</div>
-            <h2 className="section-title">Enterprise discipline for practical business technology.</h2>
-            <p className="section-intro">
-              Dawood Technologies helps businesses connect CRM systems, database systems, point-of-sale systems, inventory workflows, finance management systems, reporting dashboards and workflow automation.
-            </p>
-            <div className="section-action">
-              <ButtonLink href="/solutions" variant="primary">
-                View Business Solutions
-              </ButtonLink>
-            </div>
-          </div>
-          <div className="transformation-grid">
-            {transformationAreas.map((item) => (
-              <article className="transformation-card" key={item.label}>
-                <span>{item.label}</span>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
+      <section className="section capability-section">
+        <div className="container split-heading light">
+          <div><p className="kicker">CAPABILITIES</p><h2>One technology capability. Six connected disciplines.</h2></div>
+          <p>We bring engineering, operations and security together so businesses are not left coordinating disconnected vendors or fragile systems.</p>
+        </div>
+        <div className="container capability-list">
+          {capabilities.map((item) => (
+            <Link href="/capabilities" className="capability-row" key={item.title}>
+              <span>{item.code}</span><h3>{item.title}</h3><p>{item.summary}</p><ArrowUpRight aria-hidden="true" />
+            </Link>
+          ))}
         </div>
       </section>
 
-      <section className="section services">
-        <div className="container">
-          <SectionHeading
-            eyebrow="SERVICES PREVIEW"
-            title="Complete digital capability, clearly organized."
-            text="Choose a focused service or bring us a broader business challenge. We shape the right combination of strategy, software, systems and support."
-          />
-          <div className="service-grid">
-            {homeServicePreview.map((item) => (
-              <ServiceCard compact code={item.code} key={item.title} summary={item.summary} title={item.title} />
-            ))}
-          </div>
-          <div className="section-action">
-            <ButtonLink href="/services" variant="dark">
-              View All Services
-            </ButtonLink>
-          </div>
-        </div>
+      <section className="section lifecycle-section">
+        <div className="container lifecycle-intro"><p className="kicker">MANAGED TECHNOLOGY</p><h2>Delivery is a milestone.<br />Ownership is continuous.</h2><p>Technology needs attention after it goes live. We can remain responsible for the systems we build, keeping them reliable, secure and aligned as the business changes.</p></div>
+        <div className="container lifecycle-track">{lifecycle.map((item, index) => <div key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></div>)}</div>
+        <div className="container section-action"><Link className="button button-dark" href="/capabilities">Explore Managed Technology <ArrowRight aria-hidden="true" size={17} /></Link></div>
       </section>
 
-      <section className="section solutions">
-        <div className="container">
-          <SectionHeading
-            eyebrow="SOLUTIONS PREVIEW"
-            title="Practical transformation without losing the business context."
-            text="Inspired by outcome-led digital transformation firms, this site now puts the operating problem first: what needs to be built, connected, protected or improved."
-          />
-          <div className="solution-grid">
-            {homeSolutionPreview.map((item) => (
-              <article className="solution-card" key={item.title}>
-                <div className="solution-label">{item.label}</div>
-                <h3>{item.title}</h3>
-                <p>{item.approach}</p>
-              </article>
-            ))}
-          </div>
-          <div className="section-action">
-            <ButtonLink href="/solutions" variant="dark">
-              Explore Solutions
-            </ButtonLink>
-          </div>
-        </div>
+      <section className="section industry-section">
+        <div className="container section-top"><div><p className="kicker">INDUSTRIES</p><h2>Experience with operational context.</h2></div><p>We focus our story on sectors where business realities can inform the technology.</p></div>
+        <div className="container industry-list">{industries.map((item) => <article key={item.title}><span>{item.code}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
       </section>
 
-      <section className="section assurance-section">
-        <div className="container assurance-layout">
-          <div>
-            <div className="section-kicker">DELIVERY ASSURANCE</div>
-            <h2 className="section-title">Built with ownership, security and continuity in mind.</h2>
-            <p className="section-intro">
-              The goal is not just a polished launch. It is a usable system your team can trust, understand and keep improving.
-            </p>
-          </div>
-          <div className="assurance-grid">
-            {deliveryPrinciples.map((item) => (
-              <article className="assurance-item" key={item.label}>
-                <span>{item.label}</span>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
+      <section className="section closing-cta">
+        <div className="container"><p className="kicker">LET&apos;S BUILD WHAT THE BUSINESS NEEDS</p><h2>Bring technology closer to the operation.</h2><Link className="button button-primary" href="/contact">Start a Conversation <ArrowUpRight aria-hidden="true" size={17} /></Link></div>
       </section>
-
-      <section className="section industries-section" aria-label="Industries we serve">
-        <div className="container">
-          <SectionHeading
-            eyebrow="INDUSTRIES"
-            title="Technology shaped around how your industry operates."
-            text="We bring the same practical engineering discipline to specialized markets, then adapt the workflows, controls and customer experience to the realities of each sector."
-          />
-          <div className="industry-grid">
-            {industries.map((industry) => (
-              <article className="industry-card" key={industry.title}>
-                <span aria-hidden="true">{industry.code}</span>
-                <h3>{industry.title}</h3>
-                <p>{industry.text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section process-section">
-        <div className="container">
-          <SectionHeading
-            eyebrow="HOW WE WORK"
-            title="Structured delivery. Clear communication."
-            text="Every engagement follows a practical path from understanding the problem to delivering and improving the solution."
-          />
-          <div className="process-track">
-            {processSteps.map((item) => (
-              <article className="process-step" key={item.number}>
-                <div className="process-number">{item.number}</div>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
-          <div className="section-action">
-            <ButtonLink href="/process" variant="dark">
-              Learn How We Work
-            </ButtonLink>
-          </div>
-        </div>
-      </section>
-
-      <section className="section about">
-        <div className="container about-grid">
-          <div>
-            <div className="section-kicker">ABOUT Dawood Technologies</div>
-            <h2 className="section-title">Business understanding with technical execution.</h2>
-          </div>
-          <div className="about-copy">
-            <p>Dawood Technologies is a business technology company focused on helping organizations build, manage and improve their digital capabilities.</p>
-            <p>Our approach connects commercial goals with practical technology, staying focused on usability, reliability, security and long-term value.</p>
-            <ButtonLink href="/about" variant="primary">
-              About Dawood Technologies
-            </ButtonLink>
-          </div>
-        </div>
-      </section>
-
-      <section className="tech-section" aria-label="Technology capabilities">
-        <div className="container">
-          <SectionHeading
-            eyebrow="TECHNOLOGY CAPABILITIES"
-            title="Platforms your team can recognize and trust."
-            text="Dawood Technologies works across cloud, enterprise systems, data platforms and delivery tooling, then shapes the stack around the business workflow."
-          />
-          <div className="technology-category-grid">
-            {technologyCategories.map((group) => (
-              <section className="technology-category" key={group.title} aria-labelledby={`${group.title.replaceAll(" ", "-").toLowerCase()}-title`}>
-                <h3 id={`${group.title.replaceAll(" ", "-").toLowerCase()}-title`}>{group.title}</h3>
-                <div className="technology-logo-grid">
-                  {group.logos.map((logo) => (
-                    <TechnologyLogo
-                      key={logo.name}
-                      name={logo.name}
-                      category={logo.category}
-                      visualScale={logo.visualScale}
-                      accessibleLabel={logo.accessibleLabel}
-                    />
-                  ))}
-                </div>
-              </section>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <CTASection />
     </main>
   );
 }

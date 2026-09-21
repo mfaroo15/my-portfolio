@@ -3,7 +3,7 @@ import { groupCompanies } from "@/app/data/site";
 
 export function GroupMarquee() {
   return (
-    <section className="group-section" aria-label="Dawood Group companies">
+    <section className="group-section" aria-label="Business environments">
       <div className="container group-showcase">
         <div className="group-company-grid">
           {groupCompanies.map((company) => (
