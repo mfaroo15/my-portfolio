@@ -38,13 +38,26 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-system" aria-label="Technology lifecycle">
-            <div className="system-head"><span>OPERATING MODEL</span><span>CONTINUOUS</span></div>
+            <header className="system-head">
+              <span>Operating model</span>
+              <span>Continuous</span>
+            </header>
             <div className="system-core">
               <span className="system-orbit orbit-one" />
               <span className="system-orbit orbit-two" />
-              <div><small>BUSINESS</small><strong>Technology<br />Capability</strong></div>
+              <div>
+                <small>Business</small>
+                <strong>Technology<br />Capability</strong>
+              </div>
             </div>
-            <div className="system-phases">{lifecycle.map((item, index) => <span key={item}><b>{String(index + 1).padStart(2, "0")}</b>{item}</span>)}</div>
+            <ol className="system-phases">
+              {lifecycle.map((item, index) => (
+                <li key={item}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <strong>{item}</strong>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
         <div className="container hero-foot"><span>Engineering for real operating environments</span><span>Software / Systems / Infrastructure / Intelligence</span></div>
