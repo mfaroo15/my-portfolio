@@ -1,7 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
   <title id="title">Dawood Technologies icon</title>
   <desc id="desc">Compact folded D brand mark for Dawood Technologies.</desc>
-  <rect width="512" height="512" rx="104" fill="#1f4f59"/>
-  <path fill="#ffffff" fill-rule="evenodd" d="M112 112h156c88 0 148 58 148 144s-60 144-148 144H112l58-72h96c43 0 72-28 72-72s-29-72-72-72H112z"/>
-  <path d="M112 400l58-72V184l-58 72z" fill="#79c9bd"/>
+  <defs>
+    <linearGradient id="tile" x1="54" y1="34" x2="454" y2="470" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f5f9ff"/>
+      <stop offset="1" stop-color="#dcecff"/>
+    </linearGradient>
+    <linearGradient id="dawood-blue" x1="112" y1="112" x2="388" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#062d7a"/>
+      <stop offset=".48" stop-color="#075bc7"/>
+      <stop offset="1" stop-color="#08a9f4"/>
+    </linearGradient>
+    <linearGradient id="fold-blue" x1="112" y1="400" x2="184" y2="184" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0877dc"/>
+      <stop offset="1" stop-color="#10c7f4"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="104" fill="url(#tile)"/>
+  <path fill="url(#dawood-blue)" fill-rule="evenodd" d="M112 112h156c88 0 148 58 148 144s-60 144-148 144H112l58-72h96c43 0 72-28 72-72s-29-72-72-72H112z"/>
+  <path d="M112 400l58-72V184l-58 72z" fill="url(#fold-blue)"/>
 </svg>

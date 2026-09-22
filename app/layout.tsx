@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image", title: "Dawood Technologies", description: "Technology Built Around Business." },
   icons: {
-    icon: [{ url: "/icon.svg?v=2", type: "image/svg+xml" }],
+    icon: [{ url: "/icon.svg?v=3", type: "image/svg+xml" }],
     apple: "/apple-icon.png?v=2",
   },
 };
