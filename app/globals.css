@@ -43,9 +43,7 @@ h3 { font-size: 1.45rem; font-weight: 600; }
 .site-header { position: sticky; z-index: 100; top: 0; color: var(--ink); background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); backdrop-filter: blur(16px); }
 .header-inner { height: 76px; display: flex; align-items: center; gap: 28px; }
 .brand { margin-right: auto; display: flex; align-items: center; }
-.brand-logo { position: relative; width: clamp(168px, 13vw, 208px); aspect-ratio: 1714 / 221; display: block; }
-.brand-logo img { position: absolute; inset: 0; width: 100%; height: 100%; }
-.brand-logo-technologies { clip-path: inset(0 0 0 59.5%); filter: sepia(1) saturate(4.5) hue-rotate(171deg) brightness(.8) contrast(1.12); }
+.brand-logo { width: clamp(168px, 13vw, 208px); height: auto; }
 .desktop-nav { display: flex; align-items: center; gap: 30px; }
 .desktop-nav a { position: relative; padding: 26px 0 24px; color: #3f4857; font-size: .84rem; font-weight: 600; }
 .desktop-nav a::after { content: ""; position: absolute; right: 0; bottom: 18px; left: 0; height: 2px; background: var(--teal-bright); transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
