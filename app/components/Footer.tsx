@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { capabilities, contactEmail, industries, legalLinks, navLinks, whatsappHref } from "@/app/data/site";
+import { capabilities, contactEmail, industries, legalLinks, navLinks } from "@/app/data/site";
 
 export function Footer() {
   return (
@@ -20,7 +20,6 @@ export function Footer() {
           </Link>
           <p>We design, build, operate and improve technology around the way businesses actually work.</p>
           <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
-          <a href={whatsappHref} rel="noopener noreferrer" target="_blank">WhatsApp</a>
         </div>
         <nav className="footer-column" aria-label="Company links">
           <strong>Navigate</strong>

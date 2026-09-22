@@ -6,7 +6,7 @@ import { contactServiceOptions } from "@/app/data/site";
 
 const budgetRanges = ["Not sure yet", "Under $5,000", "$5,000 - $15,000", "$15,000 - $50,000", "$50,000+"];
 const timelines = ["Not sure yet", "As soon as possible", "1 - 3 months", "3 - 6 months", "6+ months"];
-const contactMethods = ["Email", "Phone", "WhatsApp", "Either"];
+const contactMethods = ["Email", "Phone", "Either"];
 const formspreeEndpoint = "https://formspree.io/f/xkjgojzw";
 const fieldLimits = {
   name: 100,
