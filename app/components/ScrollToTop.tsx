@@ -34,7 +34,7 @@ export function ScrollToTop() {
     display: "grid",
     placeItems: "center",
     padding: 0,
-    color: "#fff",
+    color: "#1268e8",
     background: "#1f5962",
     border: "2px solid #fff",
     borderRadius: "50%",

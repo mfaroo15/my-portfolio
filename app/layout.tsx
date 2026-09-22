@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { FloatingWhatsApp } from "@/app/components/FloatingWhatsApp";
 import { Footer } from "@/app/components/Footer";
 import { Header } from "@/app/components/Header";
 import { ScrollToTop } from "@/app/components/ScrollToTop";
@@ -42,7 +41,6 @@ export default function RootLayout({
         {children}
         <Footer />
         <ScrollToTop />
-        <FloatingWhatsApp />
       </body>
     </html>
   );
