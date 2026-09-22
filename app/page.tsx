@@ -61,22 +61,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section work-feature">
-        <div className="container section-top"><div><p className="kicker">SELECTED WORK</p><h2>Technology inside the operation.</h2></div><Link className="text-link" href="/work">View all work <ArrowRight aria-hidden="true" size={17} /></Link></div>
-        <div className="container work-grid">
-          {work.map((item, index) => (
-            <Link className={`work-card work-card-${index + 1}`} href={`/work/${item.slug}`} key={item.slug}>
-              <div className="work-visual">
-                <span>{item.sector}</span>
-                <Image src={item.logo} alt="" width={520} height={150} />
-                <div className="blueprint-lines" aria-hidden="true" />
-              </div>
-              <div className="work-copy"><p>{item.name}</p><h3>{item.title}</h3><span>View case study <ArrowUpRight aria-hidden="true" size={16} /></span></div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
       <section className="section capability-section">
         <div className="container split-heading light">
           <div><p className="kicker">CAPABILITIES</p><h2>One technology capability. Six connected disciplines.</h2></div>
