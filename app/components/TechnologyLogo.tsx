@@ -15,6 +15,12 @@ import kubernetes from "@iconify-icons/logos/kubernetes";
 import terraform from "@iconify-icons/logos/terraform";
 import github from "@iconify-icons/logos/github-icon";
 import shopify from "@iconify-icons/logos/shopify";
+import react from "@iconify-icons/logos/react";
+import nextjs from "@iconify-icons/logos/nextjs-icon";
+import typescript from "@iconify-icons/logos/typescript-icon";
+import nodejs from "@iconify-icons/logos/nodejs-icon";
+import python from "@iconify-icons/logos/python";
+import vercel from "@iconify-icons/logos/vercel-icon";
 
 type TechnologyLogoProps = {
   name: string;
@@ -40,6 +46,12 @@ const logos: Record<string, IconifyIcon> = {
   Kubernetes: kubernetes,
   Terraform: terraform,
   GitHub: github,
+  React: react,
+  "Next.js": nextjs,
+  TypeScript: typescript,
+  "Node.js": nodejs,
+  Python: python,
+  Vercel: vercel,
 };
 
 export function TechnologyLogo({ name, category, visualScale = 1, accessibleLabel }: TechnologyLogoProps) {

@@ -44,6 +44,35 @@ export const work = [
 
 export const groupCompanies = work.map((item) => ({ name: item.name, logo: item.logo, caption: item.name, descriptor: item.sector, url: `/work/${item.slug}` }));
 export const insightCategories = ["Engineering", "Cloud", "Cybersecurity", "Data & AI", "Business Technology", "Digital Transformation"] as const;
+export const technologyCategories = [
+  { title: "Cloud & Infrastructure", logos: [
+    { name: "AWS", category: "Cloud" },
+    { name: "Microsoft Azure", category: "Cloud" },
+    { name: "Google Cloud", category: "Cloud" },
+    { name: "Vercel", category: "Cloud delivery" },
+  ] },
+  { title: "Enterprise & CRM", logos: [
+    { name: "Salesforce", category: "CRM" },
+    { name: "Dynamics 365", category: "Enterprise" },
+  ] },
+  { title: "Commerce", logos: [
+    { name: "Shopify", category: "Commerce" },
+  ] },
+  { title: "Software Engineering", logos: [
+    { name: "React", category: "Frontend" },
+    { name: "Next.js", category: "Web platform" },
+    { name: "TypeScript", category: "Engineering" },
+    { name: "Node.js", category: "Backend" },
+    { name: "Python", category: "Engineering" },
+  ] },
+  { title: "Data & Analytics", logos: [
+    { name: "Power BI", category: "Analytics" },
+  ] },
+  { title: "DevOps & Delivery", logos: [
+    { name: "Docker", category: "DevOps" },
+    { name: "GitHub", category: "Code delivery" },
+  ] },
+] as const;
 export const contactServiceOptions = capabilities.map((item) => item.title);
 
 // Compatibility data for established URLs and components retained during the redesign.

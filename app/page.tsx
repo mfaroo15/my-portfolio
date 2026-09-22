@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import { capabilities, industries, lifecycle, siteUrl, work } from "@/app/data/site";
+import { TechnologyLogo } from "@/app/components/TechnologyLogo";
+import { capabilities, industries, lifecycle, siteUrl, technologyCategories, work } from "@/app/data/site";
 
 export const metadata: Metadata = {
   title: "Technology Built Around Business",
@@ -26,7 +27,6 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema).replace(/</g, "\\u003c") }} />
 
       <section className="home-hero">
-        <div className="hero-grid" aria-hidden="true" />
         <div className="container hero-inner">
           <div className="hero-copy">
             <p className="kicker">DAWOOD TECHNOLOGIES</p>
@@ -37,30 +37,10 @@ export default function Home() {
               <Link className="text-link" href="/contact">Work With Us <ArrowUpRight aria-hidden="true" size={17} /></Link>
             </div>
           </div>
-          <div className="hero-system" aria-label="Technology lifecycle">
-            <header className="system-head">
-              <span>Operating model</span>
-              <span>Continuous</span>
-            </header>
-            <div className="system-core">
-              <span className="system-orbit orbit-one" />
-              <span className="system-orbit orbit-two" />
-              <div>
-                <small>Business</small>
-                <strong>Technology<br />Capability</strong>
-              </div>
-            </div>
-            <ol className="system-phases">
-              {lifecycle.map((item, index) => (
-                <li key={item}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <strong>{item}</strong>
-                </li>
-              ))}
-            </ol>
-          </div>
+          <figure className="hero-visual">
+            <Image src="/technology-built-around-business.png" alt="Abstract blue architectural forms representing connected business technology" width={1152} height={1536} priority />
+          </figure>
         </div>
-        <div className="container hero-foot"><span>Engineering for real operating environments</span><span>Software / Systems / Infrastructure / Intelligence</span></div>
       </section>
 
       <section className="section real-world">
@@ -120,6 +100,23 @@ export default function Home() {
       <section className="section industry-section">
         <div className="container section-top"><div><p className="kicker">INDUSTRIES</p><h2>Experience with operational context.</h2></div><p>We focus our story on sectors where business realities can inform the technology.</p></div>
         <div className="container industry-list">{industries.map((item) => <article key={item.title}><span>{item.code}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
+      </section>
+
+      <section className="section technology-section" aria-labelledby="technology-title">
+        <div className="container split-heading">
+          <div><p className="kicker">TECHNOLOGY ECOSYSTEM</p><h2 id="technology-title">Platforms and technologies we work with.</h2></div>
+          <p>We select technologies around the requirements of each system. These are tools we work with, not claims of formal partnership.</p>
+        </div>
+        <div className="container technology-groups">
+          {technologyCategories.map((group) => (
+            <section className="technology-group" key={group.title}>
+              <h3>{group.title}</h3>
+              <div className="technology-logo-grid">
+                {group.logos.map((logo) => <TechnologyLogo key={logo.name} name={logo.name} category={logo.category} />)}
+              </div>
+            </section>
+          ))}
+        </div>
       </section>
 
       <section className="section closing-cta">
