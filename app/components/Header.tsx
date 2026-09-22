@@ -31,14 +31,10 @@ export function Header() {
     <header className="site-header">
       <div className="container header-inner">
         <Link className="brand" href="/" aria-label="Dawood Technologies home">
-          <Image
-            className="brand-logo"
-            src="/dawood-technologies-logo.png"
-            alt=""
-            width={1714}
-            height={221}
-            priority
-          />
+          <span className="brand-logo" aria-hidden="true">
+            <Image className="brand-logo-base" src="/dawood-technologies-logo.png" alt="" width={1714} height={221} priority />
+            <Image className="brand-logo-technologies" src="/dawood-technologies-logo.png" alt="" width={1714} height={221} />
+          </span>
         </Link>
 
         <nav className="desktop-nav" aria-label="Main navigation">
