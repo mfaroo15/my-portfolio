@@ -12,6 +12,13 @@ export const metadata: Metadata = {
     template: "%s | Dawood Technologies",
   },
   description: "Dawood Technologies designs, builds, operates and improves the digital systems modern businesses depend on.",
+  applicationName: "Dawood Technologies",
+  creator: "Dawood Technologies",
+  publisher: "Dawood Technologies",
+  robots: {
+    index: true,
+    follow: true,
+  },
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -20,7 +27,7 @@ export const metadata: Metadata = {
     description: "Digital systems engineered around real operations and managed for the long term.",
     url: siteUrl,
   },
-  twitter: { card: "summary_large_image", title: "Dawood Technologies", description: "Technology Built Around Business." },
+  twitter: { card: "summary", title: "Dawood Technologies", description: "Technology Built Around Business." },
   icons: {
     icon: [{ url: "/icon.svg?v=3", type: "image/svg+xml" }],
     apple: "/apple-icon.png?v=2",

@@ -1,16 +1,17 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/app/components/PageHero";
 import { contactEmail, legalUpdated } from "@/app/data/site";
+import { createPageMetadata } from "@/app/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Terms & Conditions | Dawood Technologies",
+export const metadata = createPageMetadata({
+  title: "Terms & Conditions",
   description: "Terms and Conditions for using the Dawood Technologies website and requesting services.",
-};
+  path: "/terms",
+});
 
 export default function TermsPage() {
   return (
-    <main className="legal-page">
+    <main className="legal-page" id="main-content">
       <PageHero
         eyebrow="LEGAL"
         title="Terms & Conditions"

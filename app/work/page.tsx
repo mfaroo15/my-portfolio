@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { ContactBand } from "@/app/components/ContactBand";
 import { InnerHero } from "@/app/components/InnerHero";
 import { work } from "@/app/data/site";
+import { createPageMetadata } from "@/app/lib/metadata";
 
-export const metadata: Metadata = { title: "Work", description: "Selected Dawood Technologies work in operating businesses across manufacturing, infrastructure and international trade.", alternates: { canonical: "/work" } };
+export const metadata = createPageMetadata({ title: "Work", description: "Selected Dawood Technologies work in operating businesses across manufacturing, infrastructure and international trade.", path: "/work" });
 
 export default function WorkPage() {
   return <main id="main-content">

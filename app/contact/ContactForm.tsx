@@ -8,6 +8,7 @@ const budgetRanges = ["Not sure yet", "Under $5,000", "$5,000 - $15,000", "$15,0
 const timelines = ["Not sure yet", "As soon as possible", "1 - 3 months", "3 - 6 months", "6+ months"];
 const contactMethods = ["Email", "Phone", "Either"];
 const formspreeEndpoint = "https://formspree.io/f/xkjgojzw";
+const submissionTimeoutMs = 15_000;
 const fieldLimits = {
   name: 100,
   email: 254,
@@ -48,6 +49,12 @@ function isValidSubmission(formData: FormData) {
   );
 }
 
+function logSubmissionEvent(event: string, details?: Record<string, unknown>) {
+  if (process.env.NODE_ENV === "development") {
+    console.info(`[contact form] ${event}`, details ?? {});
+  }
+}
+
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const submissionInProgress = useRef(false);
@@ -62,52 +69,65 @@ export function ContactForm() {
     const form = event.currentTarget;
     const formData = new FormData(form);
 
-    if (getFieldValue(formData, "_gotcha")) {
-      setStatus("success");
-      return;
-    }
-
-    if (!formspreeEndpoint || !isValidSubmission(formData)) {
+    if (!isValidSubmission(formData)) {
+      logSubmissionEvent("validation rejected");
       setStatus("error");
       return;
     }
 
     submissionInProgress.current = true;
     setStatus("submitting");
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), submissionTimeoutMs);
 
     try {
+      logSubmissionEvent("request started");
       const response = await fetch(formspreeEndpoint, {
         method: "POST",
         body: formData,
+        signal: controller.signal,
         headers: {
           Accept: "application/json",
         },
       });
 
+      logSubmissionEvent("response received", { status: response.status });
+
       if (!response.ok) {
-        throw new Error("Form submission failed");
+        try {
+          await response.json();
+        } catch {
+          // Formspree may return a non-JSON error page; the visitor still gets the retry state.
+        }
+        setStatus("error");
+        return;
       }
 
       form.reset();
       setStatus("success");
-    } catch {
+      logSubmissionEvent("confirmed success");
+    } catch (error) {
+      logSubmissionEvent("request failed", {
+        reason: error instanceof DOMException && error.name === "AbortError" ? "timeout" : "network",
+      });
       setStatus("error");
     } finally {
+      window.clearTimeout(timeout);
       submissionInProgress.current = false;
     }
   };
 
   return (
-    <form className="contact-form" onSubmit={onSubmit}>
+    <form
+      className="contact-form"
+      onSubmit={onSubmit}
+      onInput={() => {
+        if (status === "success" || status === "error") {
+          setStatus("idle");
+        }
+      }}
+    >
       <input type="hidden" name="_subject" value="Dawood Technologies Inquiry" />
-      <input
-        className="sr-only"
-        type="text"
-        name="_gotcha"
-        tabIndex={-1}
-        autoComplete="off"
-        aria-hidden="true"
-      />
       <div className="form-grid">
         <label>
           <span>Name</span>
@@ -186,7 +206,7 @@ export function ContactForm() {
         {status === "success"
           ? "Thank you. Your inquiry has been sent."
           : status === "error"
-            ? "The form could not be sent. Please try again or email us directly."
+            ? "We couldn't send your inquiry. Please try again."
             : "Share the business context and we will follow up with the right next step."}
       </p>
     </form>

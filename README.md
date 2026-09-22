@@ -12,17 +12,14 @@ Open `http://localhost:3000`.
 
 ## Contact Form
 
-The contact form submits to Formspree through this environment variable:
-
-```bash
-NEXT_PUBLIC_FORMSPREE_ENDPOINT=https://formspree.io/f/your-form-id
-```
-
-Add it to `.env.local` for local development and to the Vercel project environment variables for production.
+The contact form submits directly to the production Formspree endpoint configured in
+`app/contact/ContactForm.tsx`. A successful message is shown only after Formspree
+returns a successful response.
 
 ## Checks
 
 ```bash
 npm run lint
+npx tsc --noEmit
 npm run build
 ```

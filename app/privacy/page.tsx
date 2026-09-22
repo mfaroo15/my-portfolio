@@ -1,16 +1,17 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/app/components/PageHero";
 import { contactEmail, legalUpdated } from "@/app/data/site";
+import { createPageMetadata } from "@/app/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | Dawood Technologies",
+export const metadata = createPageMetadata({
+  title: "Privacy Policy",
   description: "Privacy Policy for Dawood Technologies website visitors, prospects and clients.",
-};
+  path: "/privacy",
+});
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="legal-page">
+    <main className="legal-page" id="main-content">
       <PageHero
         eyebrow="LEGAL"
         title="Privacy Policy"

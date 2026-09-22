@@ -4,13 +4,14 @@ import { notFound } from "next/navigation";
 import { ContactBand } from "@/app/components/ContactBand";
 import { ArrowUpRight } from "lucide-react";
 import { work } from "@/app/data/site";
+import { createPageMetadata } from "@/app/lib/metadata";
 
 type Props = { params: Promise<{ slug: string }> };
 export function generateStaticParams() { return work.map(({ slug }) => ({ slug })); }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params; const project = work.find((item) => item.slug === slug);
   if (!project) return {};
-  return { title: project.name, description: project.summary, alternates: { canonical: `/work/${slug}` } };
+  return createPageMetadata({ title: project.name, description: project.summary, path: `/work/${slug}` });
 }
 
 export default async function WorkDetail({ params }: Props) {

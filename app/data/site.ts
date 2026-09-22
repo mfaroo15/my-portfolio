@@ -1,4 +1,4 @@
-export const siteUrl = "https://dawoodtech.com";
+export const siteUrl = "https://www.dawoodtech.com";
 export const contactEmail = "info@dawoodtech.com";
 export const legalUpdated = "September 21, 2026";
 
@@ -104,7 +104,6 @@ export const work = [
   { slug: "dawood-traders", name: "Dawood Traders", sector: "International Trade & Commerce", title: "Technology supporting modern trade operations", summary: "Digital capability shaped around information, coordination and the continuity international commerce requires.", logo: "/logos/dawood-traders.png", website: "https://dawoodtraderspk.com" },
 ] as const;
 
-export const groupCompanies = work.map((item) => ({ name: item.name, logo: item.logo, caption: item.name, descriptor: item.sector, url: `/work/${item.slug}` }));
 export const insightCategories = ["Engineering", "Cloud", "Cybersecurity", "Data & AI", "Business Technology", "Digital Transformation"] as const;
 export const technologyCategories = [
   { title: "Cloud & Infrastructure", logos: [
@@ -137,8 +136,6 @@ export const technologyCategories = [
 ] as const;
 export const contactServiceOptions = capabilities.map((item) => item.title);
 
-// Compatibility data for established URLs and components retained during the redesign.
-export const services = capabilities.map((item) => ({ ...item, deliverables: [...item.items], value: "Designed around the operation, with a clear path for long-term ownership." }));
 export const solutions = [
   { label: "01", title: "Business Applications", text: "Purpose-built systems for operational workflows, internal coordination and business visibility.", services: ["Application development", "Systems integration", "Data services"] },
   { label: "02", title: "Customer & Employee Portals", text: "Secure digital experiences that connect people with information, services and workflows.", services: ["Portal engineering", "Identity and access", "API integration"] },

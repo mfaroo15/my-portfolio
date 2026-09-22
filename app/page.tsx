@@ -4,12 +4,37 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { TechnologyLogo } from "@/app/components/TechnologyLogo";
 import { capabilities, industries, siteUrl, solutions, technologyCategories, work } from "@/app/data/site";
+import { createPageMetadata } from "@/app/lib/metadata";
 
-export const metadata: Metadata = { title: "Technology Built Around Business", description: "Dawood Technologies designs, builds, integrates, operates and improves technology for businesses.", alternates: { canonical: "/" } };
+const homeDescription = "Dawood Technologies designs, builds, integrates, operates and improves technology for businesses.";
+
+export const metadata: Metadata = {
+  ...createPageMetadata({ title: "Technology Built Around Business", description: homeDescription, path: "/" }),
+  title: { absolute: "Dawood Technologies | Technology Built Around Business" },
+};
 
 export default function Home() {
-  const organizationSchema = { "@context": "https://schema.org", "@type": "Organization", name: "Dawood Technologies", url: siteUrl, email: "info@dawoodtech.com", logo: `${siteUrl}/dawood-technologies-logo.png`, description: "A technology company providing services and solutions to businesses across industries." };
-  return <main id="main-content"><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema).replace(/</g, "\\u003c") }} />
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${siteUrl}/#organization`,
+        name: "Dawood Technologies",
+        url: `${siteUrl}/`,
+        logo: `${siteUrl}/dawood-technologies-logo.png`,
+        description: "Dawood Technologies designs, builds, operates and improves the digital systems modern businesses depend on.",
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        name: "Dawood Technologies",
+        url: `${siteUrl}/`,
+        publisher: { "@id": `${siteUrl}/#organization` },
+      },
+    ],
+  };
+  return <main id="main-content"><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
     <section className="home-hero"><div className="container hero-inner"><div className="hero-copy"><p className="kicker">DAWOOD TECHNOLOGIES</p><h1>Technology built around <span>business.</span></h1><p className="hero-intro">We design, build, integrate, operate and improve the digital systems businesses depend on, across software, cloud, enterprise platforms, data, AI, security and managed technology.</p><div className="hero-actions"><Link className="button button-primary" href="/services">Explore Services <ArrowRight aria-hidden="true" size={17} /></Link><Link className="text-link" href="/contact">Let&apos;s Talk <ArrowUpRight aria-hidden="true" size={17} /></Link></div></div><figure className="hero-visual"><Image src="/technology-built-around-business.png" alt="Abstract blue architectural forms representing connected business technology" width={1152} height={1536} priority /></figure></div></section>
 
     <section className="section capability-section"><div className="container split-heading light"><div><p className="kicker">SERVICES</p><h2>Full-service technology capability.</h2></div><p>Eight connected disciplines spanning advisory, engineering, integration and ongoing operation.</p></div><div className="container capability-list">{capabilities.map((item) => <Link href={`/services/${item.slug}`} className="capability-row" key={item.title}><span>{item.code}</span><h3>{item.title}</h3><p>{item.summary}</p><ArrowUpRight aria-hidden="true" /></Link>)}</div></section>

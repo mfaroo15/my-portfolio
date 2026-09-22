@@ -1,16 +1,17 @@
-import type { Metadata } from "next";
 import { ContactForm } from "@/app/contact/ContactForm";
 import { PageHero } from "@/app/components/PageHero";
 import { contactEmail } from "@/app/data/site";
+import { createPageMetadata } from "@/app/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Let's Talk | Dawood Technologies",
+export const metadata = createPageMetadata({
+  title: "Let's Talk",
   description: "Contact Dawood Technologies about technology consulting, software, cloud, enterprise systems, data, AI, cybersecurity or managed technology.",
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (
-    <main>
+    <main id="main-content">
       <PageHero
         eyebrow="LET'S TALK"
         title="Tell us what your business needs technology to do."

@@ -1,17 +1,18 @@
-import type { Metadata } from "next";
 import { ButtonLink } from "@/app/components/ButtonLink";
 import { CTASection } from "@/app/components/CTASection";
 import { PageHero } from "@/app/components/PageHero";
 import { locations, values } from "@/app/data/site";
+import { createPageMetadata } from "@/app/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "About Dawood Technologies",
+export const metadata = createPageMetadata({
+  title: "About",
   description: "Learn about Dawood Technologies, its business-first, risk-aware technology approach, values, markets served and way of working.",
-};
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (
-    <main>
+    <main id="main-content">
       <PageHero
         eyebrow="ABOUT Dawood Technologies"
         title="Business understanding with technical execution."

@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
 import { ContactBand } from "@/app/components/ContactBand";
 import { InnerHero } from "@/app/components/InnerHero";
+import { createPageMetadata } from "@/app/lib/metadata";
 
-export const metadata: Metadata = { title: "Company", description: "Dawood Technologies brings technology ownership, continuity and operational understanding closer to the businesses that depend on it.", alternates: { canonical: "/company" } };
+export const metadata = createPageMetadata({ title: "Company", description: "Dawood Technologies brings technology ownership, continuity and operational understanding closer to the businesses that depend on it.", path: "/company" });
 export default function CompanyPage() {
   return <main id="main-content"><InnerHero kicker="COMPANY" title="Technology capability, closer to the business." intro="Dawood Technologies was created from a simple operating principle: businesses should have greater ownership and continuity over the technology they depend on." />
     <section className="section company-story"><div className="container story-grid"><div><p className="kicker">OUR FOUNDATION</p><h2>Built from operational need.</h2></div><div className="story-copy"><p>Technology capability was brought closer to operating businesses so systems could be shaped with a clearer understanding of users, workflows, risk and long-term priorities.</p><p>That foundation still defines how we work: understand operations first, build technology around them, remain involved after deployment and improve systems as the business evolves.</p><p>Today, the same approach supports organizations beyond our immediate business ecosystem. Dawood Technologies stands independently as an engineering-led company built for enduring technology responsibility.</p></div></div></section>
