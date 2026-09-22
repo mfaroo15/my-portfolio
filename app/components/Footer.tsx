@@ -18,7 +18,7 @@ export function Footer() {
           <Link href="/" aria-label="Dawood Technologies home">
             <Image src="/dawood-technologies-logo.png" alt="" width={1714} height={221} />
           </Link>
-          <p>We design, build, operate and improve technology around the way businesses actually work.</p>
+          <p>Business applications, enterprise integrations, cloud infrastructure and ongoing technology operations.</p>
           <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
         </div>
         <nav className="footer-column" aria-label="Company links">

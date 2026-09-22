@@ -104,7 +104,6 @@ export const work = [
   { slug: "dawood-traders", name: "Dawood Traders", sector: "International Trade & Commerce", title: "Technology supporting modern trade operations", summary: "Digital presence and technology support for international trade operations.", logo: "/logos/dawood-traders.png", website: "https://dawoodtraderspk.com" },
 ] as const;
 
-export const insightCategories = ["Engineering", "Cloud", "Cybersecurity", "Data & AI", "Business Technology", "Digital Transformation"] as const;
 export const technologyCategories = [
   { title: "Cloud & Infrastructure", logos: [
     { name: "AWS", category: "Cloud" },
