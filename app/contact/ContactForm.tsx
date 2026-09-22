@@ -2,12 +2,15 @@
 
 import type { FormEvent } from "react";
 import { useRef, useState } from "react";
+import Script from "next/script";
 import { contactServiceOptions } from "@/app/data/site";
 
 const budgetRanges = ["Not sure yet", "Under $5,000", "$5,000 - $15,000", "$15,000 - $50,000", "$50,000+"];
 const timelines = ["Not sure yet", "As soon as possible", "1 - 3 months", "3 - 6 months", "6+ months"];
 const contactMethods = ["Email", "Phone", "Either"];
 const formspreeEndpoint = "https://formspree.io/f/xkjgojzw";
+const recaptchaSiteKey = "6LfC6sktAAAAAPCa1g7KfcnQkP7bkJ-y_oWfdNhU";
+const recaptchaMessage = "Please complete the reCAPTCHA verification.";
 const submissionTimeoutMs = 15_000;
 const fieldLimits = {
   name: 100,
@@ -16,6 +19,26 @@ const fieldLimits = {
   company: 150,
   description: 3000,
 } as const;
+
+type ReCaptchaApi = {
+  getResponse: (widgetId?: number) => string;
+  render: (
+    container: HTMLElement,
+    parameters: {
+      sitekey: string;
+      callback: (token: string) => void;
+      "expired-callback": () => void;
+      "error-callback": () => void;
+    },
+  ) => number;
+  reset: (widgetId?: number) => void;
+};
+
+declare global {
+  interface Window {
+    grecaptcha?: ReCaptchaApi;
+  }
+}
 
 function getFieldValue(formData: FormData, field: string) {
   const value = formData.get(field);
@@ -57,7 +80,41 @@ function logSubmissionEvent(event: string, details?: Record<string, unknown>) {
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [recaptchaError, setRecaptchaError] = useState("");
   const submissionInProgress = useRef(false);
+  const recaptchaContainer = useRef<HTMLDivElement>(null);
+  const recaptchaToken = useRef("");
+  const recaptchaWidgetId = useRef<number | null>(null);
+
+  const renderRecaptcha = () => {
+    if (!recaptchaContainer.current || !window.grecaptcha || recaptchaWidgetId.current !== null) {
+      return;
+    }
+
+    recaptchaWidgetId.current = window.grecaptcha.render(recaptchaContainer.current, {
+      sitekey: recaptchaSiteKey,
+      callback: (token) => {
+        recaptchaToken.current = token;
+        setRecaptchaError("");
+      },
+      "expired-callback": () => {
+        recaptchaToken.current = "";
+        setRecaptchaError(recaptchaMessage);
+      },
+      "error-callback": () => {
+        recaptchaToken.current = "";
+        setRecaptchaError("reCAPTCHA verification failed. Please try again.");
+      },
+    });
+  };
+
+  const resetRecaptcha = (message = "") => {
+    recaptchaToken.current = "";
+    if (recaptchaWidgetId.current !== null) {
+      window.grecaptcha?.reset(recaptchaWidgetId.current);
+    }
+    setRecaptchaError(message);
+  };
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -74,6 +131,19 @@ export function ContactForm() {
       setStatus("error");
       return;
     }
+
+    const recaptchaResponse =
+      recaptchaToken.current ||
+      (recaptchaWidgetId.current !== null
+        ? window.grecaptcha?.getResponse(recaptchaWidgetId.current) ?? ""
+        : "");
+
+    if (!recaptchaResponse) {
+      setRecaptchaError(recaptchaMessage);
+      return;
+    }
+
+    formData.set("g-recaptcha-response", recaptchaResponse);
 
     submissionInProgress.current = true;
     setStatus("submitting");
@@ -99,17 +169,20 @@ export function ContactForm() {
         } catch {
           // Formspree may return a non-JSON error page; the visitor still gets the retry state.
         }
+        resetRecaptcha(recaptchaMessage);
         setStatus("error");
         return;
       }
 
       form.reset();
+      resetRecaptcha();
       setStatus("success");
       logSubmissionEvent("confirmed success");
     } catch (error) {
       logSubmissionEvent("request failed", {
         reason: error instanceof DOMException && error.name === "AbortError" ? "timeout" : "network",
       });
+      resetRecaptcha(recaptchaMessage);
       setStatus("error");
     } finally {
       window.clearTimeout(timeout);
@@ -190,7 +263,7 @@ export function ContactForm() {
         </label>
       </div>
       <label>
-          <span>What does your business need technology to do?</span>
+        <span>What does your business need technology to do?</span>
         <textarea
           name="description"
           rows={7}
@@ -199,6 +272,14 @@ export function ContactForm() {
           maxLength={fieldLimits.description}
         />
       </label>
+      <div className="recaptcha-field">
+        <div ref={recaptchaContainer} />
+        {recaptchaError ? (
+          <p className="recaptcha-error" role="alert">
+            {recaptchaError}
+          </p>
+        ) : null}
+      </div>
       <button className="button button-primary" type="submit" disabled={status === "submitting"}>
         {status === "submitting" ? "Submitting..." : "Submit Inquiry"}
       </button>
@@ -209,6 +290,13 @@ export function ContactForm() {
             ? "We couldn't send your inquiry. Please try again."
             : "Share the business context and we will follow up with the right next step."}
       </p>
+      <Script
+        id="google-recaptcha"
+        src="https://www.google.com/recaptcha/api.js?render=explicit"
+        strategy="afterInteractive"
+        onReady={renderRecaptcha}
+        onError={() => setRecaptchaError("reCAPTCHA could not load. Please try again.")}
+      />
     </form>
   );
 }
