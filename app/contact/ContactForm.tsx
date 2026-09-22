@@ -22,7 +22,8 @@ const fieldLimits = {
 
 type ReCaptchaApi = {
   getResponse: (widgetId?: number) => string;
-  render: (
+  ready?: (callback: () => void) => void;
+  render?: (
     container: HTMLElement,
     parameters: {
       sitekey: string;
@@ -87,11 +88,17 @@ export function ContactForm() {
   const recaptchaWidgetId = useRef<number | null>(null);
 
   const renderRecaptcha = () => {
-    if (!recaptchaContainer.current || !window.grecaptcha || recaptchaWidgetId.current !== null) {
+    const recaptcha = window.grecaptcha;
+
+    if (
+      !recaptchaContainer.current ||
+      typeof recaptcha?.render !== "function" ||
+      recaptchaWidgetId.current !== null
+    ) {
       return;
     }
 
-    recaptchaWidgetId.current = window.grecaptcha.render(recaptchaContainer.current, {
+    recaptchaWidgetId.current = recaptcha.render(recaptchaContainer.current, {
       sitekey: recaptchaSiteKey,
       callback: (token) => {
         recaptchaToken.current = token;
@@ -106,6 +113,17 @@ export function ContactForm() {
         setRecaptchaError("reCAPTCHA verification failed. Please try again.");
       },
     });
+  };
+
+  const initializeRecaptcha = () => {
+    const recaptcha = window.grecaptcha;
+
+    if (typeof recaptcha?.ready === "function") {
+      recaptcha.ready(renderRecaptcha);
+      return;
+    }
+
+    renderRecaptcha();
   };
 
   const resetRecaptcha = (message = "") => {
@@ -294,7 +312,7 @@ export function ContactForm() {
         id="google-recaptcha"
         src="https://www.google.com/recaptcha/api.js?render=explicit"
         strategy="afterInteractive"
-        onReady={renderRecaptcha}
+        onReady={initializeRecaptcha}
         onError={() => setRecaptchaError("reCAPTCHA could not load. Please try again.")}
       />
     </form>
