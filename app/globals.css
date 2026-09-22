@@ -175,6 +175,40 @@ h3 { font-size: 1.45rem; font-weight: 600; }
 .detail-row ul { columns: 2; margin: 8px 0 0; padding: 0; list-style: none; }
 .detail-row li { margin: 0 0 11px; padding-left: 15px; font-size: .86rem; break-inside: avoid; }
 .detail-row li::before { content: ""; width: 5px; height: 5px; display: inline-block; margin: 0 10px 2px 0; background: var(--teal); }
+.capability-overview-row { display: grid; grid-template-columns: 52px minmax(260px, .9fr) minmax(220px, .65fr) minmax(230px, .7fr); gap: 34px; padding: 58px 0; border-top: 1px solid var(--line); }
+.capability-overview-row:last-child { border-bottom: 1px solid var(--line); }
+.capability-overview-intro h2 { margin-bottom: 16px; font-size: clamp(1.75rem, 2.7vw, 2.8rem); }
+.capability-overview-intro p { max-width: 520px; color: var(--muted); }
+.capability-overview-intro .text-link { margin-top: 10px; }
+.capability-overview-services > strong, .capability-overview-platforms > strong { display: block; margin: 8px 0 20px; color: var(--teal); font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; }
+.capability-overview-services ul { margin: 0; padding: 0; list-style: none; }
+.capability-overview-services li { padding: 8px 0; border-bottom: 1px solid var(--line); font-size: .84rem; }
+.capability-overview-platforms > div { display: grid; gap: 18px; }
+.capability-overview-platforms > p { color: var(--muted); font-size: .84rem; }
+.capability-detail-section { background: var(--white); }
+.capability-platform-section, .capability-industries-section { background: var(--mist); }
+.numbered-section { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 64px; }
+.section-marker span { display: block; margin-bottom: 14px; color: var(--teal); font-size: 1.1rem; }
+.section-marker p { margin: 0; font-size: .68rem; font-weight: 700; letter-spacing: .1em; }
+.section-body > h2 { max-width: 850px; margin-bottom: 46px; font-size: clamp(2.2rem, 4vw, 4rem); }
+.section-intro { max-width: 720px; margin: -22px 0 42px; color: var(--muted); }
+.service-editorial-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.service-editorial-grid article { min-height: 118px; display: grid; grid-template-columns: 38px 1fr; align-content: center; gap: 18px; padding: 22px 28px 22px 0; border-bottom: 1px solid var(--line); }
+.service-editorial-grid article:nth-child(odd) { border-right: 1px solid var(--line); }
+.service-editorial-grid article:nth-child(even) { padding-left: 28px; }
+.service-editorial-grid span, .approach-grid span { color: var(--teal); font-size: .68rem; }
+.service-editorial-grid h3 { margin: 0; font-size: 1rem; line-height: 1.35; }
+.capability-platform-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; padding: 38px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.capability-platform-grid .technology-logo-art { width: 42px; height: 42px; }
+.platform-context { max-width: 720px; padding: 30px 0; color: var(--muted); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.approach-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.approach-grid article { min-height: 280px; padding: 24px; border-right: 1px solid var(--line); }
+.approach-grid article:last-child { border-right: 0; }
+.approach-grid h3 { margin-top: 70px; }
+.approach-grid p { color: var(--muted); font-size: .86rem; }
+.relevant-industry-list { border-top: 1px solid var(--line); }
+.relevant-industry-list a { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 15px 4px; border-bottom: 1px solid var(--line); font-weight: 600; }
+.relevant-industry-list a:hover { color: var(--teal); }
 .managed-block { padding-bottom: 120px; }
 .work-index { background: var(--white); }
 .work-index-row { display: grid; grid-template-columns: 45px 180px 1fr 30px; align-items: center; gap: 36px; padding: 50px 0; border-top: 1px solid var(--line); }
@@ -336,6 +370,13 @@ h3 { font-size: 1.45rem; font-weight: 600; }
   .inner-hero, .case-hero { padding: 80px 0 65px; }
   .detail-row { grid-template-columns: 42px 1fr; gap: 20px; }
   .detail-row ul { grid-column: 2; }
+  .capability-overview-row { grid-template-columns: 42px 1fr 1fr; }
+  .capability-overview-intro { grid-column: 2 / -1; }
+  .capability-overview-services { grid-column: 2; }
+  .numbered-section { grid-template-columns: 130px minmax(0, 1fr); gap: 34px; }
+  .approach-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .approach-grid article:nth-child(2) { border-right: 0; }
+  .approach-grid article:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
   .work-index-row { grid-template-columns: 30px 120px 1fr 22px; gap: 18px; }
   .case-hero-grid { grid-template-columns: 1fr; gap: 45px; }
   .case-logo { min-height: 230px; }
@@ -382,6 +423,17 @@ h3 { font-size: 1.45rem; font-weight: 600; }
   .company-lifecycle .lifecycle-track > div:nth-child(-n+4) { border-bottom-color: var(--line); }
   .detail-row { grid-template-columns: 30px 1fr; }
   .detail-row ul { columns: 1; }
+  .capability-overview-row { grid-template-columns: 30px 1fr; gap: 18px; }
+  .capability-overview-intro, .capability-overview-services, .capability-overview-platforms { grid-column: 2; }
+  .numbered-section { grid-template-columns: 1fr; gap: 38px; }
+  .section-marker { display: flex; align-items: baseline; gap: 16px; }
+  .section-marker span { margin-bottom: 0; }
+  .service-editorial-grid, .approach-grid { grid-template-columns: 1fr; }
+  .service-editorial-grid article:nth-child(odd), .approach-grid article { border-right: 0; }
+  .service-editorial-grid article:nth-child(even) { padding-left: 0; }
+  .approach-grid article { min-height: 230px; }
+  .approach-grid article:nth-child(3) { border-bottom: 1px solid var(--line); }
+  .capability-platform-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .work-index-row { grid-template-columns: 28px 1fr 22px; }
   .work-index-logo { grid-column: 2; width: 150px; }
   .work-index-row > div:nth-of-type(2) { grid-column: 2; }

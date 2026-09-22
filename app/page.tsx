@@ -84,7 +84,7 @@ export default function Home() {
         </div>
         <div className="container capability-list">
           {capabilities.map((item) => (
-            <Link href="/capabilities" className="capability-row" key={item.title}>
+            <Link href={`/capabilities/${item.slug}`} className="capability-row" key={item.title}>
               <span>{item.code}</span><h3>{item.title}</h3><p>{item.summary}</p><ArrowUpRight aria-hidden="true" />
             </Link>
           ))}

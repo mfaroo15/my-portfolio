@@ -19,12 +19,54 @@ export const legalLinks = [
 ];
 
 export const capabilities = [
-  { code: "01", title: "Software & Digital Products", summary: "Purpose-built websites, applications, platforms and integrations shaped around users and operations.", items: ["Custom software", "Web applications", "Digital platforms", "E-commerce", "Portals", "APIs & integrations"] },
-  { code: "02", title: "Enterprise Systems", summary: "Connected business applications that bring structure, visibility and continuity to day-to-day work.", items: ["Business applications", "CRM", "ERP", "POS", "Workflow systems", "Systems integration"] },
-  { code: "03", title: "Cloud & Infrastructure", summary: "Reliable foundations for applications, teams and operations, designed for maintainability and control.", items: ["Cloud architecture", "Infrastructure", "DevOps", "Networking", "Workplace technology", "Monitoring"] },
-  { code: "04", title: "Cybersecurity", summary: "Practical security across identities, applications and infrastructure, built into the operating model.", items: ["Security architecture", "Identity & access", "Application security", "Infrastructure security", "Assessments", "Resilience"] },
-  { code: "05", title: "Data, Automation & AI", summary: "Data and intelligent workflows that make information usable and reduce repetitive operational work.", items: ["Business intelligence", "Data engineering", "Analytics", "Workflow automation", "AI solutions", "Intelligent operations"] },
-  { code: "06", title: "Managed Technology", summary: "Continuous ownership of applications and infrastructure after launch, with monitoring, support and improvement.", items: ["Technology operations", "Infrastructure management", "Application management", "Website management", "Vendor coordination", "Support"] },
+  {
+    code: "01", slug: "software-digital-products", title: "Software & Digital Products",
+    summary: "Modern digital systems designed around the people, workflows and operating needs they must support.",
+    introduction: "We plan and engineer digital products that turn business requirements into maintainable software. The work can span a focused customer experience, an internal platform or the modernization of an existing application.",
+    items: ["Web application development", "Mobile application development", "Enterprise application development", "Customer and employee portals", "API development and integration", "E-commerce development", "Application modernization", "UI/UX engineering"],
+    platforms: [{ name: "React", category: "Frontend" }, { name: "Next.js", category: "Web platform" }, { name: "TypeScript", category: "Engineering" }, { name: "Node.js", category: "Backend" }, { name: "Python", category: "Engineering" }],
+    industries: ["Manufacturing & Infrastructure", "International Trade & Commerce", "Retail & Commerce", "Professional Services"],
+  },
+  {
+    code: "02", slug: "enterprise-systems", title: "Enterprise Systems",
+    summary: "Connected business applications that bring structure, visibility and continuity to day-to-day operations.",
+    introduction: "We shape enterprise systems around the way information and responsibility move through a business. That includes selecting, implementing and connecting platforms without treating software as separate from the operating process.",
+    items: ["CRM solutions", "ERP solutions", "Systems integration", "Workflow automation", "Business process digitization", "Platform implementation", "Application integration", "Enterprise support"],
+    platforms: [{ name: "Salesforce", category: "CRM" }, { name: "Dynamics 365", category: "Enterprise" }],
+    industries: ["Manufacturing & Infrastructure", "International Trade & Commerce", "Retail & Commerce", "Professional Services"],
+  },
+  {
+    code: "03", slug: "cloud-infrastructure", title: "Cloud & Infrastructure",
+    summary: "Reliable technical foundations for applications, teams and operations, designed for maintainability and control.",
+    introduction: "We design and improve cloud and infrastructure environments with attention to resilience, cost, security and operational ownership. Architecture decisions stay connected to the applications and teams that depend on them.",
+    items: ["Cloud consulting", "Cloud architecture", "Cloud migration", "Cloud infrastructure", "DevOps", "Cloud optimization", "Managed cloud", "Infrastructure monitoring"],
+    platforms: [{ name: "AWS", category: "Cloud" }, { name: "Microsoft Azure", category: "Cloud" }, { name: "Google Cloud", category: "Cloud" }, { name: "Docker", category: "DevOps" }, { name: "GitHub", category: "Code delivery" }, { name: "Vercel", category: "Cloud delivery" }],
+    industries: ["Manufacturing & Infrastructure", "International Trade & Commerce", "Retail & Commerce", "Professional Services"],
+  },
+  {
+    code: "04", slug: "cybersecurity", title: "Cybersecurity",
+    summary: "Practical security across identities, applications and infrastructure, built into the operating model.",
+    introduction: "We help organizations identify risk and strengthen the controls surrounding their applications, users and infrastructure. Recommendations are practical, prioritized and tied to how technology is actually operated.",
+    items: ["Security assessments", "Application security", "Cloud security", "Identity and access management", "Security hardening", "Vulnerability management", "Security monitoring", "Security architecture"],
+    platforms: [],
+    industries: ["Manufacturing & Infrastructure", "International Trade & Commerce", "Retail & Commerce", "Professional Services"],
+  },
+  {
+    code: "05", slug: "data-automation-ai", title: "Data, Automation & AI",
+    summary: "Data and intelligent workflows that make information usable and reduce repetitive operational work.",
+    introduction: "We help businesses organize data, improve reporting and introduce automation where it can remove friction. AI is approached as an applied capability within a defined workflow, with value and maintainability considered from the outset.",
+    items: ["Data engineering", "Business intelligence", "Data visualization", "Analytics", "Data strategy", "Workflow automation", "AI application development", "AI integration", "Intelligent automation"],
+    platforms: [{ name: "Power BI", category: "Analytics" }, { name: "Python", category: "Engineering" }, { name: "Microsoft Azure", category: "Cloud" }, { name: "Google Cloud", category: "Cloud" }, { name: "AWS", category: "Cloud" }],
+    industries: ["Manufacturing & Infrastructure", "International Trade & Commerce", "Retail & Commerce", "Agriculture & Dairy", "Professional Services"],
+  },
+  {
+    code: "06", slug: "managed-technology", title: "Managed Technology",
+    summary: "Continuous ownership of applications and infrastructure after launch, with support, maintenance and improvement.",
+    introduction: "Technology needs informed ownership after deployment. We can remain involved to preserve context, support day-to-day operation and guide improvements as business priorities and technical requirements change.",
+    items: ["Managed IT", "Application support", "Infrastructure management", "Systems administration", "Technology operations", "Monitoring and maintenance", "Platform support", "Continuous improvement"],
+    platforms: [],
+    industries: ["Manufacturing & Infrastructure", "International Trade & Commerce", "Retail & Commerce", "Agriculture & Dairy", "Professional Services"],
+  },
 ] as const;
 
 export const lifecycle = ["Plan", "Build", "Deploy", "Operate", "Secure", "Improve"] as const;
