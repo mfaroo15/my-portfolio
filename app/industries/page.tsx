@@ -3,8 +3,8 @@ import { ContactBand } from "@/app/components/ContactBand";
 import { InnerHero } from "@/app/components/InnerHero";
 import { industries } from "@/app/data/site";
 
-export const metadata: Metadata = { title: "Industries", description: "Technology capabilities informed by manufacturing, infrastructure, trade, commerce, agriculture and professional services.", alternates: { canonical: "/industries" } };
+export const metadata: Metadata = { title: "Industries We Serve", description: "Technology services for media, health, finance, real estate, education, advertising, retail, manufacturing, construction, logistics and trade.", alternates: { canonical: "/industries" } };
 export default function IndustriesPage() {
-  return <main id="main-content"><InnerHero kicker="INDUSTRIES" title="Business context before technology choices." intro="We focus on operating environments we can speak about responsibly. Each engagement still begins with the organization in front of us, because no two workflows are exactly alike." />
-    <section className="section industry-detail"><div className="container">{industries.map((item) => <article key={item.title}><span>{item.code}</span><div><h2>{item.title}</h2><p>{item.text}</p></div><ul><li>Operational visibility</li><li>Connected workflows</li><li>Secure, maintainable systems</li></ul></article>)}</div></section><ContactBand /></main>;
+  return <main id="main-content"><InnerHero kicker="INDUSTRIES WE SERVE" title="Technology shaped for different operating contexts." intro="These sectors represent markets where our services can be applied. They do not imply completed client work in every industry; each engagement starts with the specific organization and its needs." />
+    <section className="section industry-detail"><div className="container">{industries.map((item) => <article key={item.title}><span>{item.code}</span><div><h2>{item.title}</h2><p>{item.text}</p></div><ul>{item.needs.map((need) => <li key={need}>{need}</li>)}</ul></article>)}</div></section><ContactBand /></main>;
 }

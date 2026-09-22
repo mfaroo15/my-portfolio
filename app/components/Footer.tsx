@@ -28,8 +28,8 @@ export function Footer() {
           <Link href="/contact">Contact</Link>
         </nav>
         <nav className="footer-column" aria-label="Capability links">
-          <strong>Capabilities</strong>
-          {capabilities.slice(0, 5).map((item) => <Link href="/capabilities" key={item.title}>{item.title}</Link>)}
+          <strong>Services</strong>
+          {capabilities.slice(0, 5).map((item) => <Link href={`/services/${item.slug}`} key={item.title}>{item.title}</Link>)}
         </nav>
         <nav className="footer-column" aria-label="Industry links">
           <strong>Industries</strong>

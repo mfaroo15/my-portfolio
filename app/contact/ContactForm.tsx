@@ -99,7 +99,7 @@ export function ContactForm() {
 
   return (
     <form className="contact-form" onSubmit={onSubmit}>
-      <input type="hidden" name="_subject" value="Dawood Technologies Project Inquiry" />
+      <input type="hidden" name="_subject" value="Dawood Technologies Inquiry" />
       <input
         className="sr-only"
         type="text"
@@ -170,7 +170,7 @@ export function ContactForm() {
         </label>
       </div>
       <label>
-        <span>Project description</span>
+          <span>What does your business need technology to do?</span>
         <textarea
           name="description"
           rows={7}
@@ -180,14 +180,14 @@ export function ContactForm() {
         />
       </label>
       <button className="button button-primary" type="submit" disabled={status === "submitting"}>
-        {status === "submitting" ? "Submitting..." : "Submit Project Inquiry"}
+        {status === "submitting" ? "Submitting..." : "Submit Inquiry"}
       </button>
       <p className="form-note" role="status" aria-live="polite">
         {status === "success"
           ? "Thank you. Your inquiry has been sent."
           : status === "error"
             ? "The form could not be sent. Please try again or email us directly."
-            : "Share your project details and we will reply as soon as possible."}
+            : "Share the business context and we will follow up with the right next step."}
       </p>
     </form>
   );

@@ -1,62 +1,7 @@
 import type { Metadata } from "next";
-import { ButtonLink } from "@/app/components/ButtonLink";
-import { CTASection } from "@/app/components/CTASection";
-import { PageHero } from "@/app/components/PageHero";
+import { ContactBand } from "@/app/components/ContactBand";
+import { InnerHero } from "@/app/components/InnerHero";
 import { solutions } from "@/app/data/site";
 
-export const metadata: Metadata = {
-  title: "Business Technology Solutions | Dawood Technologies",
-  description: "Business technology solutions for digital products, POS and retail operations, CRM, finance systems, automation, cybersecurity, IT controls, infrastructure and technology roadmaps.",
-};
-
-export default function SolutionsPage() {
-  return (
-    <main>
-      <PageHero
-        eyebrow="BUSINESS SOLUTIONS"
-        title="Technology organized around business problems."
-        text="The right solution starts with the operational challenge, not the tool. Dawood Technologies connects customer needs, workflows, retail operations, technology risk, controls and growth priorities to practical implementation."
-      />
-
-      <section className="section solutions">
-        <div className="container solution-list">
-          {solutions.map((item) => (
-            <article className="solution-detail" key={item.title}>
-              <div className="solution-detail-lead">
-                <div className="solution-label">{item.label}</div>
-                <h2>{item.title}</h2>
-                <ButtonLink href="/contact" variant="dark">
-                  Discuss This Solution
-                </ButtonLink>
-              </div>
-              <div className="solution-columns">
-                <div>
-                  <h3>Business challenge</h3>
-                  <p>{item.challenge}</p>
-                </div>
-                <div>
-                  <h3>How Dawood Technologies approaches it</h3>
-                  <p>{item.approach}</p>
-                </div>
-                <div>
-                  <h3>Relevant services</h3>
-                  <ul>
-                    {item.services.map((service) => (
-                      <li key={service}>{service}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3>Expected outcome</h3>
-                  <p>{item.outcome}</p>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <CTASection title="Have a business challenge that does not fit a neat category?" text="Send the context. We can shape the technology path around the actual operation." />
-    </main>
-  );
-}
+export const metadata: Metadata = { title: "Business Technology Solutions", description: "Business applications, portals, CRM, commerce, data, AI and cloud solutions designed around operational needs.", alternates: { canonical: "/solutions" } };
+export default function SolutionsPage() { return <main id="main-content"><InnerHero kicker="SOLUTIONS" title="Technology systems organized around business outcomes." intro="Solutions bring multiple services together around a specific business need. They are designed and integrated for each organization; they are not off-the-shelf Dawood products." /><section className="section industry-detail"><div className="container">{solutions.map((item) => <article key={item.title}><span>{item.label}</span><div><h2>{item.title}</h2><p>{item.text}</p></div><ul>{item.services.map((service) => <li key={service}>{service}</li>)}</ul></article>)}</div></section><ContactBand /></main>; }

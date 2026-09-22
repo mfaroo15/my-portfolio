@@ -3,109 +3,28 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { TechnologyLogo } from "@/app/components/TechnologyLogo";
-import { capabilities, industries, lifecycle, siteUrl, technologyCategories, work } from "@/app/data/site";
+import { capabilities, industries, siteUrl, solutions, technologyCategories, work } from "@/app/data/site";
 
-export const metadata: Metadata = {
-  title: "Technology Built Around Business",
-  description: "Dawood Technologies designs, builds, operates, secures and continuously improves technology for real businesses.",
-  alternates: { canonical: "/" },
-};
+export const metadata: Metadata = { title: "Technology Built Around Business", description: "Dawood Technologies designs, builds, integrates, operates and improves technology for businesses.", alternates: { canonical: "/" } };
 
 export default function Home() {
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Dawood Technologies",
-    url: siteUrl,
-    email: "info@dawoodtech.com",
-    logo: `${siteUrl}/dawood-technologies-logo.png`,
-    description: "A technology company that designs, builds, operates and improves digital systems around business operations.",
-  };
+  const organizationSchema = { "@context": "https://schema.org", "@type": "Organization", name: "Dawood Technologies", url: siteUrl, email: "info@dawoodtech.com", logo: `${siteUrl}/dawood-technologies-logo.png`, description: "A technology company providing services and solutions to businesses across industries." };
+  return <main id="main-content"><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema).replace(/</g, "\\u003c") }} />
+    <section className="home-hero"><div className="container hero-inner"><div className="hero-copy"><p className="kicker">DAWOOD TECHNOLOGIES</p><h1>Technology built around <span>business.</span></h1><p className="hero-intro">We design, build, integrate, operate and improve the digital systems businesses depend on, across software, cloud, enterprise platforms, data, AI, security and managed technology.</p><div className="hero-actions"><Link className="button button-primary" href="/services">Explore Services <ArrowRight aria-hidden="true" size={17} /></Link><Link className="text-link" href="/contact">Let&apos;s Talk <ArrowUpRight aria-hidden="true" size={17} /></Link></div></div><figure className="hero-visual"><Image src="/technology-built-around-business.png" alt="Abstract blue architectural forms representing connected business technology" width={1152} height={1536} priority /></figure></div></section>
 
-  return (
-    <main id="main-content">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema).replace(/</g, "\\u003c") }} />
+    <section className="section capability-section"><div className="container split-heading light"><div><p className="kicker">SERVICES</p><h2>Full-service technology capability.</h2></div><p>Seven connected disciplines spanning strategy, engineering, integration and ongoing operation.</p></div><div className="container capability-list">{capabilities.map((item) => <Link href={`/services/${item.slug}`} className="capability-row" key={item.title}><span>{item.code}</span><h3>{item.title}</h3><p>{item.summary}</p><ArrowUpRight aria-hidden="true" /></Link>)}</div></section>
 
-      <section className="home-hero">
-        <div className="container hero-inner">
-          <div className="hero-copy">
-            <p className="kicker">DAWOOD TECHNOLOGIES</p>
-            <h1>Technology built around <span>business.</span></h1>
-            <p className="hero-intro">We design, build, manage and evolve the digital systems modern businesses depend on, from software and enterprise platforms to infrastructure, security, data and intelligent automation.</p>
-            <div className="hero-actions">
-              <Link className="button button-primary" href="/work">Explore Our Work <ArrowRight aria-hidden="true" size={17} /></Link>
-              <Link className="text-link" href="/contact">Work With Us <ArrowUpRight aria-hidden="true" size={17} /></Link>
-            </div>
-          </div>
-          <figure className="hero-visual">
-            <Image src="/technology-built-around-business.png" alt="Abstract blue architectural forms representing connected business technology" width={1152} height={1536} priority />
-          </figure>
-        </div>
-      </section>
+    <section className="section industry-section"><div className="container section-top"><div><p className="kicker">INDUSTRIES WE SERVE</p><h2>Technology for different operating contexts.</h2></div><Link className="text-link" href="/industries">Explore industries <ArrowRight aria-hidden="true" size={16} /></Link></div><div className="container industry-list">{industries.slice(0, 6).map((item) => <article key={item.title}><span>{item.code}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div></section>
 
-      <section className="section real-world">
-        <div className="container split-heading">
-          <div><p className="kicker">TECHNOLOGY IN THE REAL WORLD</p><h2>Built where business happens.</h2></div>
-          <p>Our capability is developed through direct exposure to operating businesses. We solve for real workflows, real constraints and systems that need to keep working long after deployment.</p>
-        </div>
-        <div className="container evidence-grid">
-          {work.map((item, index) => (
-            <Link className="evidence-item" href={`/work/${item.slug}`} key={item.slug}>
-              <span className="index">{String(index + 1).padStart(2, "0")}</span>
-              <div className="evidence-logo"><Image src={item.logo} alt={item.name} width={420} height={120} /></div>
-              <div><strong>{item.name}</strong><span>{item.sector}</span></div>
-              <ArrowUpRight aria-hidden="true" />
-            </Link>
-          ))}
-          <div className="evidence-statement"><p>This experience becomes a stronger technology capability for every organization we work with.</p></div>
-        </div>
-      </section>
+    <section className="section home-solutions"><div className="container split-heading"><div><p className="kicker">SOLUTIONS</p><h2>Systems built around business needs.</h2></div><Link className="text-link" href="/solutions">View all solutions <ArrowRight aria-hidden="true" size={16} /></Link></div><div className="container solution-summary-grid">{solutions.map((item) => <article key={item.title}><span>{item.label}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div></section>
 
-      <section className="section capability-section">
-        <div className="container split-heading light">
-          <div><p className="kicker">CAPABILITIES</p><h2>One technology capability. Six connected disciplines.</h2></div>
-          <p>We bring engineering, operations and security together so businesses are not left coordinating disconnected vendors or fragile systems.</p>
-        </div>
-        <div className="container capability-list">
-          {capabilities.map((item) => (
-            <Link href={`/capabilities/${item.slug}`} className="capability-row" key={item.title}>
-              <span>{item.code}</span><h3>{item.title}</h3><p>{item.summary}</p><ArrowUpRight aria-hidden="true" />
-            </Link>
-          ))}
-        </div>
-      </section>
+    <section className="section real-world"><div className="container split-heading"><div><p className="kicker">OUR WORK</p><h2>Technology in operating businesses.</h2></div><p>Verified work provides real operational context without defining the limits of our wider technology capability.</p></div><div className="container evidence-grid">{work.map((item, index) => <article className="evidence-item work-evidence" key={item.slug}><span className="index">{String(index + 1).padStart(2, "0")}</span><div className="evidence-logo"><Image src={item.logo} alt={item.name} width={420} height={120} /></div><div><strong>{item.name}</strong><span>{item.summary}</span></div><div className="work-evidence-actions"><Link href={`/work/${item.slug}`}>Case study</Link><a href={item.website} target="_blank" rel="noopener noreferrer">Visit website <ArrowUpRight aria-hidden="true" size={15} /></a></div></article>)}</div></section>
 
-      <section className="section lifecycle-section">
-        <div className="container lifecycle-intro"><p className="kicker">MANAGED TECHNOLOGY</p><h2>Delivery is a milestone.<br />Ownership is continuous.</h2><p>Technology needs attention after it goes live. We can remain responsible for the systems we build, keeping them reliable, secure and aligned as the business changes.</p></div>
-        <div className="container lifecycle-track">{lifecycle.map((item, index) => <div key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></div>)}</div>
-        <div className="container section-action"><Link className="button button-dark" href="/capabilities">Explore Managed Technology <ArrowRight aria-hidden="true" size={17} /></Link></div>
-      </section>
+    <section className="section technology-section" aria-labelledby="technology-title"><div className="container split-heading"><div><p className="kicker">PLATFORMS &amp; TECHNOLOGIES</p><h2 id="technology-title">Tools selected around the system.</h2></div><p>These are technologies we work with, not claims of formal vendor partnership or certification.</p></div><div className="container technology-groups">{technologyCategories.map((group) => <section className="technology-group" key={group.title}><h3>{group.title}</h3><div className="technology-logo-grid">{group.logos.map((logo) => <TechnologyLogo key={logo.name} {...logo} />)}</div></section>)}</div></section>
 
-      <section className="section industry-section">
-        <div className="container section-top"><div><p className="kicker">INDUSTRIES</p><h2>Experience with operational context.</h2></div><p>We focus our story on sectors where business realities can inform the technology.</p></div>
-        <div className="container industry-list">{industries.map((item) => <article key={item.title}><span>{item.code}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
-      </section>
+    <section className="section principles"><div className="container"><p className="kicker">WHY DAWOOD TECHNOLOGIES</p><div className="principle-grid"><article><span>01</span><h3>Business-focused</h3><p>Technology decisions begin with the operating need and the people involved.</p></article><article><span>02</span><h3>Practical engineering</h3><p>Solutions are designed for clarity, maintainability and responsible implementation.</p></article><article><span>03</span><h3>Continuity</h3><p>We can remain involved after deployment to support and improve the system.</p></article><article><span>04</span><h3>Cross-industry capability</h3><p>Technical depth is applied to the specific context of each organization.</p></article></div></div></section>
 
-      <section className="section technology-section" aria-labelledby="technology-title">
-        <div className="container split-heading">
-          <div><p className="kicker">TECHNOLOGY ECOSYSTEM</p><h2 id="technology-title">Platforms and technologies we work with.</h2></div>
-          <p>We select technologies around the requirements of each system. These are tools we work with, not claims of formal partnership.</p>
-        </div>
-        <div className="container technology-groups">
-          {technologyCategories.map((group) => (
-            <section className="technology-group" key={group.title}>
-              <h3>{group.title}</h3>
-              <div className="technology-logo-grid">
-                {group.logos.map((logo) => <TechnologyLogo key={logo.name} name={logo.name} category={logo.category} />)}
-              </div>
-            </section>
-          ))}
-        </div>
-      </section>
-
-      <section className="section closing-cta">
-        <div className="container"><p className="kicker">LET&apos;S BUILD WHAT THE BUSINESS NEEDS</p><h2>Bring technology closer to the operation.</h2><Link className="button button-primary" href="/contact">Start a Conversation <ArrowUpRight aria-hidden="true" size={17} /></Link></div>
-      </section>
-    </main>
-  );
+    <section className="section home-insights"><div className="container split-heading"><div><p className="kicker">INSIGHTS</p><h2>Useful thinking, published with purpose.</h2></div><div><p>Our considered library is in development. We will publish when there is something specific and useful to contribute.</p><Link className="text-link" href="/insights">Visit insights <ArrowRight aria-hidden="true" size={16} /></Link></div></div></section>
+    <section className="section closing-cta"><div className="container"><p className="kicker">LET&apos;S TALK</p><h2>Tell us what your business needs technology to do.</h2><Link className="button button-primary" href="/contact">Let&apos;s Talk <ArrowUpRight aria-hidden="true" size={17} /></Link></div></section>
+  </main>;
 }
