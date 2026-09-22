@@ -6,7 +6,7 @@ import { createPageMetadata } from "@/app/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "About",
-  description: "Learn about Dawood Technologies, its business-first, risk-aware technology approach, values, markets served and way of working.",
+  description: "Learn why Dawood Technologies was established and how it designs, operates and supports business technology systems.",
   path: "/about",
 });
 
@@ -15,8 +15,8 @@ export default function AboutPage() {
     <main id="main-content">
       <PageHero
         eyebrow="ABOUT Dawood Technologies"
-        title="Business understanding with technical execution."
-        text="Dawood Technologies is a business technology company focused on helping organizations build, manage and improve their digital capabilities."
+        title="Technology capability built around operating businesses."
+        text="Dawood Technologies was established to bring software, infrastructure, data, security and technology operations closer to the businesses that depend on them."
       >
         <ButtonLink href="/contact" variant="primary">
           Start a Conversation
@@ -27,13 +27,12 @@ export default function AboutPage() {
         <div className="container about-grid">
           <div>
             <div className="section-kicker">WHAT WE DO</div>
-            <h2 className="section-title">Technology that serves the business first.</h2>
+            <h2 className="section-title">Applications, infrastructure and operations.</h2>
           </div>
           <div className="about-copy light-copy">
-            <p>Dawood Technologies helps businesses plan, build and operate the digital systems they rely on, including websites, software, POS, finance workflows, CRM, internal systems, cybersecurity, IT controls, reporting and automation.</p>
-            <p>The mission is to connect business goals with technology that is practical, secure, understandable and valuable over the long term.</p>
-            <p>Dawood Technologies approaches technology as part of the wider business operation. Our work considers systems, people, workflows, access, documentation, security, controls, reporting, and long-term maintainability.</p>
-            <p>Recommendations are based on operational requirements rather than using technology merely for appearance.</p>
+            <p>We plan, build and operate websites, business applications, CRM and enterprise systems, cloud infrastructure, reporting, automation and security controls.</p>
+            <p>Requirements are defined against the users, workflows, data and access arrangements involved in day-to-day operation.</p>
+            <p>After deployment, we can continue to monitor, maintain and improve the systems we support.</p>
           </div>
         </div>
       </section>
@@ -43,9 +42,9 @@ export default function AboutPage() {
           <div className="section-heading">
             <div>
               <div className="section-kicker">HOW THE COMPANY WORKS</div>
-              <h2 className="section-title">Clear thinking before implementation.</h2>
+              <h2 className="section-title">Requirements before implementation.</h2>
             </div>
-            <p className="section-intro">Every engagement starts by understanding the business, users, constraints and desired outcome. From there, Dawood Technologies defines a practical plan and delivers in clear steps.</p>
+            <p className="section-intro">Each engagement begins with the current systems, users, workflows, constraints and required outcome. These inputs define the implementation plan.</p>
           </div>
           <div className="value-card-grid">
             {values.map((item) => (

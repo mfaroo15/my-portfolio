@@ -19,64 +19,64 @@ export const legalLinks = [
 export const capabilities = [
   {
     code: "01", slug: "technology-consulting", title: "Technology Consulting",
-    summary: "Clear technology direction before or alongside implementation, grounded in business priorities and existing systems.",
-    introduction: "We help organizations assess their technology position, define practical priorities and make informed architecture and platform decisions before committing to implementation.",
+    summary: "Technology assessments, architecture decisions and implementation roadmaps based on business requirements and existing systems.",
+    introduction: "We assess existing systems, document requirements and define architecture, platform and delivery priorities before or alongside implementation.",
     items: ["Technology strategy", "Digital transformation consulting", "Technology assessments", "Solution architecture", "Systems and platform advisory", "Cloud strategy", "Technology roadmapping"],
     platforms: [],
     industries: ["FinTech", "HealthTech", "Retail & E-commerce", "Manufacturing & Infrastructure", "Professional Services"],
   },
   {
     code: "02", slug: "ai-automation", title: "AI & Automation",
-    summary: "Applied AI and automation designed around defined business processes and practical operational value.",
-    introduction: "We identify where AI and automation can improve a real workflow, then design the application, integration and controls needed to make that capability useful and maintainable.",
+    summary: "AI applications and workflow automation integrated into defined business processes with appropriate controls.",
+    introduction: "We identify repeatable workflows, evaluate where AI or automation is appropriate, and build the applications, integrations and controls required for production use.",
     items: ["AI consulting", "AI application development", "AI integration", "Intelligent automation", "Workflow automation", "Business process automation", "AI-enabled business applications"],
     platforms: [{ name: "Python", category: "Engineering" }, { name: "Microsoft Azure", category: "Cloud" }, { name: "AWS", category: "Cloud" }, { name: "Google Cloud", category: "Cloud" }],
     industries: ["FinTech", "HealthTech", "Retail & E-commerce", "Manufacturing & Infrastructure", "Professional Services"],
   },
   {
     code: "03", slug: "cloud-devops", title: "Cloud & DevOps",
-    summary: "Reliable cloud foundations and delivery practices for applications, teams and business operations.",
-    introduction: "We design and improve cloud environments with attention to security, maintainability, delivery flow and operational ownership.",
+    summary: "Cloud architecture, migration, infrastructure automation and deployment pipelines for business applications.",
+    introduction: "We design, migrate and maintain cloud environments, including infrastructure, deployment workflows, monitoring and security controls.",
     items: ["Cloud consulting", "Cloud architecture", "Cloud migration", "Cloud infrastructure", "DevOps", "Cloud optimization", "Infrastructure automation", "Managed cloud"],
     platforms: [{ name: "AWS", category: "Cloud" }, { name: "Microsoft Azure", category: "Cloud" }, { name: "Google Cloud", category: "Cloud" }, { name: "Docker", category: "DevOps" }, { name: "GitHub", category: "Code delivery" }, { name: "Vercel", category: "Cloud delivery" }],
     industries: ["Media & Entertainment", "FinTech", "Retail & E-commerce", "Logistics & Supply Chain", "Professional Services"],
   },
   {
     code: "04", slug: "application-development", title: "Application Development",
-    summary: "Modern digital products designed around users, workflows and the operating needs they support.",
-    introduction: "We plan and engineer digital products that turn business requirements into maintainable software, from focused customer experiences to internal platforms and modernization programs.",
+    summary: "Web and mobile applications, internal platforms, APIs and integrations built around defined users and workflows.",
+    introduction: "We turn business requirements into maintainable web applications, mobile applications, internal platforms, APIs and system integrations.",
     items: ["Web application development", "Mobile application development", "Enterprise application development", "Customer and employee portals", "API development and integration", "E-commerce development", "Application modernization", "UI/UX engineering"],
     platforms: [{ name: "React", category: "Frontend" }, { name: "Next.js", category: "Web platform" }, { name: "TypeScript", category: "Engineering" }, { name: "Node.js", category: "Backend" }, { name: "Python", category: "Engineering" }],
     industries: ["Manufacturing & Infrastructure", "International Trade & Commerce", "Retail & Commerce", "Professional Services"],
   },
   {
     code: "05", slug: "enterprise-erp", title: "Enterprise & ERP",
-    summary: "Connected business applications that bring structure, visibility and continuity to day-to-day operations.",
-    introduction: "We shape enterprise systems around the way information and responsibility move through a business. That includes selecting, implementing and connecting platforms without treating software as separate from the operating process.",
+    summary: "CRM, ERP and workflow systems configured and integrated around day-to-day business operations.",
+    introduction: "We select, configure and connect CRM, ERP and workflow platforms around business data, responsibilities and operating processes.",
     items: ["CRM solutions", "ERP solutions", "Systems integration", "Workflow automation", "Business process digitization", "Platform implementation", "Application integration", "Enterprise support"],
     platforms: [{ name: "Salesforce", category: "CRM" }, { name: "Dynamics 365", category: "Enterprise" }],
     industries: ["Manufacturing & Infrastructure", "International Trade & Commerce", "Retail & Commerce", "Professional Services"],
   },
   {
     code: "06", slug: "data-services", title: "Data Services",
-    summary: "Data foundations, reporting and analytics that make operational information useful and accessible.",
-    introduction: "We help businesses organize, integrate and present data so teams can report consistently, understand operations and make informed decisions.",
+    summary: "Data pipelines, integrations, reporting and analytics for operational and management information.",
+    introduction: "We organize data from business systems, build integrations and reporting pipelines, and deliver dashboards and analysis for operational use.",
     items: ["Data engineering", "Business intelligence", "Data visualization", "Data analytics", "Data strategy", "Reporting solutions", "Data integration", "Operational analytics"],
     platforms: [{ name: "Power BI", category: "Analytics" }, { name: "Python", category: "Engineering" }, { name: "Microsoft Azure", category: "Cloud" }, { name: "AWS", category: "Cloud" }, { name: "Google Cloud", category: "Cloud" }],
     industries: ["FinTech", "Retail & E-commerce", "Manufacturing & Infrastructure", "Logistics & Supply Chain", "International Trade & Commerce"],
   },
   {
     code: "07", slug: "cybersecurity", title: "Cybersecurity",
-    summary: "Practical security across identities, applications and infrastructure, built into the operating model.",
-    introduction: "We help organizations identify risk and strengthen the controls surrounding their applications, users and infrastructure. Recommendations are practical, prioritized and tied to how technology is actually operated.",
+    summary: "Security assessments and controls for identities, applications, cloud environments and infrastructure.",
+    introduction: "We assess security risks and implement prioritized controls across user access, applications, cloud environments and infrastructure.",
     items: ["Security assessments", "Application security", "Cloud security", "Identity and access management", "Security hardening", "Vulnerability management", "Security monitoring", "Security architecture"],
     platforms: [],
     industries: ["Manufacturing & Infrastructure", "International Trade & Commerce", "Retail & Commerce", "Professional Services"],
   },
   {
     code: "08", slug: "managed-technology", title: "Managed Technology",
-    summary: "Continuous ownership of applications and infrastructure after launch, with support, maintenance and improvement.",
-    introduction: "Technology needs informed ownership after deployment. We can remain involved to preserve context, support day-to-day operation and guide improvements as business priorities and technical requirements change.",
+    summary: "Ongoing monitoring, administration, support and maintenance for applications and infrastructure.",
+    introduction: "We operate and maintain deployed systems through monitoring, administration, incident support, updates and planned improvements.",
     items: ["Managed IT", "Application support", "Infrastructure management", "Systems administration", "Technology operations", "Monitoring and maintenance", "Platform support", "Continuous improvement"],
     platforms: [],
     industries: ["Manufacturing & Infrastructure", "International Trade & Commerce", "Retail & Commerce", "Agriculture & Dairy", "Professional Services"],
@@ -100,8 +100,8 @@ export const industries = [
 ] as const;
 
 export const work = [
-  { slug: "dawood-rcc-pipe", name: "Dawood RCC Pipe", sector: "Manufacturing & Infrastructure", title: "Digital foundations for an operating infrastructure manufacturer", summary: "Technology work shaped around business presence, operational context and long-term continuity.", logo: "/logos/dawood-rcc-pipe.png", website: "https://dawoodrccpipe.com" },
-  { slug: "dawood-traders", name: "Dawood Traders", sector: "International Trade & Commerce", title: "Technology supporting modern trade operations", summary: "Digital capability shaped around information, coordination and the continuity international commerce requires.", logo: "/logos/dawood-traders.png", website: "https://dawoodtraderspk.com" },
+  { slug: "dawood-rcc-pipe", name: "Dawood RCC Pipe", sector: "Manufacturing & Infrastructure", title: "Digital foundations for an operating infrastructure manufacturer", summary: "Digital presence and ongoing technology support for an established RCC pipe manufacturer.", logo: "/logos/dawood-rcc-pipe.png", website: "https://dawoodrccpipe.com" },
+  { slug: "dawood-traders", name: "Dawood Traders", sector: "International Trade & Commerce", title: "Technology supporting modern trade operations", summary: "Digital presence and technology support for international trade operations.", logo: "/logos/dawood-traders.png", website: "https://dawoodtraderspk.com" },
 ] as const;
 
 export const insightCategories = ["Engineering", "Cloud", "Cybersecurity", "Data & AI", "Business Technology", "Digital Transformation"] as const;
@@ -137,13 +137,13 @@ export const technologyCategories = [
 export const contactServiceOptions = capabilities.map((item) => item.title);
 
 export const solutions = [
-  { label: "01", title: "Business Applications", text: "Purpose-built systems for operational workflows, internal coordination and business visibility.", services: ["Application development", "Systems integration", "Data services"] },
-  { label: "02", title: "Customer & Employee Portals", text: "Secure digital experiences that connect people with information, services and workflows.", services: ["Portal engineering", "Identity and access", "API integration"] },
-  { label: "03", title: "CRM & Workflow Solutions", text: "Connected customer data and automated processes shaped around how teams work.", services: ["CRM implementation", "Workflow automation", "Platform integration"] },
-  { label: "04", title: "E-commerce Solutions", text: "Commerce experiences integrated with customer, inventory, payment and reporting workflows.", services: ["Commerce development", "Shopify", "Systems integration"] },
-  { label: "05", title: "Data & Analytics Solutions", text: "Reporting and analytics environments that turn operational data into usable information.", services: ["Business intelligence", "Data integration", "Operational analytics"] },
-  { label: "06", title: "AI-powered Business Solutions", text: "Applied AI and automation introduced within defined business processes and controls.", services: ["AI integration", "Intelligent automation", "AI applications"] },
-  { label: "07", title: "Cloud & Infrastructure Solutions", text: "Cloud foundations and managed environments aligned with application and operational needs.", services: ["Cloud architecture", "DevOps", "Managed cloud"] },
+  { label: "01", title: "Business Applications", text: "Custom systems for operational workflows, approvals, internal coordination and reporting.", services: ["Application development", "Systems integration", "Data services"] },
+  { label: "02", title: "Customer & Employee Portals", text: "Authenticated portals that provide customers and employees with access to information, services and workflows.", services: ["Portal engineering", "Identity and access", "API integration"] },
+  { label: "03", title: "CRM & Workflow Solutions", text: "CRM configuration, customer-data integration and workflow automation for sales and service teams.", services: ["CRM implementation", "Workflow automation", "Platform integration"] },
+  { label: "04", title: "E-commerce Solutions", text: "Online stores connected with product, inventory, payment, customer and reporting systems.", services: ["Commerce development", "Shopify", "Systems integration"] },
+  { label: "05", title: "Data & Analytics Solutions", text: "Data integration, reporting and dashboards for operational and management information.", services: ["Business intelligence", "Data integration", "Operational analytics"] },
+  { label: "06", title: "AI-powered Business Solutions", text: "AI-assisted applications and automation for defined tasks, workflows and business rules.", services: ["AI integration", "Intelligent automation", "AI applications"] },
+  { label: "07", title: "Cloud & Infrastructure Solutions", text: "Cloud architecture, deployment pipelines, monitoring and managed infrastructure for business applications.", services: ["Cloud architecture", "DevOps", "Managed cloud"] },
 ] as const;
 export const locations = ["Pakistan", "United States", "Remote engagements"];
 export const values = ["Clarity", "Reliability", "Security", "Practical Innovation", "Long-Term Value"];
