@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Footer } from "@/app/components/Footer";
 import { Header } from "@/app/components/Header";
-import { ScrollToTop } from "@/app/components/ScrollToTop";
 import "./globals.css";
 import { siteUrl } from "@/app/data/site";
 
@@ -40,7 +39,6 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-        <ScrollToTop />
       </body>
     </html>
   );
