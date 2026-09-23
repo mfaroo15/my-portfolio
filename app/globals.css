@@ -367,6 +367,7 @@ h3 { font-size: clamp(1.25rem, 1.7vw, 1.625rem); font-weight: 600; }
   .work-evidence { grid-template-columns: 28px 1fr; }
   .work-evidence .work-logo-block, .work-evidence > div:nth-of-type(2), .work-evidence-actions { grid-column: 2; }
   .work-evidence .work-logo-block { justify-items: start; text-align: left; }
+  .work-evidence:first-child .work-logo-block { padding-block-start: 8.7px; }
   .work-logo-block .evidence-logo { grid-column: auto; }
   .work-evidence .work-logo-block .evidence-logo { justify-content: flex-start; }
   .work-evidence .work-logo-block .evidence-logo img { object-position: left center; }
