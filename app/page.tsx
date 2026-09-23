@@ -9,8 +9,8 @@ import { createPageMetadata } from "@/app/lib/metadata";
 const homeDescription = "Business applications, enterprise integrations, cloud infrastructure, data, AI automation and ongoing technology operations.";
 
 export const metadata: Metadata = {
-  ...createPageMetadata({ title: "Technology Built Around Business", description: homeDescription, path: "/" }),
-  title: { absolute: "Dawood Technologies | Technology Built Around Business" },
+  ...createPageMetadata({ title: "Technology That Keeps Business Moving", description: homeDescription, path: "/" }),
+  title: { absolute: "Dawood Technologies | Technology That Keeps Business Moving" },
 };
 
 export default function Home() {
@@ -35,7 +35,7 @@ export default function Home() {
     ],
   };
   return <main id="main-content"><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
-    <section className="home-hero"><div className="container hero-inner"><div className="hero-copy"><p className="kicker">DAWOOD TECHNOLOGIES</p><h1>Technology built around <span>business.</span></h1><p className="hero-intro">Our work covers business applications, enterprise integrations, cloud infrastructure, data and AI automation. We also provide ongoing technology operations.</p><div className="hero-actions"><Link className="button button-primary" href="/services">Explore Services <ArrowRight aria-hidden="true" size={17} /></Link><Link className="text-link" href="/contact">Let&apos;s Talk <ArrowUpRight aria-hidden="true" size={17} /></Link></div></div><figure className="hero-visual"><Image src="/technology-built-around-business.png" alt="Abstract blue architectural forms representing connected business technology" width={1152} height={1536} priority /></figure></div></section>
+    <section className="home-hero"><div className="container hero-inner"><div className="hero-copy"><h1>Technology that keeps business <span>moving.</span></h1><p className="hero-intro">Applications, enterprise systems, cloud infrastructure, data, automation and ongoing technology operations — connected to the needs of the business.</p><div className="hero-actions"><Link className="button button-primary" href="/services">Explore Services <ArrowRight aria-hidden="true" size={17} /></Link><Link className="text-link" href="/contact">Let&apos;s Talk <ArrowUpRight aria-hidden="true" size={17} /></Link></div></div><figure className="hero-visual"><Image src="/technology-built-around-business.png" alt="Abstract blue architectural forms representing connected business technology" width={1152} height={1536} priority /></figure></div></section>
 
     <section className="section capability-section"><div className="container split-heading light"><div><p className="kicker">SERVICES</p><h2>Full-service technology capability.</h2></div><p>Eight connected disciplines spanning advisory, engineering, integration and ongoing operation.</p></div><div className="container capability-list">{capabilities.map((item) => <Link href={`/services/${item.slug}`} className="capability-row" key={item.title}><span>{item.code}</span><h3>{item.title}</h3><p>{item.summary}</p><ArrowUpRight aria-hidden="true" /></Link>)}</div></section>
 

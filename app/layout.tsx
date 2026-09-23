@@ -8,7 +8,7 @@ import { siteUrl } from "@/app/data/site";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Dawood Technologies | Technology Built Around Business",
+    default: "Dawood Technologies | Technology That Keeps Business Moving",
     template: "%s | Dawood Technologies",
   },
   description: "Business applications, enterprise integrations, cloud infrastructure, data, AI automation and ongoing technology operations.",
@@ -23,11 +23,11 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Dawood Technologies",
-    title: "Technology Built Around Business",
+    title: "Technology That Keeps Business Moving",
     description: "Business applications, enterprise integrations, cloud infrastructure, data, AI automation and ongoing technology operations.",
     url: siteUrl,
   },
-  twitter: { card: "summary", title: "Dawood Technologies", description: "Technology Built Around Business." },
+  twitter: { card: "summary", title: "Dawood Technologies", description: "Technology that keeps business moving." },
   icons: {
     icon: [{ url: "/icon.svg?v=3", type: "image/svg+xml" }],
     apple: "/apple-icon.png?v=2",
