@@ -1,7 +1,7 @@
 "use client";
 
 import type { FormEvent } from "react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Script from "next/script";
 import { contactServiceOptions } from "@/app/data/site";
 
@@ -11,6 +11,7 @@ const contactMethods = ["Email", "Phone", "Either"];
 const formspreeEndpoint = "https://formspree.io/f/xkjgojzw";
 const recaptchaSiteKey = "6LfC6sktAAAAAPCa1g7KfcnQkP7bkJ-y_oWfdNhU";
 const recaptchaMessage = "Please complete the reCAPTCHA verification.";
+const recaptchaNormalWidth = 304;
 const submissionTimeoutMs = 15_000;
 const fieldLimits = {
   name: 100,
@@ -27,6 +28,7 @@ type ReCaptchaApi = {
     container: HTMLElement,
     parameters: {
       sitekey: string;
+      size: "normal" | "compact";
       callback: (token: string) => void;
       "expired-callback": () => void;
       "error-callback": () => void;
@@ -82,24 +84,50 @@ function logSubmissionEvent(event: string, details?: Record<string, unknown>) {
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [recaptchaError, setRecaptchaError] = useState("");
+  const [recaptchaReady, setRecaptchaReady] = useState(false);
+  const [recaptchaSize, setRecaptchaSize] = useState<"normal" | "compact" | null>(null);
   const submissionInProgress = useRef(false);
+  const recaptchaField = useRef<HTMLDivElement>(null);
   const recaptchaContainer = useRef<HTMLDivElement>(null);
   const recaptchaToken = useRef("");
   const recaptchaWidgetId = useRef<number | null>(null);
 
-  const renderRecaptcha = () => {
-    const recaptcha = window.grecaptcha;
+  useEffect(() => {
+    const field = recaptchaField.current;
+    if (!field) return;
 
-    if (
-      !recaptchaContainer.current ||
-      typeof recaptcha?.render !== "function" ||
-      recaptchaWidgetId.current !== null
-    ) {
+    const sizingElement = field.parentElement ?? field;
+
+    const updateSize = () => {
+      const style = window.getComputedStyle(sizingElement);
+      const availableWidth =
+        sizingElement.clientWidth - Number.parseFloat(style.paddingLeft) - Number.parseFloat(style.paddingRight);
+      setRecaptchaSize(availableWidth < recaptchaNormalWidth ? "compact" : "normal");
+    };
+
+    updateSize();
+
+    if (typeof ResizeObserver === "undefined") {
+      window.addEventListener("resize", updateSize);
+      return () => window.removeEventListener("resize", updateSize);
+    }
+
+    const observer = new ResizeObserver(updateSize);
+    observer.observe(sizingElement);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const recaptcha = window.grecaptcha;
+    const container = recaptchaContainer.current;
+
+    if (!recaptchaReady || !recaptchaSize || !container || typeof recaptcha?.render !== "function") {
       return;
     }
 
-    recaptchaWidgetId.current = recaptcha.render(recaptchaContainer.current, {
+    recaptchaWidgetId.current = recaptcha.render(container, {
       sitekey: recaptchaSiteKey,
+      size: recaptchaSize,
       callback: (token) => {
         recaptchaToken.current = token;
         setRecaptchaError("");
@@ -113,17 +141,25 @@ export function ContactForm() {
         setRecaptchaError("reCAPTCHA verification failed. Please try again.");
       },
     });
-  };
+
+    return () => {
+      recaptchaToken.current = "";
+      if (recaptchaWidgetId.current !== null) {
+        recaptcha.reset(recaptchaWidgetId.current);
+        recaptchaWidgetId.current = null;
+      }
+    };
+  }, [recaptchaReady, recaptchaSize]);
 
   const initializeRecaptcha = () => {
     const recaptcha = window.grecaptcha;
 
     if (typeof recaptcha?.ready === "function") {
-      recaptcha.ready(renderRecaptcha);
+      recaptcha.ready(() => setRecaptchaReady(true));
       return;
     }
 
-    renderRecaptcha();
+    setRecaptchaReady(true);
   };
 
   const resetRecaptcha = (message = "") => {
@@ -290,8 +326,8 @@ export function ContactForm() {
           maxLength={fieldLimits.description}
         />
       </label>
-      <div className="recaptcha-field">
-        <div ref={recaptchaContainer} />
+      <div ref={recaptchaField} className="recaptcha-field">
+        <div key={recaptchaSize ?? "pending"} ref={recaptchaContainer} />
         {recaptchaError ? (
           <p className="recaptcha-error" role="alert">
             {recaptchaError}
