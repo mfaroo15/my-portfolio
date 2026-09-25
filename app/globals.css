@@ -300,8 +300,7 @@ h3 { font-size: clamp(1.25rem, 1.7vw, 1.625rem); font-weight: 600; }
 .page-hero .eyebrow { margin-bottom: 22px; color: var(--teal); font-size: .7rem; font-weight: 700; letter-spacing: .1em; }
 .page-hero .actions { display: flex; gap: 16px; margin-top: 30px; }
 .contact-page { background: var(--white); }
-.contact-layout { display: grid; grid-template-columns: minmax(0, 3fr) minmax(410px, 2fr); gap: clamp(56px, 5vw, 64px); align-items: start; }
-.contact-primary { min-width: 0; }
+.contact-layout { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(440px, 1fr); gap: clamp(50px, 5vw, 64px); align-items: start; }
 .contact-intro { max-width: 680px; margin-bottom: 42px; }
 .contact-intro .section-kicker { margin-bottom: 22px; }
 .contact-intro h1 { margin-bottom: 24px; font-size: clamp(2.625rem, 4vw, 3.25rem); }
@@ -314,8 +313,8 @@ h3 { font-size: clamp(1.25rem, 1.7vw, 1.625rem); font-weight: 600; }
 .contact-phone { display: inline-block; color: var(--ink); font-size: 1.5rem; font-weight: 600; line-height: 1.2; }
 .contact-phone:hover { color: var(--teal); }
 .contact-presence { display: grid; gap: 7px; color: var(--ink); font-size: 1.12rem; font-weight: 600; }
-.contact-presence-composition { display: grid; grid-template-columns: minmax(155px, .72fr) minmax(220px, 1.28fr); gap: 22px; align-items: center; }
-.contact-world-map { min-width: 0; margin: 0; opacity: .72; }
+.contact-presence-composition { display: grid; grid-template-columns: minmax(145px, .72fr) minmax(0, 1.65fr); gap: 16px; align-items: start; }
+.contact-world-map { min-width: 0; margin: 12px 0 0; opacity: .88; }
 .contact-world-map img { width: 100%; height: auto; }
 .contact-information-block h2 { max-width: 300px; margin-bottom: 0; font-size: clamp(1.625rem, 2.5vw, 2rem); }
 .section-kicker { margin-bottom: 20px; color: var(--teal); font-size: .7rem; font-weight: 700; letter-spacing: .1em; }
@@ -491,7 +490,7 @@ h3 { font-size: clamp(1.25rem, 1.7vw, 1.625rem); font-weight: 600; }
   .engineering-tags { padding-top: 8px; gap: 8px; }
   .engineering-tags li { min-height: 29px; white-space: normal; }
   .contact-presence-composition { grid-template-columns: 1fr; gap: 0; }
-  .contact-world-map { width: min(100%, 360px); justify-self: start; margin-bottom: 22px; }
+  .contact-world-map { width: min(100%, 360px); justify-self: start; margin: 0 0 22px; }
 }
 
 @media (max-width: 520px) {
@@ -552,7 +551,6 @@ h3 { font-size: clamp(1.25rem, 1.7vw, 1.625rem); font-weight: 600; }
   .contact-form { padding: 24px 18px; }
   .contact-intro { margin-bottom: 34px; }
   .contact-information-block { padding: 26px 0; }
-  .contact-world-map { display: none; }
   .footer-contact-details { grid-template-columns: 1fr; gap: 24px; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-grid .footer-column { display: flex !important; }
