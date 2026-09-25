@@ -314,7 +314,8 @@ h3 { font-size: clamp(1.25rem, 1.7vw, 1.625rem); font-weight: 600; }
 .contact-phone:hover { color: var(--teal); }
 .contact-presence { display: grid; gap: 7px; color: var(--ink); font-size: 1.12rem; font-weight: 600; }
 .contact-presence-composition { display: grid; grid-template-columns: 260px minmax(0, 1fr); column-gap: 12px; align-items: start; }
-.contact-presence-composition > .contact-information-block:last-child { border-top: 1px solid var(--line); }
+.contact-presence-composition > .contact-information-block:last-child { position: relative; }
+.contact-presence-composition > .contact-information-block:last-child::before { position: absolute; top: 0; left: 0; width: 96px; border-top: 1px solid var(--line); content: ""; }
 .contact-world-map { width: 500px; min-width: 0; grid-column: 2; grid-row: 1 / 3; justify-self: end; margin: 8px -24px 0 0; }
 .contact-world-map img { width: 100%; height: auto; }
 .contact-information-block h2 { max-width: 300px; margin-bottom: 0; font-size: clamp(1.625rem, 2.5vw, 2rem); }
@@ -410,7 +411,12 @@ h3 { font-size: clamp(1.25rem, 1.7vw, 1.625rem); font-weight: 600; }
 }
 
 @media (min-width: 1025px) and (max-width: 1300px) {
+  .contact-presence-composition > .contact-information-block:last-child::before { width: 100%; }
   .contact-world-map { width: calc(100% + 24px); }
+}
+
+@media (max-width: 1024px) {
+  .contact-presence-composition > .contact-information-block:last-child::before { width: 100%; }
 }
 
 @media (max-width: 904px) {
