@@ -162,9 +162,6 @@ export const technologyCategories = [
   { title: "Commerce", logos: [
     { name: "Shopify", category: "Commerce" },
   ] },
-  { title: "Application Delivery", logos: [
-    { name: "Vercel", category: "Application delivery" },
-  ] },
 ] as const;
 export const engineeringTechnologies = ["TypeScript", "Python", "React", "Next.js", "Node.js", "Docker", "GitHub"] as const;
 export const contactServiceOptions = capabilities.map((item) => item.title);

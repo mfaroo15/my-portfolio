@@ -5,11 +5,9 @@ export function EngineeringModel() {
     <div className="engineering-model" aria-label="Dawood Technologies engineering model">
       {engineeringLayers.map((layer, index) => (
         <section className="engineering-layer" key={layer.title}>
-          <div className="engineering-layer-heading">
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            <h3>{layer.title}</h3>
-          </div>
-          <ul>
+          <span className="engineering-layer-number">{String(index + 1).padStart(2, "0")}</span>
+          <h3>{layer.title}</h3>
+          <ul className="engineering-tags">
             {layer.items.map((item) => (
               <li key={item}>{item}</li>
             ))}
