@@ -24,12 +24,12 @@ export default function AboutPage() {
       </PageHero>
 
       <section className="section about-page">
-        <div className="container about-grid">
+        <div className="container editorial-intro story-grid">
           <div>
             <div className="section-kicker">WHAT WE DO</div>
             <h2 className="section-title">Applications, infrastructure and operations.</h2>
           </div>
-          <div className="about-copy light-copy">
+          <div className="editorial-copy about-copy light-copy">
             <p>We plan, build and operate websites, business applications, CRM and enterprise systems, cloud infrastructure, reporting, automation and security controls.</p>
             <p>Requirements are defined against the users, workflows, data and access arrangements involved in day-to-day operation.</p>
             <p>After deployment, we can continue to monitor, maintain and improve the systems we support.</p>
@@ -39,12 +39,12 @@ export default function AboutPage() {
 
       <section className="section process-section">
         <div className="container">
-          <div className="section-heading">
+          <div className="editorial-intro">
             <div>
               <div className="section-kicker">HOW THE COMPANY WORKS</div>
               <h2 className="section-title">Requirements before implementation.</h2>
             </div>
-            <p className="section-intro">Each engagement begins with the current systems, users, workflows, constraints and required outcome. These inputs define the implementation plan.</p>
+            <p className="section-intro editorial-copy">Each engagement begins with the current systems, users, workflows, constraints and required outcome. These inputs define the implementation plan.</p>
           </div>
           <div className="value-card-grid">
             {values.map((item) => (
@@ -65,9 +65,10 @@ export default function AboutPage() {
 
       <section className="section locations-section">
         <div className="container">
-          <div className="section-kicker">MARKETS AND LOCATIONS SERVED</div>
-          <h2 className="section-title">Support across key business markets.</h2>
-          <p className="section-intro">These are presented as markets and locations served, not as claims of physical offices in every location.</p>
+          <div className="editorial-intro">
+            <div><div className="section-kicker">MARKETS AND LOCATIONS SERVED</div><h2 className="section-title">Support across key business markets.</h2></div>
+            <p className="section-intro editorial-copy">These are presented as markets and locations served, not as claims of physical offices in every location.</p>
+          </div>
           <div className="locations">
             {locations.map((item) => (
               <span className="location" key={item}>

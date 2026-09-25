@@ -14,6 +14,8 @@ export function PageHero({ eyebrow, title, text, children }: PageHeroProps) {
         <div>
           <div className="eyebrow">{eyebrow}</div>
           <h1>{title}</h1>
+        </div>
+        <div className="page-hero-copy">
           <p>{text}</p>
           {children ? <div className="actions">{children}</div> : null}
         </div>
