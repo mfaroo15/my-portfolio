@@ -28,7 +28,7 @@ export default async function WorkDetail({ params }: Props) {
   ];
   return <main id="main-content">
     <section className="case-hero"><div className="container case-hero-grid"><div><p className="kicker">WORK / {project.sector}</p><h1>{project.title}</h1><p>{project.summary}</p><a className="text-link" href={project.website} target="_blank" rel="noopener noreferrer">Visit website <ArrowUpRight aria-hidden="true" size={16} /></a></div><div className="browser-frame case-browser" aria-label={`${project.name} project preview`}><div className="browser-bar"><span></span><span></span><span></span></div><div className="browser-canvas"><Image src={project.logo} alt={project.name} width={520} height={160} />{project.slug === "dawood-rcc-pipe" ? <strong>Dawood RCC Pipe</strong> : null}</div></div></div></section>
-    <section className="section case-content"><div className="container case-layout"><aside><span>CLIENT</span><strong>{project.name}</strong><span>SECTOR</span><strong>{project.sector}</strong></aside><div>
+    <section className="section case-content"><div className="container case-layout"><aside><span>OPERATING BUSINESS</span><strong>{project.name}</strong><span>SECTOR</span><strong>{project.sector}</strong></aside><div>
       {caseSections.map((section) => <section key={section.label}><p className="kicker">{section.label}</p><h2>{section.title}</h2>{section.items ? <ul className="case-scope-list">{section.items.map((item) => <li key={item}>{item}</li>)}</ul> : <p>{section.body}</p>}</section>)}
       <section className="case-note"><strong>Published scope</strong><p>Detailed implementation information and project outcomes are kept private unless approved for publication.</p></section>
     </div></div></section>

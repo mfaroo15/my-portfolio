@@ -8,7 +8,6 @@ export const navLinks = [
   { href: "/solutions", label: "Solutions" },
   { href: "/work", label: "Work" },
   { href: "/company", label: "Company" },
-  { href: "/insights", label: "Insights" },
 ];
 
 export const legalLinks = [
@@ -84,26 +83,23 @@ export const capabilities = [
 ] as const;
 
 export const industries = [
-  { code: "01", title: "Media & Entertainment", text: "Digital platforms, content systems, audience experiences, analytics and scalable infrastructure.", needs: ["Content platforms", "Audience applications", "Analytics", "Cloud infrastructure"] },
-  { code: "02", title: "HealthTech", text: "Digital applications and secure operational systems that support connected data workflows and automation.", needs: ["Digital applications", "Secure data workflows", "Operational systems", "Automation"] },
-  { code: "03", title: "FinTech", text: "Secure customer applications, integrations, data systems and automated financial workflows.", needs: ["Customer platforms", "Secure integrations", "Data systems", "Process automation"] },
-  { code: "04", title: "PropTech & Real Estate", text: "Property platforms, CRM integrations, operational workflows, analytics and digital customer experiences.", needs: ["Property platforms", "CRM integration", "Workflow systems", "Analytics"] },
-  { code: "05", title: "EdTech & Education", text: "Learning platforms, portals, content systems and digital tools designed around educators and learners.", needs: ["Learning platforms", "Portals", "Content systems", "Automation"] },
-  { code: "06", title: "AdTech & Advertising", text: "Campaign platforms, reporting, workflow automation and data integrations for advertising operations.", needs: ["Campaign platforms", "Data integration", "Analytics", "Workflow automation"] },
-  { code: "07", title: "Sports", text: "Digital platforms, fan experiences, applications and analytics for connected sports operations.", needs: ["Digital platforms", "Fan experiences", "Mobile and web applications", "Data and analytics"] },
-  { code: "08", title: "Aviation", text: "Passenger experiences, operational systems and enterprise integrations for connected aviation workflows.", needs: ["Passenger platforms", "Operational systems", "Workflow automation", "Enterprise integration"] },
-  { code: "09", title: "Retail & E-commerce", text: "Connected commerce, customer, inventory and reporting experiences across physical and digital channels.", needs: ["Commerce platforms", "CRM", "System integration", "Customer analytics"] },
-  { code: "10", title: "Manufacturing & Infrastructure", text: "Business applications, operational systems, reporting and digital infrastructure for production-led organizations.", needs: ["Business applications", "Operational visibility", "Reporting", "Digital infrastructure"] },
-  { code: "11", title: "Construction", text: "Project workflows, business applications, data visibility and cloud platforms for coordinated delivery.", needs: ["Project workflows", "Business systems", "Reporting", "Cloud platforms"] },
-  { code: "12", title: "Logistics & Supply Chain", text: "Tracking systems, integrations, reporting and data platforms for complex operational movement.", needs: ["Tracking systems", "Integrations", "Operational reporting", "Data platforms"] },
-  { code: "13", title: "International Trade & Commerce", text: "Business systems, operational workflows, data management and commerce technology for international coordination.", needs: ["Business systems", "Digital presence", "Data management", "Automation"] },
+  { code: "01", basis: "operating", title: "Construction & Infrastructure", text: "Technology supporting operational businesses across manufacturing, construction, infrastructure and related environments.", needs: ["Business applications", "Digital presence", "Reporting", "Technology infrastructure"] },
+  { code: "02", basis: "operating", title: "International Trade & Commerce", text: "Technology supporting digital operations, business systems, communications and infrastructure for organizations operating across markets.", needs: ["Business systems", "Digital presence", "Communications", "Technology infrastructure"] },
+  { code: "03", basis: "team", title: "FinTech", text: "Team experience and technology applications involving secure systems, data, integrations and controlled workflows.", needs: ["Secure applications", "Systems integration", "Data workflows", "Automation"] },
+  { code: "04", basis: "team", title: "EdTech", text: "Team experience and technology applications for learning platforms, portals, content and education workflows.", needs: ["Learning platforms", "Portals", "Content systems", "Workflow support"] },
+  { code: "05", basis: "team", title: "Aviation", text: "Team experience and technology applications across passenger, operational and enterprise environments.", needs: ["Digital experiences", "Operational systems", "Workflow support", "Enterprise integration"] },
+  { code: "06", basis: "team", title: "Sports", text: "Team experience and technology applications spanning digital platforms, audience experiences and operational data.", needs: ["Digital platforms", "Audience experiences", "Web and mobile applications", "Data and analytics"] },
+  { code: "07", basis: "team", title: "Media & Entertainment", text: "Team experience and technology applications involving content, audiences, analytics and scalable infrastructure.", needs: ["Content platforms", "Audience applications", "Analytics", "Cloud infrastructure"] },
+  { code: "08", basis: "team", title: "HealthTech", text: "Team experience and technology applications involving secure data workflows, operational systems and automation.", needs: ["Digital applications", "Secure data workflows", "Operational systems", "Automation"] },
+  { code: "09", basis: "team", title: "PropTech", text: "Team experience and technology applications for property workflows, CRM integration, analytics and customer experiences.", needs: ["Property workflows", "CRM integration", "Operational systems", "Analytics"] },
+  { code: "10", basis: "team", title: "AdTech", text: "Team experience and technology applications involving campaign workflows, reporting, automation and data integration.", needs: ["Campaign workflows", "Data integration", "Analytics", "Automation"] },
 ] as const;
 
 export const work = [
   {
     slug: "dawood-rcc-pipe",
     name: "Dawood RCC Pipe",
-    sector: "Manufacturing & Infrastructure",
+    sector: "Construction & Infrastructure",
     title: "Digital foundations for an operating infrastructure manufacturer",
     summary: "Digital presence and ongoing technology support for an established RCC pipe manufacturer.",
     logo: "/logos/dawood-rcc-pipe.png",

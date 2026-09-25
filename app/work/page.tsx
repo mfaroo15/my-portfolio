@@ -10,7 +10,7 @@ export const metadata = createPageMetadata({ title: "Work", description: "Select
 
 export default function WorkPage() {
   return <main id="main-content">
-    <InnerHero kicker="OUR WORK" title="Technology in operating businesses." intro="Dawood Technologies supports the digital presence and ongoing technology requirements of Dawood RCC Pipe and Dawood Traders." />
+    <InnerHero kicker="OUR WORK" title="Technology in operating businesses." intro="Work with Dawood RCC Pipe and Dawood Traders helped develop the ownership-driven approach that now defines Dawood Technologies." />
     <section className="section work-index"><div className="container work-case-list">
       {work.map((item, index) => <article className="work-case-feature" key={item.slug}>
         <div className="browser-frame" aria-label={`${item.name} project preview`}><div className="browser-bar"><span></span><span></span><span></span></div><div className="browser-canvas"><Image src={item.logo} alt={item.name} width={420} height={120} />{item.slug === "dawood-rcc-pipe" ? <strong>Dawood RCC Pipe</strong> : null}</div></div>
