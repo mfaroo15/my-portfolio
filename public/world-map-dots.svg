@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" role="presentation">
   <defs>
     <pattern id="dots" width="9" height="9" patternUnits="userSpaceOnUse">
-      <circle cx="2.5" cy="2.5" r="1.55" fill="#9cc8ff"/>
+      <circle cx="2.5" cy="2.5" r="1.55" fill="#8fc2ff"/>
     </pattern>
     <clipPath id="land">
       <path d="M38 106 23 91 31 72 53 62 67 45 102 38 126 47 151 35 185 41 207 54 236 58 255 74 279 82 291 101 276 116 251 118 237 132 214 135 201 151 181 153 168 173 148 170 139 154 113 147 102 131 76 124 66 111Z"/>
@@ -20,7 +20,15 @@
     </clipPath>
   </defs>
   <rect width="900" height="420" fill="url(#dots)" clip-path="url(#land)"/>
-  <path d="M190 142C314 53 515 52 616 166" fill="none" stroke="#1268e8" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="190" cy="142" r="5" fill="#1268e8"/>
-  <circle cx="616" cy="166" r="5" fill="#1268e8"/>
+  <path d="M225 130C343 47 493 60 580 170" fill="none" stroke="#1268e8" stroke-width="2" stroke-linecap="round"/>
+  <g fill="#1268e8">
+    <circle cx="225" cy="130" r="5"/>
+    <circle cx="580" cy="170" r="5"/>
+    <rect x="198" y="94" width="54" height="25" rx="4"/>
+    <rect x="553" y="181" width="54" height="25" rx="4"/>
+  </g>
+  <g fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="1" text-anchor="middle">
+    <text x="225" y="111">CHI</text>
+    <text x="580" y="198">KHI</text>
+  </g>
 </svg>
