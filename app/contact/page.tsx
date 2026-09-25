@@ -38,15 +38,15 @@ export default function ContactPage() {
                   </div>
                 </section>
                 <figure className="contact-world-map" aria-hidden="true">
-                  <Image src="/world-map-dots.svg" alt="" width={720} height={360} />
+                  <Image src="/world-map-dots.svg" alt="" width={900} height={470} />
                 </figure>
-              </div>
 
-              <section className="contact-information-block">
-                <p className="section-kicker">REMOTE ENGAGEMENT</p>
-                <h2>Built to work<br />across locations.</h2>
-                <p>Our team supports remote and distributed engagements, working with organizations across locations and time zones.</p>
-              </section>
+                <section className="contact-information-block">
+                  <p className="section-kicker">REMOTE ENGAGEMENT</p>
+                  <h2>Built to work<br />across locations.</h2>
+                  <p>Our team supports remote and distributed engagements, working with organizations across locations and time zones.</p>
+                </section>
+              </div>
             </aside>
           </div>
         </div>
