@@ -1,15 +1,16 @@
 import { ContactBand } from "@/app/components/ContactBand";
 import { InnerHero } from "@/app/components/InnerHero";
+import { foundingYear } from "@/app/data/site";
 import { createPageMetadata } from "@/app/lib/metadata";
 
-export const metadata = createPageMetadata({ title: "Company", description: "Dawood Technologies developed from the technology needs of operating businesses and brings that ownership-driven approach to other organizations.", path: "/company" });
+export const metadata = createPageMetadata({ title: "Company", description: `Founded in ${foundingYear}, Dawood Technologies developed from the technology needs of operating businesses and brings that ownership-driven approach to other organizations.`, path: "/company" });
 
 const companySections = [
   {
     kicker: "BUILT FROM OPERATING EXPERIENCE",
     title: "Technology responsibility became a dedicated company.",
     copy: [
-      "Dawood Technologies was established from the technology needs of Dawood operating businesses. What began as an internal capability to manage applications, infrastructure, systems, security, data and day-to-day technology operations developed into a dedicated technology company.",
+      `Dawood Technologies was founded in ${foundingYear} from the technology needs of Dawood operating businesses. What began as an internal capability to manage applications, infrastructure, systems, security, data and day-to-day technology operations developed into a dedicated technology company.`,
       "Today, Dawood Technologies brings that ownership-driven approach to organizations beyond Dawood, connecting technology decisions to how businesses actually operate.",
     ],
   },
