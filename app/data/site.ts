@@ -1,5 +1,11 @@
 export const siteUrl = "https://www.dawoodtech.com";
 export const contactEmail = "info@dawoodtech.com";
+export const contactPhone = {
+  display: "224-598-7275",
+  href: "tel:+12245987275",
+  schema: "+1-224-598-7275",
+} as const;
+export const contactPresence = ["Chicago, Illinois", "Karachi, Pakistan"] as const;
 export const legalUpdated = "September 21, 2026";
 
 export const navLinks = [

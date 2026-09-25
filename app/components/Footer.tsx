@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { capabilities, contactEmail, industries, legalLinks, navLinks } from "@/app/data/site";
+import { capabilities, contactEmail, contactPhone, contactPresence, industries, legalLinks, navLinks } from "@/app/data/site";
 
 export function Footer() {
   return (
@@ -19,7 +19,17 @@ export function Footer() {
             <Image src="/dawood-technologies-logo.png" alt="" width={1714} height={221} />
           </Link>
           <p>Business applications, enterprise integrations, cloud infrastructure and ongoing technology operations.</p>
-          <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+          <div className="footer-contact-details">
+            <div>
+              <strong>Contact</strong>
+              <a href={contactPhone.href}>{contactPhone.display}</a>
+              <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+            </div>
+            <div>
+              <strong>Locations</strong>
+              {contactPresence.map((location) => <span key={location}>{location}</span>)}
+            </div>
+          </div>
         </div>
         <nav className="footer-column" aria-label="Company links">
           <strong>Navigate</strong>

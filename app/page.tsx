@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { EngineeringModel } from "@/app/components/EngineeringModel";
 import { TechnologyEcosystem } from "@/app/components/TechnologyEcosystem";
-import { capabilities, industries, siteUrl, solutions, work } from "@/app/data/site";
+import { capabilities, contactPhone, industries, siteUrl, solutions, work } from "@/app/data/site";
 import { createPageMetadata } from "@/app/lib/metadata";
 
 const homeDescription = "Technology capability developed through operating businesses, spanning applications, cloud, data, security, automation and ongoing operations.";
@@ -24,6 +24,7 @@ export default function Home() {
         name: "Dawood Technologies",
         url: `${siteUrl}/`,
         logo: `${siteUrl}/dawood-technologies-logo.png`,
+        telephone: contactPhone.schema,
         description: "Dawood Technologies grew from the technology needs of operating businesses and designs, builds, modernizes and supports business technology.",
       },
       {
