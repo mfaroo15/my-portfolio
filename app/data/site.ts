@@ -100,8 +100,46 @@ export const industries = [
 ] as const;
 
 export const work = [
-  { slug: "dawood-rcc-pipe", name: "Dawood RCC Pipe", sector: "Manufacturing & Infrastructure", title: "Digital foundations for an operating infrastructure manufacturer", summary: "Digital presence and ongoing technology support for an established RCC pipe manufacturer.", logo: "/logos/dawood-rcc-pipe.png", website: "https://dawoodrccpipe.com" },
-  { slug: "dawood-traders", name: "Dawood Traders", sector: "International Trade & Commerce", title: "Technology supporting modern trade operations", summary: "Digital presence and technology support for international trade operations.", logo: "/logos/dawood-traders.png", website: "https://dawoodtraderspk.com" },
+  {
+    slug: "dawood-rcc-pipe",
+    name: "Dawood RCC Pipe",
+    sector: "Manufacturing & Infrastructure",
+    title: "Digital foundations for an operating infrastructure manufacturer",
+    summary: "Digital presence and ongoing technology support for an established RCC pipe manufacturer.",
+    logo: "/logos/dawood-rcc-pipe.png",
+    website: "https://dawoodrccpipe.com",
+    overview: "Dawood RCC Pipe required a clear public digital presence that reflects an established infrastructure manufacturing business and can be maintained as business needs evolve.",
+    challenge: "The technology work needed to present essential company information clearly while keeping the platform simple enough to support over time.",
+    built: ["Public website presence", "Structured company and product information", "Responsive user experience", "Ongoing website support"],
+    approach: "The engagement prioritizes clear information architecture, maintainable implementation and continuity of support after launch.",
+    system: ["Public experience", "Content and brand presentation", "Hosting and deployment", "Maintenance and updates"],
+    outcome: "The business has a dedicated digital presence supported by Dawood Technologies.",
+    support: "Dawood Technologies continues to support the website and related technology requirements as approved updates are needed.",
+  },
+  {
+    slug: "dawood-traders",
+    name: "Dawood Traders",
+    sector: "International Trade & Commerce",
+    title: "Technology supporting modern trade operations",
+    summary: "Digital presence and technology support for international trade operations.",
+    logo: "/logos/dawood-traders.png",
+    website: "https://dawoodtraderspk.com",
+    overview: "Dawood Traders needed a professional digital presence for an international trade business, with technology support aligned to ongoing operating requirements.",
+    challenge: "The work needed to communicate the business clearly online without adding unnecessary system complexity or unsupported claims.",
+    built: ["Public website presence", "Business information structure", "Responsive user experience", "Ongoing technology support"],
+    approach: "The implementation is kept focused on credible business presentation, maintainability and continued support.",
+    system: ["Public experience", "Business content structure", "Hosting and deployment", "Maintenance and updates"],
+    outcome: "The business has a maintained digital presence supported by Dawood Technologies.",
+    support: "Dawood Technologies provides continued support for published digital presence and approved technology updates.",
+  },
+] as const;
+
+export const engineeringLayers = [
+  { title: "Experience", items: ["Web Applications", "Mobile", "Internal Tools", "Customer Experiences"] },
+  { title: "Application", items: ["Business Logic", "APIs", "Integrations", "Enterprise Applications"] },
+  { title: "Data & Automation", items: ["Databases", "Analytics", "Data Pipelines", "Automation", "AI where appropriate"] },
+  { title: "Infrastructure", items: ["Cloud", "Deployment", "Networking", "Security"] },
+  { title: "Operations", items: ["Monitoring", "Support", "Maintenance", "Continuous Improvement"] },
 ] as const;
 
 export const technologyCategories = [
