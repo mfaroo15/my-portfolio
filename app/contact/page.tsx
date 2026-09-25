@@ -41,9 +41,9 @@ export default function ContactPage() {
                   <Image src="/world-map-dots.svg" alt="" width={900} height={470} />
                 </figure>
 
-                <section className="contact-information-block">
+                <section className="contact-information-block contact-remote-engagement">
                   <p className="section-kicker">REMOTE ENGAGEMENT</p>
-                  <h2>Built to work<br />across locations.</h2>
+                  <h2>Built to work across locations.</h2>
                   <p>Our team supports remote and distributed engagements, working with organizations across locations and time zones.</p>
                 </section>
               </div>
