@@ -5,14 +5,8 @@ import microsoftAzure from "@iconify-icons/logos/microsoft-azure";
 import googleCloud from "@iconify-icons/logos/google-cloud";
 import salesforce from "@iconify-icons/logos/salesforce";
 import microsoft from "@iconify-icons/logos/microsoft";
-import oracle from "@iconify-icons/logos/oracle";
 import powerBi from "@iconify-icons/logos/microsoft-power-bi";
-import snowflake from "@iconify-icons/logos/snowflake";
-import databricks from "@iconify-icons/logos/databricks";
-import tableau from "@iconify-icons/logos/tableau";
 import docker from "@iconify-icons/logos/docker";
-import kubernetes from "@iconify-icons/logos/kubernetes";
-import terraform from "@iconify-icons/logos/terraform";
 import github from "@iconify-icons/logos/github-icon";
 import shopify from "@iconify-icons/logos/shopify";
 import react from "@iconify-icons/logos/react";
@@ -34,17 +28,10 @@ const logos: Record<string, IconifyIcon> = {
   "Microsoft Azure": microsoftAzure,
   "Google Cloud": googleCloud,
   Salesforce: salesforce,
-  "Dynamics 365": microsoft,
-  Oracle: oracle,
-  NetSuite: oracle,
+  "Microsoft Dynamics 365": microsoft,
   Shopify: shopify,
   "Power BI": powerBi,
-  Snowflake: snowflake,
-  Databricks: databricks,
-  Tableau: tableau,
   Docker: docker,
-  Kubernetes: kubernetes,
-  Terraform: terraform,
   GitHub: github,
   React: react,
   "Next.js": nextjs,

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { ContactBand } from "@/app/components/ContactBand";
@@ -13,8 +12,8 @@ export default function WorkPage() {
     <InnerHero kicker="OUR WORK" title="Technology in operating businesses." intro="Work with Dawood RCC Pipe and Dawood Traders helped develop the ownership-driven approach that now defines Dawood Technologies." />
     <section className="section work-index"><div className="container work-case-list">
       {work.map((item, index) => <article className="work-case-feature" key={item.slug}>
-        <div className="browser-frame" aria-label={`${item.name} project preview`}><div className="browser-bar"><span></span><span></span><span></span></div><div className="browser-canvas"><Image src={item.logo} alt={item.name} width={420} height={120} />{item.slug === "dawood-rcc-pipe" ? <strong>Dawood RCC Pipe</strong> : null}</div></div>
-        <div className="work-case-copy"><span>{String(index + 1).padStart(2, "0")} / {item.sector}</span><h2><Link href={`/work/${item.slug}`}>{item.title}</Link></h2><p>{item.overview}</p><div className="work-index-actions"><Link href={`/work/${item.slug}`}>Read case study <ArrowUpRight aria-hidden="true" size={15} /></Link><a href={item.website} target="_blank" rel="noopener noreferrer">Visit website <ArrowUpRight aria-hidden="true" size={15} /></a></div></div>
+        <div className="work-project-meta"><span>{String(index + 1).padStart(2, "0")}</span><strong>{item.name}</strong><small>{item.sector}</small></div>
+        <div className="work-case-copy"><h2><Link href={`/work/${item.slug}`}>{item.title}</Link></h2><p>{item.overview}</p><ul className="work-capability-list">{item.built.slice(0, 3).map((capability) => <li key={capability}>{capability}</li>)}</ul><div className="work-index-actions"><Link href={`/work/${item.slug}`}>View case study <ArrowUpRight aria-hidden="true" size={15} /></Link><a href={item.website} target="_blank" rel="noopener noreferrer">Visit website <ArrowUpRight aria-hidden="true" size={15} /></a></div></div>
       </article>)}
     </div></section>
     <ContactBand title="Tell us what your business needs technology to do." />
