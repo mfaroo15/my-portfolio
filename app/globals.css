@@ -120,6 +120,7 @@ h3 { font-size: clamp(1.25rem, 1.7vw, 1.625rem); font-weight: 600; }
 .industry-list h3 { margin-bottom: 0; }
 .industry-list p { margin-bottom: 0; color: var(--muted); }
 .home-origin, .home-solutions { background: var(--white); }
+.home-origin .story-copy { max-width: 600px; padding-top: 36px; }
 .home-origin .story-copy .text-link { margin-top: 8px; }
 .industry-experience-groups { min-width: 0; display: grid; gap: 40px; }
 .industry-group-heading { margin: 0 0 18px 58px; }
@@ -267,7 +268,7 @@ h3 { font-size: clamp(1.25rem, 1.7vw, 1.625rem); font-weight: 600; }
 .industry-team { background: var(--paper); }
 .company-story { background: var(--white); }
 .company-engineering { background: var(--paper); }
-.story-grid { margin-bottom: 0; }
+.story-grid { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(80px, 8vw, 112px); align-items: start; margin-bottom: 0; }
 .story-grid h2 { max-width: 480px; }
 .company-story-grid { border-top: 1px solid var(--line); }
 .company-story-row { display: grid; grid-template-columns: minmax(260px, .82fr) minmax(360px, 1fr); gap: var(--editorial-gap); align-items: start; padding: 48px 0; border-bottom: 1px solid var(--line); }
@@ -391,6 +392,7 @@ h3 { font-size: clamp(1.25rem, 1.7vw, 1.625rem); font-weight: 600; }
   .approach-step { padding: 32px; }
   .approach-step:nth-child(odd) { padding-left: 0; border-left: 0; }
   .approach-step:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .story-grid { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 64px; }
   .editorial-intro, .split-heading, .section-top, .inner-hero-grid, .page-hero-inner { gap: var(--space-intro-flow); }
   .solutions-editorial { gap: 48px; }
   .industry-editorial { gap: 56px; }
@@ -435,6 +437,7 @@ h3 { font-size: clamp(1.25rem, 1.7vw, 1.625rem); font-weight: 600; }
   .approach-hero { padding-block: 72px 78px; }
   .approach-intro h1 { font-size: 3rem; }
   .editorial-intro, .split-heading, .section-top, .inner-hero-grid, .story-grid, .page-hero-inner { grid-template-columns: 1fr; gap: 24px; }
+  .home-origin .story-copy { padding-top: 0; }
   .editorial-intro, .split-heading, .section-top { margin-bottom: 40px; }
   .section-top .text-link { justify-self: start; }
   .evidence-item { grid-template-columns: 34px 130px 1fr 22px; gap: 15px; }
