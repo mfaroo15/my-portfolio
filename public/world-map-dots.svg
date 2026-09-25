@@ -1,7 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="presentation">
+  <style>.world-map-dot{fill:#7fb3ff}</style>
   <defs>
     <pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse">
-      <circle cx="3" cy="3" r="2.1" fill="#1268e8" fill-opacity=".32"/>
+      <circle class="world-map-dot" cx="3" cy="3" r="2.2"/>
     </pattern>
     <clipPath id="land">
       <path d="M48 79l30-24 47-14 47 9 28 23 22 7 14 24-18 22-36 1-20 16-31-4-18 16-20-10-8-25-25-15-12-26z"/>
