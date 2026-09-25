@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { EngineeringModel } from "@/app/components/EngineeringModel";
@@ -8,6 +7,13 @@ import { capabilities, contactPhone, industries, siteUrl, solutions, work } from
 import { createPageMetadata } from "@/app/lib/metadata";
 
 const homeDescription = "Technology capability developed through operating businesses, spanning applications, cloud, data, security, automation and ongoing operations.";
+
+const operatingApproach = [
+  { code: "01", title: "Understand", description: "Operating requirements and existing systems." },
+  { code: "02", title: "Design", description: "Architecture, applications and infrastructure." },
+  { code: "03", title: "Implement", description: "Engineering, integration and deployment." },
+  { code: "04", title: "Operate", description: "Monitoring, support and continuous improvement." },
+];
 
 export const metadata: Metadata = {
   ...createPageMetadata({ title: "Technology That Keeps Business Moving", description: homeDescription, path: "/" }),
@@ -37,7 +43,7 @@ export default function Home() {
     ],
   };
   return <main id="main-content"><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
-    <section className="home-hero"><div className="container hero-inner"><div className="hero-copy"><h1>Technology that keeps business <span>moving.</span></h1><p className="hero-intro">Applications, enterprise systems, cloud infrastructure, data and automation, with ongoing technology support for business operations.</p><div className="hero-actions"><Link className="button button-primary" href="/services">Explore Services <ArrowRight aria-hidden="true" size={17} /></Link><Link className="text-link" href="/contact">Let&apos;s Talk <ArrowUpRight aria-hidden="true" size={17} /></Link></div></div><figure className="hero-visual"><Image src="/technology-built-around-business.png" alt="Abstract blue architectural forms representing connected business technology" width={1152} height={1536} priority /></figure></div></section>
+    <section className="home-hero" aria-labelledby="approach-title"><div className="container approach-hero"><header className="approach-intro"><p className="kicker">OUR APPROACH</p><h1 id="approach-title">Technology built around how businesses operate.</h1><p>Dawood Technologies designs, implements and supports technology across applications, data, cloud infrastructure, enterprise networking and day-to-day technology operations.</p></header><div className="approach-process" aria-label="Four-step operating approach">{operatingApproach.map((step) => <article className="approach-step" key={step.code}><div className="approach-step-index"><span>{step.code}</span><i aria-hidden="true" /></div><h2>{step.title}</h2><p>{step.description}</p></article>)}</div></div></section>
 
     <section className="section home-origin"><div className="container editorial-intro story-grid"><div><p className="kicker">BUILT FROM OPERATING EXPERIENCE</p><h2>Technology capability developed inside operating businesses.</h2></div><div className="editorial-copy story-copy"><p>Dawood Technologies grew from the technology needs of Dawood operating businesses. That internal capability developed into a dedicated technology company.</p><p>Today, we bring the same ownership-driven approach to organizations beyond Dawood, connecting technology decisions to how businesses actually operate.</p><Link className="text-link" href="/company">Our company story <ArrowRight aria-hidden="true" size={16} /></Link></div></div></section>
 
