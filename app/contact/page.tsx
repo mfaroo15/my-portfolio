@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ContactForm } from "@/app/contact/ContactForm";
 import { contactPhone, contactPresence } from "@/app/data/site";
 import { createPageMetadata } from "@/app/lib/metadata";
@@ -29,12 +30,17 @@ export default function ContactPage() {
               <p>We&apos;re available to discuss your requirements and answer any questions.</p>
             </section>
 
-            <section className="contact-information-block">
-              <p className="section-kicker">OUR PRESENCE</p>
-              <div className="contact-presence">
-                {contactPresence.map((location) => <span key={location}>{location}</span>)}
-              </div>
-            </section>
+            <div className="contact-presence-composition">
+              <section className="contact-information-block">
+                <p className="section-kicker">OUR PRESENCE</p>
+                <div className="contact-presence">
+                  {contactPresence.map((location) => <span key={location}>{location}</span>)}
+                </div>
+              </section>
+              <figure className="contact-world-map" aria-hidden="true">
+                <Image src="/world-map-dots.svg" alt="" width={720} height={360} />
+              </figure>
+            </div>
 
             <section className="contact-information-block">
               <p className="section-kicker">REMOTE ENGAGEMENT</p>

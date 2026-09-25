@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="presentation">
+  <defs>
+    <pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2.1" fill="#1268e8" fill-opacity=".18"/>
+    </pattern>
+    <clipPath id="land">
+      <path d="M48 79l30-24 47-14 47 9 28 23 22 7 14 24-18 22-36 1-20 16-31-4-18 16-20-10-8-25-25-15-12-26z"/>
+      <path d="M185 154l25 12 19 32-4 32-17 30-12 48-18 12-11-35-17-31 6-38 15-24z"/>
+      <path d="M276 60l24-18 31 8 6 27-23 18-29-9z"/>
+      <path d="M313 101l35-22 37 4 24-14 59 4 43-18 54 14 45 26 49 4 34 27-24 19-42-3-27 13-31-8-21 14-31-11-18 13-23-22-36 9-22-18-31 6-32-13-34 2-19-13z"/>
+      <path d="M350 145l39 3 36 24 13 42-20 35-16 55-31-5-15-43-26-31-8-43z"/>
+      <path d="M579 236l37-22 52 12 18 28-17 27-42 7-38-18z"/>
+      <path d="M676 192l14-7 11 12-8 16-15-4z"/>
+    </clipPath>
+  </defs>
+  <rect width="720" height="340" fill="url(#dots)" clip-path="url(#land)"/>
+</svg>
