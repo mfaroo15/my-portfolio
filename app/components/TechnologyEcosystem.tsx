@@ -1,5 +1,5 @@
 import { TechnologyLogo } from "@/app/components/TechnologyLogo";
-import { engineeringTechnologies, technologyCategories } from "@/app/data/site";
+import { technologyCategories } from "@/app/data/site";
 
 export function TechnologyEcosystem() {
   return (
@@ -15,10 +15,6 @@ export function TechnologyEcosystem() {
             <div>{group.logos.map((logo) => <TechnologyLogo key={logo.name} {...logo} />)}</div>
           </section>
         ))}
-      </div>
-      <div className="engineering-technologies">
-        <h4>Engineering Technologies</h4>
-        <p>{engineeringTechnologies.join(" · ")}</p>
       </div>
       <p className="platform-disclosure">Platform references indicate technologies we work with and do not imply vendor partnership or certification.</p>
     </aside>
